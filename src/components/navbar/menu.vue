@@ -1,7 +1,7 @@
 <template lang='jade'>
 
 nav( v-show='visible' transition='slide' )
-  button(v-for='button in buttons') {{ button }}
+  button(v-for='route in routes' v-link="{ path: route.path }") {{ route.name }}
 
 </template>
 
@@ -15,7 +15,7 @@ export default {
 
   props: {
     visible: true,
-    buttons: [],
+    routes: [],
   },
 };
 
