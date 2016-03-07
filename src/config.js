@@ -1,7 +1,7 @@
 let config = {
   env: process.env.NODE_ENV,
   api: {
-    source: 'https://pogoda.skalagi.pl/api',
+    source: 'https://weatherapi.skalagi.pl',
   },
 };
 
