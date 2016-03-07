@@ -7,7 +7,11 @@ let config = {
 
 export default config;
 export function api() {
-  return config.env !== 'production'
-    ? config.api.source
-    : '/api';
+  return config.api.source;
+
+  /* TODO remove api function - not anymore dynamic api
+   * return config.env !== 'production'
+   *   ? config.api.source
+   *   : '/api';
+   */
 };
