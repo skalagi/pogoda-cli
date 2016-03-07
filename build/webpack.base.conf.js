@@ -5,7 +5,7 @@ module.exports = {
     app: './src/weather.js',
   },
   output: {
-    path: '../../../web/static',
+    path: './dist/static',
     publicPath: '/static/',
     filename: '[name].js',
   },
