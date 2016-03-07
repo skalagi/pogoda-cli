@@ -1,4 +1,0 @@
-bind: 127.0.0.1
-port: '7799'
-log: /../../../../app/logs/socket.log
-task: SyntaxError\SocketBundle\Task\Weather
