@@ -14,7 +14,6 @@
 
     data() {
       return {
-        pressure: 960,
         measure: {
           from: 960,
           unit: 40,
@@ -22,9 +21,9 @@
       };
     },
 
-    events: {
-      updated(api) {
-        this.pressure = api.barometer.current.value;
+    vuex: {
+      getters: {
+        pressure: ({ api }) => api.basic.barometer ? api.basic.barometer.current.value : 960,
       },
     },
   };

@@ -3,7 +3,7 @@
 .windWraper
   .actionBar
     h1 Wiatr
-    select(v-model='wind.choice' v-bind:disabled='animation')
+    select(v-model='choice' v-bind:disabled='animation')
       option(selected) aktualny
       option powiew
   .wind
@@ -28,17 +28,13 @@
     data() {
       return {
         animation: false,
-        wind: {
-          choice: '',
-          actual: model(),
-          gust: model(),
-        },
+        choice: '',
       };
     },
 
     computed: {
       current() {
-        switch (this.wind.choice) {
+        switch (this.choice) {
           case 'powiew':
             return this.wind.gust;
           default:
@@ -47,35 +43,39 @@
       },
     },
 
+    vuex: {
+      getters: {
+        wind({ api }) {
+          const wind = api.basic.wind;
+
+          return {
+            actual: wind ? setWind(wind.current) : model(),
+            gust: wind ? setWind(wind.gust) : model(),
+          }
+        },
+      },
+    },
+
     events: {
       animate(isAnimating) {
         this.animation = isAnimating;
       },
-
-      updated(api) {
-        let wind = api.wind;
-
-        this.setWind('actual', wind.current);
-        this.setWind('gust', wind.gust);
-      },
-    },
-
-    methods: {
-      windDirection(fromBlow) {
-        let direction = fromBlow === null ? fromBlow : fromBlow + 180;
-
-        return direction < 360 ? direction : direction - 360;
-      },
-
-      setWind(which, wind) {
-        Object.assign(this.wind[which], {
-          direction: this.windDirection(wind.dir.value),
-          speed: wind.speed.value,
-          humanReadable: wind.translated,
-        });
-      },
     },
   };
+
+  function setWind(wind) {
+    return {
+      direction: windDirection(wind.dir.value),
+      speed: wind.speed.value,
+      humanReadable: wind.translated,
+    };
+  }
+
+  function windDirection(fromBlow) {
+    let direction = fromBlow === null ? fromBlow : fromBlow + 180;
+
+    return direction < 360 ? direction : direction - 360;
+  }
 
 </script>
 
