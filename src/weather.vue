@@ -22,6 +22,7 @@
 <script>
   import material from './components/material';
   import navbar from './components/navbar';
+  import store from './vuex/store';
   import Basic from '@pogoda/basic-api';
   import { api } from './config';
   import 'whatwg-fetch';
@@ -30,6 +31,15 @@
     components: {
       material,
       navbar,
+    },
+
+    store,
+    vuex: {
+      actions: {
+        updateApi({ dispatch }, api) {
+          dispatch('updateBasicApi', api);
+        },
+      },
     },
 
     data() {
@@ -46,7 +56,7 @@
     },
 
     ready() {
-      this.api.basic.on('updated', e => this.$broadcast('updated', e));
+      this.api.basic.on('updated', api => this.updateApi(api));
     },
   };
 
