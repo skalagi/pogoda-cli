@@ -1,16 +1,13 @@
 # Pogoda-cli
-[![Dependency Status](https://david-dm.org/rascada/pogoda.svg?style=flat-square&path=src/Rascada/pogoda-cli)](https://david-dm.org/rascada/pogoda?path=src/Rascada/pogoda-cli) [![devDependency Status](https://david-dm.org/rascada/pogoda/dev-status.svg?style=flat-square&path=src/Rascada/pogoda-cli)](https://david-dm.org/rascada/pogoda?path=src/Rascada/pogoda-cli#info=devDependencies)
-##### `src/Rascada/pogoda-cli`
 
-Client for weather station api  
-Written with [vue](http://vuejs.org)
+Client for weather station api
 
 ## Setup
 ```sh
 # go to pogoda-cli directory
 ~/Pogoda$ cd src/Rascada/pogoda-cli
 
-~/Pogoda/src/Rascada/pogoda-cli$ npm i && bower i
+~/Pogoda/src/Rascada/pogoda-cli$ npm i && cd dist && bower i
 ```
 
 ## Build
