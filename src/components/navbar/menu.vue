@@ -1,7 +1,7 @@
 <template lang='jade'>
 
 nav( v-show='visible' transition='slide' )
-  button(v-for='route in routes' v-link="{ path: route.path }") {{ route.name }}
+  paper-button(v-for='route in routes' v-link="{ path: route.path }") {{ route.name }}
 
 </template>
 
@@ -26,6 +26,7 @@ export default {
 
 nav
   background #eee
+  overflow hidden
 
   button
     margin .75em .5em
