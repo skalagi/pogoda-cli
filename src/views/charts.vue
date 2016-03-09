@@ -40,6 +40,9 @@ export default {
           series: [{
             data,
           }],
+          xAxis: {
+            type: 'datetime'
+          },
           chart: {
             type: 'line',
           },
