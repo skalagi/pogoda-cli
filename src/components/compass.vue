@@ -1,13 +1,12 @@
 <template lang='jade'>
 
-paper-material(elevation='2').compass
+.compass
   measure(:values='directions' v-bind:options='{ range: 0, start: 0 }')
   .arrowWrapper
     .arrow(:style='arrowDirection')
     .screen
       slot
         h1(v-show='direction != null') {{ direction | round 2 }}°
-          paper-tooltip(position='top') {{ direction }}°
       slot(name='screen')
 
 </template>

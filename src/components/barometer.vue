@@ -1,5 +1,5 @@
 <template lang="jade">
-paper-material.barometer
+.barometer
   h1 Ciśnienie
   gauge(:measure='measure' v-bind:value='pressure' unit-name='hPa')
 </template>

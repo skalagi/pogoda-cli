@@ -1,6 +1,6 @@
 <template lang='jade'>
 
-paper-material.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible = false')
+.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible = false')
   header
 
     ul.sunLogo

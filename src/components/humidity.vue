@@ -1,6 +1,6 @@
 <template lang="jade">
 .dropletWrapper(v-show='humidity != null')
-  paper-material.droplet
+  .droplet
     .humidity
       .sensor(:style='{ height: humidity + "%" }')
         .overlay

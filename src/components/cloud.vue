@@ -1,6 +1,6 @@
 <template lang='jade'>
 
-paper-material.cloud(:style='style' elevation='2')
+.cloud(:style='style' elevation='2')
 
 </template>
 

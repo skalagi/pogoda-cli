@@ -1,7 +1,7 @@
 <template lang='jade'>
 
-paper-material.windWraper
-  paper-material.actionBar
+.windWraper
+  .actionBar
     h1 Wiatr
     select(v-model='wind.choice' v-bind:disabled='animation')
       option(selected) aktualny

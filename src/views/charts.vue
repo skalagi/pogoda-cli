@@ -17,7 +17,7 @@
 
 <script>
 import Highchart from 'highcharts';
-import { config } from '../config';
+import { api } from '../config';
 
 export default {
   data() {
