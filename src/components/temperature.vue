@@ -1,6 +1,6 @@
 <template lang='jade'>
 
-paper-material.temperature
+.temperature
   h1 Temperatura
   termometer(:degrees='current')
 
@@ -22,10 +22,6 @@ export default {
   data() {
     return {
       choice: '',
-      temperature: {
-        actual: 0,
-        real: 0,
-      },
     };
   },
 
@@ -40,14 +36,16 @@ export default {
     },
   },
 
-  events: {
-    updated(api) {
-      let temperature = api.temperature;
+  vuex: {
+    getters: {
+      temperature: state => {
+        let temperature = state.api.basic.temperature;
 
-      Object.assign(this.temperature, {
-        actual: temperature.current.value,
-        real: temperature.real.value,
-      });
+        return {
+          actual: temperature ? temperature.current.value : 0,
+          real: temperature ? temperature.real.value : 0,
+        };
+      },
     },
   },
 };

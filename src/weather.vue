@@ -14,7 +14,7 @@
 .weather
   link(href='https://fonts.googleapis.com/css?family=Rajdhani:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css')
   material
-  navbar(name='pogoda-skalagi')
+  navbar(:routes="routes" name='pogoda-skalagi')
   router-view
 
 </template>
@@ -22,6 +22,7 @@
 <script>
   import material from './components/material';
   import navbar from './components/navbar';
+  import store from './vuex/store';
   import Basic from '@pogoda/basic-api';
   import { api } from './config';
   import 'whatwg-fetch';
@@ -32,16 +33,30 @@
       navbar,
     },
 
+    store,
+    vuex: {
+      actions: {
+        updateApi({ dispatch }, api) {
+          dispatch('updateBasicApi', api);
+        },
+      },
+    },
+
     data() {
       return {
         api: {
           basic: new Basic(api()),
         },
+
+        routes: [
+          { name: 'pogoda', path: '/' },
+          { name: 'wykresy (beta)', path: '/wykresy' },
+        ],
       };
     },
 
     ready() {
-      this.api.basic.on('updated', e => this.$broadcast('updated', e));
+      this.api.basic.on('updated', api => this.updateApi(api));
     },
   };
 

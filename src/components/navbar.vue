@@ -1,6 +1,6 @@
 <template lang='jade'>
 
-paper-material.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible = false')
+.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible = false')
   header
 
     ul.sunLogo
@@ -10,7 +10,7 @@ paper-material.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible =
     h1 {{ name }}
     next-update
     span pogoda2
-  menu(:visible='menu.visible' v-bind:buttons='buttons')
+  menu(:visible='menu.visible' v-bind:routes='routes')
   paper-progress(:indeterminate='updateInProgress')
 
 </template>
@@ -27,7 +27,7 @@ paper-material.navbar(@mouseover='menu.visible = true' @mouseout='menu.visible =
 
     props: {
       name: 'Wstaw nazwe',
-      buttons: [],
+      routes: [],
     },
 
     data() {

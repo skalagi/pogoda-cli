@@ -1,6 +1,6 @@
 <template lang="jade">
 .dropletWrapper(v-show='humidity != null')
-  paper-material.droplet
+  .droplet
     .humidity
       .sensor(:style='{ height: humidity + "%" }')
         .overlay
@@ -15,19 +15,13 @@
   import round from 'vue-round-filter';
 
   export default {
-    data() {
-      return {
-        humidity: 0,
-      };
-    },
-
     filters: {
       round,
     },
 
-    events: {
-      updated(api) {
-        this.humidity = api.humidity.value;
+    vuex: {
+      getters: {
+        humidity: ({ api }) => api.basic.humidity ? api.basic.humidity.value : 0,
       },
     },
   };

@@ -1,5 +1,5 @@
 <template lang="jade">
-paper-material.barometer
+.barometer
   h1 Ciśnienie
   gauge(:measure='measure' v-bind:value='pressure' unit-name='hPa')
 </template>
@@ -14,7 +14,6 @@ paper-material.barometer
 
     data() {
       return {
-        pressure: 960,
         measure: {
           from: 960,
           unit: 40,
@@ -22,9 +21,9 @@ paper-material.barometer
       };
     },
 
-    events: {
-      updated(api) {
-        this.pressure = api.barometer.current.value;
+    vuex: {
+      getters: {
+        pressure: ({ api }) => api.basic.barometer ? api.basic.barometer.current.value : 960,
       },
     },
   };

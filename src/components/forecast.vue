@@ -1,6 +1,6 @@
 <template lang='jade'>
 
-paper-material.forecast
+.forecast
   div(v-if='populated')
     forecast-icons(:days='week' v-bind:focused.sync='focused')
 

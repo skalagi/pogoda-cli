@@ -1,10 +1,16 @@
-import weather from './views/weather';
-
 export default function(router) {
   router.map({
     '/': {
-      component: weather,
+      component(resolve) {
+        require(['./views/weather'], resolve);
+      },
+    },
+    '/wykresy': {
+      component(resolve) {
+        require(['./views/charts'], resolve);
+      },
     },
   });
+
   return router;
 };
