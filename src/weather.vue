@@ -40,7 +40,7 @@
 
         routes: [
           { name: 'pogoda', path: '/' },
-          { name: 'wykresy', path: '/wykresy' },
+          { name: 'wykresy (beta)', path: '/wykresy' },
         ],
       };
     },
