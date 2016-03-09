@@ -5,6 +5,11 @@
 
   .chart(v-el:chart)
 
+  select(v-model='period' @change='load')
+    option(selected) day
+    option month
+    option year
+
   select(v-model='selected' @change='load')
     option(selected) outTemp
     option outHumidity
@@ -22,13 +27,14 @@ import { api } from '../config';
 export default {
   data() {
     return {
+      period: null,
       selected: null,
     };
   },
 
   methods: {
     load() {
-      fetch(`${api()}/day-charts/${this.selected}.json`)
+      fetch(`${api()}/${this.period}-charts/${this.selected}.json`)
         .then(res => res.json())
         .then(data => new Highchart.chart(this.$els.chart, {
           series: [{
