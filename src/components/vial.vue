@@ -2,15 +2,26 @@
 
 .vial
   .measure
-    -for(var i = 20; i--;)
-      -if(i % 5 == 0 && i != 0)
-        div.line.boldLine
-      -else
-        .line
+    .line(v-for='num of 20' v-bind:class='{ boldLine: num % 5 === 0 }')
+      span(v-if='num % 5 === 0') {{ 20 - num }}
   .vialVal
-    .rainVal(style='height: 10%')
+    .rainVal(style='height: {{ amount }}%')
 
 </template>
+
+<script>
+  export default {
+    vuex: {
+      getters: {
+        amount: ({ api }) => {
+          let amount = api.basic.sum ? api.basic.sum.value : 0;
+
+          return amount ? (amount * 4.8) + 5.3 : 0;
+        },
+      },
+    },
+  };
+</script>
 
 <style lang='stylus'>
   @import "~styles/main"
@@ -18,7 +29,7 @@
 
   .vial
     @extend .blockShadow, .flex, .center
-    width 6em
+    width 6.5em
     height 24em
     background #fff
     position relative
@@ -28,11 +39,16 @@
       height 85%
       position absolute
       @extend .flex, .fcolumn, .between
+
       .line
         height .11em
         margin-left .1em
         width 1em
         background #555
+
+        span
+          margin 0 .25em
+
       .boldLine
         width 1.5em
     .vialVal
@@ -44,7 +60,7 @@
       overflow hidden
       border-left .1em solid #ddd
       .rainVal
-        background #09f
+        background color
         height 50%
         width 100%
         @extend .blockShadow

@@ -23,9 +23,10 @@ main
 <template lang="jade">
 .weather
   main
-    humidity
+    section
+      humidity
+      vial
     temperature
-    //vial
     section
       .section
         barometer
