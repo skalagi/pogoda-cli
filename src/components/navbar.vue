@@ -59,7 +59,7 @@
     margin .5em
 
   paper-progress
-    width 100%
+    width 100% !important
 
   header
     @extend .flex, .w-around, .acenter
