@@ -44,7 +44,7 @@ export default {
             type: 'line',
           },
           title: {
-            text: '',
+            text: `${this.period} - ${this.selected}`,
           },
         }))
         .catch(err => console.log(err));
