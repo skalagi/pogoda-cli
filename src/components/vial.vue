@@ -66,8 +66,13 @@
         position relative
         background #555
 
-        span
-          margin 0 .25em
+        p
+          position absolute
+          font-weight 600
+          color #444
+          right 125%
+          top -500%
+          margin 0
 
       .boldLine
         width 1.5em
