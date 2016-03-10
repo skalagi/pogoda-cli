@@ -42,6 +42,17 @@
     background #fff
     position relative
     border-radius 0 0 5em 5em
+    &:after
+      content ''
+      position absolute
+      pointer-events none
+      top -1.9%
+      left 56%
+      width 110%
+      height 114%
+      z-index 2
+      transform skew(25deg) rotate(37deg)
+      background rgba(#000, .1)
     .measure
       top 2.5%
       height 85%
