@@ -1,11 +1,13 @@
 <template lang='jade'>
 
-.vial
-  .measure
-    .line(v-for='num of 20' v-bind:class='{ boldLine: num % 5 === 0 }')
-      span(v-if='num % 5 === 0') {{ 20 - num }}
-  .vialVal
-    .rainVal(style='height: {{ amount }}%')
+.container
+  h1 Opady
+  .vial
+    .measure
+      .line(v-for='num of 20' v-bind:class='{ boldLine: num % 5 === 0 }')
+        p(v-if='num % 5 === 0') {{ 20 - num }}
+    .vialVal
+      .rainVal(style='height: {{ amount }}%')
 
 </template>
 
@@ -25,12 +27,18 @@
 
 <style lang='stylus'>
   @import "~styles/main"
+  @import '~styles/section'
   @import "~flexstyl/index"
 
+  .container
+    @extend .section
+    overflow hidden
+
   .vial
-    @extend .blockShadow, .flex, .center
+    @extend .flex, .center
     width 6.5em
     height 24em
+    margin .5em
     background #fff
     position relative
     border-radius 0 0 5em 5em
@@ -44,6 +52,7 @@
         height .11em
         margin-left .1em
         width 1em
+        position relative
         background #555
 
         span
