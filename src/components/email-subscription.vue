@@ -1,10 +1,37 @@
 <template lang='jade'>
 .subscription
-  .email
+  form(v-el:form v-on:submit.prevent="subscription").email
     h1 subskrypcja pocztowa
-    input
-    button
+    h2(v-show='status') Udało się
+    input(name='email' type='email' @keyup='status = null')
+    button Subskrybuj
 </template>
+
+<script>
+import config from 'config';
+
+export default {
+  methods: {
+    subscription() {
+      fetch(`${config.api.source}/subscribe`, {
+        method: 'post',
+        body: new FormData(this.$els.form),
+      }).then(res => {
+        const status = res.json().status;
+
+        this.status = status === 'Added.' || status === 'Removed.';
+      });
+    },
+  },
+
+  data() {
+    return {
+      status: null,
+    };
+  },
+};
+
+</script>
 
 <style lang='stylus'>
 @import '~styles/section'
