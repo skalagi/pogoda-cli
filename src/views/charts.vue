@@ -22,7 +22,7 @@
 
 <script>
 import Highchart from 'highcharts';
-import { api } from '../config';
+import { api } from 'config';
 
 export default {
   data() {

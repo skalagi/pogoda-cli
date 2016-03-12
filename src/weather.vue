@@ -26,7 +26,7 @@
   import navbar from './components/navbar';
   import store from './vuex/store';
   import Basic from '@pogoda/basic-api';
-  import { api } from './config';
+  import { api } from 'config';
   import 'whatwg-fetch';
 
   export default {
