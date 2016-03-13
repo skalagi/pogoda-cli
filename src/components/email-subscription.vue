@@ -4,7 +4,7 @@
   form(v-el:form v-show='active' v-on:submit.prevent="subscription").email
     h1 Subskrypcja pocztowa
     h2(v-show='status') {{ status }}
-    input(name='email' type='email' @keyup='status = null')
+    input(name='email' placeholder='adres email' type='email' @keyup='status = null')
     .buttons
       paper-button(raised @click.prevent='active = false') nie dziękuje
       paper-button(raised @click='subscription') Subskrybuj
