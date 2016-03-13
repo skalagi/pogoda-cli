@@ -4,10 +4,11 @@
   form(v-el:form v-show='active' v-on:submit.prevent="subscription").email
     h1 Subskrypcja pocztowa
     h2(v-show='status') {{ status }}
-    input(name='email' placeholder='adres email' type='email' @keyup='status = null')
+    input(name='email' placeholder='adres email' required type='email' @keyup='status = null')
     .buttons
-      paper-button(raised @click.prevent='active = false') nie dziękuje
-      paper-button(raised @click='subscription') Subskrybuj
+      paper-button(raised) nie dziękuje
+      paper-button(raised).submit
+        button(type='submit') Subskrybuj
 </template>
 
 <script>
@@ -97,6 +98,22 @@ export default {
       flex styl
       margin .5em 0
       justify around
+
+      .submit
+        padding 0
+
+        button
+          border 0
+          margin 0
+          padding 0
+          width 100%
+          height 100%
+          padding 1em
+          outline none
+          color inherit
+          cursor pointer
+          background none
+          font-weight 600
 
       paper-button
         font-weight 600
