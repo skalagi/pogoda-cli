@@ -31,7 +31,7 @@
 <style lang='stylus' src='./style/forecast'></style>
 
 <script>
-  import { api } from '../config';
+  import { api } from 'config';
   import shortWeek from './forecast/shortWeek';
   import forecastIcons from './forecast/icons';
 

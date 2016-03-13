@@ -22,7 +22,7 @@
     "@pogoda/basic-api": "^1.0.0",
     "dynamics.js": "0.0.9",
     "eventemitter2": "^0.4.14",
-    "flexstyl": "0.0.4",
+    "flexstyl": "^1.1.0",
     "highcharts": "^4.2.3",
     "pretty-ms": "^2.1.0",
     "vue": "^1.0.0",

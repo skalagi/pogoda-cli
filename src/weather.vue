@@ -16,19 +16,22 @@
   material
   navbar(:routes="routes" name='pogoda-skalagi')
   router-view
+  email-subscription
 
 </template>
 
 <script>
+  import emailSubscription from './components/email-subscription';
   import material from './components/material';
   import navbar from './components/navbar';
   import store from './vuex/store';
   import Basic from '@pogoda/basic-api';
-  import { api } from './config';
+  import { api } from 'config';
   import 'whatwg-fetch';
 
   export default {
     components: {
+      emailSubscription,
       material,
       navbar,
     },
