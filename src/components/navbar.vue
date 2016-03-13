@@ -82,10 +82,9 @@
     padding .5em 1em
 
     > span
-      margin-left auto
+      margin auto
 
     paper-button
-      margin-left auto
       align-self flex-end
       font-weight 600
 
