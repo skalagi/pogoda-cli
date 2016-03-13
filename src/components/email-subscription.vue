@@ -19,11 +19,9 @@ export default {
       fetch(`${config.api.source}/subscribe`, {
         method: 'post',
         body: new FormData(this.$els.form),
-      }).then(res => {
-        const status = res.json().status;
-
-        this.status = status === 'Added.' || status === 'Removed.';
-      });
+      })
+      .then(res => res.json())
+      .then(res => this.status = res.status === 'Added.' || res.status === 'Removed.');
     },
   },
 
