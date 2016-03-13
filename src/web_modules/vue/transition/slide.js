@@ -15,7 +15,7 @@ function slide(el, value, done) {
   dyn.animate(el, {
     height: value,
   }, {
-    duration: 700,
+    duration: 500,
     complete: function() {
       if (done) done.call();
     },
