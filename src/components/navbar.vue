@@ -9,7 +9,11 @@
 
     h1 {{ name }}
     next-update
-    span pogoda2
+
+    paper-button(@click="open")
+      span pogoda2
+      span.octicon.octicon-mark-github
+
   menu(:visible='menu.visible' v-bind:routes='routes')
   paper-progress(:indeterminate='updateInProgress')
 
@@ -17,6 +21,7 @@
 
 <script>
   import menu from './navbar/menu';
+  import 'octicons/octicons/octicons.css';
   import nextUpdate from './navbar/nextUpdate';
 
   export default {
@@ -46,6 +51,10 @@
           setTimeout(_ => this.updateInProgress = true, time * 1000);
         });
     },
+
+    methods: {
+      open: _ => open('https://github.com/skalagi/pogoda-cli'),
+    },
   };
 
 </script>
@@ -53,6 +62,8 @@
 <style lang='stylus'>
   @import "~styles/main"
   @import "~flexstyl/index"
+  @import "~flexstyl/flex"
+
   sunWidth = 4em
 
   .navbar
@@ -72,8 +83,17 @@
 
     > span
       margin-left auto
+
+    paper-button
+      margin-left auto
       align-self flex-end
       font-weight 600
+
+      span
+        margin 0 .2em
+
+      .octicon
+        font-size 1.4em
 
     .sunLogo
       width 1.5em
