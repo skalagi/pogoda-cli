@@ -64,10 +64,30 @@ radius(rad)
 
 .cloud
   position absolute
-  border-radius 50%
-  background rgba(#fff, .85)
-  width 6.5em
+  border-radius 4em
+  background #fff
+  opacity .9
+  width 9em
   bottom 1em
   z-index -1
-  height 5em
+  height 3em
+
+  &:before, &:after
+    content ''
+    position absolute
+    border-radius 50%
+    background inherit
+
+  &:before
+    top -1.5em
+    left 1em
+    width 3em
+    height @width
+
+  &:after
+    top -2.5em
+    left 3em
+    width 4.75em
+    height @width
+
 </style>
