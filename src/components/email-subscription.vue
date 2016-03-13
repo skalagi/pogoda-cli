@@ -7,7 +7,7 @@
     input(name='email' type='email' @keyup='status = null')
     .buttons
       paper-button(raised @click.prevent='active = false') nie dziękuje
-      paper-button(raised) Subskrybuj
+      paper-button(raised @click='subscription') Subskrybuj
 </template>
 
 <script>
@@ -107,6 +107,7 @@ export default {
     position absolute
     bottom 1em
     left 1em
+    outline none
 
     cursor pointer
     border 0
