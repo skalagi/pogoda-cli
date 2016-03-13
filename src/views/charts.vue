@@ -37,11 +37,11 @@ export default {
       fetch(`${api()}/${this.period}-charts/${this.selected}.json`)
         .then(res => res.json())
         .then(data => new Highchart.chart(this.$els.chart, {
-          series: [{
-            data,
-          }],
+          series: [
+            { data },
+          ],
           xAxis: {
-            type: 'datetime'
+            type: 'datetime',
           },
           chart: {
             type: 'line',

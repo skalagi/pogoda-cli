@@ -51,7 +51,7 @@
           return {
             actual: wind ? setWind(wind.current) : model(),
             gust: wind ? setWind(wind.gust) : model(),
-          }
+          };
         },
       },
     },
