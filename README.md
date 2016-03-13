@@ -1,6 +1,6 @@
 # Pogoda-cli
 
-Client for weather station api
+Client for skalagis weather station [pogoda-api](https://github.com/skalagi/pogoda-api)
 
 ## Setup
 ```sh
