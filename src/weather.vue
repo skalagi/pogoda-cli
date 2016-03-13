@@ -14,7 +14,7 @@
 .weather
   link(href='https://fonts.googleapis.com/css?family=Rajdhani:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css')
   material
-  navbar(:routes="routes" name='pogoda-skalagi')
+  navbar(:routes="routes" name='Pogoda Skałągi')
   router-view
   email-subscription
 
