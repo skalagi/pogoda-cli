@@ -6,7 +6,7 @@
     h2(v-show='status') {{ status }}
     input(name='email' placeholder='adres email' required type='email' @keyup='status = null')
     .buttons
-      paper-button(raised) nie dziękuje
+      paper-button(raised @click='active = false') nie dziękuje
       paper-button(raised).submit
         button(type='submit') Subskrybuj
 </template>
