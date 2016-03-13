@@ -42,12 +42,16 @@ export default {
 @import '~flexstyl/flex'
 
 .subscription
+  pointer-events none
   position fixed
   height 100vh
   width 100vw
   z-index 2
   left 0
   top 0
+
+  & > *
+    pointer-events all
 
   .email
     flex styl
