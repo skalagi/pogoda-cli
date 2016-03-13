@@ -31,7 +31,7 @@ export default {
 
   methods: {
     step() {
-      this.x = this.x > window.innerWidth
+      this.x = this.x > document.body.clientWidth + 200
         ? this.reset()
         : this.x + this.speed;
 
@@ -39,7 +39,7 @@ export default {
     },
 
     reset() {
-      this.y = Math.random() * -window.innerHeight;
+      this.y = Math.random() * -document.body.clientHeight;
       this.speed = Math.random() * 1 + 1;
       this.onTop = Math.random();
 
@@ -48,7 +48,7 @@ export default {
   },
 
   ready() {
-    this.x = Math.random() * innerWidth;
+    this.x = Math.random() * document.body.clientWidth;
     this.reset();
     requestAnimationFrame(this.step);
   },
@@ -64,10 +64,30 @@ radius(rad)
 
 .cloud
   position absolute
-  border-radius 50%
-  background rgba(#fff, .85)
-  width 6.5em
+  border-radius 4em
+  background #fff
+  opacity .9
+  width 9em
   bottom 1em
   z-index -1
-  height 5em
+  height 3em
+
+  &:before, &:after
+    content ''
+    position absolute
+    border-radius 50%
+    background inherit
+
+  &:before
+    top -1.5em
+    left 1em
+    width 3em
+    height @width
+
+  &:after
+    top -2.5em
+    left 3em
+    width 4.75em
+    height @width
+
 </style>
