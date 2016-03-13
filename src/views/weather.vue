@@ -2,6 +2,13 @@
 @import "~styles/main"
 @import "~flexstyl/index"
 
+.clouds
+  position fixed
+  z-index -1
+  height 100vh
+  width 100vw
+  top 0; left 0
+
 main
   @extend .flex, .center, .fwrap, .around
   > *
@@ -32,8 +39,8 @@ main
         barometer
         forecast
       wind-section
-
-  cloud(v-for='n in 7')
+  .clouds
+    cloud(v-for='n in 7')
 </template>
 
 <script>

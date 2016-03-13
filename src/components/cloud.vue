@@ -31,7 +31,7 @@ export default {
 
   methods: {
     step() {
-      this.x = this.x > window.innerWidth
+      this.x = this.x > document.body.clientWidth + 200
         ? this.reset()
         : this.x + this.speed;
 
@@ -39,7 +39,7 @@ export default {
     },
 
     reset() {
-      this.y = Math.random() * -window.innerHeight;
+      this.y = Math.random() * -document.body.clientHeight;
       this.speed = Math.random() * 1 + 1;
       this.onTop = Math.random();
 
@@ -48,7 +48,7 @@ export default {
   },
 
   ready() {
-    this.x = Math.random() * innerWidth;
+    this.x = Math.random() * document.body.clientWidth;
     this.reset();
     requestAnimationFrame(this.step);
   },
