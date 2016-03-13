@@ -3,7 +3,7 @@
   button(v-show='!active' @click.prevent='active = true') +
   form(v-el:form v-show='active' v-on:submit.prevent="subscription").email
     h1 Subskrypcja pocztowa
-    h2(v-show='status') Udało się
+    h2(v-show='status') {{ status }}
     input(name='email' type='email' @keyup='status = null')
     .buttons
       paper-button(raised @click.prevent='active = false') nie dziękuje
@@ -20,8 +20,15 @@ export default {
         method: 'post',
         body: new FormData(this.$els.form),
       })
-      .then(res => res.json())
-      .then(res => this.status = res.status === 'Added.' || res.status === 'Removed.');
+        .then(res => res.json())
+        .then(res => {
+          switch (res.status) {
+            case 'Added.': return 'Dodano';
+            case 'Removed.': return 'Usunięto';
+            default: return false;
+          }
+        })
+        .then(status => this.status = status);
     },
   },
 
