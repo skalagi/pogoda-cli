@@ -27,6 +27,16 @@ export default {
     },
   },
 
+  ready() {
+    const active = localStorage.subscriptionActive;
+
+    this.active = active === undefined ? true : JSON.parse(active);
+  },
+
+  watch: {
+    active: active => localStorage.subscriptionActive = active,
+  },
+
   data() {
     return {
       active: true,
