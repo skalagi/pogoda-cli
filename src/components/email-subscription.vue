@@ -1,10 +1,12 @@
 <template lang='jade'>
+
 .subscription
   button(v-show='!active' @click.prevent='active = true') +
   form(v-el:form v-show='active' v-on:submit.prevent="subscription").email
     h1 Subskrypcja pocztowa
     h2(v-show='status') {{ status }}
     input(name='email' placeholder='adres email' required type='email' @keyup='status = null')
+    .g-recaptcha(data-sitekey="6LdR0RoTAAAAABiBKp632ugUU6X-GpnjsnFJKo2j")
     .buttons
       paper-button(raised @click='active = false') nie dziękuje
       paper-button(raised).submit
@@ -93,6 +95,10 @@ export default {
       outline none
       color #333
       border 0
+
+    .g-recaptcha
+      margin 0 1.3em
+      margin-top 1em
 
     .buttons
       flex styl
