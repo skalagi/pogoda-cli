@@ -19,6 +19,11 @@ import config from 'config';
 export default {
   methods: {
     subscription() {
+      if (!grecaptcha.getResponse()) {
+        this.status = 'Wypełnij reCAPTCHA';
+        return false;
+      } else this.status = '';
+
       fetch(`${config.api.source}/subscribe`, {
         method: 'post',
         body: new FormData(this.$els.form),
