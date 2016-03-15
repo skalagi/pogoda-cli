@@ -22,6 +22,7 @@
 
 <script>
 import Highchart from 'highcharts';
+require('highcharts-more')(Highchart);
 import { api } from 'config';
 
 export default {
@@ -44,7 +45,7 @@ export default {
             type: 'datetime',
           },
           chart: {
-            type: 'line',
+            type: data[0].length > 2 ? 'columnrange' : 'line',
           },
           title: {
             text: `${this.period} - ${this.selected}`,

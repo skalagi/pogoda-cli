@@ -24,6 +24,7 @@
     "eventemitter2": "^0.4.14",
     "flexstyl": "^1.1.0",
     "highcharts": "^4.2.3",
+    "highcharts-more": "^0.1.2",
     "octicons": "^3.5.0",
     "pretty-ms": "^2.1.0",
     "vue": "^1.0.0",
