@@ -12,7 +12,7 @@
 
 <script>
 
-import termometer from './termometer';
+import termometer from 'vue-thermometer';
 
 export default {
   components: {
