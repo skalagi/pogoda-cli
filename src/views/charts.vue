@@ -45,7 +45,7 @@ export default {
             type: 'datetime',
           },
           chart: {
-            type: data[0].length > 2 ? 'columnrange' : 'line',
+            type: data[0].length > 2 ? 'arearange' : 'line',
           },
           title: {
             text: `${this.period} - ${this.selected}`,
