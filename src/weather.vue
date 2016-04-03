@@ -53,7 +53,7 @@
 
         routes: [
           { name: 'pogoda', path: '/' },
-          { name: 'wykresy (beta)', path: '/wykresy' },
+          { name: 'wykresy', path: '/wykresy' },
         ],
       };
     },
