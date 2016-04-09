@@ -1,15 +1,20 @@
 <template lang='jade'>
 
 .charts
-  .select
-    h4 okres:
-    select(v-model='selected.purview' @change='load')
-      option(v-for='opt in purview' v-bind:selected='$index === 0' v-bind:value='opt.value') {{ opt }}
+  .choice
+    date-picker(
+        v-bind:time.sync='picker.date'
+        v-bind:option='picker.option'
+      )
+    .select
+      h4 okres:
+      select(v-model='selected.purview' @change='load')
+        option(v-for='opt in purview' v-bind:selected='$index === 0' v-bind:value='opt.value') {{ opt }}
 
-  .select
-    h4 typ:
-    select(v-model='selected.type' @change='load')
-      option(v-for='opt in options' v-bind:selected='$index === 0' v-bind:value='opt.value') {{ opt }}
+    .select
+      h4 typ:
+      select(v-model='selected.type' @change='load')
+        option(v-for='opt in options' v-bind:selected='$index === 0' v-bind:value='opt.value') {{ opt }}
 
   .chart(v-el:chart)
 </template>
@@ -17,11 +22,38 @@
 <script>
 import Highchart from 'highcharts';
 require('highcharts-more')(Highchart);
+import datePicker from 'vue-datepicker'
+import months from 'months';
 import { api } from 'config';
 
 export default {
+  components: {
+    datePicker,
+  },
+
+  watch: {
+    'picker.date': function(time) {
+      this.load(time);
+    },
+  },
+
   data() {
     return {
+      picker: {
+        date: '',
+        option: {
+          type: 'day',
+          format:'YYYY-MM-DD',
+          month: months,
+          week: require('week-days'),
+          placeholder: 'wybierz datę',
+          buttons : {
+            ok : 'pokaż',
+            cancel : 'anuluj'
+          },
+        },
+      },
+
       purview: [
         { toString: _ => 'dzień', value: 'day' },
         { toString: _ => 'miesiąc', value: 'month' },
@@ -47,6 +79,22 @@ export default {
     };
   },
 
+  computed: {
+    title() {
+      const date = this.picker.date;
+      if (date) {
+        const dateParts = date.split('-');
+
+        switch(this.selected.purview) {
+          case 'day': return date;
+          case 'month': return `${months[+dateParts[1] - 1]} ${dateParts[0]}`;
+          case 'year': return dateParts[0];
+          default: return 'bład';
+        }
+      } else return '';
+    },
+  },
+
   methods: {
     findByValue(object, value) {
       for (const key of object)
@@ -57,7 +105,7 @@ export default {
       const type = this.findByValue(this.options, this.selected.type);
       const purview = this.findByValue(this.purview, this.selected.purview);
 
-      fetch(`${api()}/${purview.value}-charts/${type.value}.json`)
+      fetch(`${api()}/${purview.value}-charts/${type.value}.json${this.picker.date ? '?date=' + this.picker.date : ''}`)
         .then(res => res.json())
         .then(data => new Highchart.chart(this.$els.chart, {
           series: [
@@ -76,7 +124,7 @@ export default {
             },
           },
 
-          title: { text: '' },
+          title: { text: this.title },
 
           xAxis: {
             type: 'datetime',
@@ -106,7 +154,7 @@ export default {
     display inline-flex
     color #fff
 
-  select
+  select, input
     margin 1em
 
   .chart

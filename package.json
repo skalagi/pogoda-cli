@@ -28,6 +28,7 @@
     "octicons": "^3.5.0",
     "pretty-ms": "^2.1.0",
     "vue": "^1.0.0",
+    "vue-datepicker": "^1.1.5",
     "vue-round-filter": "^1.1.1",
     "vue-router": "^0.7.11",
     "vue-thermometer": "^1.0.2",
