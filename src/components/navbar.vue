@@ -14,6 +14,10 @@
       span pogoda2
       span.octicon.octicon-mark-github
 
+    paper-button(@click="openApi")
+      span api
+      span.octicon.octicon-mark-github
+
   menu(:visible='menu.visible' v-bind:routes='routes')
   paper-progress(:indeterminate='updateInProgress')
 
@@ -54,6 +58,7 @@
 
     methods: {
       open: _ => open('https://github.com/skalagi/pogoda-cli'),
+      openApi: _ => open('https://github.com/skalagi/pogoda-api'),
     },
   };
 
