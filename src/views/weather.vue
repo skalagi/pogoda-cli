@@ -39,7 +39,6 @@ main
         barometer
         forecast
       wind-section
-  .clouds
     cloud(v-for='n in 7')
 </template>
 
