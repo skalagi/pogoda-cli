@@ -91,7 +91,12 @@ export default {
           case 'year': return dateParts[0];
           default: return 'bład';
         }
-      } else return '';
+      } else switch(this.selected.purview) {
+        case 'day': return 'dziś';
+        case 'month': return 'bieżący miesiąc';
+        case 'year': return 'bieżący rok';
+        default: return 'bład';
+      }
     },
   },
 
