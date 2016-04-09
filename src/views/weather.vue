@@ -49,7 +49,6 @@ main
   import barometer from '../components/barometer';
   import forecast from '../components/forecast';
   import humidity from '../components/humidity';
-  import cloud from '../components/cloud';
   import vial from '../components/vial';
 
   export default {
@@ -59,7 +58,6 @@ main
       barometer,
       humidity,
       forecast,
-      cloud,
       vial,
     },
 

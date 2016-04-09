@@ -8,6 +8,18 @@
     background color
     font-family 'Rajdhani', bold, sans-serif
 
+
+  .view
+    transition all .4s ease-in-out
+
+  .show-enter
+    transform translateX(2em)
+  .show-leave
+    transform translateX(-2em)
+
+  .show-enter, .show-leave
+    opacity 0
+
 </style>
 
 <template lang="jade">
@@ -15,8 +27,14 @@
   link(href='https://fonts.googleapis.com/css?family=Rajdhani:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css')
   material
   navbar(:routes="routes" name='Pogoda Skałągi')
-  router-view
+  router-view(
+      class='view'
+      transition='show'
+      transition-mode="out-in"
+      )
   email-subscription
+  .clouds
+    cloud(v-for='n in 7')
 
 </template>
 
@@ -24,6 +42,7 @@
   import emailSubscription from './components/email-subscription';
   import material from './components/material';
   import navbar from './components/navbar';
+  import cloud from './components/cloud';
   import store from './vuex/store';
   import Basic from '@pogoda/basic-api';
   import { api } from 'config';
@@ -34,6 +53,7 @@
       emailSubscription,
       material,
       navbar,
+      cloud,
     },
 
     store,
