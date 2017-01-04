@@ -2,13 +2,14 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { PogodaSkalagiApi } from "./api.interface";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class ApiService {
   public nextUpdate = new EventEmitter();
   public update: EventEmitter<PogodaSkalagiApi> = new EventEmitter();
 
-  private source: string = 'http://testu.jemy.ga/basic.json';
+  private source: string = `${ environment.apiSource }/basic.json`;
   private timeToUpdate: number = null;
 
   constructor(private http: Http) {
