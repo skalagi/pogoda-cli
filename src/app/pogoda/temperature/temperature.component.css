@@ -1,1 +1,4 @@
-
+md-card-title {
+  align-items: center;
+  display: flex;
+}

@@ -18,4 +18,17 @@ export class TemperatureComponent implements OnInit {
       this.loaded = true;
     });
   }
+
+  get trend() {
+    if (!this.temperature) return;
+    const { trend: { value: trend } } = this.temperature;
+
+    switch (true) {
+      case trend > 0:
+        return 'arrow_upward';
+      case trend < 0:
+        return 'arrow_downward';
+      default: return;
+    }
+  }
 }

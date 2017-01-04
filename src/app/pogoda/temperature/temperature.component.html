@@ -1,5 +1,8 @@
 <md-card>
-  <md-card-title>Temperatura</md-card-title>
+  <md-card-title>
+    <md-icon>{{ trend }}</md-icon> Temperatura
+  </md-card-title>
+
   <md-card-content>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
