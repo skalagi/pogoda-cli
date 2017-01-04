@@ -1,0 +1,19 @@
+md-card-title, md-card-footer {
+  align-items: center;
+  display: flex;
+}
+md-card-title {
+  font-weight: 100;
+}
+
+md-card-title md-icon {
+  margin-left: auto;
+}
+
+md-tab-group h2 {
+  text-align: center;
+}
+
+span {
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+<md-card>
+  <md-card-title>Wiatr</md-card-title>
+  <md-card-content>
+    <md-spinner *ngIf='!loaded'></md-spinner>
+
+    <md-tab-group *ngIf='loaded'>
+      <md-tab label='Aktualny'>
+        <p>{{ wind.current.translated }}</p>
+        <p>{{ wind.current.speed.value }} {{ wind.current.speed.units }}</p>
+        <p>{{ wind.current.dir.value }} {{ wind.current.dir.units }}</p>
+      </md-tab>
+
+      <md-tab label='Podmuchy'>
+        <p>{{ wind.gust.translated }}</p>
+        <p>{{ wind.gust.speed.value }} {{ wind.gust.speed.units }}</p>
+        <p>{{ wind.gust.dir.value }} {{ wind.gust.dir.units }}</p>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>

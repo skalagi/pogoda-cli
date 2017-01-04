@@ -1,0 +1,8 @@
+:host >>> md-card {
+  display: inline-block;
+}
+
+:host >>> md-spinner {
+  height: 3em;
+  margin: auto;
+}

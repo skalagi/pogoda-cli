@@ -1,32 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="/favicon.png" type="image/png"/>
-    <title>Stacja pogodowa w Skałągach</title>
-    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
-    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">{% } %}
-    <meta name='description' content='Stacja pogodowa - meteo Skałągi w gminie Wołczyn, powiat Kluczborski, woj. opolskie. Aktualna pogoda, aktualizacja co 5min.'>
-    <meta name='keywords' content='stacja, meteo, pogodowa, pogoda, skałągi, temperatura, wiatr, kluczbork, wołczyn, prognoza, wilgotność, meteorologiczna, szkoła, podstawowa, rcre, opolskie'>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-  </head>
-  <body>
-    <div id='weather'></div>{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>{% } %}
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>SkalagiStation</title>
+  <base href="/">
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','//connect.facebook.net/en_US/fbevents.js');
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-fbq('init', '553987614778429');
-fbq('track', "PageView");</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=553987614778429&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
 </html>
