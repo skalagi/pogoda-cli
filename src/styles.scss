@@ -7,6 +7,7 @@ $weather-app-theme: md-light-theme($weather-app-primary, $weather-app-accent);
 @include angular-material-theme($weather-app-theme);
 
 body {
+  -webkit-font-smoothing: antialiased;
   background: #1E88E5;
   margin: 0;
 }
