@@ -1,1 +1,14 @@
+h2 {
+  display: inline-flex;
+  align-items: center;
+}
 
+md-icon {
+  animation: spin 30s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
