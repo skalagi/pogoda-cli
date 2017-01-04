@@ -1,4 +1,15 @@
-md-card-title {
+md-card-title, md-card-footer {
   align-items: center;
   display: flex;
+}
+md-card-title {
+  font-weight: 100;
+}
+
+md-card-title md-icon {
+  margin-left: auto;
+}
+
+span{
+  cursor: pointer;
 }

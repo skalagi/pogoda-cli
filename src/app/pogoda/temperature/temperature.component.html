@@ -1,6 +1,7 @@
 <md-card>
   <md-card-title>
-    <md-icon>{{ trend }}</md-icon> Temperatura
+    Temperatura
+    <md-icon>{{ trend }}</md-icon>
   </md-card-title>
 
   <md-card-content>
@@ -8,12 +9,23 @@
 
     <md-tab-group *ngIf='loaded'>
       <md-tab label='Aktualna'>
-        <p>{{ temperature.current.value + temperature.current.units }}</p>
+        <span [mdTooltip]='temperature.current.value + temperature.current.units'>
+          {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
+        </span>
       </md-tab>
 
       <md-tab label='Odczuwalna'>
-        <p>{{ temperature.real.value + temperature.real.units }}</p>
+        <span [mdTooltip]='temperature.real.value + temperature.real.units'>
+          {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
+        </span>
       </md-tab>
     </md-tab-group>
   </md-card-content>
+
+  <md-card-footer *ngIf='loaded && temperature.dewPoint.value'>
+    <md-icon>opacity</md-icon>
+    <span [mdTooltip]='temperature.dewPoint.value + temperature.dewPoint.units'>
+      {{ temperature.dewPoint.value | number:'1.0-0' }}{{ temperature.dewPoint.units }}
+    </span>
+  </md-card-footer>
 </md-card>
