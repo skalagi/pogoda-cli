@@ -10,11 +10,13 @@ import { WindComponent } from './wind/wind.component';
 import { PressureComponent } from './pressure/pressure.component';
 import { HumidityComponent } from './humidity/humidity.component';
 import { RainComponent } from './rain/rain.component';
+import { SentencesComponent } from './sentences/sentences.component';
+import { SentencesService } from "./sentences/sentences.service";
 
 @NgModule({
   imports: [CommonModule, MaterialModule.forRoot()],
-  declarations: [PogodaComponent, TemperatureComponent, HeaderComponent, UpdateTimerComponent, WindComponent, PressureComponent, HumidityComponent, RainComponent],
+  declarations: [PogodaComponent, TemperatureComponent, HeaderComponent, UpdateTimerComponent, WindComponent, PressureComponent, HumidityComponent, RainComponent, SentencesComponent],
   exports: [PogodaComponent],
-  providers: [ApiService],
+  providers: [ApiService, SentencesService],
 })
 export class PogodaModule { }
