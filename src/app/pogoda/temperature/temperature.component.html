@@ -1,0 +1,16 @@
+<md-card>
+  <md-card-title>Temperatura</md-card-title>
+  <md-card-content>
+    <md-spinner *ngIf='!loaded'></md-spinner>
+
+    <md-tab-group *ngIf='loaded'>
+      <md-tab label='Aktualna'>
+        <p>{{ temperature.current.value + temperature.current.units }}</p>
+      </md-tab>
+
+      <md-tab label='Odczuwalna'>
+        <p>{{ temperature.real.value + temperature.real.units }}</p>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
