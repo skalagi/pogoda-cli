@@ -4,4 +4,5 @@
 
 :host >>> md-spinner {
   height: 3em;
+  margin: auto;
 }
