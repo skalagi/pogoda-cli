@@ -16,15 +16,22 @@ export class SentencesComponent implements OnInit {
     return sentences[current];
   }
 
-  ngOnInit() {
-    this.api.sentences.subscribe(sentences => this.sentences = sentences);
-    setInterval(() => this.next(),1500);
+  private get readTime() {
+    return this.sentence.length * 72;
   }
 
-  next() {
+  ngOnInit() {
+    this.api.sentences.subscribe(sentences => {
+      this.sentences = sentences;
+      setTimeout(() => this.next(), this.readTime);
+    });
+  }
+
+  private next() {
     const { sentences, current } = this;
     const next = current + 1;
 
     this.current = sentences.length > next ? next : 0;
+    setTimeout(() => this.next(), this.readTime);
   }
 }
