@@ -9,15 +9,19 @@
 
     <md-tab-group *ngIf='loaded'>
       <md-tab label='Aktualna'>
-        <span [mdTooltip]='temperature.current.value + temperature.current.units'>
-          {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
-        </span>
+        <h2>
+          <span [mdTooltip]='temperature.current.value + temperature.current.units'>
+            {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
+          </span>
+        </h2>
       </md-tab>
 
       <md-tab label='Odczuwalna'>
-        <span [mdTooltip]='temperature.real.value + temperature.real.units'>
-          {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
-        </span>
+        <h2>
+          <span [mdTooltip]='temperature.real.value + temperature.real.units'>
+            {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
+          </span>
+        </h2>
       </md-tab>
     </md-tab-group>
   </md-card-content>
