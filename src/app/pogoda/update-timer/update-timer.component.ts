@@ -5,7 +5,7 @@ import { PogodaSkalagiApi, Unit } from "../api.interface";
 @Component({
   selector: 'app-update-timer',
   templateUrl: './update-timer.component.html',
-  styleUrls: ['./update-timer.component.css']
+  styleUrls: ['./update-timer.component.scss']
 })
 export class UpdateTimerComponent implements OnInit {
   constructor(private api: ApiService) { }

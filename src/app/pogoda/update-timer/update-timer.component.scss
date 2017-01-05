@@ -1,0 +1,9 @@
+@import "../../theme/weather-blue";
+
+:host {
+  font-size: .8em;
+}
+
+.value {
+  color: md-color($weather-blue-accent);
+}
