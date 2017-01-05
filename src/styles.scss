@@ -1,10 +1,4 @@
-@import '~@angular/material/core/theming/all-theme';
-@include md-core();
-
-$weather-app-primary: md-palette($md-blue);
-$weather-app-accent:  md-palette($md-amber, A200, A100, A400);
-$weather-app-theme: md-light-theme($weather-app-primary, $weather-app-accent);
-@include angular-material-theme($weather-app-theme);
+@import "app/theme/weather-blue";
 
 body {
   -webkit-font-smoothing: antialiased;

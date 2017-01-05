@@ -1,0 +1,8 @@
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+
+$weather-blue-primary: md-palette($md-blue);
+$weather-blue-accent:  md-palette($md-amber, A200, A100, A400);
+$weather-blue-theme: md-light-theme($weather-blue-primary, $weather-blue-accent);
+
+@include angular-material-theme($weather-blue-theme);
