@@ -1,6 +1,11 @@
 h2 {
   display: inline-flex;
   align-items: center;
+  color: #FFEB3B;
+}
+
+app-update-timer {
+  margin-left: auto;
 }
 
 md-icon {
