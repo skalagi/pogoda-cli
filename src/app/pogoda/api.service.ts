@@ -10,7 +10,8 @@ export class ApiService {
   public update: EventEmitter<PogodaSkalagiApi> = new EventEmitter();
 
   private source: string = `${ environment.apiSource }/basic.json`;
-  private timeToUpdate: number = null;
+  private timeToReconnect = null;
+  private timeToUpdate = null;
 
   constructor(private http: Http) {
     this.fetch();
@@ -29,9 +30,19 @@ export class ApiService {
   }
 
   private checkForUpdate() {
-    const { timeToUpdate } = this;
+    const { timeToUpdate, timeToReconnect } = this;
 
-    if (timeToUpdate !== null) {
+    if (timeToUpdate === 'offline') {
+      if (!timeToReconnect) {
+        this.nextUpdate.emit(this.timeToUpdate = null);
+        this.timeToReconnect = 10;
+      } else if (timeToReconnect === 0) {
+        this.timeToReconnect = null;
+        this.fetch();
+      } else {
+        this.timeToReconnect--;
+      }
+    } else if (timeToUpdate !== null) {
       if (timeToUpdate > 0) {
         this.nextUpdate.emit(this.timeToUpdate--);
       } else {
