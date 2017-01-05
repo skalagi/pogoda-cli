@@ -1,3 +1,3 @@
-<span *ngIf='loaded'>Ostatnia aktualizacja: {{ data.value | amTimeAgo }},</span>
-<span *ngIf='time'>czas do następnej: {{ time | amDuration:'seconds' }}</span>
+<span *ngIf='loaded'>Ostatnia aktualizacja: <span class='value'>{{ data.value | amTimeAgo }}</span>,</span>
+<span *ngIf='time'>czas do następnej: <span class='value'>{{ time | amDuration:'seconds' }}</span></span>
 <md-spinner *ngIf='!loaded'></md-spinner>
