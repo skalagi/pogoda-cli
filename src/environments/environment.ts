@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiSource: 'http://api.pogoda.ml'
+  apiSource: 'https://api.pogoda.ml'
 };
