@@ -2,6 +2,6 @@
   <md-card-title *ngIf='loaded'>{{ humidity.name }}</md-card-title>
   <md-card-content>
     <md-spinner *ngIf='!loaded'></md-spinner>
-    <p *ngIf='loaded'>{{ humidity.value + humidity.units }}</p>
+    <span *ngIf='loaded' [mdTooltip]='humidity.value'>{{ humidity.value | number:'1.0-2' }}{{ humidity.units }}</span>
   </md-card-content>
 </md-card>
