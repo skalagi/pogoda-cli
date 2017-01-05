@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiSource: 'http://testu.jemy.ga'
+  apiSource: 'http://api.pogoda.ml'
 };
