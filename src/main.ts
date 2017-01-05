@@ -1,4 +1,8 @@
 import './polyfills.ts';
+import 'moment/min/locales';
+import * as moment from 'moment';
+
+moment.locale('pl-pl');
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
