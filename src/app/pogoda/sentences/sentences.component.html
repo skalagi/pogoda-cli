@@ -1,1 +1,4 @@
-<md-toolbar>{{ sentence }}</md-toolbar>
+<md-toolbar>
+  <md-progress-bar *ngIf='!sentence' mode='indeterminate'></md-progress-bar>
+  <span [@next]="sentence">{{ sentence }}</span>
+</md-toolbar>
