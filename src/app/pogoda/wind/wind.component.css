@@ -1,0 +1,7 @@
+md-card-content {
+  display: flex;
+}
+
+div:first-child {
+  margin-right: .5em;
+}

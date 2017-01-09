@@ -1,20 +1,24 @@
 <md-card>
   <md-card-title>Wiatr</md-card-title>
-  <md-card-content>
+  <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <md-tab-group *ngIf='loaded'>
-      <md-tab label='Aktualny'>
-        <p>{{ wind.current.translated }}</p>
-        <p>{{ wind.current.speed.value }} {{ wind.current.speed.units }}</p>
-        <p>{{ wind.current.dir.value }} {{ wind.current.dir.units }}</p>
-      </md-tab>
+    <div>
+      <h4>Aktualny</h4>
 
-      <md-tab label='Podmuchy'>
-        <p>{{ wind.gust.translated }}</p>
-        <p>{{ wind.gust.speed.value }} {{ wind.gust.speed.units }}</p>
-        <p>{{ wind.gust.dir.value }} {{ wind.gust.dir.units }}</p>
-      </md-tab>
-    </md-tab-group>
+      <h5>Prędkość: {{ wind.current.speed.value | number:'1.0-2' }} {{ wind.current.speed.units }}</h5>
+      <h5>Kierunek: {{ wind.current.translated }} ({{ wind.current.dir.value | number:'1.0-2' }} {{ wind.current.dir.units }})</h5>
+    </div>
+
+    <div>
+      <h4>Podmuchy</h4>
+
+      <h5>Prędkość: {{ wind.gust.speed.value | number:'1.0-2' }} {{ wind.gust.speed.units }}</h5>
+      <h5>Kierunek: {{ wind.gust.translated }} ({{ wind.gust.dir.value | number:'1.0-2' }} {{ wind.gust.dir.units }})</h5>
+    </div>
   </md-card-content>
+
+  <md-card-actions>
+    <button md-button color='primary'>Szczegóły</button>
+  </md-card-actions>
 </md-card>
