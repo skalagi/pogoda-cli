@@ -15,11 +15,42 @@ import { RainComponent } from './rain/rain.component';
 import { SentencesComponent } from './sentences/sentences.component';
 import { SentencesService } from "./sentences/sentences.service";
 import { ChartsComponent } from './charts/charts.component';
+import { ThermometerComponent } from './thermometer/thermometer.component';
+import { TemperatureDetailsComponent } from './temperature-details/temperature-details.component';
+import { RouterModule } from "@angular/router";
+import { pogodaRoutes } from "./pogoda/pogoda.routes";
+import { BasicWeatherComponent } from './basic-weather/basic-weather.component';
+import { DayChartComponent } from './day-chart/day-chart.component';
+import { ChartModule } from "angular2-highcharts";
+import { DayChartService } from "./day-chart/day-chart.service";
 
 @NgModule({
-  imports: [CommonModule, MaterialModule.forRoot(), MomentModule],
-  declarations: [PogodaComponent, TemperatureComponent, HeaderComponent, UpdateTimerComponent, WindComponent, PressureComponent, HumidityComponent, RainComponent, SentencesComponent, ChartsComponent],
-  exports: [PogodaComponent, ChartsComponent],
-  providers: [ApiService, SentencesService],
+  exports: [PogodaComponent],
+  providers: [ApiService, SentencesService, DayChartService],
+
+  imports: [
+    RouterModule.forRoot(pogodaRoutes),
+    MaterialModule.forRoot(),
+    CommonModule,
+    MomentModule,
+    ChartModule,
+  ],
+
+  declarations: [
+    PogodaComponent,
+    TemperatureComponent,
+    HeaderComponent,
+    UpdateTimerComponent,
+    WindComponent,
+    PressureComponent,
+    HumidityComponent,
+    RainComponent,
+    SentencesComponent,
+    ChartsComponent,
+    ThermometerComponent,
+    TemperatureDetailsComponent,
+    BasicWeatherComponent,
+    DayChartComponent
+  ],
 })
 export class PogodaModule { }
