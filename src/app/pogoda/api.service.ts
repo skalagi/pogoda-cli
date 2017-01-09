@@ -8,21 +8,20 @@ import { environment } from "../../environments/environment";
 export class ApiService {
   public nextUpdate = new EventEmitter();
   public update: EventEmitter<PogodaSkalagiApi> = new EventEmitter();
+  public data: PogodaSkalagiApi;
 
   private source: string = `${ environment.apiSource }/basic.json`;
   private timeToReconnect = null;
   private timeToUpdate = null;
-  public data: PogodaSkalagiApi;
 
   constructor(private http: Http) {
     this.fetch();
     setInterval(() => this.checkForUpdate(), 1000);
   }
 
-  public get(): Promise<PogodaSkalagiApi> {
-    return new Promise((resolve, reject) => {
-      resolve(this.data);
-    });
+  get(method) {
+    this.update.subscribe(method);
+    method(this.data);
   }
 
   private fetch() {
