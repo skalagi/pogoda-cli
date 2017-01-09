@@ -12,10 +12,17 @@ export class ApiService {
   private source: string = `${ environment.apiSource }/basic.json`;
   private timeToReconnect = null;
   private timeToUpdate = null;
+  public data: PogodaSkalagiApi;
 
   constructor(private http: Http) {
     this.fetch();
     setInterval(() => this.checkForUpdate(), 1000);
+  }
+
+  public get(): Promise<PogodaSkalagiApi> {
+    return new Promise((resolve, reject) => {
+      resolve(this.data);
+    });
   }
 
   private fetch() {
@@ -27,6 +34,7 @@ export class ApiService {
   private handleResponse(data) {
     this.timeToUpdate = data.time.next.value;
     this.update.emit(data);
+    this.data = data;
   }
 
   private checkForUpdate() {
