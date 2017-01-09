@@ -1,0 +1,16 @@
+<div class="measure">
+  <div *ngFor='let line of lines' class='line'>
+    <p></p>
+  </div>
+</div>
+
+<div class="sensor">
+  <div class='temperatureSensor sensorVal'>
+    <span [mdTooltip]='temperature + unit'>
+      {{ temperature | number:'1.0-2' }}{{ unit }}
+    </span>
+    <div class="bottomColor"></div>
+  </div>
+</div>
+
+<div class='bottom'></div>
