@@ -13,7 +13,7 @@ export class RainComponent implements OnInit {
   public rain: Rain;
 
   ngOnInit() {
-    this.api.update.subscribe((api: PogodaSkalagiApi) => {
+    this.api.get((api: PogodaSkalagiApi) => {
       this.rain = api.rain;
       this.loaded = true;
     });

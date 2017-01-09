@@ -17,7 +17,7 @@ export class UpdateTimerComponent implements OnInit {
     const { api } = this;
 
     api.nextUpdate.subscribe(time => this.time = time);
-    api.update.subscribe((api: PogodaSkalagiApi) => {
+    api.get((api: PogodaSkalagiApi) => {
       this.time = api.time.next.value;
       this.data = api.time.data;
       this.loaded = true;

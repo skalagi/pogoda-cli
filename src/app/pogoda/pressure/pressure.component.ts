@@ -13,7 +13,7 @@ export class PressureComponent implements OnInit {
   public pressure: Pressure;
 
   ngOnInit() {
-    this.api.update.subscribe((api: PogodaSkalagiApi) => {
+    this.api.get((api: PogodaSkalagiApi) => {
       this.pressure = api.barometer;
       this.loaded = true;
     });

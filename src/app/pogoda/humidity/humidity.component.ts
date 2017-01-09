@@ -13,7 +13,7 @@ export class HumidityComponent implements OnInit {
   public humidity: Unit;
 
   ngOnInit() {
-    this.api.update.subscribe((api: PogodaSkalagiApi) => {
+    this.api.get((api: PogodaSkalagiApi) => {
       this.humidity = api.humidity;
       this.loaded = true;
     });

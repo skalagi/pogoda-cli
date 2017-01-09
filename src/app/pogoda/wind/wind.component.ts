@@ -13,7 +13,7 @@ export class WindComponent implements OnInit {
   public wind: Wind;
 
   ngOnInit() {
-    this.api.update.subscribe((api: PogodaSkalagiApi) => {
+    this.api.get((api: PogodaSkalagiApi) => {
       this.wind = api.wind;
       this.loaded = true;
     });

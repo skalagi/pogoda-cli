@@ -13,7 +13,7 @@ export class TemperatureComponent implements OnInit {
   public temperature: Temperature;
 
   ngOnInit() {
-    this.api.update.subscribe((api: PogodaSkalagiApi) => {
+    this.api.get((api: PogodaSkalagiApi) => {
       this.temperature = api.temperature;
       this.loaded = true;
     });
