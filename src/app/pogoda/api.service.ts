@@ -20,8 +20,9 @@ export class ApiService {
   }
 
   get(method) {
-    this.update.subscribe(method);
-    method(this.data);
+    const { data, update } = this;
+    if (data) method(data);
+    update.subscribe(method);
   }
 
   private fetch() {
