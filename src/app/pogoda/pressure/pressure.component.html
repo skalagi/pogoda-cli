@@ -1,17 +1,14 @@
 <md-card>
   <md-card-title>Ciśnienie</md-card-title>
 
-  <md-card-content>
+  <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <md-tab-group *ngIf='loaded'>
-      <md-tab label='Aktualne'>
-        <p>{{ pressure.current.value}} {{ pressure.current.units }}</p>
-      </md-tab>
-
-      <md-tab label='Tendencja'>
-        <p>{{ pressure.trend.value}} {{ pressure.trend.units }}</p>
-      </md-tab>
-    </md-tab-group>
+    <h5>Aktualne: {{ pressure.current.value}} {{ pressure.current.units }}</h5>
+    <h5>Tendencja: {{ pressure.trend.value | number:'1.0-2' }} {{ pressure.trend.units }}</h5>
   </md-card-content>
+
+  <md-card-actions>
+    <button md-button color='primary'>Szczegóły</button>
+  </md-card-actions>
 </md-card>
