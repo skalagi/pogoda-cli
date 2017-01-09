@@ -1,3 +1,7 @@
 md-toolbar {
   font-size: .8em;
 }
+
+md-progress-bar {
+  min-width: 100vw;
+}
