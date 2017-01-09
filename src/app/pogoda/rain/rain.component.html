@@ -1,15 +1,13 @@
 <md-card>
   <md-card-title>Opady</md-card-title>
-  <md-card-content>
+  <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <md-tab-group *ngIf='loaded'>
-      <md-tab label='Aktualne'>
-        <p>{{ rain.current.value + rain.current.units }}</p>
-      </md-tab>
-      <md-tab label='Suma'>
-        <p>{{ rain.sum.value + rain.sum.units }}</p>
-      </md-tab>
-    </md-tab-group>
+    <h5>Aktualne: {{ rain.current.value + rain.current.units }}</h5>
+    <h5>Suma: {{ rain.sum.value + rain.sum.units }}</h5>
   </md-card-content>
+
+  <md-card-actions>
+    <button md-button color='primary'>Szczegóły</button>
+  </md-card-actions>
 </md-card>
