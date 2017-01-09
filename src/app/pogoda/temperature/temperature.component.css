@@ -1,23 +1,6 @@
-md-card-title, md-card-footer {
+md-card-title {
   align-items: center;
   display: flex;
-}
-
-md-card {
-  display: block;
-  width: 100%;
-}
-
-md-card-title {
-  font-weight: 100;
-}
-
-md-card-title md-icon {
-  margin-left: auto;
-}
-
-md-tab-group h2 {
-  text-align: center;
 }
 
 span {

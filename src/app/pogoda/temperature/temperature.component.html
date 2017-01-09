@@ -2,34 +2,28 @@
   <md-card-title>
     Temperatura
     <md-icon>{{ trend }}</md-icon>
-  </md-card-title>
 
-  <md-card-content>
-    <md-spinner *ngIf='!loaded'></md-spinner>
-
-    <md-tab-group *ngIf='loaded'>
-      <md-tab label='Aktualna'>
-        <h2>
-          <span [mdTooltip]='temperature.current.value + temperature.current.units'>
-            {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
-          </span>
-        </h2>
-      </md-tab>
-
-      <md-tab label='Odczuwalna'>
-        <h2>
-          <span [mdTooltip]='temperature.real.value + temperature.real.units'>
-            {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
-          </span>
-        </h2>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-
-  <md-card-footer *ngIf='loaded && temperature.dewPoint.value'>
-    <md-icon>opacity</md-icon>
-    <span [mdTooltip]='temperature.dewPoint.value + temperature.dewPoint.units'>
+    <md-icon *ngIf='loaded && temperature.dewPoint.value'>opacity</md-icon>
+    <span *ngIf='loaded && temperature.dewPoint.value' [mdTooltip]='temperature.dewPoint.value + temperature.dewPoint.units'>
       {{ temperature.dewPoint.value | number:'1.0-0' }}{{ temperature.dewPoint.units }}
     </span>
-  </md-card-footer>
+  </md-card-title>
+
+  <md-card-content *ngIf='loaded'>
+    <h5>Aktualna
+      <span [mdTooltip]='temperature.current.value + temperature.current.units'>
+        {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
+      </span>
+    </h5>
+
+    <h5>Odczuwalna
+      <span [mdTooltip]='temperature.real.value + temperature.real.units'>
+        {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
+      </span>
+    </h5>
+  </md-card-content>
+
+  <md-card-actions>
+    <button md-button color='primary' routerLink='temperatura'>Szczegóły</button>
+  </md-card-actions>
 </md-card>
