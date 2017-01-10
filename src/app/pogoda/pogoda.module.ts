@@ -24,6 +24,8 @@ import { DayChartComponent } from './day-chart/day-chart.component';
 import { ChartModule } from "angular2-highcharts";
 import { DayChartService } from "./day-chart/day-chart.service";
 import { ThermometerMeasureComponent } from './thermometer/thermometer-measure/thermometer-measure.component';
+import { ThermometerSensorComponent } from './thermometer/thermometer-sensor/thermometer-sensor.component';
+import { ThermometerSensorValueComponent } from './thermometer/thermometer-sensor-value/thermometer-sensor-value.component';
 
 @NgModule({
   exports: [PogodaComponent],
@@ -52,7 +54,9 @@ import { ThermometerMeasureComponent } from './thermometer/thermometer-measure/t
     TemperatureDetailsComponent,
     BasicWeatherComponent,
     DayChartComponent,
-    ThermometerMeasureComponent
+    ThermometerMeasureComponent,
+    ThermometerSensorComponent,
+    ThermometerSensorValueComponent
   ],
 })
 export class PogodaModule { }
