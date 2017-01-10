@@ -1,4 +1,9 @@
 md-card#thermometer {
   padding-bottom: 5em;
+  height: 100%;
   overflow: hidden;
+}
+
+md-card#thermometer md-card-content {
+  height: 100%;
 }
