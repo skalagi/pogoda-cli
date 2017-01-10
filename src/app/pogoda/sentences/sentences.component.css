@@ -5,3 +5,7 @@ md-toolbar {
 md-progress-bar {
   min-width: 100vw;
 }
+
+span {
+  margin-left: auto;
+}
