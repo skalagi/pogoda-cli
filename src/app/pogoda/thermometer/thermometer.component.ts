@@ -8,9 +8,4 @@ import { Component, Input } from '@angular/core';
 export class ThermometerComponent {
   @Input('value') temperature: number;
   @Input('unit') unit: string;
-  public lines: number[];
-
-  constructor() {
-    this.lines = (new Array(51)).map((x, i) => i);
-  }
 }
