@@ -1,0 +1,30 @@
+:host {
+  position: absolute;
+  height: 85%;
+  width: 20%;
+  z-index: 2;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+
+  div {
+    position: relative;
+    background: #444;
+    height: 4px;
+    margin-top: 5px;
+    width: 90%;
+
+    &.bold-line {
+      width: 150%;
+    }
+
+    p {
+      position: absolute;
+      font-weight: 600;
+      color: #444;
+      right: 110%;
+      top: -125%;
+      margin: 0;
+    }
+  }
+}

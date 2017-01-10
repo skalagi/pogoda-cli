@@ -1,0 +1,3 @@
+<div *ngFor='let line of lines' [class.bold-line]='line.bold'>
+  <p *ngIf='line.bold'>{{ line.value }}</p>
+</div>
