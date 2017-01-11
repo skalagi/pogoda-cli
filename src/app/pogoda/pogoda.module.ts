@@ -30,6 +30,7 @@ import { WindDetailsComponent } from './wind-details/wind-details.component';
 import { RainDetailsComponent } from './rain-details/rain-details.component';
 import { PressureDetailsComponent } from './pressure-details/pressure-details.component';
 import { HumidityDetailsComponent } from './humidity-details/humidity-details.component';
+import { DayRecordsModule } from "./day-records/day-records.module";
 
 const Highcharts = require('../../../node_modules/highcharts/highcharts');
 const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
@@ -43,6 +44,7 @@ HighchartsMore(Highcharts);
   imports: [
     RouterModule.forRoot(pogodaRoutes),
     MaterialModule.forRoot(),
+    DayRecordsModule,
     CommonModule,
     MomentModule,
     ChartModule,
