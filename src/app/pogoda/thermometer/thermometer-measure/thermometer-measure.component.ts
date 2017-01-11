@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, Input, EventEmitter } from '@angular/core';
+import { Unit } from "../../api.interface";
 
 export interface Line {
   bold: boolean;
@@ -12,11 +13,16 @@ export interface Line {
 })
 export class ThermometerMeasureComponent implements OnInit {
   constructor(private host: ElementRef) { }
+  @Input() public temperature: Unit;
   public lines: Line[];
 
   ngOnInit() {
     this.generate();
     setTimeout(() => this.generate(), 300);
+  }
+
+  get height() {
+    return `${ Math.abs(this.temperature.value * 9) }px`;
   }
 
   generate() {

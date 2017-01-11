@@ -1,3 +1,9 @@
 <div *ngFor='let line of lines' [class.bold-line]='line.bold'>
   <p *ngIf='line.bold'>{{ line.value }}</p>
 </div>
+
+<div id="value" [style.height]='height'>
+  <span [mdTooltip]='temperature.value + temperature.units'>
+    {{ temperature.value | number:'1.0-2' }}{{ temperature.units }}
+  </span>
+</div>
