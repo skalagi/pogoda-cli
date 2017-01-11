@@ -1,9 +1,9 @@
+<md-card>
+  <app-day-chart dataType='Temperatura' type='outTemp'></app-day-chart>
+</md-card>
+
 <md-card id='thermometer'>
   <md-card-content>
     <app-thermometer *ngIf='loaded' [value]='temperature.real.value'></app-thermometer>
   </md-card-content>
-</md-card>
-
-<md-card>
-  <app-day-chart type='outTemp'></app-day-chart>
 </md-card>

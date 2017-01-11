@@ -7,3 +7,10 @@ md-card#thermometer {
 md-card#thermometer md-card-content {
   height: 100%;
 }
+
+:host {
+  justify-content: space-around;
+  align-items: baseline;
+  display: flex;
+  width: 100%;
+}
