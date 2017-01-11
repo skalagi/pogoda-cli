@@ -3,5 +3,17 @@
 body {
   -webkit-font-smoothing: antialiased;
   background: #1E88E5;
+  min-height: 100vh;
+  display: flex;
   margin: 0;
+}
+
+app-root {
+  margin: auto;
+}
+
+#loader {
+  font-weight: 600;
+  font-size: 2em;
+  color: md-color($weather-blue-accent);
 }

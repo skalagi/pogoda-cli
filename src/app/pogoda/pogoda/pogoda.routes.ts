@@ -11,5 +11,5 @@ export const pogodaRoutes = [
   { path: 'wilgotnosc', component: HumidityDetailsComponent },
   { path: 'cisnienie', component: PressureDetailsComponent },
   { path: 'opady', component: RainDetailsComponent },
-  { path: 'wiatr', component: WindDetailsComponent },
+  { path: 'powiewy', component: WindDetailsComponent },
 ];

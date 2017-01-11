@@ -5,21 +5,19 @@
 
     <div>
       <h4>Aktualny <md-icon [style.transform]='"rotate(" + (wind.current.speed.value + 180) + "deg)"'>{{ icon }}</md-icon></h4>
-
-      <h5>Prędkość: {{ wind.current.speed.value | number:'1.0-2' }} {{ wind.current.speed.units }}</h5>
       <h5>Kierunek: {{ wind.current.translated }} ({{ wind.current.dir.value | number:'1.0-2' }} {{ wind.current.dir.units }})</h5>
+      <h5>Prędkość: {{ wind.current.speed.value | number:'1.0-2' }} {{ wind.current.speed.units }}</h5>
     </div>
 
     <div>
       <h4>Podmuchy <md-icon [style.transform]='"rotate(" + (wind.gust.speed.value + 180) + "deg)"'>{{ icon }}</md-icon></h4>
-
-      <h5>Prędkość: {{ wind.gust.speed.value | number:'1.0-2' }} {{ wind.gust.speed.units }}</h5>
       <h5>Kierunek: {{ wind.gust.translated }} ({{ wind.gust.dir.value | number:'1.0-2' }} {{ wind.gust.dir.units }})</h5>
+      <h5>Prędkość: {{ wind.gust.speed.value | number:'1.0-2' }} {{ wind.gust.speed.units }}</h5>
     </div>
   </md-card-content>
 
   <md-card-actions>
     <button disabled md-button color='primary'>Szczegóły</button>
-    <button md-button color='primary' routerLink='wiatr'>Raport</button>
+    <button md-button color='primary' routerLink='powiewy'>Raport</button>
   </md-card-actions>
 </md-card>
