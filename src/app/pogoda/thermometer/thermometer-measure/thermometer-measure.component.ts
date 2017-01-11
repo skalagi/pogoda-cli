@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, EventEmitter } from '@angular/core';
 
 export interface Line {
   bold: boolean;
@@ -12,14 +12,21 @@ export interface Line {
 })
 export class ThermometerMeasureComponent implements OnInit {
   constructor(private host: ElementRef) { }
-  public lines: Line[] = [];
+  public lines: Line[];
 
   ngOnInit() {
+    this.generate();
+    setTimeout(() => this.generate(), 300);
+  }
+
+  generate() {
     const { nativeElement: { clientHeight } } = this.host;
     const amount = Math.round(clientHeight / 9);
 
+    this.lines = [];
     for (let i = amount; i--;) {
       this.lines.push({ bold: (i % 5 === 0), value: i  });
     }
   }
+
 }
