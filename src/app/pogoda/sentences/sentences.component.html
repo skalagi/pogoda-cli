@@ -1,2 +1,2 @@
 <md-progress-bar *ngIf='!sentence' mode='indeterminate'></md-progress-bar>
-<span [@next]="sentence">{{ sentence }}</span>
+<span (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
