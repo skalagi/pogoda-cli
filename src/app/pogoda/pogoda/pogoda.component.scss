@@ -10,4 +10,6 @@ app-header, app-sentences {
 
 router-outlet {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -26,6 +26,10 @@ import { ThermometerMeasureComponent } from './thermometer/thermometer-measure/t
 import { ThermometerSensorComponent } from './thermometer/thermometer-sensor/thermometer-sensor.component';
 import { ThermometerSensorValueComponent } from './thermometer/thermometer-sensor-value/thermometer-sensor-value.component';
 import { ChartModule } from "angular2-highcharts";
+import { WindDetailsComponent } from './wind-details/wind-details.component';
+import { RainDetailsComponent } from './rain-details/rain-details.component';
+import { PressureDetailsComponent } from './pressure-details/pressure-details.component';
+import { HumidityDetailsComponent } from './humidity-details/humidity-details.component';
 
 const Highcharts = require('../../../node_modules/highcharts/highcharts');
 const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
@@ -61,7 +65,11 @@ HighchartsMore(Highcharts);
     DayChartComponent,
     ThermometerMeasureComponent,
     ThermometerSensorComponent,
-    ThermometerSensorValueComponent
+    ThermometerSensorValueComponent,
+    WindDetailsComponent,
+    RainDetailsComponent,
+    PressureDetailsComponent,
+    HumidityDetailsComponent
   ],
 })
 export class PogodaModule { }
