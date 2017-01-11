@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Unit } from "../api.interface";
 
 @Component({
   selector: 'app-thermometer',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./thermometer.component.scss']
 })
 export class ThermometerComponent {
-  @Input() temperature: number;
+  @Input() temperature: Unit;
 }
