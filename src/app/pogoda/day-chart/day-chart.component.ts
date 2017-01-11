@@ -11,16 +11,18 @@ export class DayChartComponent implements OnInit {
   public loaded: boolean = false;
   @Input() public type: string;
   @Input() public date: string;
+  @Input() public dataType: string;
 
   public options = {
+    title: { text: 'Raport dzienny' },
     xAxis: { type: 'datetime' },
-    chart: { type: 'arearange' },
+    chart: { type: 'line' },
     series: [],
   };
 
   ngOnInit() {
     this.api.get(this.type).subscribe(data => {
-      this.options.series = [{ name: 'temperatura', data }];
+      this.options.series = [{ name: this.dataType, data }];
       this.loaded = true;
     });
   }
