@@ -11,6 +11,7 @@ md-card#thermometer md-card-content {
 :host {
   justify-content: space-around;
   align-items: baseline;
+  margin: 2em auto;
   display: flex;
   width: 100%;
 }
