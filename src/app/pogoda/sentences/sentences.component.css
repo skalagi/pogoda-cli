@@ -1,9 +1,8 @@
-md-toolbar {
-  font-size: .8em;
-}
-
-md-progress-bar {
-  min-width: 100vw;
+:host {
+  display: block;
+  background: #fff;
+  padding: .5em 2em;
+  width: 100%;
 }
 
 span {
