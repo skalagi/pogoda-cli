@@ -1,5 +1,21 @@
 <md-card>
-  <md-card-title>Temperatura <md-icon>{{ trend }}</md-icon></md-card-title>
+  <md-card-title>Temperatura</md-card-title>
+
+  <md-card-content id='dew-point' *ngIf='loaded && temperature.dewPoint.value'>
+    <div>
+      <md-icon>opacity</md-icon>
+      <span [mdTooltip]='"Punkt rosy wynosi: " + temperature.dewPoint.value + temperature.dewPoint.units'>
+        {{ temperature.dewPoint.value | number:'1.0-0' }}{{ temperature.dewPoint.units }}
+      </span>
+    </div>
+
+    <div *ngIf='trend'>
+      <md-icon>{{ trend }}</md-icon>
+      <span [mdTooltip]='"Tendencja: " + temperature.trend.value + temperature.trend.units'>
+        {{ temperature.trend.value | number:'1.0-2' }} {{ temperature.trend.units }}
+      </span>
+    </div>
+  </md-card-content>
 
   <md-card-content *ngIf='loaded'>
     <h5>Odczuwalna
@@ -13,13 +29,6 @@
         {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
       </span>
     </h5>
-  </md-card-content>
-
-  <md-card-content id='dew-point' *ngIf='loaded && temperature.dewPoint.value'>
-    <md-icon>opacity</md-icon>
-    <span [mdTooltip]='temperature.dewPoint.value + temperature.dewPoint.units'>
-      {{ temperature.dewPoint.value | number:'1.0-0' }}{{ temperature.dewPoint.units }}
-    </span>
   </md-card-content>
 
   <md-card-actions>
