@@ -1,6 +1,15 @@
 #dew-point {
+  justify-content: space-between;
+  display: flex;
+}
+
+#dew-point div {
   align-items: center;
   display: flex;
+}
+
+#dew-point > *:first-child {
+  margin-right: 1em;
 }
 
 span {
