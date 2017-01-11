@@ -21,11 +21,16 @@ import { RouterModule } from "@angular/router";
 import { pogodaRoutes } from "./pogoda/pogoda.routes";
 import { BasicWeatherComponent } from './basic-weather/basic-weather.component';
 import { DayChartComponent } from './day-chart/day-chart.component';
-import { ChartModule } from "angular2-highcharts";
 import { DayChartService } from "./day-chart/day-chart.service";
 import { ThermometerMeasureComponent } from './thermometer/thermometer-measure/thermometer-measure.component';
 import { ThermometerSensorComponent } from './thermometer/thermometer-sensor/thermometer-sensor.component';
 import { ThermometerSensorValueComponent } from './thermometer/thermometer-sensor-value/thermometer-sensor-value.component';
+import { ChartModule } from "angular2-highcharts";
+
+const Highcharts = require('../../../node_modules/highcharts/highcharts');
+const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
+
+HighchartsMore(Highcharts);
 
 @NgModule({
   exports: [PogodaComponent],
