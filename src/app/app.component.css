@@ -2,6 +2,10 @@
   display: inline-block;
 }
 
+:host {
+  margin: 0;
+}
+
 :host >>> md-spinner {
   height: 3em;
   margin: auto;
