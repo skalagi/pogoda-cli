@@ -1,5 +1,5 @@
 <md-card>
-  <md-card-title>Opady</md-card-title>
+  <md-card-title>Opady <portable-value *ngIf='loaded' [value]="rain.current.value" [after]="rain.current.units"></portable-value></md-card-title>
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 

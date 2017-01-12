@@ -5,7 +5,7 @@ import { ApiService } from "../api.service";
 @Component({
   selector: 'app-rain',
   templateUrl: './rain.component.html',
-  styleUrls: ['./rain.component.css']
+  styleUrls: ['./rain.component.scss']
 })
 export class RainComponent implements OnInit {
   constructor(private api: ApiService) { }
