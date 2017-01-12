@@ -5,7 +5,7 @@ import { ApiService } from "../api.service";
 @Component({
   selector: 'app-humidity',
   templateUrl: './humidity.component.html',
-  styleUrls: ['./humidity.component.css']
+  styleUrls: ['./humidity.component.scss']
 })
 export class HumidityComponent implements OnInit {
   constructor(private api: ApiService) { }

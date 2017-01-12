@@ -1,0 +1,13 @@
+@import '../../theme/weather-blue.scss';
+
+span {
+  cursor: pointer;
+}
+
+md-card-content {
+  text-align: center;
+}
+
+portable-value {
+  color: md-color($weather-blue-primary);
+}
