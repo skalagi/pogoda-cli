@@ -7,7 +7,7 @@ import { DayRecords, RangeUnit } from "../day-records/day-records.interface";
 @Component({
   selector: 'app-temperature',
   templateUrl: './temperature.component.html',
-  styleUrls: ['./temperature.component.css']
+  styleUrls: ['./temperature.component.scss']
 })
 export class TemperatureComponent implements OnInit {
   constructor(private api: ApiService, private day: DayRecordsService) { }
