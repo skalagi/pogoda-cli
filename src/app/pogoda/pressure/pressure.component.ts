@@ -5,7 +5,7 @@ import { ApiService } from "../api.service";
 @Component({
   selector: 'app-pressure',
   templateUrl: './pressure.component.html',
-  styleUrls: ['./pressure.component.css']
+  styleUrls: ['./pressure.component.scss']
 })
 export class PressureComponent implements OnInit {
   constructor(private api: ApiService) { }

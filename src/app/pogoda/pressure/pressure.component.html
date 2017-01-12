@@ -1,5 +1,5 @@
 <md-card>
-  <md-card-title>Ciśnienie</md-card-title>
+  <md-card-title>Ciśnienie <portable-value *ngIf="loaded" [value]="pressure.current.value" [after]="pressure.current.units"></portable-value></md-card-title>
 
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
