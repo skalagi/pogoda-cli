@@ -5,7 +5,7 @@ import { ApiService } from "../api.service";
 @Component({
   selector: 'app-wind',
   templateUrl: './wind.component.html',
-  styleUrls: ['./wind.component.css']
+  styleUrls: ['./wind.component.scss']
 })
 export class WindComponent implements OnInit {
   constructor(private api: ApiService) { }

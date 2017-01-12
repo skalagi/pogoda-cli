@@ -1,5 +1,16 @@
+@import "../../theme/weather-blue";
+
 md-card-content {
   display: flex;
+}
+
+md-card-title {
+  display: flex;
+}
+
+portable-value {
+  color: md-color($weather-blue-primary);
+  margin-left: auto;
 }
 
 div:first-child {
