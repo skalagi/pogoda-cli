@@ -31,6 +31,7 @@ import { RainDetailsComponent } from './rain-details/rain-details.component';
 import { PressureDetailsComponent } from './pressure-details/pressure-details.component';
 import { HumidityDetailsComponent } from './humidity-details/humidity-details.component';
 import { DayRecordsModule } from "./day-records/day-records.module";
+import { PortableValueComponent } from './portable-value/portable-value.component';
 
 const Highcharts = require('../../../node_modules/highcharts/highcharts');
 const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
@@ -71,7 +72,8 @@ HighchartsMore(Highcharts);
     WindDetailsComponent,
     RainDetailsComponent,
     PressureDetailsComponent,
-    HumidityDetailsComponent
+    HumidityDetailsComponent,
+    PortableValueComponent
   ],
 })
 export class PogodaModule { }
