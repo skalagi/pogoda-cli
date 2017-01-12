@@ -9,6 +9,6 @@ import { DayRecordComponent } from './day-record/day-record.component';
   imports: [CommonModule, MaterialModule.forRoot()],
   providers: [DayRecordsService],
   declarations: [DayRecordsComponent, DayRecordComponent],
-  exports: [DayRecordsComponent],
+  exports: [DayRecordComponent],
 })
 export class DayRecordsModule { }
