@@ -12,6 +12,22 @@
   margin-right: 1em;
 }
 
+h5 {
+  margin: 0;
+}
+
+#data {
+  display: flex;
+  align-items: center;
+}
+
+#data > * {
+  display: inline-block;
+}
+#data > *:first-child {
+  margin-right: 1em;
+}
+
 span {
   cursor: pointer;
 }

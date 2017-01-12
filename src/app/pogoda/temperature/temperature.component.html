@@ -17,17 +17,23 @@
     </div>
   </md-card-content>
 
-  <md-card-content *ngIf='loaded'>
-    <h5>Odczuwalna
-      <span [mdTooltip]='temperature.real.value + temperature.real.units'>
-        {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
-      </span>
+  <md-card-content id='data' *ngIf='loaded'>
+    <h5>
+      <p>Odczuwalna
+        <span [mdTooltip]='temperature.real.value + temperature.real.units'>
+          {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
+        </span>
+      </p>
+
+      <p>Aktualna
+        <span [mdTooltip]='temperature.current.value + temperature.current.units'>
+          {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
+        </span>
+      </p>
     </h5>
 
-    <h5>Aktualna
-      <span [mdTooltip]='temperature.current.value + temperature.current.units'>
-        {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
-      </span>
+    <h5>
+      <app-day-record [value]='records'></app-day-record>
     </h5>
   </md-card-content>
 
