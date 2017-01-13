@@ -4,6 +4,11 @@ h2 {
   color: #FFEB3B;
 }
 
+sub {
+  margin-left: .25em;
+  transform: translateY(-.5em);
+}
+
 app-update-timer {
   margin-left: auto;
 }
