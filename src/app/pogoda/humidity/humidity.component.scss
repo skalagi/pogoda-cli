@@ -8,6 +8,12 @@ md-card-content {
   text-align: center;
 }
 
+md-card-title {
+  display: flex;
+}
+
 portable-value {
   color: md-color($weather-blue-primary);
+  padding-left: 1em;
+  margin-left: auto;
 }

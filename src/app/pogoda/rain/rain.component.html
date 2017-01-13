@@ -3,8 +3,8 @@
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <h5>Aktualne: {{ rain.current.value + rain.current.units }}</h5>
-    <h5>Suma: {{ rain.sum.value + rain.sum.units }}</h5>
+    <h5>Aktualne: <portable-value *ngIf='loaded' [value]="rain.current.value" [after]="rain.current.units"></portable-value></h5>
+    <h5>Suma: <portable-value *ngIf='loaded' [value]="rain.sum.value" [after]="rain.sum.units"></portable-value></h5>
   </md-card-content>
 
   <md-card-actions>

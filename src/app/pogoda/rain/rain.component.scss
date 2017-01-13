@@ -2,5 +2,10 @@
 
 portable-value {
   margin-left: auto;
+  padding-left: 1em;
   color: md-color($weather-blue-primary);
+}
+
+md-card-title, h5 {
+  display: flex;
 }
