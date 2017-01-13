@@ -4,6 +4,12 @@ md-card-content {
   display: flex;
 }
 
+.wind-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 md-card-title {
   display: flex;
 }
