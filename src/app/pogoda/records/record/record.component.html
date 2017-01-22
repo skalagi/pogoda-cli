@@ -1,4 +1,8 @@
-<p *ngIf='data'>
+<p *ngIf='data && data.name'>
+  {{ data.name }} <portable-value [value]="data.value" [after]="data.units"></portable-value>
+</p>
+
+<p *ngIf='data && data.max'>
   max: <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
 </p>
 
