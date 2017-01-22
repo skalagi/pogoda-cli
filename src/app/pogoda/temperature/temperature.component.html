@@ -4,31 +4,23 @@
   <md-card-content id='dew-point' *ngIf='loaded && temperature.dewPoint.value'>
     <div>
       <md-icon>opacity</md-icon>
-      <span [mdTooltip]='"Punkt rosy wynosi: " + temperature.dewPoint.value + temperature.dewPoint.units'>
-        {{ temperature.dewPoint.value | number:'1.0-0' }}{{ temperature.dewPoint.units }}
-      </span>
+      <portable-value preTip="Punkt rosy wynosi: " [value]="temperature.dewPoint.value" [after]="temperature.dewPoint.units"></portable-value>
     </div>
 
     <div *ngIf='trend'>
       <md-icon>{{ trend }}</md-icon>
-      <span [mdTooltip]='"Tendencja: " + temperature.trend.value + temperature.trend.units'>
-        {{ temperature.trend.value | number:'1.0-2' }} {{ temperature.trend.units }}
-      </span>
+      <portable-value preTip="Tendencja: " [value]="temperature.trend.value" [after]="temperature.trend.units"></portable-value>
     </div>
   </md-card-content>
 
   <md-card-content id='data' *ngIf='loaded'>
     <h5>
       <p>Odczuwalna
-        <span [mdTooltip]='temperature.real.value + temperature.real.units'>
-          {{ temperature.real.value  | number:'1.0-2' }}{{ temperature.real.units }}
-        </span>
+        <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
       </p>
 
       <p>Aktualna
-        <span [mdTooltip]='temperature.current.value + temperature.current.units'>
-          {{ temperature.current.value | number:'1.0-2' }}{{ temperature.current.units }}
-        </span>
+        <portable-value [value]="temperature.current.value" [after]="temperature.current.units"></portable-value>
       </p>
     </h5>
 
