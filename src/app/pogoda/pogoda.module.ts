@@ -33,6 +33,7 @@ import { HumidityDetailsComponent } from './humidity-details/humidity-details.co
 import { DayRecordsModule } from "./day-records/day-records.module";
 import { PortableValueComponent } from './portable-value/portable-value.component';
 import { WindGroupComponent } from './wind/wind-group/wind-group.component';
+import { PortableValueModule } from "./portable-value/portable-value.module";
 
 const Highcharts = require('../../../node_modules/highcharts/highcharts');
 const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
@@ -46,6 +47,7 @@ HighchartsMore(Highcharts);
   imports: [
     RouterModule.forRoot(pogodaRoutes),
     MaterialModule.forRoot(),
+    PortableValueModule,
     DayRecordsModule,
     CommonModule,
     MomentModule,
@@ -74,7 +76,6 @@ HighchartsMore(Highcharts);
     RainDetailsComponent,
     PressureDetailsComponent,
     HumidityDetailsComponent,
-    PortableValueComponent,
     WindGroupComponent
   ],
 })
