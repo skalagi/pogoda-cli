@@ -7,20 +7,17 @@
       </span>
     </template>
 
-    <h5>Kierunek:
-      <span>
-        <portable-value
-          [preText]="wind.data.translated + ' ('"
-          [afterText]="wind.data.dir.units + ')'"
-          [afterTip]="wind.data.dir.units"
-          [value]="wind.data.dir.value"
-        ></portable-value>
-      </span>
-    </h5>
-    <h5>Prędkość:
-      <span>
-        <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value>
-      </span>
-    </h5>
+    <p>Kierunek:
+      <portable-value
+        [preText]="wind.data.translated + ' ('"
+        [afterText]="wind.data.dir.units + ')'"
+        [afterTip]="wind.data.dir.units"
+        [value]="wind.data.dir.value"
+      ></portable-value>
+    </p>
+
+    <p>Prędkość:
+      <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value>
+    </p>
   </md-tab>
 </md-tab-group>
