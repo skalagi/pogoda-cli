@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PogodaSkalagiApi, Unit } from "../../api.interface";
-import { ApiService } from "../../api.service";
+import { BasicApi } from "../../api/basic/basic.interface";
+import { Unit } from "../../api/unit.interface";
+import { BasicService } from "../../api/basic/api.service";
 
 @Component({
   selector: 'app-humidity',
@@ -8,12 +9,12 @@ import { ApiService } from "../../api.service";
   styleUrls: ['./humidity.component.scss']
 })
 export class HumidityComponent implements OnInit {
-  constructor(private api: ApiService) { }
+  constructor(private api: BasicService) { }
   public loaded: boolean = false;
   public humidity: Unit;
 
   ngOnInit() {
-    this.api.get((api: PogodaSkalagiApi) => {
+    this.api.get((api: BasicApi) => {
       this.humidity = api.humidity;
       this.loaded = true;
     });

@@ -1,8 +1,4 @@
-export interface Unit {
-  name: string;
-  units: string;
-  value: any;
-}
+import { Unit, WindUnit } from "../unit.interface";
 
 export interface Pressure {
   current: Unit;
@@ -12,12 +8,6 @@ export interface Pressure {
 export interface Rain {
   current: Unit;
   sum: Unit;
-}
-
-export interface WindUnit {
-  translated: string;
-  speed: Unit;
-  dir: Unit;
 }
 
 export interface Wind {
@@ -37,7 +27,7 @@ export interface Temperature {
   real: Unit;
 }
 
-export interface PogodaSkalagiApi {
+export interface BasicApi {
   temperature: Temperature;
   barometer: Pressure;
   humidity: Unit;

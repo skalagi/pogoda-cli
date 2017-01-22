@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../api.service";
-import { PogodaSkalagiApi, Unit } from "../api.interface";
+import { BasicApi } from "../api/basic/basic.interface";
+import { BasicService } from "../api/basic/api.service";
+import { Unit } from "../api/unit.interface";
 
 @Component({
   selector: 'app-update-timer',
@@ -8,7 +9,7 @@ import { PogodaSkalagiApi, Unit } from "../api.interface";
   styleUrls: ['./update-timer.component.scss']
 })
 export class UpdateTimerComponent implements OnInit {
-  constructor(private api: ApiService) { }
+  constructor(private api: BasicService) { }
   public loaded: boolean = false;
   public time: number = 0;
   public data: Unit;
@@ -17,7 +18,7 @@ export class UpdateTimerComponent implements OnInit {
     const { api } = this;
 
     api.nextUpdate.subscribe(time => this.time = time);
-    api.get((api: PogodaSkalagiApi) => {
+    api.get((api: BasicApi) => {
       this.time = api.time.next.value;
       this.data = api.time.data;
       this.loaded = true;

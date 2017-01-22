@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Rain, PogodaSkalagiApi } from "../../api.interface";
-import { ApiService } from "../../api.service";
+import { Rain, BasicApi } from "../../api/basic/basic.interface";
+import { BasicService } from "../../api/basic/api.service";
 
 @Component({
   selector: 'app-rain',
@@ -8,12 +8,12 @@ import { ApiService } from "../../api.service";
   styleUrls: ['./rain.component.scss']
 })
 export class RainComponent implements OnInit {
-  constructor(private api: ApiService) { }
+  constructor(private api: BasicService) { }
   public loaded: boolean = false;
   public rain: Rain;
 
   ngOnInit() {
-    this.api.get((api: PogodaSkalagiApi) => {
+    this.api.get((api: BasicApi) => {
       this.rain = api.rain;
       this.loaded = true;
     });

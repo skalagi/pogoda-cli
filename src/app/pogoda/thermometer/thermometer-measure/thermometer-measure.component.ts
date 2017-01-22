@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef, Input, EventEmitter } from '@angular/core';
-import { Unit } from "../../api.interface";
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Unit } from "../../api/unit.interface";
 
 export interface Line {
   bold: boolean;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DayRecordsService } from "../day-records.service";
-import { DayRecords } from "../day-records.interface";
+import { DayRecordsService } from "../../../api/records/day-records.service";
+import { DayRecords } from "../../../api/records/day-records.interface";
 
 @Component({
   selector: 'day-records',

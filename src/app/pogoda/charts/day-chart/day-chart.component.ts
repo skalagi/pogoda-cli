@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DayChartService } from "./day-chart.service";
+import { DayChartService } from "../../api/charts/day-chart.service";
 
 @Component({
   selector: 'app-day-chart',

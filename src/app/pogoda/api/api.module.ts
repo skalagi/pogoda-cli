@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BasicService } from "./basic/api.service";
+import { SentencesService } from "./sentences/sentences.service";
+import { DayChartService } from "./charts/day-chart.service";
+import { DayRecordsService } from "./records/day-records.service";
 
 @NgModule({
-  imports: [
-    CommonModule
+  providers: [
+    BasicService,
+    SentencesService,
+    DayChartService,
+    DayRecordsService
   ],
-  declarations: []
 })
 export class ApiModule { }

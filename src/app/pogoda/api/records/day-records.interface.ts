@@ -1,9 +1,4 @@
-import { Unit } from "../../api.interface";
-
-export interface RangeUnit {
-  min?: Unit;
-  max: Unit;
-}
+import { RangeUnit, Unit } from "../unit.interface";
 
 export interface DayRecords {
   temperature: RangeUnit;

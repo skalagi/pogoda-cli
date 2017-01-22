@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, transition, animate, style, state } from '@angular/core';
-import { SentencesService } from "./sentences.service";
+import { SentencesService } from "../api/sentences/sentences.service";
 
 @Component({
   selector: 'app-sentences',

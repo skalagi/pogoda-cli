@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RangeUnit } from "../day-records.interface";
+import { RangeUnit } from "../../../api/unit.interface";
 
 @Component({
   selector: 'day-record',

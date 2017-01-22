@@ -1,12 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { PogodaSkalagiApi } from "./api.interface";
-import { environment } from "../../environments/environment";
+import { environment } from "../../../../environments/environment";
 
-import { SentencesService } from "./sentences/sentences.service";
-import { DayRecordsService } from "./records/day-records/day-records.service";
-import { DayChartService } from "./charts/day-chart/day-chart.service";
+import { SentencesService } from "../sentences/sentences.service";
+import { DayRecordsService } from "../records/day-records.service";
+import { DayChartService } from "../charts/day-chart.service";
+import { BasicApi } from "./basic.interface";
 
 export {
   SentencesService,
@@ -15,10 +15,10 @@ export {
 };
 
 @Injectable()
-export class ApiService {
+export class BasicService {
   public nextUpdate = new EventEmitter();
-  public update: EventEmitter<PogodaSkalagiApi> = new EventEmitter();
-  public data: PogodaSkalagiApi;
+  public update: EventEmitter<BasicApi> = new EventEmitter();
+  public data: BasicApi;
 
   private source: string = `${ environment.apiSource }/basic.json`;
   private timeToReconnect = null;

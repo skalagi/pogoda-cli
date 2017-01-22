@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../../api.service";
-import { PogodaSkalagiApi, Temperature } from "../../../api.interface";
+import { BasicApi, Temperature } from "../../../api/basic/basic.interface";
+import { BasicService } from "../../../api/basic/api.service";
 
 @Component({
   selector: 'app-temperature-details',
@@ -8,12 +8,12 @@ import { PogodaSkalagiApi, Temperature } from "../../../api.interface";
   styleUrls: ['./temperature-details.component.css']
 })
 export class TemperatureDetailsComponent implements OnInit {
-  constructor(private api: ApiService) { }
+  constructor(private api: BasicService) { }
   public temperature: Temperature;
   public loaded: boolean = false;
 
   ngOnInit() {
-    this.api.get(({ temperature }: PogodaSkalagiApi) => {
+    this.api.get(({ temperature }: BasicApi) => {
       this.temperature = temperature;
       this.loaded = true;
     });

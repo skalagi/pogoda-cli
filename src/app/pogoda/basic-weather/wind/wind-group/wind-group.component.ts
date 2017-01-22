@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { WindUnit } from "../../../api.interface";
+import { WindUnit } from "../../../api/unit.interface";
 
 export interface WindData {
   data: WindUnit;
