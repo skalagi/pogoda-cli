@@ -1,15 +1,9 @@
 @import '../../../theme/weather-blue';
 
-portable-value {
-  margin-left: auto;
-  padding-left: 1em;
-  color: md-color($weather-blue-primary);
-}
-
 record {
   width: 100%;
 }
 
-md-card-title, h5 {
+md-card-title, p {
   display: flex;
 }
