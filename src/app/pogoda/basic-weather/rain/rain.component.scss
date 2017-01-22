@@ -6,6 +6,10 @@ portable-value {
   color: md-color($weather-blue-primary);
 }
 
+record {
+  width: 100%;
+}
+
 md-card-title, h5 {
   display: flex;
 }

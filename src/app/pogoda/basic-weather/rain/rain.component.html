@@ -1,8 +1,10 @@
 <md-card>
   <md-card-title>Opady <portable-value *ngIf='loaded' [value]="rain.current.value" [after]="rain.current.units"></portable-value></md-card-title>
+
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
+    <h5><record range='day' record="rainrate"></record></h5>
     <h5>Aktualne: <portable-value *ngIf='loaded' [value]="rain.current.value" [after]="rain.current.units"></portable-value></h5>
     <h5>Suma: <portable-value *ngIf='loaded' [value]="rain.sum.value" [after]="rain.sum.units"></portable-value></h5>
   </md-card-content>
