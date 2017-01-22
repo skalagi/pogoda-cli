@@ -9,8 +9,8 @@
   > * {
     margin: 1em;
     display: flex;
-    flex-grow: 1;
     flex-flow: column;
     align-items: stretch;
+    justify-content: flex-end;
   }
 }
