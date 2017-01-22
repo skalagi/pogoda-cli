@@ -3,15 +3,14 @@
 #dew-point {
   justify-content: space-between;
   display: flex;
-}
 
-#dew-point div {
-  align-items: center;
-  display: flex;
-}
-
-#dew-point > *:first-child {
-  margin-right: 1em;
+  div {
+    align-items: center;
+    display: flex;
+  }
+  > *:first-child {
+    margin-right: 1em;
+  }
 }
 
 portable-value {
@@ -28,6 +27,14 @@ h5 {
   display: flex;
   align-items: center;
 
+  > * {
+    display: inline-block;
+
+    &:first-child {
+      margin-right: 1em;
+    }
+  }
+
   h5 {
     p {
       display: flex;
@@ -37,12 +44,4 @@ h5 {
       }
     }
   }
-}
-
-
-#data > * {
-  display: inline-block;
-}
-#data > *:first-child {
-  margin-right: 1em;
 }
