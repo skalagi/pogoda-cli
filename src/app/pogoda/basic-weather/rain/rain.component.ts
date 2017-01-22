@@ -12,6 +12,11 @@ export class RainComponent implements OnInit {
   public loaded: boolean = false;
   public rain: Rain;
 
+  get title() {
+    const { loaded, rain } = this;
+    return loaded && rain.current.value > 0 ? 'Opady' : 'Sucho';
+  }
+
   ngOnInit() {
     this.api.get((api: BasicApi) => {
       this.rain = api.rain;
