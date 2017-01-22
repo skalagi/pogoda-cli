@@ -1,5 +1,10 @@
 @import "../../theme/weather-blue";
 
+:host {
+  padding-left: 1em;
+  margin-left: auto;
+}
+
 span {
   color: md-color($weather-blue-primary);
   cursor: pointer;
