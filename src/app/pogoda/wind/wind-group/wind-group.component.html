@@ -1,8 +1,8 @@
 <md-tab-group>
   <md-tab *ngFor="let wind of data">
-    <template md-tab-label>
+    <template md-tab-label *ngIf="wind">
       <span class="wind-label">
-        Aktualny <md-icon color='primary' [style.transform]='"rotate(" + (wind.speed.value + 180) + "deg)"'> {{ icon }} </md-icon>
+        Aktualny <md-icon color='primary' [style.transform]='transform(wind)'> {{ icon }} </md-icon>
       </span>
     </template>
 

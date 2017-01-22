@@ -18,4 +18,8 @@ export class WindGroupComponent {
   get data() : WindUnit[] {
     return [this.wind.current, this.wind.gust];
   }
+
+  transform(wind) {
+    return `rotate(${ wind.speed.value + 180 }deg)`;
+  }
 }
