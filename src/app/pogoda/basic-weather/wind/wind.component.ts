@@ -12,6 +12,11 @@ export class WindComponent implements OnInit {
   public loaded: boolean = false;
   public wind: Wind;
 
+  get title() {
+    const { loaded, wind } = this;
+    return loaded && wind.current.speed.value == 0 ? 'Bezwietrznie' : 'Wiatr';
+  }
+
   ngOnInit() {
     this.api.get((api: BasicApi) => {
       this.wind = api.wind;
