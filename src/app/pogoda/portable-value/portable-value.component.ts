@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'portable-value',
   templateUrl: './portable-value.component.html',
-  styleUrls: ['./portable-value.component.css']
+  styleUrls: ['./portable-value.component.scss']
 })
 export class PortableValueComponent {
   @Input() afterTip = '';
