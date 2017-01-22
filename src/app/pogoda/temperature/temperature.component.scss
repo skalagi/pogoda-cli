@@ -27,15 +27,22 @@ h5 {
 #data {
   display: flex;
   align-items: center;
+
+  h5 {
+    p {
+      display: flex;
+
+      portable-value {
+        margin-left: auto;
+      }
+    }
+  }
 }
+
 
 #data > * {
   display: inline-block;
 }
 #data > *:first-child {
   margin-right: 1em;
-}
-
-span {
-  cursor: pointer;
 }
