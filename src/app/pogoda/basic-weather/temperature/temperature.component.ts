@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DayRecordsService } from "../../api/records/day-records.service";
+import { RecordsService } from "../../api/records/records.service";
 import { BasicService } from "../../api/basic/api.service";
 import { Temperature, BasicApi } from "../../api/basic/basic.interface";
 import { RangeUnit } from "../../api/unit.interface";
-import { DayRecords } from "../../api/records/day-records.interface";
+import { Records } from "../../api/records/records.interface";
 
 @Component({
   selector: 'app-temperature',
@@ -11,13 +11,13 @@ import { DayRecords } from "../../api/records/day-records.interface";
   styleUrls: ['./temperature.component.scss']
 })
 export class TemperatureComponent implements OnInit {
-  constructor(private api: BasicService, private day: DayRecordsService) { }
+  constructor(private api: BasicService, private recordsApi: RecordsService) { }
   public records: RangeUnit;
   public loaded: boolean = false;
   public temperature: Temperature;
 
   ngOnInit() {
-    this.day.records.subscribe((records: DayRecords) => this.records = records.temperature);
+    this.recordsApi.get('day').subscribe((records: Records) => this.records = records.temperature);
     this.api.get((api: BasicApi) => {
       this.temperature = api.temperature;
       this.loaded = true;

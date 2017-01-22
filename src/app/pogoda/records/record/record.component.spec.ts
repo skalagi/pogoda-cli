@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { RecordComponent } from './record.component';
 
-describe('RecordComponent', () => {
+describe('DayRecordComponent', () => {
   let component: RecordComponent;
   let fixture: ComponentFixture<RecordComponent>;
 

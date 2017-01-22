@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecordComponent } from './record/record.component';
-import { DayRecordsModule } from "./day-records/day-records.module";
-import { DayRecordComponent } from "./day-records/day-record/day-record.component";
+import { PortableValueModule } from "../portable-value/portable-value.module";
+import { MaterialModule } from "@angular/material";
+import { RecordComponent } from "./record/record.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DayRecordsModule
-  ],
+  imports: [CommonModule, MaterialModule.forRoot(), PortableValueModule],
   declarations: [RecordComponent],
-  exports: [DayRecordComponent],
+  exports: [RecordComponent],
 })
 export class RecordsModule { }

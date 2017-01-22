@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 
 @Injectable()
-export class DayRecordsService {
+export class RecordsService {
   constructor(private http: Http) {}
 
-  get records() {
-    return this.http.get(`${environment.apiSource}/day-records.json`)
+  get(type) {
+    return this.http.get(`${environment.apiSource}/${type}-records.json`)
       .map(res => res.json())
   }
 }

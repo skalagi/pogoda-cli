@@ -4,14 +4,14 @@ import { Http } from '@angular/http';
 import { environment } from "../../../../environments/environment";
 
 import { SentencesService } from "../sentences/sentences.service";
-import { DayRecordsService } from "../records/day-records.service";
+import { RecordsService } from "../records/records.service";
 import { DayChartService } from "../charts/day-chart.service";
 import { BasicApi } from "./basic.interface";
 
 export {
   SentencesService,
   DayChartService,
-  DayRecordsService,
+  RecordsService,
 };
 
 @Injectable()
