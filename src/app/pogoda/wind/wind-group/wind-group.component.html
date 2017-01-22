@@ -7,7 +7,20 @@
       </span>
     </template>
 
-    <h5>Kierunek: {{ wind.data.translated }} <portable-value [afterText]="wind.data.dir.units" [value]="wind.data.dir.value"></portable-value></h5>
-    <h5>Prędkość: <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value></h5>
+    <h5>Kierunek:
+      <span>
+        <portable-value
+          [preText]="wind.data.translated + ' ('"
+          [afterText]="wind.data.dir.units + ')'"
+          [afterTip]="wind.data.dir.units"
+          [value]="wind.data.dir.value"
+        ></portable-value>
+      </span>
+    </h5>
+    <h5>Prędkość:
+      <span>
+        <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value>
+      </span>
+    </h5>
   </md-tab>
 </md-tab-group>
