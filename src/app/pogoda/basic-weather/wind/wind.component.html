@@ -13,6 +13,11 @@
     <wind-group [data]="wind"></wind-group>
   </md-card-content>
 
+  <md-card-content>
+    <record range="day" record="winddir"></record>
+    <record range="day" record="windspeed"></record>
+  </md-card-content>
+
   <md-card-actions>
     <button disabled md-button color='primary'>Szczegóły</button>
     <button md-button color='primary' routerLink='powiewy'>Raport</button>
