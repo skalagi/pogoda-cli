@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RangeUnit } from "../../api/unit.interface";
+import { Record } from "../../api/records/records.interface";
 
 @Component({
   selector: 'record',
@@ -7,5 +7,5 @@ import { RangeUnit } from "../../api/unit.interface";
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent {
-  @Input('value') type: RangeUnit;
+  @Input('value') type: Record;
 }

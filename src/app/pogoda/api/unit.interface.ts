@@ -9,8 +9,3 @@ export interface WindUnit {
   speed: Unit;
   dir: Unit;
 }
-
-export interface RangeUnit {
-  min?: Unit;
-  max: Unit;
-}

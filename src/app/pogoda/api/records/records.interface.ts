@@ -1,11 +1,16 @@
-import { RangeUnit, Unit } from "../unit.interface";
+import { Unit } from "../unit.interface";
+
+export interface Record {
+  min?: Unit;
+  max: Unit;
+}
 
 export interface Records {
-  temperature: RangeUnit;
-  humidity: RangeUnit;
-  barometer: RangeUnit;
-  windspeed: RangeUnit;
-  rainrate: RangeUnit;
+  temperature: Record;
+  humidity: Record;
+  barometer: Record;
+  windspeed: Record;
+  rainrate: Record;
   winddir: Unit;
   rain: Unit;
 }
