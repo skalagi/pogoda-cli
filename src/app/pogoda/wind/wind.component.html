@@ -3,27 +3,7 @@
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <md-tab-group>
-      <md-tab>
-        <template md-tab-label>
-          <span class="wind-label">
-            Aktualny <md-icon color='primary' [style.transform]='"rotate(" + (wind.current.speed.value + 180) + "deg)"'>{{ icon }}</md-icon>
-          </span>
-        </template>
-        <h5>Kierunek: {{ wind.current.translated }} ({{ wind.current.dir.value | number:'1.0-2' }} {{ wind.current.dir.units }})</h5>
-        <h5>Prędkość: {{ wind.current.speed.value | number:'1.0-2' }} {{ wind.current.speed.units }}</h5>
-      </md-tab>
-
-      <md-tab>
-        <template md-tab-label>
-          <span class="wind-label">
-            Podmuchy <md-icon color='primary' [style.transform]='"rotate(" + (wind.gust.speed.value + 180) + "deg)"'>{{ icon }}</md-icon>
-          </span>
-        </template>
-        <h5>Kierunek: {{ wind.gust.translated }} ({{ wind.gust.dir.value | number:'1.0-2' }} {{ wind.gust.dir.units }})</h5>
-        <h5>Prędkość: do {{ wind.gust.speed.value | number:'1.0-2' }} {{ wind.gust.speed.units }}</h5>
-      </md-tab>
-    </md-tab-group>
+    <wind-group [data]="wind"></wind-group>
   </md-card-content>
 
   <md-card-actions>

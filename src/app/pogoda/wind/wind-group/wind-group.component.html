@@ -1,0 +1,12 @@
+<md-tab-group>
+  <md-tab *ngFor="let wind of data">
+    <template md-tab-label>
+      <span class="wind-label">
+        Aktualny <md-icon color='primary' [style.transform]='"rotate(" + (wind.speed.value + 180) + "deg)"'> {{ icon }} </md-icon>
+      </span>
+    </template>
+
+    <h5>Kierunek: {{ wind.translated }} ({{ wind.dir.value | number:'1.0-2' }} {{ wind.dir.units }})</h5>
+    <h5>Prędkość: {{ wind.speed.value | number:'1.0-2' }} {{ wind.speed.units }}</h5>
+  </md-tab>
+</md-tab-group>
