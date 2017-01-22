@@ -1,2 +1,7 @@
-<p *ngIf='type'>max: {{ type.max.value + type.max.units }}</p>
-<p *ngIf='type && type.min'>min: {{ type.min.value + type.min.units }}</p>
+<p *ngIf='type'>
+  max: <portable-value [value]="type.max.value" [after]="type.max.units"></portable-value>
+</p>
+
+<p *ngIf='type && type.min'>
+  min: <portable-value [value]="type.min.value" [after]="type.min.units"></portable-value>
+</p>
