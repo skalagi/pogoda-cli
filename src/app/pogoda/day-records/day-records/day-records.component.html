@@ -2,9 +2,9 @@
   <md-card-title>Raport dzienny</md-card-title>
 
   <md-card-content>
-    <app-day-record *ngIf='records' [value]="records.temperature" title='Temperatura'></app-day-record>
-    <app-day-record *ngIf='records' [value]="records.barometer" title='Ciśnienie'></app-day-record>
-    <app-day-record *ngIf='records' [value]="records.humidity" title='Wilgotność'></app-day-record>
-    <app-day-record *ngIf='records' [value]="records.windspeed" title='Prędkość wiatru'></app-day-record>
+    <day-record *ngIf='records' [value]="records.temperature" title='Temperatura'></day-record>
+    <day-record *ngIf='records' [value]="records.barometer" title='Ciśnienie'></day-record>
+    <day-record *ngIf='records' [value]="records.humidity" title='Wilgotność'></day-record>
+    <day-record *ngIf='records' [value]="records.windspeed" title='Prędkość wiatru'></day-record>
   </md-card-content>
 </md-card>

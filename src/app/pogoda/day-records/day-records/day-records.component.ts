@@ -3,7 +3,7 @@ import { DayRecordsService } from "../day-records.service";
 import { DayRecords } from "../day-records.interface";
 
 @Component({
-  selector: 'app-day-records',
+  selector: 'day-records',
   templateUrl: './day-records.component.html',
   styleUrls: ['./day-records.component.css']
 })
