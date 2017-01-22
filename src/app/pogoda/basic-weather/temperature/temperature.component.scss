@@ -13,15 +13,6 @@
   }
 }
 
-portable-value {
-  padding-left: 1em;
-  margin-left: auto;
-}
-
-h5 {
-  margin: 0;
-}
-
 #data {
   display: flex;
   align-items: center;
@@ -35,13 +26,7 @@ h5 {
     }
   }
 
-  h5 {
-    p {
-      display: flex;
-
-      portable-value {
-        margin-left: auto;
-      }
-    }
+  p {
+    display: flex;
   }
 }

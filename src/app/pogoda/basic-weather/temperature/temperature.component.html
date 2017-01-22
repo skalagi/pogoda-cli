@@ -14,7 +14,7 @@
   </md-card-content>
 
   <md-card-content id='data' *ngIf='loaded'>
-    <h5>
+    <div>
       <p>Odczuwalna:
         <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
       </p>
@@ -22,11 +22,11 @@
       <p>Aktualna:
         <portable-value [value]="temperature.current.value" [after]="temperature.current.units"></portable-value>
       </p>
-    </h5>
+    </div>
 
-    <h5>
+    <div>
       <record range='day' record="temperature"></record>
-    </h5>
+    </div>
   </md-card-content>
 
   <md-card-actions>
