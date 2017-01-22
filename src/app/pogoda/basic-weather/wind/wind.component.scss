@@ -1,0 +1,31 @@
+@import "../../../theme/weather-blue";
+
+portable-value {
+  color: md-color($weather-blue-primary);
+  margin-left: auto;
+}
+
+wind-group {
+  width: 100%;
+}
+
+div:first-child {
+  margin-right: .5em;
+}
+
+md-card-content {
+  display: flex;
+}
+
+md-card-title {
+  display: flex;
+}
+
+h4 {
+  display: flex;
+  align-items: center;
+}
+
+h4 md-icon {
+  margin-left: auto;
+}

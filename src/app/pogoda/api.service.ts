@@ -4,6 +4,16 @@ import { Http } from '@angular/http';
 import { PogodaSkalagiApi } from "./api.interface";
 import { environment } from "../../environments/environment";
 
+import { SentencesService } from "./sentences/sentences.service";
+import { DayRecordsService } from "./records/day-records/day-records.service";
+import { DayChartService } from "./charts/day-chart/day-chart.service";
+
+export {
+  SentencesService,
+  DayChartService,
+  DayRecordsService,
+};
+
 @Injectable()
 export class ApiService {
   public nextUpdate = new EventEmitter();

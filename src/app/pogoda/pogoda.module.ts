@@ -5,78 +5,33 @@ import { MomentModule } from 'angular2-moment';
 
 import { PogodaComponent } from './pogoda/pogoda.component';
 import { ApiService } from "./api.service";
-import { TemperatureComponent } from './temperature/temperature.component';
 import { HeaderComponent } from './header/header.component';
 import { UpdateTimerComponent } from './update-timer/update-timer.component';
-import { WindComponent } from './wind/wind.component';
-import { PressureComponent } from './pressure/pressure.component';
-import { HumidityComponent } from './humidity/humidity.component';
-import { RainComponent } from './rain/rain.component';
 import { SentencesComponent } from './sentences/sentences.component';
 import { SentencesService } from "./sentences/sentences.service";
-import { ChartsComponent } from './charts/charts.component';
-import { ThermometerComponent } from './thermometer/thermometer.component';
-import { TemperatureDetailsComponent } from './temperature-details/temperature-details.component';
+import { PortableValueModule } from "./portable-value/portable-value.module";
+import { BasicWeatherModule } from "./basic-weather/basic-weather.module";
 import { RouterModule } from "@angular/router";
 import { pogodaRoutes } from "./pogoda/pogoda.routes";
-import { BasicWeatherComponent } from './basic-weather/basic-weather.component';
-import { DayChartComponent } from './day-chart/day-chart.component';
-import { DayChartService } from "./day-chart/day-chart.service";
-import { ThermometerMeasureComponent } from './thermometer/thermometer-measure/thermometer-measure.component';
-import { ThermometerSensorComponent } from './thermometer/thermometer-sensor/thermometer-sensor.component';
-import { ThermometerSensorValueComponent } from './thermometer/thermometer-sensor-value/thermometer-sensor-value.component';
-import { ChartModule } from "angular2-highcharts";
-import { WindDetailsComponent } from './wind-details/wind-details.component';
-import { RainDetailsComponent } from './rain-details/rain-details.component';
-import { PressureDetailsComponent } from './pressure-details/pressure-details.component';
-import { HumidityDetailsComponent } from './humidity-details/humidity-details.component';
-import { DayRecordsModule } from "./day-records/day-records.module";
-import { PortableValueComponent } from './portable-value/portable-value.component';
-import { WindGroupComponent } from './wind/wind-group/wind-group.component';
-import { PortableValueModule } from "./portable-value/portable-value.module";
-
-const Highcharts = require('../../../node_modules/highcharts/highcharts');
-const HighchartsMore = require('../../../node_modules/highcharts/highcharts-more');
-
-HighchartsMore(Highcharts);
 
 @NgModule({
   exports: [PogodaComponent],
-  providers: [ApiService, SentencesService, DayChartService],
+  providers: [ApiService, SentencesService],
 
   imports: [
     RouterModule.forRoot(pogodaRoutes),
     MaterialModule.forRoot(),
     PortableValueModule,
-    DayRecordsModule,
+    BasicWeatherModule,
     CommonModule,
     MomentModule,
-    ChartModule,
   ],
 
   declarations: [
     PogodaComponent,
-    TemperatureComponent,
     HeaderComponent,
     UpdateTimerComponent,
-    WindComponent,
-    PressureComponent,
-    HumidityComponent,
-    RainComponent,
     SentencesComponent,
-    ChartsComponent,
-    ThermometerComponent,
-    TemperatureDetailsComponent,
-    BasicWeatherComponent,
-    DayChartComponent,
-    ThermometerMeasureComponent,
-    ThermometerSensorComponent,
-    ThermometerSensorValueComponent,
-    WindDetailsComponent,
-    RainDetailsComponent,
-    PressureDetailsComponent,
-    HumidityDetailsComponent,
-    WindGroupComponent
   ],
 })
 export class PogodaModule { }
