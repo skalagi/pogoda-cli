@@ -1,12 +1,13 @@
 <md-tab-group>
-  <md-tab *ngFor="let wind of data">
-    <template md-tab-label *ngIf="wind">
+  <md-tab *ngFor="let wind of winds">
+    <template md-tab-label>
       <span class="wind-label">
-        Aktualny <md-icon color='primary' [style.transform]='transform(wind)'> {{ icon }} </md-icon>
+        {{ wind.name }}
+        <md-icon color='primary' [style.transform]='transform(wind.data)'> {{ icon }} </md-icon>
       </span>
     </template>
 
-    <h5>Kierunek: {{ wind.translated }} ({{ wind.dir.value | number:'1.0-2' }} {{ wind.dir.units }})</h5>
-    <h5>Prędkość: {{ wind.speed.value | number:'1.0-2' }} {{ wind.speed.units }}</h5>
+    <h5>Kierunek: {{ wind.data.translated }} <portable-value [afterText]="wind.data.dir.units" [value]="wind.data.dir.value"></portable-value></h5>
+    <h5>Prędkość: <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value></h5>
   </md-tab>
 </md-tab-group>

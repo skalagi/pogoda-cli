@@ -1,26 +1,24 @@
 @import "../../theme/weather-blue";
 
-md-card-content {
-  display: flex;
-}
-
-.wind-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-md-card-title {
-  display: flex;
-}
-
 portable-value {
   color: md-color($weather-blue-primary);
   margin-left: auto;
 }
 
+wind-group {
+  width: 100%;
+}
+
 div:first-child {
   margin-right: .5em;
+}
+
+md-card-content {
+  display: flex;
+}
+
+md-card-title {
+  display: flex;
 }
 
 h4 {

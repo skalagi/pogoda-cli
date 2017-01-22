@@ -1,12 +1,8 @@
-@import "../../theme/weather-blue";
-
-portable-value {
-  color: md-color($weather-blue-primary);
-  margin-left: auto;
-}
-
 .wind-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.no-wind {
+  text-align: center;
 }

@@ -10,7 +10,6 @@ import { ApiService } from "../api.service";
 export class WindComponent implements OnInit {
   constructor(private api: ApiService) { }
   public loaded: boolean = false;
-  public icon = 'arrow_upward';
   public wind: Wind;
 
   ngOnInit() {
