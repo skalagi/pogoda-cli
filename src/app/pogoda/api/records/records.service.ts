@@ -6,8 +6,9 @@ import { Http } from "@angular/http";
 export class RecordsService {
   constructor(private http: Http) {}
 
-  get(type) {
-    return this.http.get(`${environment.apiSource}/${type}-records.json`)
+  get(range, record?) {
+    return this.http.get(`${environment.apiSource}/${range}-records.json`)
       .map(res => res.json())
+      .map(api => record ? api[record] : api);
   }
 }
