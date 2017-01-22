@@ -1,4 +1,4 @@
-<md-tab-group>
+<md-tab-group *ngIf="thereIsWind">
   <md-tab *ngFor="let wind of winds">
     <template md-tab-label>
       <span class="wind-label">

@@ -17,6 +17,11 @@ export class WindGroupComponent {
   private winds;
   private wind;
 
+  get thereIsWind() {
+    const { winds } = this;
+    return winds && winds[0].data.dir.value != null && winds[1].data.dir.value != null;
+  }
+
   @Input()
   set data(wind) {
     this.wind = wind;

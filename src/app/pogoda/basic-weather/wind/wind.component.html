@@ -1,6 +1,12 @@
 <md-card>
   <md-card-title>
-    Wiatr <portable-value *ngIf="loaded" [value]="wind.current.speed.value" [after]="wind.current.speed.units"></portable-value>
+    Wiatr
+    <portable-value
+      *ngIf="loaded && wind.current.speed.value > 0"
+      [value]="wind.current.speed.value"
+      [after]="wind.current.speed.units"
+    ></portable-value>
+    <span *ngIf='wind.current.speed.value == 0'>-</span>
   </md-card-title>
 
   <md-card-content *ngIf='loaded'>
