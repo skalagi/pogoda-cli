@@ -3,10 +3,10 @@ import { DayChartService } from "../../api/charts/day-chart.service";
 
 @Component({
   selector: 'ws-chart',
-  templateUrl: './day-chart.component.html',
-  styleUrls: ['./day-chart.component.css']
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss']
 })
-export class DayChartComponent implements OnInit {
+export class ChartComponent implements OnInit {
   constructor(private api: DayChartService) { }
   public loaded: boolean = false;
   @Input() public type: string;

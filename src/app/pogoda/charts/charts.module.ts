@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartModule } from "angular2-highcharts";
-import { DayChartComponent } from "./day-chart/day-chart.component";
+import { ChartComponent } from "./chart/chart.component";
 import { MaterialModule } from "@angular/material";
 import { ReportComponent } from './report/report.component';
 
@@ -12,7 +12,7 @@ HighchartsMore(Highcharts);
 
 @NgModule({
   imports: [CommonModule, ChartModule, MaterialModule],
-  declarations: [DayChartComponent, ReportComponent],
-  exports: [DayChartComponent, ReportComponent],
+  declarations: [ChartComponent, ReportComponent],
+  exports: [ChartComponent, ReportComponent],
 })
 export class ChartsModule { }
