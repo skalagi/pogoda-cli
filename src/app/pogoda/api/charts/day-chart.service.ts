@@ -6,7 +6,7 @@ import { environment } from "../../../../environments/environment";
 export class DayChartService {
   constructor(private http: Http) {}
 
-  get(type) {
-    return this.http.get(`${ environment.apiSource }/day-charts/${ type }.json`).map(res => res.json());
+  get(range, type) {
+    return this.http.get(`${ environment.apiSource }/${ range }-charts/${ type }.json`).map(res => res.json());
   }
 }
