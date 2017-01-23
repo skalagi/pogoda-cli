@@ -4,6 +4,10 @@
     Wilgotność <portable-value *ngIf='loaded' [value]='humidity.value' [after]='humidity.units'></portable-value>
   </md-card-title>
 
+  <md-card-content>
+    <records record="humidity"></records>
+  </md-card-content>
+
   <md-card-actions>
     <button disabled md-button color='primary'>Szczegóły</button>
     <button md-button color='primary' routerLink='wilgotnosc'>Raport</button>

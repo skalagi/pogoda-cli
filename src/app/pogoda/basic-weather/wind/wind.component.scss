@@ -5,6 +5,12 @@ portable-value {
   margin-left: auto;
 }
 
+:host >>> .md-tab-label {
+  min-width: 0 !important;
+  flex-grow: 1;
+}
+
+
 wind-group {
   width: 100%;
 }

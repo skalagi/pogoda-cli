@@ -9,8 +9,8 @@
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
+    <records record="rainrate"></records>
     <p *ngIf="rain.current.value">Aktualne: <portable-value *ngIf='loaded' [value]="rain.current.value" [after]="rain.current.units"></portable-value></p>
-    <record *ngIf="rain.sum.value" range='day' record="rainrate"></record>
     <p *ngIf="rain.sum.value">Suma: <portable-value *ngIf='loaded' [value]="rain.sum.value" [after]="rain.sum.units"></portable-value></p>
   </md-card-content>
 
