@@ -1,4 +1,5 @@
 <md-card class='thermometer'>
+  <md-card-title>Odczuwalna</md-card-title>
   <md-card-content>
     <app-thermometer *ngIf='loaded' [temperature]='temperature.real'></app-thermometer>
   </md-card-content>
@@ -16,6 +17,7 @@
 </md-card>
 
 <md-card class='thermometer'>
+  <md-card-title>Aktualna</md-card-title>
   <md-card-content>
     <app-thermometer *ngIf='loaded' [temperature]='temperature.current'></app-thermometer>
   </md-card-content>

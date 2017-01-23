@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+md-card-content {
+  text-align: center;
+}
+
 :host >>> .md-tab-label {
   flex-grow: 1;
 }
