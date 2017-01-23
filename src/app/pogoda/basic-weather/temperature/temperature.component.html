@@ -14,17 +14,18 @@
   </md-card-content>
 
   <md-card-content id='data' *ngIf='loaded'>
-    <div><records record="temperature"></records></div>
+    <md-tab-group>
+      <md-tab label="Dane">
+        <p>Odczuwalna:
+          <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
+        </p>
 
-    <div>
-      <p>Odczuwalna:
-        <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
-      </p>
-
-      <p>Aktualna:
-        <portable-value [value]="temperature.current.value" [after]="temperature.current.units"></portable-value>
-      </p>
-    </div>
+        <p>Aktualna:
+          <portable-value [value]="temperature.current.value" [after]="temperature.current.units"></portable-value>
+        </p>
+      </md-tab>
+      <md-tab label="Raport"><records record="temperature"></records></md-tab>
+    </md-tab-group>
   </md-card-content>
 
   <md-card-actions>
