@@ -19,7 +19,13 @@
     <md-tab label="dzienny">
       <ws-chart dataType='Temperatura' range="day" type='outTemp'></ws-chart>
     </md-tab>
-    <md-tab disabled label='miesieczny'></md-tab>
-    <md-tab disabled label='roczny'></md-tab>
+
+    <md-tab label='miesieczny'>
+      <ws-chart dataType='Temperatura' range="month" type='outTemp'></ws-chart>
+    </md-tab>
+
+    <md-tab label='roczny'>
+      <ws-chart dataType='Temperatura' range="year" type='outTemp'></ws-chart>
+    </md-tab>
   </md-tab-group>
 </md-card>
