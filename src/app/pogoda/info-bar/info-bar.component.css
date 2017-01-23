@@ -1,0 +1,12 @@
+:host {
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+}
+
+span {
+  margin: 0 .25em;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}

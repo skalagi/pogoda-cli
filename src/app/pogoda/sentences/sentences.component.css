@@ -1,10 +1,8 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: .5em 2em;
   color: #fff;
   width: 100%;
 }
 
-span {
-  margin-left: auto;
-}

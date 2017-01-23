@@ -12,6 +12,7 @@ import { BasicWeatherModule } from "./basic-weather/basic-weather.module";
 import { RouterModule } from "@angular/router";
 import { pogodaRoutes } from "./pogoda/pogoda.routes";
 import { ApiModule } from "./api/api.module";
+import { InfoBarComponent } from './info-bar/info-bar.component';
 
 @NgModule({
   exports: [PogodaComponent],
@@ -30,6 +31,7 @@ import { ApiModule } from "./api/api.module";
     HeaderComponent,
     UpdateTimerComponent,
     SentencesComponent,
+    InfoBarComponent,
   ],
 })
 export class PogodaModule { }
