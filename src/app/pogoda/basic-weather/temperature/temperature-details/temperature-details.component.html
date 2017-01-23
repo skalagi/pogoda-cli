@@ -5,20 +5,21 @@
   </md-card-content>
 </md-card>
 
-<md-card>
-  <md-card-title>Raport</md-card-title>
-  <md-tab-group>
-    <md-tab label="dzienny">
-      <app-day-chart dataType='Temperatura' type='outTemp'></app-day-chart>
-    </md-tab>
-    <md-tab disabled label='miesieczny'></md-tab>
-    <md-tab disabled label='roczny'></md-tab>
-  </md-tab-group>
-</md-card>
-
 <md-card class='thermometer'>
   <md-card-title>Aktualna</md-card-title>
   <md-card-content>
     <app-thermometer *ngIf='loaded' [temperature]='temperature.current'></app-thermometer>
   </md-card-content>
+</md-card>
+
+
+<md-card>
+  <md-card-title>Raport</md-card-title>
+  <md-tab-group>
+    <md-tab label="dzienny">
+      <ws-chart dataType='Temperatura' range="day" type='outTemp'></ws-chart>
+    </md-tab>
+    <md-tab disabled label='miesieczny'></md-tab>
+    <md-tab disabled label='roczny'></md-tab>
+  </md-tab-group>
 </md-card>
