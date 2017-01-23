@@ -15,6 +15,7 @@ import { ChartsModule } from "../charts/charts.module";
 import { WindModule } from "./wind/wind.module";
 import { TemperatureModule } from "./temperature/temperature.module";
 import { RouterModule } from "@angular/router";
+import { ForecastModule } from "./forecast/forecast.module";
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { RouterModule } from "@angular/router";
     MaterialModule.forRoot(),
     PortableValueModule,
     TemperatureModule,
+    ForecastModule,
     RecordsModule,
     CommonModule,
     ChartsModule,
