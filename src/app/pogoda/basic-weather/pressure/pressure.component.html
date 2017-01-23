@@ -4,9 +4,9 @@
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
 
-    <records record="barometer"></records>
     <p>Aktualne: <portable-value *ngIf="loaded" [value]="pressure.current.value" [after]="pressure.current.units"></portable-value></p>
     <p>Tendencja: <portable-value *ngIf="loaded" [value]="pressure.trend.value" [after]="pressure.trend.units"></portable-value></p>
+    <records record="barometer"></records>
   </md-card-content>
 
   <md-card-actions>
