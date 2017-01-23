@@ -3,9 +3,9 @@
 </p>
 
 <p *ngIf='data && data.max'>
-  max: <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
+  {{ data.max.name | amTimeAgo }} <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
 </p>
 
 <p *ngIf='data && data.min'>
-  min: <portable-value [value]="data.min.value" [after]="data.min.units"></portable-value>
+  {{ data.min.name | amTimeAgo }} <portable-value [value]="data.min.value" [after]="data.min.units"></portable-value>
 </p>
