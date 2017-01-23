@@ -10,7 +10,7 @@
 
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
-    <md-tab-group>
+    <md-tab-group [dynamicHeight]="true">
       <md-tab label="Dane">
         <wind-group [data]="wind"></wind-group>
       </md-tab>

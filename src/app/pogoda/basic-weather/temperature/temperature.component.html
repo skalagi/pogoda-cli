@@ -14,7 +14,7 @@
   </md-card-content>
 
   <md-card-content id='data' *ngIf='loaded'>
-    <md-tab-group>
+    <md-tab-group [dynamicHeight]="true">
       <md-tab label="Dane">
         <p>Odczuwalna:
           <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
