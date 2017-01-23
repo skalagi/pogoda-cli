@@ -1,0 +1,16 @@
+<md-card>
+  <md-card-title>Raport</md-card-title>
+  <md-tab-group>
+    <md-tab label="dzienny">
+      <ws-chart [dataType]='dataType' range="day" [type]='type'></ws-chart>
+    </md-tab>
+
+    <md-tab label='miesieczny'>
+      <ws-chart [dataType]='dataType' range="month" [type]='type'></ws-chart>
+    </md-tab>
+
+    <md-tab label='roczny'>
+      <ws-chart [dataType]='dataType' range="year" [type]='type'></ws-chart>
+    </md-tab>
+  </md-tab-group>
+</md-card>
