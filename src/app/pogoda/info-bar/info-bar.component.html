@@ -1,8 +1,20 @@
-<span>
-  <md-icon mdTooltip='web-socket' color="primary">toll</md-icon>
-  <md-icon mdTooltip="https" color="accent">https</md-icon>
+<span *ngIf="temperature">
+  Temperatura: <span class="accent">{{ temperature.value + temperature.units }}</span>
 </span>
 
-<span mdTooltipPosition="left" mdTooltip="Liczba rekorów w bazie">
-  <md-icon>dns</md-icon> {{ recordsAmount }}
+<span *ngIf="pressure">
+  Ciśnienie: <span class="accent">{{ pressure.value + pressure.units }}</span>
+</span>
+
+<span *ngIf="wind && wind.translated">
+  Wiatr: <span class="accent">{{ wind.translated }}({{ wind.speed.value }})</span>
+</span>
+
+<span mdTooltipPosition="left" mdTooltip="Ilośćg rekorów w bazie">
+  <md-icon>dns</md-icon> <span class="accent">{{ recordsAmount }}</span>
+</span>
+
+<span>
+  <md-icon mdTooltip="https" color="accent">https</md-icon>
+  <md-icon mdTooltip='web-socket' color="primary">toll</md-icon>
 </span>
