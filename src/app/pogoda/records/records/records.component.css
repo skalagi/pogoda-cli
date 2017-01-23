@@ -1,0 +1,4 @@
+:host >>> .md-tab-label {
+  min-width: 0 !important;
+  flex-grow: 1;
+}
