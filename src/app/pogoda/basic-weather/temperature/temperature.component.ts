@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecordsService } from "../../api/records/records.service";
-import { BasicService } from "../../api/basic/api.service";
+import { BasicService } from "../../api/basic/basic.service";
 import { Temperature, BasicApi } from "../../api/basic/basic.interface";
 import { Records, Record } from "../../api/records/records.interface";
 

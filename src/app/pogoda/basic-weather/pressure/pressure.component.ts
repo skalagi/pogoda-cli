@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicService } from "../../api/basic/api.service";
+import { BasicService } from "../../api/basic/basic.service";
 import { Pressure, BasicApi } from "../../api/basic/basic.interface";
 
 @Component({

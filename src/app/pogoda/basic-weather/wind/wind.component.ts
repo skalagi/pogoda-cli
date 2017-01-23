@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicApi, Wind } from "../../api/basic/basic.interface";
-import { BasicService } from "../../api/basic/api.service";
+import { BasicService } from "../../api/basic/basic.service";
 
 @Component({
   selector: 'app-wind',
