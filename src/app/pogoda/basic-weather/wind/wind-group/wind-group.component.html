@@ -3,7 +3,8 @@
     <template md-tab-label>
       <span class="wind-label">
         {{ wind.name }}
-        <md-icon color='primary' [style.transform]='transform(wind.data)'> {{ icon }} </md-icon>
+        <md-icon color='primary' *ngIf="thereIsWind" [style.transform]='transform(wind.data)'> {{ icon }} </md-icon>
+        <md-icon *ngIf="!thereIsWind" color='primary'>brightness_high</md-icon>
       </span>
     </template>
 
