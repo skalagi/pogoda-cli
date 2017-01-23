@@ -10,11 +10,18 @@
 
   <md-card-content *ngIf='loaded'>
     <md-spinner *ngIf='!loaded'></md-spinner>
-    <wind-group [data]="wind"></wind-group>
+    <md-tab-group>
+      <md-tab label="Dane">
+        <wind-group [data]="wind"></wind-group>
+      </md-tab>
+
+      <md-tab label="Raport">
+        <records record="windspeed"></records>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
 
   <md-card-content>
-    <records record="windspeed"></records>
   </md-card-content>
 
   <md-card-actions>
