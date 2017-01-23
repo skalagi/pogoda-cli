@@ -1,5 +1,9 @@
 @import "../../../theme/weather-blue";
 
+md-card-title {
+  display: flex;
+}
+
 #dew-point {
   justify-content: space-between;
   display: flex;
