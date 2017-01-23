@@ -18,6 +18,7 @@ export class ChartComponent implements OnInit {
     title: { text: 'Raport dzienny' },
     xAxis: { type: 'datetime' },
     chart: { type: 'line' },
+    yAxis: { min: null },
     series: [],
   };
 
@@ -32,6 +33,7 @@ export class ChartComponent implements OnInit {
   ngOnInit() {
     this.api.get(this.range, this.type).subscribe(data => {
       this.options.chart.type = data[0].length > 2 ? 'arearange' : 'line';
+      this.options.yAxis.min = this.type === 'windGust' ? 0 : null;
       this.options.title.text = `Raport ${ this.polRange }`;
       this.options.series = [{ name: this.dataType, data }];
       this.loaded = true;
