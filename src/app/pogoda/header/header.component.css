@@ -13,7 +13,7 @@ app-update-timer {
   margin-left: auto;
 }
 
-md-icon {
+mat-icon {
   animation: spin 30s infinite;
 }
 
