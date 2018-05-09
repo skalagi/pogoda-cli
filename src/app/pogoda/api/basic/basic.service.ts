@@ -1,12 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { environment } from "../../../../environments/environment";
+import { environment } from '../../../../environments/environment';
 
-import { SentencesService } from "../sentences/sentences.service";
-import { RecordsService } from "../records/records.service";
-import { DayChartService } from "../charts/day-chart.service";
-import { BasicApi } from "./basic.interface";
+import { SentencesService } from '../sentences/sentences.service';
+import { RecordsService } from '../records/records.service';
+import { DayChartService } from '../charts/day-chart.service';
+import { BasicApi } from './basic.interface';
+import { map } from 'rxjs/operators';
 
 export {
   SentencesService,
@@ -20,7 +21,7 @@ export class BasicService {
   public update: EventEmitter<BasicApi> = new EventEmitter();
   public data: BasicApi;
 
-  private source: string = `${ environment.apiSource }/basic.json`;
+  private source = `${ environment.apiSource }/basic.json`;
   private timeToReconnect = null;
   private timeToUpdate = null;
 
@@ -31,13 +32,17 @@ export class BasicService {
 
   get(method) {
     const { data, update } = this;
-    if (data) method(data);
+
+    if (data) {
+      method(data);
+    }
+
     update.subscribe(method);
   }
 
   private fetch() {
     this.http.get(this.source)
-      .map(res => res.json())
+      .pipe(map(res => res.json()))
       .subscribe(api => this.handleResponse(api));
   }
 
