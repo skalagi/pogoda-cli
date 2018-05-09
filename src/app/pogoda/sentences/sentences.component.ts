@@ -1,5 +1,6 @@
-import { Component, OnInit, trigger, transition, animate, style, state } from '@angular/core';
-import { SentencesService } from "../api/sentences/sentences.service";
+import { Component, OnInit } from '@angular/core';
+import { trigger, transition, animate, style, state } from '@angular/animations';
+import { SentencesService } from '../api/sentences/sentences.service';
 
 @Component({
   selector: 'app-sentences',
@@ -14,10 +15,11 @@ import { SentencesService } from "../api/sentences/sentences.service";
   ],
 })
 export class SentencesComponent implements OnInit {
-  constructor(private api: SentencesService) { }
   private sentences: string[] = [];
-  private current: number = 0;
   public state = 'show';
+  private current = 0;
+
+  constructor(private api: SentencesService) { }
 
   get sentence() {
     const { sentences, current } = this;
