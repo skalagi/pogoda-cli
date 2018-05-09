@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicService } from "../api/basic/basic.service";
-import { BasicApi } from "../api/basic/basic.interface";
-import { Unit, WindUnit } from "../api/unit.interface";
+import { BasicService } from '../api/basic/basic.service';
+import { BasicApi } from '../api/basic/basic.interface';
+import { Unit, WindUnit } from '../api/unit.interface';
 
 @Component({
   selector: 'info-bar',
@@ -9,7 +9,7 @@ import { Unit, WindUnit } from "../api/unit.interface";
   styleUrls: ['./info-bar.component.scss']
 })
 export class InfoBarComponent implements OnInit {
-  public recordsAmount: number = 0;
+  public recordsAmount = 0;
   public temperature: Unit;
   public pressure: Unit;
   public wind: WindUnit;

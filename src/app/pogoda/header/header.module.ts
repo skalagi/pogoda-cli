@@ -14,4 +14,4 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
     exports: [HeaderComponent],
     declarations: [HeaderComponent],
 })
-export class PogodaModule { }
+export class HeaderModule { }

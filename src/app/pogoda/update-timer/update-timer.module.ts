@@ -18,4 +18,4 @@ import { ApiModule } from '../api/api.module';
     exports: [UpdateTimerComponent],
     declarations: [UpdateTimerComponent],
 })
-export class PogodaModule { }
+export class UpdateTimerModule { }
