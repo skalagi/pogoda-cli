@@ -1,5 +1,5 @@
-@import '~@angular/material/core/theming/all-theme';
-@include md-core();
+@import '~@angular/material/core/theming';
+@include mat-core();
 
 $weather-blue-primary: md-palette($md-blue);
 $weather-blue-accent:  md-palette($md-amber, A200, A100, A400);
