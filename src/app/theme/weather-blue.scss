@@ -1,8 +1,8 @@
-@import '~@angular/material/core/theming';
+@import '~@angular/material/theming';
 @include mat-core();
 
-$weather-blue-primary: md-palette($md-blue);
-$weather-blue-accent:  md-palette($md-amber, A200, A100, A400);
-$weather-blue-theme: md-light-theme($weather-blue-primary, $weather-blue-accent);
+$weather-blue-primary: mat-palette($mat-blue);
+$weather-blue-accent:  mat-palette($mat-amber, A200, A100, A400);
+$weather-blue-theme: mat-light-theme($weather-blue-primary, $weather-blue-accent);
 
 @include angular-material-theme($weather-blue-theme);
