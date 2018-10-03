@@ -1,3 +1,4 @@
+import { UpdateTimerModule } from './../update-timer/update-timer.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
 @NgModule({
     imports: [
         CommonModule,
+        UpdateTimerModule,
         MatToolbarModule,
         MatIconModule,
     ],

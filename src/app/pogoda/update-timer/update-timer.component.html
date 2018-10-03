@@ -1,6 +1,6 @@
-<span *ngIf='loaded'>Ostatnia aktualizacja: <span class='value'>{{ data.value | amTimeAgo }}</span>,</span>
+<span *ngIf='loaded'>Ostatnia aktualizacja: <span class='value'>{{ data.value + "| amTimeAgo" }}</span>,</span>
 
 <span *ngIf='time'>czas do następnej:
-  <span [matTooltip]="time + 's'" class='value'>{{ time | amDuration:'seconds' }}</span>
+  <span [matTooltip]="time + 's'" class='value'>{{ time + "| amDuration:'seconds'" }}</span>
 </span>
 <mat-spinner *ngIf='!loaded'></mat-spinner>

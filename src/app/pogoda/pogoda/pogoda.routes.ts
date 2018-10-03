@@ -8,9 +8,10 @@ import { Routes } from '@angular/router';
 
 export const pogodaRoutes: Routes = [
   { path: '', pathMatch: 'full', component: BasicWeatherComponent },
+  /*
   { path: 'temperatura', component: TemperatureDetailsComponent },
   { path: 'wilgotnosc', component: HumidityDetailsComponent },
   { path: 'cisnienie', component: PressureDetailsComponent },
   { path: 'opady', component: RainDetailsComponent },
-  { path: 'powiewy', component: WindDetailsComponent },
+  { path: 'powiewy', component: WindDetailsComponent },*/
 ];

@@ -7,12 +7,16 @@ import { PortableValueModule } from '../../portable-value/portable-value.module'
 import { RecordsModule } from '../../records/records.module';
 import { ChartsModule } from '../../charts/charts.module';
 import { RouterModule } from '@angular/router';
+import { MatCardModule, MatIconModule, MatTabsModule } from '@angular/material';
 
 @NgModule({
   imports: [
     PortableValueModule,
     ThermometerModule,
     RecordsModule,
+    MatCardModule,
+    MatIconModule,
+    MatTabsModule,
     RouterModule,
     ChartsModule,
     CommonModule,

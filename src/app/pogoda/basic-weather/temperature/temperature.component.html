@@ -1,21 +1,21 @@
-<md-card>
-  <md-card-title>Temperatura <portable-value *ngIf="loaded" [value]="temperature.real.value" [after]="temperature.real.units"></portable-value></md-card-title>
+<mat-card>
+  <mat-card-title>Temperatura <portable-value *ngIf="loaded" [value]="temperature.real.value" [after]="temperature.real.units"></portable-value></mat-card-title>
 
-  <md-card-content id='dew-point' *ngIf='loaded && temperature.dewPoint.value'>
+  <mat-card-content id='dew-point' *ngIf='loaded && temperature.dewPoint.value'>
     <div>
-      <md-icon>opacity</md-icon>
+      <mat-icon>opacity</mat-icon>
       <portable-value preTip="Punkt rosy wynosi: " [value]="temperature.dewPoint.value" [after]="temperature.dewPoint.units"></portable-value>
     </div>
 
     <div *ngIf='trend'>
-      <md-icon>{{ trend }}</md-icon>
+      <mat-icon>{{ trend }}</mat-icon>
       <portable-value preTip="Tendencja: " [value]="temperature.trend.value" [after]="temperature.trend.units"></portable-value>
     </div>
-  </md-card-content>
+  </mat-card-content>
 
-  <md-card-content id='data' *ngIf='loaded'>
-    <md-tab-group [dynamicHeight]="true">
-      <md-tab label="Dane">
+  <mat-card-content id='data' *ngIf='loaded'>
+    <mat-tab-group [dynamicHeight]="true">
+      <mat-tab label="Dane">
         <p>Odczuwalna:
           <portable-value [value]="temperature.real.value" [after]="temperature.real.units"></portable-value>
         </p>
@@ -23,12 +23,12 @@
         <p>Aktualna:
           <portable-value [value]="temperature.current.value" [after]="temperature.current.units"></portable-value>
         </p>
-      </md-tab>
-      <md-tab label="Raport"><records record="temperature"></records></md-tab>
-    </md-tab-group>
-  </md-card-content>
+      </mat-tab>
+      <mat-tab label="Raport"><records record="temperature"></records></mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 
-  <md-card-actions>
-    <button md-button color='primary' routerLink='temperatura'>Szczegóły</button>
-  </md-card-actions>
-</md-card>
+  <mat-card-actions>
+    <button mat-button color='primary' routerLink='temperatura'>Szczegóły</button>
+  </mat-card-actions>
+</mat-card>

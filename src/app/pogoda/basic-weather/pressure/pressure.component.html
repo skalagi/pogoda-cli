@@ -1,16 +1,16 @@
-<md-card>
-  <md-card-title>Ciśnienie <portable-value *ngIf="loaded" [value]="pressure.current.value" [after]="pressure.current.units"></portable-value></md-card-title>
+<mat-card>
+  <mat-card-title>Ciśnienie <portable-value *ngIf="loaded" [value]="pressure.current.value" [after]="pressure.current.units"></portable-value></mat-card-title>
 
-  <md-card-content *ngIf='loaded'>
-    <md-spinner *ngIf='!loaded'></md-spinner>
+  <mat-card-content *ngIf='loaded'>
+    <mat-spinner *ngIf='!loaded'></mat-spinner>
 
     <p>Aktualne: <portable-value *ngIf="loaded" [value]="pressure.current.value" [after]="pressure.current.units"></portable-value></p>
     <p>Tendencja: <portable-value *ngIf="loaded" [value]="pressure.trend.value" [after]="pressure.trend.units"></portable-value></p>
     <records record="barometer"></records>
-  </md-card-content>
+  </mat-card-content>
 
-  <md-card-actions>
-    <button disabled md-button color='primary'>Szczegóły</button>
-    <button md-button color='primary' routerLink='cisnienie'>Raport</button>
-  </md-card-actions>
-</md-card>
+  <mat-card-actions>
+    <button disabled mat-button color='primary'>Szczegóły</button>
+    <button mat-button color='primary' routerLink='cisnienie'>Raport</button>
+  </mat-card-actions>
+</mat-card>
