@@ -1,7 +1,7 @@
+import { Pressure, Temperature, Wind } from './../api/basic/basic.interface';
 import { Component, OnInit } from '@angular/core';
 import { BasicService } from '../api/basic/basic.service';
 import { BasicApi } from '../api/basic/basic.interface';
-import { Unit, WindUnit } from '../api/unit.interface';
 
 @Component({
   selector: 'info-bar',
@@ -10,9 +10,9 @@ import { Unit, WindUnit } from '../api/unit.interface';
 })
 export class InfoBarComponent implements OnInit {
   public recordsAmount = 0;
-  public temperature: Unit;
-  public pressure: Unit;
-  public wind: WindUnit;
+  public temperature: Temperature;
+  public pressure: Pressure;
+  public wind: Wind;
 
   constructor(private basic: BasicService) {}
 
@@ -20,9 +20,9 @@ export class InfoBarComponent implements OnInit {
     this.basic.get((api: BasicApi) => {
       this.recordsAmount = api.count;
 
-      this.temperature = api.temperature.current;
-      this.pressure = api.barometer.current;
-      this.wind = api.wind.current;
+      this.temperature = api.temperature;
+      this.pressure = api.barometer;
+      this.wind = api.wind;
     });
   }
 }

@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
-import { MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
         UpdateTimerModule,
+        MatButtonModule,
         MatToolbarModule,
         MatIconModule,
     ],

@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiSource: 'https://api.pogoda.ml'
+  apiSource: 'http://weatherapi.dynu.com'
 };

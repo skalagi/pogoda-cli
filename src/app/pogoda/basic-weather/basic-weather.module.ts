@@ -16,7 +16,7 @@ import { HumidityComponent } from './humidity/humidity.component';
 import { RainDetailsComponent } from './rain/rain-details/rain-details.component';
 import { HumidityDetailsComponent } from './humidity/humidity-details/humidity-details.component';
 import { PressureDetailsComponent } from './pressure/pressure-details/pressure-details.component';
-import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -24,8 +24,10 @@ import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule }
     PortableValueModule,
     TemperatureModule,
     ForecastModule,
+    PortableValueModule,
 
     MatCardModule,
+    MatButtonModule,
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,

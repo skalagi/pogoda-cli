@@ -12,9 +12,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     PogodaModule,
-    BrowserModule,
     FormsModule,
     HttpModule
   ],

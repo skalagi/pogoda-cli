@@ -1,13 +1,18 @@
 <span *ngIf="temperature">
-  Temperatura: <span class="accent">{{ temperature.value + temperature.units }}</span>
+  Temperatura: <span class="accent">{{ 
+    temperature?.current?.value + temperature?.current?.units
+  }}</span>
 </span>
 
 <span *ngIf="pressure">
-  Ciśnienie: <span class="accent">{{ pressure.value + pressure.units }}</span>
+  Ciśnienie: <span class="accent">{{ 
+    pressure?.current?.value + pressure?.current?.units
+  }}</span>
 </span>
 
-<span *ngIf="wind && wind.translated">
-  Wiatr: <span class="accent">{{ wind.translated }}({{ wind.speed.value }})</span>
+<span *ngIf="wind && wind?.current.translated">
+  Wiatr: <span class="accent">{{ 
+    wind?.current?.translated }}({{ wind?.current?.speed.value }})</span>
 </span>
 
 <span matTooltipPosition="left" matTooltip="Ilośćg rekorów w bazie">

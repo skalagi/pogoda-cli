@@ -4,10 +4,14 @@ import { SentencesComponent } from './sentences.component';
 import { MatProgressBarModule } from '@angular/material';
 import { InfoBarModule } from '../info-bar/info-bar.module';
 
-
 @NgModule({
-  imports: [CommonModule, MatProgressBarModule, InfoBarModule],
+  imports: [
+    CommonModule,
+    MatProgressBarModule,
+    InfoBarModule,
+    MatProgressBarModule
+  ],
   declarations: [SentencesComponent],
-  exports: [SentencesComponent],
+  exports: [SentencesComponent]
 })
-export class SentencesModule { }
+export class SentencesModule {}

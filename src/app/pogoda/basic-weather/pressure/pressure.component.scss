@@ -6,6 +6,10 @@ portable-value {
   color: md-color($weather-blue-primary);
 }
 
+mat-card-title {
+  text-align: center;
+}
+
 mat-card-title, p {
   display: flex;
 }

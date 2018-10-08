@@ -1,24 +1,24 @@
 <mat-tab-group [dynamicHeight]="true">
-  <mat-tab *ngFor="let wind of winds">
+  <mat-tab *ngFor="let wind of []">
     <template mat-tab-label>
       <span class="wind-label">
         {{ wind.name }}
-        <mat-icon color='primary' *ngIf="thereIsWind" [style.transform]='transform(wind.data)'> {{ icon }} </mat-icon>
+        <mat-icon color='primary' *ngIf="thereIsWind" [style.transform]='transform(wind?.data)'> {{ icon }} </mat-icon>
         <mat-icon *ngIf="!thereIsWind" color='primary'>brightness_high</mat-icon>
       </span>
     </template>
 
     <p *ngIf="thereIsWind">Kierunek:
       <portable-value
-        [preText]="wind.data.translated + ' ('"
-        [afterText]="wind.data.dir.units + ')'"
-        [afterTip]="wind.data.dir.units"
-        [value]="wind.data.dir.value"
+        [preText]="wind?.data.translated + ' ('"
+        [afterText]="wind?.data.dir.units + ')'"
+        [afterTip]="wind?.data.dir.units"
+        [value]="wind?.data.dir.value"
       ></portable-value>
     </p>
 
     <p>Prędkość:
-      <portable-value [afterText]="wind.data.speed.units" [value]="wind.data.speed.value"></portable-value>
+      <portable-value [afterText]="wind?.data.speed.units" [value]="wind?.data.speed.value"></portable-value>
     </p>
   </mat-tab>
 </mat-tab-group>

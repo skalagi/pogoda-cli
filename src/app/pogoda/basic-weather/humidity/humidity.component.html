@@ -1,7 +1,7 @@
 <mat-card>
   <mat-spinner *ngIf='!loaded'></mat-spinner>
   <mat-card-title *ngIf='loaded'>
-    Wilgotność <portable-value *ngIf='loaded' [value]='humidity.value' [after]='humidity.units'></portable-value>
+    Wilgotność <portable-value *ngIf='loaded' [value]='humidity?.value' [after]='humidity?.units'></portable-value>
   </mat-card-title>
 
   <mat-card-content>
@@ -10,6 +10,6 @@
 
   <mat-card-actions>
     <button disabled mat-button color='primary'>Szczegóły</button>
-    <button mat-button color='primary' routerLink='wilgotnosc'>Raport</button>
+    <button disabled mat-button color='primary' routerLink='wilgotnosc'>Raport</button>
   </mat-card-actions>
 </mat-card>

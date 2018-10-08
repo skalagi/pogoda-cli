@@ -1,4 +1,4 @@
-import { MatCardModule, MatTabsModule, MatProgressSpinnerModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatTabsModule, MatProgressSpinnerModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WindComponent } from './wind.component';
@@ -11,15 +11,16 @@ import { RecordsModule } from '../../records/records.module';
 
 @NgModule({
   imports: [
+    CommonModule,
     PortableValueModule,
     RecordsModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
     MatIconModule,
     MatCardModule,
     ChartsModule,
     RouterModule,
-    CommonModule,
   ],
   declarations: [WindComponent, WindDetailsComponent, WindGroupComponent],
   exports: [WindComponent],

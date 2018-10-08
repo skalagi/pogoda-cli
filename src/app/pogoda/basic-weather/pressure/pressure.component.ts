@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicService } from "../../api/basic/basic.service";
-import { Pressure, BasicApi } from "../../api/basic/basic.interface";
+import { BasicService } from '../../api/basic/basic.service';
+import { Pressure, BasicApi } from '../../api/basic/basic.interface';
 
 @Component({
   selector: 'app-pressure',
@@ -8,12 +8,13 @@ import { Pressure, BasicApi } from "../../api/basic/basic.interface";
   styleUrls: ['./pressure.component.scss']
 })
 export class PressureComponent implements OnInit {
-  constructor(private api: BasicService) { }
-  public loaded: boolean = false;
+  public loaded = false;
   public pressure: Pressure;
+  constructor(private api: BasicService) { }
 
   ngOnInit() {
     this.api.get((api: BasicApi) => {
+      console.log(api);
       this.pressure = api.barometer;
       this.loaded = true;
     });

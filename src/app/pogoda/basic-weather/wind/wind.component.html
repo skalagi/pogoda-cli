@@ -2,18 +2,18 @@
   <mat-card-title>
     {{ title }}
     <portable-value
-      *ngIf="loaded && wind.current.speed.value > 0"
-      [value]="wind.current.speed.value"
-      [after]="wind.current.speed.units"
+      *ngIf="loaded && wind?.current.speed.value > 0"
+      [value]="wind?.current.speed.value"
+      [after]="wind?.current.speed.units"
     ></portable-value>
   </mat-card-title>
 
   <mat-card-content *ngIf='loaded'>
     <mat-spinner *ngIf='!loaded'></mat-spinner>
-    <mat-tab-group [dynamicHeight]="true">
-      <mat-tab label="Dane">
+    <mat-tab-group [dynamicHeight]="true" selectedIndex="1">
+      <mat-tab label="Dane" disabled>
         <wind-group [data]="wind"></wind-group>
-      </mat-tab>
+      </mat-tab>>
 
       <mat-tab label="Raport">
         <records record="windspeed"></records>
@@ -26,6 +26,6 @@
 
   <mat-card-actions>
     <button disabled mat-button color='primary'>Szczegóły</button>
-    <button mat-button color='primary' routerLink='powiewy'>Raport</button>
+    <button disabled mat-button color='primary' routerLink='powiewy'>Raport</button>
   </mat-card-actions>
 </mat-card>
