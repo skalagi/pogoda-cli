@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+.second-font {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
 app-root {
   margin: auto;
 }
@@ -16,4 +20,8 @@ app-root {
   font-weight: 600;
   font-size: 2em;
   color: mat-color($weather-blue-accent);
+}
+
+.primary-bg {
+  background: $primary;
 }
