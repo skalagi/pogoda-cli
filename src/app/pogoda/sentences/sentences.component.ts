@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { trigger, transition, animate, style, state } from '@angular/animations';
 import { SentencesService } from '../api/sentences/sentences.service';
 
@@ -15,6 +15,7 @@ import { SentencesService } from '../api/sentences/sentences.service';
   ],
 })
 export class SentencesComponent implements OnInit {
+  @HostBinding('class') primaryBg = 'primary-bg';
   private sentences: string[] = [];
   public state = 'show';
   private current = 0;

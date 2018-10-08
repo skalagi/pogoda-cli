@@ -4,5 +4,15 @@
   padding: .5em 2em;
   color: #fff;
   width: 100%;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
+span {
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+  flex-grow: 1;
+}

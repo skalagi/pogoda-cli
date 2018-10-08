@@ -1,8 +1,19 @@
 @import '~@angular/material/theming';
-@include mat-core();
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$weather-typography: mat-typography-config(
+  $font-family: 'PT Sans, sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include mat-core($weather-typography);
 
 $weather-blue-primary: mat-palette($mat-blue);
 $weather-blue-accent:  mat-palette($mat-amber, A200, A100, A400);
 $weather-blue-theme: mat-light-theme($weather-blue-primary, $weather-blue-accent);
 
 @include angular-material-theme($weather-blue-theme);
+
+$primary: mat-color($weather-blue-primary);
