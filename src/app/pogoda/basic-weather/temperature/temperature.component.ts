@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordsService } from "../../api/records/records.service";
-import { BasicService } from "../../api/basic/basic.service";
-import { Temperature, BasicApi } from "../../api/basic/basic.interface";
-import { Records, Record } from "../../api/records/records.interface";
+import { RecordsService } from '../../api/records/records.service';
+import { BasicService } from '../../api/basic/basic.service';
+import { Temperature, BasicApi } from '../../api/basic/basic.interface';
+import { Records, Record } from '../../api/records/records.interface';
 
 @Component({
   selector: 'app-temperature',
@@ -10,10 +10,10 @@ import { Records, Record } from "../../api/records/records.interface";
   styleUrls: ['./temperature.component.scss']
 })
 export class TemperatureComponent implements OnInit {
-  constructor(private api: BasicService, private recordsApi: RecordsService) { }
-  public records: Record;
-  public loaded: boolean = false;
   public temperature: Temperature;
+  public records: Record;
+  public loaded = false;
+  constructor(private api: BasicService, private recordsApi: RecordsService) { }
 
   ngOnInit() {
     this.recordsApi.get('day').subscribe((records: Records) => this.records = records.temperature);
@@ -24,7 +24,7 @@ export class TemperatureComponent implements OnInit {
   }
 
   get trend() {
-    if (!this.temperature) return;
+    if (!this.temperature) { return; }
     const { trend: { value: trend } } = this.temperature;
 
     switch (true) {

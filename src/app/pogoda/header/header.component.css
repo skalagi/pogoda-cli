@@ -1,7 +1,13 @@
 h2 {
   display: inline-flex;
+  font-size: 24px;
+  letter-spacing: 3px;
   align-items: center;
   color: #FFEB3B;
+}
+
+button, nav {
+  height: 100%;
 }
 
 sub {
@@ -13,8 +19,9 @@ app-update-timer {
   margin-left: auto;
 }
 
-md-icon {
+mat-icon {
   animation: spin 30s infinite;
+  margin-right: 3px;
 }
 
 @keyframes spin {

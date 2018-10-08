@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicApi, Wind } from "../../api/basic/basic.interface";
-import { BasicService } from "../../api/basic/basic.service";
+import { BasicApi, Wind } from '../../api/basic/basic.interface';
+import { BasicService } from '../../api/basic/basic.service';
 
 @Component({
   selector: 'app-wind',
@@ -8,13 +8,14 @@ import { BasicService } from "../../api/basic/basic.service";
   styleUrls: ['./wind.component.scss']
 })
 export class WindComponent implements OnInit {
-  constructor(private api: BasicService) { }
-  public loaded: boolean = false;
+  public loaded = false;
   public wind: Wind;
+
+  constructor(private api: BasicService) { }
 
   get title() {
     const { loaded, wind } = this;
-    return loaded && wind.current.speed.value == 0 ? 'Bezwietrznie' : 'Wiatr';
+    return loaded && wind && wind.current.speed.value === 0 ? 'Bezwietrznie' : 'Wiatr';
   }
 
   ngOnInit() {

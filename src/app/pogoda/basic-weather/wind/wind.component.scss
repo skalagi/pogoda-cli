@@ -1,11 +1,11 @@
 @import "../../../theme/weather-blue";
 
 portable-value {
-  color: md-color($weather-blue-primary);
+  color: mat-color($weather-blue-primary);
   margin-left: auto;
 }
 
-:host >>> .md-tab-label {
+:host >>> .mat-tab-label {
   min-width: 0 !important;
   flex-grow: 1;
 }
@@ -19,7 +19,7 @@ div:first-child {
   margin-right: .5em;
 }
 
-md-card-title {
+mat-card-title {
   display: flex;
 }
 
@@ -28,6 +28,6 @@ h4 {
   align-items: center;
 }
 
-h4 md-icon {
+h4 mat-icon {
   margin-left: auto;
 }

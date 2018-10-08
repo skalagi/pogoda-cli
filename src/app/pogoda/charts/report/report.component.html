@@ -1,16 +1,16 @@
-<md-card>
-  <md-card-title>Raport</md-card-title>
-  <md-tab-group>
-    <md-tab label="dzienny">
+<mat-card>
+  <mat-card-title>Raport</mat-card-title>
+  <mat-tab-group>
+    <mat-tab label="dzienny">
       <ws-chart [dataType]='dataType' range="day" [type]='type'></ws-chart>
-    </md-tab>
+    </mat-tab>
 
-    <md-tab label='miesieczny'>
+    <mat-tab label='miesieczny'>
       <ws-chart [dataType]='dataType' range="month" [type]='type'></ws-chart>
-    </md-tab>
+    </mat-tab>
 
-    <md-tab label='roczny'>
+    <mat-tab label='roczny'>
       <ws-chart [dataType]='dataType' range="year" [type]='type'></ws-chart>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

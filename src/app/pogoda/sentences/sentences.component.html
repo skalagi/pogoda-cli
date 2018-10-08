@@ -1,4 +1,4 @@
-<md-progress-bar *ngIf='!sentence' mode='indeterminate'></md-progress-bar>
+<mat-progress-bar *ngIf='!sentence' mode='indeterminate'></mat-progress-bar>
 <span (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
 
 <info-bar></info-bar>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DayChartService } from "../../api/charts/day-chart.service";
+import { DayChartService } from '../../api/charts/day-chart.service';
 
 @Component({
   selector: 'ws-chart',
@@ -7,8 +7,7 @@ import { DayChartService } from "../../api/charts/day-chart.service";
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
-  constructor(private api: DayChartService) { }
-  public loaded: boolean = false;
+  public loaded = false;
   @Input() public type: string;
   @Input() public date: string;
   @Input() public range: string;
@@ -21,6 +20,8 @@ export class ChartComponent implements OnInit {
     yAxis: { min: null },
     series: [],
   };
+
+  constructor(private api: DayChartService) { }
 
   get polRange() {
     switch (this.range) {

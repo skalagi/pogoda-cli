@@ -1,6 +1,7 @@
-import { environment } from "../../../../environments/environment";
+import { environment } from '../../../../environments/environment';
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RecordsService {
@@ -8,7 +9,9 @@ export class RecordsService {
 
   get(range, record?) {
     return this.http.get(`${environment.apiSource}/${range}-records.json`)
-      .map(res => res.json())
-      .map(api => record ? api[record] : api);
+      .pipe(
+        map(res => res.json()),
+        map(api => record ? api[record] : api)
+      );
   }
 }

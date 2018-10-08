@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { WindUnit } from "../../../api/unit.interface";
+import { WindUnit } from '../../../api/unit.interface';
 
 export interface WindData {
   data: WindUnit;
@@ -14,20 +14,22 @@ export interface WindData {
 })
 export class WindGroupComponent {
   public icon = 'arrow_upward';
-  private winds;
+  winds = [];
   private wind;
 
   get thereIsWind() {
     const { winds } = this;
-    return winds && winds[0].data.dir.value != null && winds[1].data.dir.value != null;
+    return winds && winds[0] && winds[1]
+      && winds[0].data.dir.value != null
+      && winds[1].data.dir.value != null;
   }
 
   @Input()
   set data(wind) {
     this.wind = wind;
     this.winds = [
-      { name: 'Aktualny', data: wind.current },
-      { name: 'Powiew', data: wind.gust },
+      { name: 'Aktualny', data: wind && wind.current },
+      { name: 'Powiew', data: wind && wind.gust },
     ];
   }
 
@@ -36,6 +38,6 @@ export class WindGroupComponent {
   }
 
   transform(wind) {
-    return `rotate(${ wind.speed.value + 180 }deg)`;
+    return `rotate(${ wind ? wind.speed.value : 0 + 180 }deg)`;
   }
 }

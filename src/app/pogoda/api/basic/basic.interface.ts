@@ -1,4 +1,4 @@
-import { Unit, WindUnit } from "../unit.interface";
+import { Unit, WindUnit } from '../unit.interface';
 
 export interface Pressure {
   current: Unit;

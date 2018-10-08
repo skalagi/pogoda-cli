@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Rain, BasicApi } from "../../api/basic/basic.interface";
-import { BasicService } from "../../api/basic/basic.service";
+import { Rain, BasicApi } from '../../api/basic/basic.interface';
+import { BasicService } from '../../api/basic/basic.service';
 
 @Component({
   selector: 'app-rain',
@@ -8,13 +8,14 @@ import { BasicService } from "../../api/basic/basic.service";
   styleUrls: ['./rain.component.scss']
 })
 export class RainComponent implements OnInit {
-  constructor(private api: BasicService) { }
-  public loaded: boolean = false;
+  public loaded = false;
   public rain: Rain;
+  constructor(private api: BasicService) { }
 
   get title() {
     const { loaded, rain } = this;
-    return loaded && rain.current.value > 0 ? 'Opady' : 'Sucho';
+    return 'Opady';
+    return loaded && rain && rain.current.value > 0 ? 'Opady' : 'Sucho';
   }
 
   ngOnInit() {

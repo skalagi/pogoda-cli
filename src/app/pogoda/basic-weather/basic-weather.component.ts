@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocketWeatherService } from '../api/socket-weather.service';
 
 @Component({
   selector: 'app-basic-weather',
