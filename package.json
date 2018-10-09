@@ -21,9 +21,11 @@
     "@angular/platform-browser": "^7.0.0-rc.0",
     "@angular/platform-browser-dynamic": "^7.0.0-rc.0",
     "@angular/router": "^7.0.0-rc.0",
+    "angular-highcharts": "^6.2.6",
     "angular2-highcharts": "^0.5.5",
     "angular2-moment": "^1.9.0",
     "core-js": "^2.5.4",
+    "highcharts": "^6.1.4",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.1.0",
     "zone.js": "^0.8.26"

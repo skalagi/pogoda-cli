@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent {
-  @Input() public dataType: string;
-  @Input() public type: string;
+  @Input() public dataType = 'Temperatura';
+  @Input() public type = 'outTemp';
 }

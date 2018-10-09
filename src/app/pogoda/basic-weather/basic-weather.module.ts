@@ -22,33 +22,35 @@ import { BasicCardComponent } from './basic-card/basic-card.component';
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule,
-    PortableValueModule,
-    TemperatureModule,
     ForecastModule,
     PortableValueModule,
 
-    MatCardModule,
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,
 
     FlexLayoutModule,
     RecordsModule,
-    CommonModule,
-    ChartsModule,
+    /*
+    TemperatureModule,
     WindModule
+    */
   ],
 
   declarations: [
     BasicWeatherComponent,
-    PressureComponent,
-    HumidityComponent,
-    RainComponent,
-    PressureDetailsComponent,
-    HumidityDetailsComponent,
-    RainDetailsComponent,
+    /*
+      PressureComponent,
+      HumidityComponent,
+      RainComponent,
+      PressureDetailsComponent,
+      HumidityDetailsComponent,
+      RainDetailsComponent,
+    */
     BasicCardComponent,
   ],
 

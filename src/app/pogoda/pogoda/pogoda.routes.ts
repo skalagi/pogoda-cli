@@ -5,9 +5,11 @@ import { RainDetailsComponent } from '../basic-weather/rain/rain-details/rain-de
 import { WindDetailsComponent } from '../basic-weather/wind/wind-details/wind-details.component';
 import { BasicWeatherComponent } from '../basic-weather/basic-weather.component';
 import { Routes } from '@angular/router';
+import { ReportComponent } from '../charts/report/report.component';
 
 export const pogodaRoutes: Routes = [
   { path: '', pathMatch: 'full', component: BasicWeatherComponent },
+  { path: 'raport', loadChildren: '../charts/charts.module#ChartsModule' },
   /*
   { path: 'temperatura', component: TemperatureDetailsComponent },
   { path: 'wilgotnosc', component: HumidityDetailsComponent },

@@ -1,2 +1,7 @@
 <mat-spinner *ngIf='!loaded'></mat-spinner>
-<chart *ngIf='loaded' [options]="options"></chart>
+
+<!--
+    <chart *ngIf='loaded' [options]="options"></chart>
+-->
+
+<div [chart]="chart"></div>
