@@ -1,16 +1,20 @@
-<mat-card>
-  <mat-card-title>Raport</mat-card-title>
-  <mat-tab-group>
-    <mat-tab label="dzienny">
+
+<mat-tab-group [dynamicHeight]="true">
+  <mat-tab label="DZIENNY">
+    <ng-template matTabContent>
       <ws-chart [dataType]='dataType' range="day" [type]='type'></ws-chart>
-    </mat-tab>
+    </ng-template>
+  </mat-tab>
 
-    <mat-tab label='miesieczny'>
+  <mat-tab label='MIESIĘCZNY'>
+    <ng-template matTabContent>
       <ws-chart [dataType]='dataType' range="month" [type]='type'></ws-chart>
-    </mat-tab>
+    </ng-template>
+  </mat-tab>
 
-    <mat-tab label='roczny'>
+  <mat-tab label='ROCZNY'>
+    <ng-template matTabContent>
       <ws-chart [dataType]='dataType' range="year" [type]='type'></ws-chart>
-    </mat-tab>
-  </mat-tab-group>
-</mat-card>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

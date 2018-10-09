@@ -1,3 +1,15 @@
 :host >>> .mat-tab-label {
   flex-grow: 1;
 }
+
+:host {
+  box-sizing: border-box;
+  padding: 32px;
+  width: 100%;
+}
+
+mat-tab-group {
+  background: #fff;
+  border-radius: 5px;
+  padding: 24px;
+}

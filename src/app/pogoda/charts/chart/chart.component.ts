@@ -16,14 +16,6 @@ export class ChartComponent implements OnInit {
 
   chart: Chart;
 
-  public options = {
-    title: { text: 'Raport dzienny' },
-    xAxis: { type: 'datetime' },
-    chart: { type: 'line' },
-    yAxis: { min: null },
-    series: [],
-  };
-
   constructor(private api: DayChartService) { }
 
   get polRange() {
@@ -40,19 +32,20 @@ export class ChartComponent implements OnInit {
         chart: {
           type: data[0].length > 2 ? 'arearange' : 'line',
         },
+
+        xAxis: { type: 'datetime' },
+
+        yAxis: {
+          min: this.type === 'windGust' ? 0 : null,
+        },
         title: {
-          text: `Raport ${ this.polRange }`,
+          text: '',
         },
         series: [
           { name: this.dataType, data },
         ]
       });
-      /*
-        this.options.chart.type = data[0].length > 2 ? 'arearange' : 'line';
-        this.options.yAxis.min = this.type === 'windGust' ? 0 : null;
-        this.options.title.text = `Raport ${ this.polRange }`;
-        this.options.series = [{ name: this.dataType, data }];
-      */
+
       this.loaded = true;
     });
   }
