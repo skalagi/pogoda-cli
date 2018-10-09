@@ -1,7 +1,13 @@
-div {
+.card {
     background: #fff;
     border-radius: 6px;
+    height: 100%;
+    box-sizing: border-box;
     padding: 24px;
+    padding-bottom: 8px;
+}
+
+.actions {
 }
 
 h3 {

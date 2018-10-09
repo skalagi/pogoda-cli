@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PortableValueModule } from '../portable-value/portable-value.module';
 import { TemperatureModule } from './temperature/temperature.module';
@@ -33,6 +34,7 @@ import { BasicCardComponent } from './basic-card/basic-card.component';
     MatTabsModule,
     MatProgressSpinnerModule,
 
+    FlexLayoutModule,
     RecordsModule,
     CommonModule,
     ChartsModule,
