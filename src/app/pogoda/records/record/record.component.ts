@@ -18,6 +18,6 @@ export class RecordComponent implements OnInit {
   ngOnInit() {
     const { range, record } = this;
     this.api.get(range, record)
-      .subscribe(data => this.data = data);
+      .subscribe((data: Record | Unit) => this.data = data);
   }
 }

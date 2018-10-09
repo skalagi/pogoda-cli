@@ -1,13 +1,13 @@
 <mat-tab-group [dynamicHeight]="true">
   <mat-tab label="dziś">
-    <record range='day' [record]="record"></record>
+    <record *matTabContent range='day' [record]="record"></record>
   </mat-tab>
 
   <mat-tab label="miesiąc">
-    <record range='month' [record]="record"></record>
+    <record *matTabContent range='month' [record]="record"></record>
   </mat-tab>
 
   <mat-tab label="rok">
-    <record range='year' [record]="record"></record>
+    <record *matTabContent range='year' [record]="record"></record>
   </mat-tab>
 </mat-tab-group>
