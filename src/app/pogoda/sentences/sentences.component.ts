@@ -8,9 +8,9 @@ import { SentencesService } from '../api/sentences/sentences.service';
   styleUrls: ['./sentences.component.css'],
   animations: [
     trigger('state', [
-      transition('show <=> hide', animate('1000ms')),
-      state('show', style({ opacity: 1 })),
-      state('hide', style({ opacity: 0 })),
+      transition('show <=> hide', animate('400ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      state('show', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('hide', style({ opacity: 0, transform: 'translateY(-16px)' })),
     ]),
   ],
 })
