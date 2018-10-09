@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
 import { MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
         CommonModule,
         UpdateTimerModule,
+        RouterModule,
         MatButtonModule,
         MatToolbarModule,
         MatIconModule,
