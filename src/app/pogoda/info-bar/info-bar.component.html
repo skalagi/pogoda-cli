@@ -15,7 +15,7 @@
     wind?.current?.translated }}({{ wind?.current?.speed.value }})</span>
 </span>
 
-<span matTooltipPosition="left" matTooltip="Ilośćg rekorów w bazie">
+<span *ngIf="recordsAmount" matTooltipPosition="left" matTooltip="Ilośćg rekorów w bazie">
   <mat-icon>dns</mat-icon> <span class="accent">{{ recordsAmount }}</span>
 </span>
 
