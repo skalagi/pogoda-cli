@@ -1,11 +1,13 @@
-<p *ngIf='data && data.name'>
-  {{ data.name }} <portable-value [value]="data.value" [after]="data.units"></portable-value>
-</p>
-
-<p *ngIf='data && data.max'>
-  {{ data.max.name | amTimeAgo }} <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
-</p>
-
-<p *ngIf='data && data.min'>
-  {{ data.min.name | amTimeAgo }} <portable-value [value]="data.min.value" [after]="data.min.units"></portable-value>
-</p>
+<div *ngIf="data$ | async as data">
+  <p *ngIf='data.name'>
+    {{ data.name }} <portable-value [value]="data.value" [after]="data.units"></portable-value>
+  </p>
+  
+  <p *ngIf='data.max'>
+    {{ data.max.name | amTimeAgo }} <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
+  </p>
+  
+  <p *ngIf='data.min'>
+    {{ data.min.name | amTimeAgo }} <portable-value [value]="data.min.value" [after]="data.min.units"></portable-value>
+  </p>
+</div>

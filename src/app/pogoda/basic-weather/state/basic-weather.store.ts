@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
-import { BasicApi, Unit } from './basic-weather';
+import { BasicApi } from './basic-weather';
 
-function unit(data?: Partial<Unit>): Unit {
-  return {
-    ...data,
-    name: '',
-    units: '',
-    value: ''
-  };
-}
+import { unit } from '../../unit/unit';
 
 export interface BasicWeatherState extends BasicApi {
   key: string;

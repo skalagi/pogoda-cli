@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RecordsService } from '../../api/records/records.service';
-import { Record } from '../../api/records/records.interface';
-import { Unit } from 'app/pogoda/api/unit.interface';
+import { RecordsQuery } from '../state';
 
 @Component({
   selector: 'record',
@@ -11,13 +9,12 @@ import { Unit } from 'app/pogoda/api/unit.interface';
 export class RecordComponent implements OnInit {
   @Input('range') range: string;
   @Input('record') record: string;
-  public data: Record | Unit;
+  public data$;
 
-  constructor(private api: RecordsService) {}
+  constructor(private query: RecordsQuery) {}
 
   ngOnInit() {
     const { range, record } = this;
-    this.api.get(range, record)
-      .subscribe((data: Record | Unit) => this.data = data);
+    this.data$ = this.query.record$(range, record);
   }
 }
