@@ -1,7 +1,8 @@
 <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between">
   <h3 class="second-font title" *ngIf="title">{{ title }}</h3>
 
-  <div *ngIf="basic$ | async as basic" fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <div *ngIf="basic$ | async as basic" class="basic" [gdColumns]="repeat(basic)"
+    gdGap="24px" gdAlignColumns="center center">
     <div *ngIf="basic?.dewPoint" fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-icon>opacity</mat-icon>
       <portable-value preTip="Punkt rosy wynosi: " [value]="basic?.dewPoint?.value" 
@@ -14,22 +15,22 @@
       [value]="basic?.trend.value" [after]="basic?.trend.units"></portable-value>
     </div>
 
-    <div *ngIf="basic?.value">Aktualna:
+    <div *ngIf="basic?.value" fxLayout="row wrap" fxLayoutAlign="space-around center">Aktualna:
       <portable-value [value]="basic?.value" 
       [after]="basic?.units"></portable-value>
     </div>
     
-    <div *ngIf="basic?.real">Odczuwalna:
+    <div *ngIf="basic?.real" fxLayout="row wrap" fxLayoutAlign="space-around center">Odczuwalna:
       <portable-value [value]="basic?.real?.value" 
         [after]="basic?.real?.units"></portable-value>
     </div>
 
-    <div *ngIf="basic?.current">Aktualna:
+    <div *ngIf="basic?.current" fxLayout="row wrap" fxLayoutAlign="space-around center">Aktualna:
       <portable-value [value]="basic?.current?.value" 
       [after]="basic?.current?.units"></portable-value>
     </div>
 
-    <div *ngIf="basic?.sum">Aktualna:
+    <div *ngIf="basic?.sum" fxLayout="row wrap" fxLayoutAlign="space-around center">Suma:
       <portable-value [value]="basic?.sum?.value" 
       [after]="basic?.sum?.units"></portable-value>
     </div>

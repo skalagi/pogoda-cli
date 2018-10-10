@@ -15,14 +15,14 @@ export function createInitialState(): BasicWeatherState {
       trend: unit()
     },
     barometer: {
-      current: unit(),
-      trend: unit()
+      current: unit({ units: 'hPa'}),
+      trend: unit({ units: 'hPa'})
     },
     count: 0,
     humidity: unit({ units: '%', value: 50 }),
     rain: {
-      current: unit(),
-      sum: unit()
+      current: unit({ units: 'mm'}),
+      sum: unit({ units: 'mm' })
     },
     time: {
       data: unit(),

@@ -12,6 +12,10 @@ export class BasicCardComponent implements OnInit {
 
   basic$;
 
+  repeat(basic) {
+    return `repeat(${ basic.value ? 1 : 2 }, 1fr)`;
+  }
+
   constructor(private query: BasicWeatherQuery) {
   }
 
