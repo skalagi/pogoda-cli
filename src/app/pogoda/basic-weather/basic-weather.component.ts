@@ -18,11 +18,11 @@ export class BasicWeatherComponent implements OnInit {
 
   dropped(ev) {
 
-  moveItemInArray(
-    this.cards,
-    ev.previousIndex,
-    ev.currentIndex,
-   );
+    moveItemInArray(
+      this.cards,
+      ev.previousIndex,
+      ev.currentIndex,
+    );
 
   }
 

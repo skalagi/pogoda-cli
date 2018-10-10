@@ -1,5 +1,5 @@
-<cdk-drop gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, 1fr))"
+<div gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, 1fr))"
     gdAlignColumns="stretch stretch" (dropped)="dropped($event)">
-    <app-basic-card *ngFor='let card of cards' cdkDrag
+    <app-basic-card *ngFor='let card of cards'
         [title]="card.title" [type]="card.type"></app-basic-card>
-</cdk-drop>
+</div>
