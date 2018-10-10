@@ -4,15 +4,12 @@ import { BasicApi } from './basic-weather';
 
 import { unit } from '../../unit/unit';
 
-export interface BasicWeatherState extends BasicApi {
-  key: string;
-}
+export interface BasicWeatherState extends BasicApi {}
 
 export function createInitialState(): BasicWeatherState {
   return {
-    key: '',
     temperature: {
-      current: unit(),
+      current: unit({ value: 10, units: '°C' }),
       dewPoint: unit(),
       real: unit(),
       trend: unit()
@@ -22,7 +19,7 @@ export function createInitialState(): BasicWeatherState {
       trend: unit()
     },
     count: 0,
-    humidity: unit(),
+    humidity: unit({ units: '%', value: 50 }),
     rain: {
       current: unit(),
       sum: unit()

@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PortableValueModule } from '../portable-value/portable-value.module';
-import { TemperatureModule } from './temperature/temperature.module';
-import { ForecastModule } from './forecast/forecast.module';
 import { RecordsModule } from '../records/records.module';
 
 import { BasicWeatherComponent } from './basic-weather.component';
@@ -17,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     RouterModule,
-    ForecastModule,
     PortableValueModule,
     HttpClientModule,
 

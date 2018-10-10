@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BasicWeatherQuery } from '../state';
 
 @Component({
   selector: 'app-basic-card',
@@ -7,11 +8,27 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BasicCardComponent implements OnInit {
   @Input() title;
-  @Input() record;
+  @Input() type;
 
-  constructor() { }
+  basic$;
 
-  ngOnInit() {
+  constructor(private query: BasicWeatherQuery) {
   }
 
+  ngOnInit() {
+    this.basic$ = this.query.basic(this.type);
+  }
+
+  trend(basic) {
+    if (!basic) { return; }
+    const { trend: { value: trend } } = basic;
+
+    switch (true) {
+      case trend > 0:
+        return 'arrow_upward';
+      case trend < 0:
+        return 'arrow_downward';
+      default: return;
+    }
+  }
 }

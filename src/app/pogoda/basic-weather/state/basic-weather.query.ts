@@ -9,4 +9,8 @@ export class BasicWeatherQuery extends Query<BasicWeatherState> {
     super(store);
   }
 
+  basic(type) {
+    return this.select(basic => basic[type]);
+  }
+
 }

@@ -1,6 +1,41 @@
 <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between">
   <h3 class="second-font title" *ngIf="title">{{ title }}</h3>
-  <records fxFlex *ngIf="record" [record]="record"></records>
+
+  <div *ngIf="basic$ | async as basic" fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <div *ngIf="basic?.dewPoint" fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-icon>opacity</mat-icon>
+      <portable-value preTip="Punkt rosy wynosi: " [value]="basic?.dewPoint?.value" 
+        [after]="basic?.dewPoint?.units"></portable-value>
+    </div>
+    
+    <div *ngIf='basic.trend' fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-icon>{{ trend(basic) }}</mat-icon>
+      <portable-value preTip="Tendencja: " 
+      [value]="basic?.trend.value" [after]="basic?.trend.units"></portable-value>
+    </div>
+
+    <div *ngIf="basic?.value">Aktualna:
+      <portable-value [value]="basic?.value" 
+      [after]="basic?.units"></portable-value>
+    </div>
+    
+    <div *ngIf="basic?.real">Odczuwalna:
+      <portable-value [value]="basic?.real?.value" 
+        [after]="basic?.real?.units"></portable-value>
+    </div>
+
+    <div *ngIf="basic?.current">Aktualna:
+      <portable-value [value]="basic?.current?.value" 
+      [after]="basic?.current?.units"></portable-value>
+    </div>
+
+    <div *ngIf="basic?.sum">Aktualna:
+      <portable-value [value]="basic?.sum?.value" 
+      [after]="basic?.sum?.units"></portable-value>
+    </div>
+  </div>
+
+  <records fxFlex *ngIf="type" [record]="type"></records>
   
   <div class="actions">
     <button mat-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
