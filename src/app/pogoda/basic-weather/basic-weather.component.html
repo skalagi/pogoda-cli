@@ -1,9 +1,5 @@
-<div gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, 1fr))"
-    gdAlignColumns="stretch stretch">
-    <app-basic-card title="Ciśnienie" type="barometer"></app-basic-card>
-    <app-basic-card title="Wilgotność" type="humidity"></app-basic-card>
-
-    <app-basic-card title="Temperatura" type="temperature"></app-basic-card>
-    <app-basic-card title="Podmuchy wiatru" type="windspeed"></app-basic-card>
-    <app-basic-card title="Opady" type="rain"></app-basic-card>    
-</div>
+<cdk-drop gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, 1fr))"
+    gdAlignColumns="stretch stretch" (dropped)="dropped($event)">
+    <app-basic-card *ngFor='let card of cards' cdkDrag
+        [title]="card.title" [type]="card.type"></app-basic-card>
+</cdk-drop>

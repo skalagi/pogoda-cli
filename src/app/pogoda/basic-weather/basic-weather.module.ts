@@ -11,6 +11,9 @@ import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, 
 import { BasicCardComponent } from './basic-card/basic-card.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     PortableValueModule,
     HttpClientModule,
 
+    DragDropModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
