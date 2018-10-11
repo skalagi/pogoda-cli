@@ -2,6 +2,7 @@
   <span fxLayout="row wrap" fxLayoutAlign="space-between center">
     <mat-icon>{{ name ? 'hdr_strong' : icon }}</mat-icon>
     {{ name ? name : unit?.name }}
+    {{ after }}
   </span>
   
   <portable-value [preTip]="preTip" [value]="unit?.value" [after]="unit?.units"></portable-value>

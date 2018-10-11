@@ -8,6 +8,7 @@ import { Unit } from '../unit';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UnitComponent {
+  @Input() after;
   @Input() icon = 'bubble_chart';
   @Input() name: String;
   @Input() unit: Unit;
