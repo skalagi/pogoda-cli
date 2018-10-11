@@ -3,12 +3,19 @@
     border-radius: 6px;
     height: 100%;
     box-sizing: border-box;
-    padding: 24px;
-    padding-bottom: 8px;
+    padding: 12px 24px;
 }
 
 .title {
     text-align: center;
+}
+
+::ng-deep .mat-tab-body-wrapper {
+    flex-grow: 1;
+}
+
+mat-tab-group {
+    flex-grow: 1;
 }
 
 .actions {
@@ -16,13 +23,8 @@
 }
 
 h3 {
-    margin: 0;
-    margin-bottom: 24px;
+    margin: 12px;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 3px;
-}
-
-.basic {
-    margin: 12px 0;
 }

@@ -9,26 +9,11 @@ import { BasicWeatherQuery } from '../state';
 export class BasicCardComponent implements OnInit {
   @Input() title;
   @Input() type;
-
   basic$;
 
-  constructor(private query: BasicWeatherQuery) {
-  }
+  constructor(private query: BasicWeatherQuery) {}
 
   ngOnInit() {
     this.basic$ = this.query.basic(this.type);
-  }
-
-  trend(basic) {
-    if (!basic) { return; }
-    const { trend: { value: trend } } = basic;
-
-    switch (true) {
-      case trend > 0:
-        return 'arrow_upward';
-      case trend < 0:
-        return 'arrow_downward';
-      default: return;
-    }
   }
 }

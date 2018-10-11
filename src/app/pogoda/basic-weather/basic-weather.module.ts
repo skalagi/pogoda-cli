@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { UnitModule } from '../unit/unit.module';
+import { BasicDataComponent } from './basic-weather-data/basic-data.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { UnitModule } from '../unit/unit.module';
   declarations: [
     BasicWeatherComponent,
     BasicCardComponent,
+    BasicDataComponent,
   ],
 
   exports: [BasicWeatherComponent],

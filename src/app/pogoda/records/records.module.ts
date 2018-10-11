@@ -7,10 +7,18 @@ import { PortableValueModule } from '../portable-value/portable-value.module';
 import { RecordComponent } from './record/record.component';
 import { RecordsComponent } from './records/records.component';
 import { UnitModule } from '../unit/unit.module';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [CommonModule, PortableValueModule, MatTabsModule, MomentModule, UnitModule],
+  imports: [
+    CommonModule,
+    PortableValueModule,
+    FlexModule,
+    MatTabsModule,
+    MomentModule,
+    UnitModule
+  ],
   declarations: [RecordComponent, RecordsComponent],
-  exports: [RecordComponent, RecordsComponent],
+  exports: [RecordComponent, RecordsComponent]
 })
-export class RecordsModule { }
+export class RecordsModule {}
