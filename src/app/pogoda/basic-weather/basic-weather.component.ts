@@ -9,11 +9,11 @@ import { moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class BasicWeatherComponent implements OnInit {
   cards = [
-    { title: 'Ciśnienie', type: 'barometer' },
-    { title: 'Wilgotność', type: 'humidity' },
+    { title: 'Opady', type: 'rain' },
     { title: 'Temperatura', type: 'temperature' },
     { title: 'Podmuchy wiatru', type: 'windspeed' },
-    { title: 'Opady', type: 'rain' },
+    { title: 'Ciśnienie', type: 'barometer' },
+    { title: 'Wilgotność', type: 'humidity' },
   ];
 
   dropped(ev) {
