@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 import { environment } from '../../../../environments/environment';
 
 import { SentencesService } from '../sentences/sentences.service';
-import { RecordsService } from '../records/records.service';
 import { DayChartService } from '../charts/day-chart.service';
 import { BasicApi } from './basic.interface';
 import { map } from 'rxjs/operators';
@@ -12,7 +11,6 @@ import { map } from 'rxjs/operators';
 export {
   SentencesService,
   DayChartService,
-  RecordsService,
 };
 
 @Injectable()
