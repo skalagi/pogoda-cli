@@ -14,8 +14,8 @@ export interface WindUnit {
 export function unit(data?: Partial<Unit>): Unit {
     return {
       name: '',
-      units: '°C',
-      value: 1,
+      units: null,
+      value: null,
       ...data,
     };
 }

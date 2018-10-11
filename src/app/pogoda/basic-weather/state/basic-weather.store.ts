@@ -9,20 +9,20 @@ export interface BasicWeatherState extends BasicApi {}
 export function createInitialState(): BasicWeatherState {
   return {
     temperature: {
-      current: unit({ value: 10, units: '°C' }),
+      current: unit(),
       dewPoint: unit(),
       real: unit(),
       trend: unit()
     },
     barometer: {
-      current: unit({ units: 'hPa'}),
-      trend: unit({ units: 'hPa'})
+      current: unit(),
+      trend: unit()
     },
     count: 0,
-    humidity: unit({ units: '%', value: 50 }),
+    humidity: unit(),
     rain: {
-      current: unit({ units: 'mm'}),
-      sum: unit({ units: 'mm' })
+      current: unit(),
+      sum: unit()
     },
     time: {
       data: unit(),
