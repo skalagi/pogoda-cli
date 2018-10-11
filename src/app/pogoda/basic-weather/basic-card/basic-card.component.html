@@ -4,10 +4,15 @@
   <div *ngIf="basic$ | async as basic" class="basic" [gdColumns]="repeat(basic)"
     gdGap="24px" gdAlignColumns="center center">
 
+    <ng-template #wind>
+      <skalagi-unit [unit]="basic?.current?.speed"></skalagi-unit>      
+      <skalagi-unit [unit]="basic?.gust?.speed"></skalagi-unit>
+    </ng-template>
+
     <skalagi-unit *ngIf="basic?.value" 
       [unit]="basic"></skalagi-unit>    
 
-    <skalagi-unit *ngIf="basic?.current" 
+    <skalagi-unit *ngIf="basic?.current && !basic?.gust; else wind" 
       [unit]="basic.current"></skalagi-unit>
 
     <skalagi-unit *ngIf="basic?.real" 

@@ -11,7 +11,7 @@ export class BasicWeatherComponent implements OnInit {
   cards = [
     { title: 'Opady', type: 'rain' },
     { title: 'Temperatura', type: 'temperature' },
-    { title: 'Podmuchy wiatru', type: 'windspeed' },
+    { title: 'Wiatr', type: 'wind' },
     { title: 'Ciśnienie', type: 'barometer' },
     { title: 'Wilgotność', type: 'humidity' },
   ];
