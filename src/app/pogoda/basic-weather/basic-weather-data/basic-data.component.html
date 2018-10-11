@@ -1,0 +1,25 @@
+<div class="basic">  
+    <ng-template #wind>
+      <skalagi-unit *ngIf="basic?.current" [unit]="basic.current.speed"></skalagi-unit>      
+      <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed"></skalagi-unit>
+    </ng-template> 
+
+    <skalagi-unit *ngIf="basic?.current && !basic?.gust; else wind" 
+      [unit]="basic.current"></skalagi-unit>
+
+    <skalagi-unit *ngIf="basic?.real" 
+      [unit]="basic.real"></skalagi-unit>
+
+    <skalagi-unit *ngIf="basic?.sum" 
+      [unit]="basic.sum"></skalagi-unit>
+    
+    <div gdColumns="repeat({{ basic?.dewPoint ? 2 : 1 }}, auto)"
+      gdAlignColumns="center center" gdAlignRows="stretch">
+
+      <skalagi-unit *ngIf="basic?.dewPoint" 
+        icon="opacity" [unit]="basic.dewPoint"></skalagi-unit>
+    
+      <skalagi-unit *ngIf="basic?.trend" 
+        [unit]="basic.trend" [icon]="trendIcon"></skalagi-unit>
+    </div>
+  </div>
