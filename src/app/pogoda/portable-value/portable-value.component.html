@@ -1,4 +1,6 @@
 <span fxLayout="row" fxLayoutAlign="center center"
-  [matTooltip]='preTip + pre + value + afterTip + after'>
-  {{ preText }}{{ pre }}{{ value | number:'1.0-2' }}{{ afterText }}{{ after }}
+  *ngIf="value != null"
+  [ngClass]="{ tooltip: showTooltip }"
+  [matTooltip]="showTooltip ? information() : ''">
+  {{ information(true) }}
 </span>

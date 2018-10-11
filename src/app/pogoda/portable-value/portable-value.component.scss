@@ -4,5 +4,8 @@ span {
   color: mat-color($weather-blue-primary);
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  
+  &.tooltip {
+    cursor: pointer;
+  }
 }

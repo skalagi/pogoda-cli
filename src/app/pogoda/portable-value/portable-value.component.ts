@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'portable-value',
@@ -6,11 +7,32 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./portable-value.component.scss']
 })
 export class PortableValueComponent {
-  @Input() afterTip = '';
-  @Input() preTip = '';
-  @Input() afterText = '';
   @Input() preText = '';
-  @Input() value = '';
-  @Input() after = '';
+  @Input() preTip = '';
   @Input() pre = '';
+
+  @Input() value = 0;
+
+  @Input() after = '';
+  @Input() afterTip = '';
+  @Input() afterText = '';
+
+  get showTooltip() {
+    return this.value.toString() !== this.roundedValue;
+  }
+
+  information(rounded) {
+    const { preTip, preText, afterText, pre, value, afterTip, after } = this;
+    const message = pre + (rounded ? this.roundedValue : value) + after;
+
+    if (rounded) {
+      return preText + message + afterText;
+    }
+
+    return preTip + message + afterTip;
+  }
+
+  get roundedValue() {
+    return formatNumber(this.value, 'en-US', '1.0-2');
+  }
 }
