@@ -1,5 +1,5 @@
-<div gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, 1fr))"
+<div gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, auto))"
     gdAlignColumns="stretch stretch" (dropped)="dropped($event)">
-    <app-basic-card *ngFor='let card of cards'
-        [title]="card.title" [type]="card.type"></app-basic-card>
+    <skalagi-basic-card *ngFor='let card of cards'
+        [title]="card.title" [type]="card.type"></skalagi-basic-card>
 </div>

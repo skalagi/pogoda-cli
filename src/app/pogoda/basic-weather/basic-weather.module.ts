@@ -12,7 +12,7 @@ import { BasicCardComponent } from './basic-card/basic-card.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { BasicUnitComponent } from './basic-unit/basic-unit.component';
+import { UnitModule } from '../unit/unit.module';
 
 
 @NgModule({
@@ -28,6 +28,7 @@ import { BasicUnitComponent } from './basic-unit/basic-unit.component';
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    UnitModule,
 
     FlexLayoutModule,
     RecordsModule,
@@ -36,7 +37,6 @@ import { BasicUnitComponent } from './basic-unit/basic-unit.component';
   declarations: [
     BasicWeatherComponent,
     BasicCardComponent,
-    BasicUnitComponent,
   ],
 
   exports: [BasicWeatherComponent],

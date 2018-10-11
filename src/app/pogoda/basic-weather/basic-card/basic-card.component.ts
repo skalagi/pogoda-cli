@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BasicWeatherQuery } from '../state';
 
 @Component({
-  selector: 'app-basic-card',
+  selector: 'skalagi-basic-card',
   templateUrl: './basic-card.component.html',
   styleUrls: ['./basic-card.component.scss']
 })
@@ -13,7 +13,7 @@ export class BasicCardComponent implements OnInit {
   basic$;
 
   repeat(basic) {
-    return `repeat(${ basic.value ? 1 : 2 }, 1fr)`;
+    return `repeat(${ basic.value ? 1 : 2 }, auto)`;
   }
 
   constructor(private query: BasicWeatherQuery) {
