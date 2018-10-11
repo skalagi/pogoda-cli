@@ -1,20 +1,7 @@
-
-<mat-tab-group [dynamicHeight]="true">
-  <mat-tab label="DZIENNY">
-    <ng-template matTabContent>
-      <ws-chart [dataType]='dataType' range="day" [type]='type'></ws-chart>
-    </ng-template>
-  </mat-tab>
-
-  <mat-tab label='MIESIĘCZNY'>
-    <ng-template matTabContent>
-      <ws-chart [dataType]='dataType' range="month" [type]='type'></ws-chart>
-    </ng-template>
-  </mat-tab>
-
-  <mat-tab label='ROCZNY'>
-    <ng-template matTabContent>
-      <ws-chart [dataType]='dataType' range="year" [type]='type'></ws-chart>
-    </ng-template>
-  </mat-tab>
+<mat-tab-group [dynamicHeight]="true" color="accent" (selectedIndexChange)="changeRange($event)">
+  <mat-tab label="DZIENNY"></mat-tab>
+  <mat-tab label='MIESIĘCZNY'></mat-tab>
+  <mat-tab label='ROCZNY'></mat-tab>
 </mat-tab-group>
+
+<ws-chart [dataType]='dataType' [range$]="range$" [type]='type'></ws-chart>
