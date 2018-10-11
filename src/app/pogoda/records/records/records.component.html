@@ -1,13 +1,13 @@
 <mat-tab-group [dynamicHeight]="true">
   <mat-tab label="DZIŚ">
-    <skalagi-record range='day' [record]="record"></skalagi-record>
+    <skalagi-record [data$]="day$"></skalagi-record>
   </mat-tab>
 
   <mat-tab label="MIESIĄC">
-    <skalagi-record range='month' [record]="record"></skalagi-record>
+    <skalagi-record [data$]="month$"></skalagi-record>
   </mat-tab>
 
   <mat-tab label="ROK">
-    <skalagi-record range='year' [record]="record"></skalagi-record>
+    <skalagi-record [data$]="year$"></skalagi-record>
   </mat-tab>
 </mat-tab-group>
