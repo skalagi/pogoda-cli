@@ -1,4 +1,13 @@
 div {
     box-sizing: border-box;
-    padding-top: 12px;
+}
+
+span {
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+span, mat-icon {
+    box-sizing: border-box;
+    margin: 12px;
 }
