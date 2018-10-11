@@ -1,0 +1,5 @@
+<div gdColumns="repeat(auto-fill, minmax(32px, 1fr)))" gdGap="8px"
+  gdAlignColumns="center center" gdAlignRows="center center">
+  <span>{{ name ? name : unit?.name }}</span>
+  <portable-value [value]="unit?.value" [after]="unit?.units"></portable-value>
+</div>
