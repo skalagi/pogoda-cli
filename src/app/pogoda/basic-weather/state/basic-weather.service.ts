@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 import { BasicWeatherStore } from './basic-weather.store';
 import { HttpClient } from '@angular/common/http';
-import { BasicService } from 'app/pogoda/api/basic/basic.service';
 import { environment } from 'environments/environment';
 
 @Injectable({ providedIn: 'root' })

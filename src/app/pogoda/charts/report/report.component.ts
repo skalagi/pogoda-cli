@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { ChartService } from '../state';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -9,11 +10,11 @@ import { BehaviorSubject, Subject } from 'rxjs';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  @Input() public dataType = '';
-  @Input() public type = '';
   range$ = new BehaviorSubject('day');
+  dataType = '';
+  type = '';
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private charts: ChartService) { }
 
   changeRange(index) {
     this.range$.next(['day', 'month', 'year'][index]);
@@ -27,7 +28,7 @@ export class ReportComponent implements OnInit {
       case 'wilgotność':
       return 'outHumidity';
 
-      case 'podmuchy wiatru':
+      case 'wiatr':
       return 'windGust';
 
       case 'opady':
@@ -43,8 +44,11 @@ export class ReportComponent implements OnInit {
       const type = data.get('type');
 
       if (type) {
-        this.type = this.getType(type);
-        this.dataType = type;
+        const _type = this.getType(type);
+
+        this.charts.preload(_type);
+        this.dataType = _type;
+        this.type = type;
       }
     });
   }

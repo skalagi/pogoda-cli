@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DayChartService } from '../../api/charts/day-chart.service';
 import { Chart } from 'angular-highcharts';
+import { ChartQuery } from '../state';
 
 const textStyle = {
-  color: '#fff'
+  fontWeight: '600',
+  color: '#fff',
 };
 
 @Component({
-  selector: 'ws-chart',
+  selector: 'skalagi-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
@@ -21,7 +22,7 @@ export class ChartComponent implements OnInit {
   loaded = true;
   chart: Chart;
 
-  constructor(private api: DayChartService) { }
+  constructor(private query: ChartQuery) { }
 
   get polRange() {
     switch (this.range) {
@@ -35,11 +36,11 @@ export class ChartComponent implements OnInit {
     this.chart = this.createChart();
 
     this.range$.subscribe(range => {
-      this.api.get(range, this.type).subscribe(data => {
-        const type = data[0].length > 2 ? 'arearange' : 'line';
+      this.query.chart(range, this.dataType).subscribe(data => {
+        const type = data[0] && data[0].length > 2 ? 'arearange' : 'line';
 
         this.chart.removeSerie(0);
-        this.chart.addSerie({ type, name: this.dataType, data });
+        this.chart.addSerie({ type, name: this.type, data });
         // this.chart.ref.yAxis[0].update({title: { text:  }});
         // this.loaded = true;
       });
@@ -51,6 +52,8 @@ export class ChartComponent implements OnInit {
       chart: {
         backgroundColor: 'transparent',
       },
+
+      credits: { enabled: false },
 
       colors: ['#FFEB3B'],
 

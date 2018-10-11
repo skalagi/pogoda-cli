@@ -1,4 +1,4 @@
-<mat-progress-bar *ngIf='!sentence' mode='indeterminate'></mat-progress-bar>
+<mat-progress-bar color="accent" *ngIf='!sentence' mode='indeterminate'></mat-progress-bar>
 <span class="second-font" (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
 
 <info-bar></info-bar>

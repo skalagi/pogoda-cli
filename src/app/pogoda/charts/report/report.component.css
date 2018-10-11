@@ -1,12 +1,11 @@
 :host {
   box-sizing: border-box;
-  padding: 8px 32px;
+  padding: 24px;
   width: 100%;
 }
 
 mat-tab-group {
   border-radius: 5px;
-  padding: 24px;
 }
 
 :host ::ng-deep .mat-tab-label {

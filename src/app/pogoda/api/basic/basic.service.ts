@@ -3,15 +3,9 @@ import { Http } from '@angular/http';
 
 import { environment } from '../../../../environments/environment';
 
-import { SentencesService } from '../sentences/sentences.service';
-import { DayChartService } from '../charts/day-chart.service';
 import { BasicApi } from './basic.interface';
 import { map } from 'rxjs/operators';
 
-export {
-  SentencesService,
-  DayChartService,
-};
 
 @Injectable()
 export class BasicService {
