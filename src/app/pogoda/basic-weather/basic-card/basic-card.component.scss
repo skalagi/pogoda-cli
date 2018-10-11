@@ -11,15 +11,18 @@
     text-align: center;
 }
 
-skalagi-records {
-    padding: 24px 0;
-}
-
 .actions {
+    text-align: right;
 }
 
 h3 {
     margin: 0;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 400;
     letter-spacing: 3px;
-    margin-bottom: 16px;
+}
+
+.basic {
+    margin: 12px 0;
 }

@@ -1,36 +1,50 @@
-<div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between">
-  <h3 class="second-font title" *ngIf="title">{{ title }}</h3>
+<ng-template [ngIf]="basic$ | async" let-basic="$implicit">
+  <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between">
+    <h3 class="second-font title" *ngIf="title" fxLayout="row wrap" 
+      [fxLayoutAlign]="basic?.value ? 'space-between center' : 'center center'">
+      {{ title }}
+      <portable-value [value]="basic?.value" [after]="basic?.units"></portable-value>
+    </h3>
 
-  <div *ngIf="basic$ | async as basic" class="basic" [gdColumns]="repeat(basic)"
-    gdGap="24px" gdAlignColumns="center center">
-
-    <ng-template #wind>
-      <skalagi-unit [unit]="basic?.current?.speed"></skalagi-unit>      
-      <skalagi-unit [unit]="basic?.gust?.speed"></skalagi-unit>
-    </ng-template>
-
-    <skalagi-unit *ngIf="basic?.value" 
-      [unit]="basic"></skalagi-unit>    
-
-    <skalagi-unit *ngIf="basic?.current && !basic?.gust; else wind" 
-      [unit]="basic.current"></skalagi-unit>
-
-    <skalagi-unit *ngIf="basic?.real" 
-      [unit]="basic.real"></skalagi-unit>
-
-    <skalagi-unit *ngIf="basic?.sum" 
-      [unit]="basic.sum"></skalagi-unit>
-    
-    <skalagi-unit *ngIf="basic?.trend" 
-      [unit]="basic.trend" [icon]="trend(basic)"></skalagi-unit>
-
-    <skalagi-unit *ngIf="basic?.dewPoint" 
-      icon="opacity" [unit]="basic.dewPoint"></skalagi-unit>
-  </div>
-
-  <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
+    <mat-tab-group [dynamicHeight]="true">
+    <mat-tab *ngIf="!basic?.value" label="DANE">
+      <div class="basic">  
+        <ng-template #wind>
+          <skalagi-unit *ngIf="basic?.current" [unit]="basic.current.speed"></skalagi-unit>      
+          <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed"></skalagi-unit>
+        </ng-template> 
   
-  <div class="actions">
-    <button mat-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
+        <skalagi-unit *ngIf="basic?.current && !basic?.gust; else wind" 
+          [unit]="basic.current"></skalagi-unit>
+  
+        <skalagi-unit *ngIf="basic?.real" 
+          [unit]="basic.real"></skalagi-unit>
+  
+        <skalagi-unit *ngIf="basic?.sum" 
+          [unit]="basic.sum"></skalagi-unit>
+        
+        <div gdColumns="repeat({{ basic?.dewPoint ? 2 : 1 }}, auto)"
+          gdAlignColumns="center center" gdAlignRows="stretch">
+    
+          <skalagi-unit *ngIf="basic?.dewPoint" 
+            icon="opacity" [unit]="basic.dewPoint"></skalagi-unit>
+        
+          <skalagi-unit *ngIf="basic?.trend" 
+            [unit]="basic.trend" [icon]="trend(basic)"></skalagi-unit>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="REKORDY">
+      <ng-template matTabContent>
+        <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>        
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+
+    
+    <div class="actions">
+      <button mat-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
+    </div>
   </div>
-</div>
+</ng-template>

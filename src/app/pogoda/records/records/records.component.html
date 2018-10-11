@@ -5,11 +5,11 @@
     </mat-tab>
   </ng-template>
 
-  <mat-tab label="MIESIĄC" *ngIf="month$ | async as month" >
+  <mat-tab label="MIESIĄCA" *ngIf="month$ | async as month" >
     <skalagi-record [data]="month"></skalagi-record>
   </mat-tab>
 
-  <mat-tab *ngIf="year$ | async as year" label="ROK">
+  <mat-tab *ngIf="year$ | async as year" label="ROKU">
     <skalagi-record [data]="year"></skalagi-record>
   </mat-tab>
 </mat-tab-group>

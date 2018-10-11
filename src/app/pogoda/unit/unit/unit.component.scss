@@ -3,11 +3,16 @@ div {
 }
 
 span {
+    box-sizing: border-box;
     letter-spacing: 1px;
-    text-align: center;
+    // text-align: center;
+}
+
+portable-value {
+    padding: 0 12px;
 }
 
 span, mat-icon {
-    box-sizing: border-box;
-    margin: 12px;
+    padding: 0 12px;
+    margin: 8px 0;
 }

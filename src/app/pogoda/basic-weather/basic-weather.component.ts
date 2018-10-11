@@ -3,7 +3,7 @@ import { BasicWeatherService } from './state';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-basic-weather',
+  selector: 'skalagi-basic-weather',
   templateUrl: './basic-weather.component.html',
   styleUrls: ['./basic-weather.component.scss']
 })

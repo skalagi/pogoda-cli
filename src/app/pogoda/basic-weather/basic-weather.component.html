@@ -1,5 +1,6 @@
-<div gdGap="16px" gdColumns="repeat(auto-fill, minmax(336px, auto))"
-    gdAlignColumns="stretch stretch" (dropped)="dropped($event)">
+<div gdGap="96px" gdColumns="repeat(auto-fill, minmax(336px, auto))"
+    gdAlignColumns="center center" gdAlignRows="center center" 
+    (dropped)="dropped($event)">
     <skalagi-basic-card *ngFor='let card of cards'
         [title]="card.title" [type]="card.type"></skalagi-basic-card>
 </div>
