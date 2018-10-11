@@ -39,7 +39,8 @@ export class ChartComponent implements OnInit {
         const type = data[0].length > 2 ? 'arearange' : 'line';
 
         this.chart.removeSerie(0);
-        this.chart.addSerie({ type, name: this.dataType,  data });
+        this.chart.addSerie({ type, name: this.dataType, data });
+        // this.chart.ref.yAxis[0].update({title: { text:  }});
         // this.loaded = true;
       });
     });
@@ -53,11 +54,17 @@ export class ChartComponent implements OnInit {
 
       colors: ['#FFEB3B'],
 
+      legend: {
+        itemStyle: {
+          ...textStyle
+        }
+      },
+
       xAxis: {
         type: 'datetime',
         labels: {
           style: {
-            ...textStyle
+            ...textStyle,
           }
         }
       },
@@ -65,7 +72,7 @@ export class ChartComponent implements OnInit {
       yAxis: {
         min: this.type === 'windGust' ? 0 : null,
         title: {
-          text: 'godziny',
+          text: '',
           style: {
             ...textStyle
           }
@@ -76,7 +83,7 @@ export class ChartComponent implements OnInit {
           }
         }
       },
-      series: [{}],
+      series: [],
       title: {
         text: '',
       },
