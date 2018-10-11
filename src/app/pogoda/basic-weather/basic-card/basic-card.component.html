@@ -4,22 +4,23 @@
   <div *ngIf="basic$ | async as basic" class="basic" [gdColumns]="repeat(basic)"
     gdGap="24px" gdAlignColumns="center center">
 
-    <skalagi-unit *ngIf="basic?.value" [unit]="basic"></skalagi-unit>    
-    <skalagi-unit *ngIf="basic?.current" [unit]="basic.current"></skalagi-unit>
-    <skalagi-unit *ngIf="basic?.real" [unit]="basic.real"></skalagi-unit>
-    <skalagi-unit *ngIf="basic?.sum" [unit]="basic.sum"></skalagi-unit>
-    
-    <div *ngIf='basic.trend' fxLayout="row wrap" fxLayoutAlign="space-between center">
-      <mat-icon>{{ trend(basic) }}</mat-icon>
-      <portable-value preTip="Tendencja: " 
-      [value]="basic?.trend.value" [after]="basic?.trend.units"></portable-value>
-    </div>
+    <skalagi-unit *ngIf="basic?.value" 
+      [unit]="basic"></skalagi-unit>    
 
-    <div *ngIf="basic?.dewPoint" fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <mat-icon>opacity</mat-icon>
-      <portable-value preTip="Punkt rosy wynosi: " [value]="basic?.dewPoint.value" 
-        [after]="basic?.dewPoint?.units"></portable-value>
-    </div>
+    <skalagi-unit *ngIf="basic?.current" 
+      [unit]="basic.current"></skalagi-unit>
+
+    <skalagi-unit *ngIf="basic?.real" 
+      [unit]="basic.real"></skalagi-unit>
+
+    <skalagi-unit *ngIf="basic?.sum" 
+      [unit]="basic.sum"></skalagi-unit>
+    
+    <skalagi-unit *ngIf="basic?.trend" 
+      [unit]="basic.trend" [icon]="trend(basic)"></skalagi-unit>
+
+    <skalagi-unit *ngIf="basic?.dewPoint" 
+      icon="opacity" [unit]="basic.dewPoint"></skalagi-unit>
   </div>
 
   <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
