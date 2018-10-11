@@ -132,11 +132,11 @@
   "defaultProject": "skalagi-station",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "css"
+      "prefix": "skalagi",
+      "styleext": "scss"
     },
     "@schematics/angular:directive": {
-      "prefix": "app"
+      "prefix": "skalagi"
     }
   }
 }
