@@ -1,9 +1,10 @@
 <div *ngIf="data$ | async as data">
-  <skalagi-unit *ngIf="data.name" [unit]="data"></skalagi-unit>
-  <skalagi-unit *ngIf="data.max" [unit]="data.max" customName>
-    {{ data.max.name | amTimeAgo }} 
-  </skalagi-unit>
-  <skalagi-unit *ngIf="data.min" [unit]="data.min" customName>
-    {{ data.min.name | amTimeAgo }}
-  </skalagi-unit>
+  <skalagi-unit *ngIf="data.name" 
+    [unit]="data"></skalagi-unit>
+
+  <skalagi-unit *ngIf="data.max" 
+    [unit]="data.max" [name]="data.max.name | amTimeAgo"></skalagi-unit>
+    
+  <skalagi-unit *ngIf="data.min" 
+    [unit]="data.min" [name]="data.min.name | amTimeAgo"></skalagi-unit>
 </div>

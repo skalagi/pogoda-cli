@@ -8,6 +8,15 @@ import { Unit } from '../unit';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UnitComponent {
-  @Input() customName;
+  @Input() name: String;
+  @Input() icon: String;
   @Input() unit: Unit;
+
+  get preTip() {
+    if (this.icon && this.unit && this.unit.name) {
+      return this.unit.name + ' wynosi: ';
+    }
+
+    return '';
+  }
 }

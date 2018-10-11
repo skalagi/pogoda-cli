@@ -1,8 +1,10 @@
 <div gdColumns="repeat(auto-fit, auto)" gdGap="8px"
   gdAlignColumns="center center" gdAlignRows="center center">
-  <span>
-    <span *ngIf="customName == null">{{ unit?.name }}</span>
-    <ng-content></ng-content>
-  </span>
-  <portable-value [value]="unit?.value" [after]="unit?.units"></portable-value>
+
+  <mat-icon *ngIf="icon; else textName">{{ icon }}</mat-icon>
+  <ng-template #textName>
+    <span>{{ name ? name : unit?.name }}</span>
+  </ng-template>
+  
+  <portable-value [preTip]="preTip" [value]="unit?.value" [after]="unit?.units"></portable-value>
 </div>
