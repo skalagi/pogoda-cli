@@ -8,6 +8,6 @@ import { Unit } from '../unit';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UnitComponent {
-  @Input() name: String;
+  @Input() customName;
   @Input() unit: Unit;
 }

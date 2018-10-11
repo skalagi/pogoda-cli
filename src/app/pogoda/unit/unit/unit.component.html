@@ -1,5 +1,8 @@
 <div gdColumns="repeat(auto-fit, auto)" gdGap="8px"
   gdAlignColumns="center center" gdAlignRows="center center">
-  <span>{{ name ? name : unit?.name }}</span>
+  <span>
+    <span *ngIf="customName == null">{{ unit?.name }}</span>
+    <ng-content></ng-content>
+  </span>
   <portable-value [value]="unit?.value" [after]="unit?.units"></portable-value>
 </div>
