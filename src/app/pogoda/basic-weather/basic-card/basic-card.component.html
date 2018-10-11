@@ -5,35 +5,21 @@
     gdGap="24px" gdAlignColumns="center center">
     <div *ngIf="basic?.dewPoint" fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-icon>opacity</mat-icon>
-      <portable-value preTip="Punkt rosy wynosi: " [value]="basic?.dewPoint?.value" 
+      <portable-value preTip="Punkt rosy wynosi: " [value]="basic?.dewPoint.value" 
         [after]="basic?.dewPoint?.units"></portable-value>
     </div>
+
+    <skalagi-basic-unit *ngIf="basic?.value" [unit]="basic"></skalagi-basic-unit>
     
-    <div *ngIf='basic.trend' fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <div *ngIf='basic.trend' fxLayout="row wrap" fxLayoutAlign="space-between center">
       <mat-icon>{{ trend(basic) }}</mat-icon>
       <portable-value preTip="Tendencja: " 
       [value]="basic?.trend.value" [after]="basic?.trend.units"></portable-value>
     </div>
-
-    <div *ngIf="basic?.value" fxLayout="row wrap" fxLayoutAlign="space-around center">Aktualna:
-      <portable-value [value]="basic?.value" 
-      [after]="basic?.units"></portable-value>
-    </div>
     
-    <div *ngIf="basic?.real" fxLayout="row wrap" fxLayoutAlign="space-around center">Odczuwalna:
-      <portable-value [value]="basic?.real?.value" 
-        [after]="basic?.real?.units"></portable-value>
-    </div>
-
-    <div *ngIf="basic?.current" fxLayout="row wrap" fxLayoutAlign="space-around center">Aktualna:
-      <portable-value [value]="basic?.current?.value" 
-      [after]="basic?.current?.units"></portable-value>
-    </div>
-
-    <div *ngIf="basic?.sum" fxLayout="row wrap" fxLayoutAlign="space-around center">Suma:
-      <portable-value [value]="basic?.sum?.value" 
-      [after]="basic?.sum?.units"></portable-value>
-    </div>
+    <skalagi-basic-unit *ngIf="basic?.current" [unit]="basic.current"></skalagi-basic-unit>
+    <skalagi-basic-unit *ngIf="basic?.real" [unit]="basic.real"></skalagi-basic-unit>
+    <skalagi-basic-unit *ngIf="basic?.sum" [unit]="basic.sum"></skalagi-basic-unit>
   </div>
 
   <records fxFlex *ngIf="type" [record]="type"></records>
