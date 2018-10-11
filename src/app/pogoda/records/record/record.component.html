@@ -1,13 +1,5 @@
 <div *ngIf="data$ | async as data">
-  <p *ngIf='data.name'>
-    {{ data.name }} <portable-value [value]="data.value" [after]="data.units"></portable-value>
-  </p>
-  
-  <p *ngIf='data.max'>
-    {{ data.max.name | amTimeAgo }} <portable-value [value]="data.max.value" [after]="data.max.units"></portable-value>
-  </p>
-  
-  <p *ngIf='data.min'>
-    {{ data.min.name | amTimeAgo }} <portable-value [value]="data.min.value" [after]="data.min.units"></portable-value>
-  </p>
+  <skalagi-unit *ngIf="data.name" [unit]="data.value"></skalagi-unit>
+  <skalagi-unit *ngIf="data.max" [name]="data.max.name | amTimeAgo" [unit]="data.max"></skalagi-unit>
+  <skalagi-unit *ngIf="data.min" [name]="data.min.name | amTimeAgo" [unit]="data.min"></skalagi-unit>
 </div>

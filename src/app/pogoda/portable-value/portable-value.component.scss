@@ -1,11 +1,8 @@
 @import "../../theme/weather-blue";
 
-:host {
-  padding-left: 1em;
-  margin-left: auto;
-}
-
 span {
-  color: md-color($weather-blue-primary);
+  color: mat-color($weather-blue-primary);
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { RecordsService } from '../state';
 
 @Component({
-  selector: 'records',
+  selector: 'skalagi-records',
   templateUrl: './records.component.html',
   styleUrls: ['./records.component.css']
 })

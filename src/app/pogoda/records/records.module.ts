@@ -6,9 +6,10 @@ import { MomentModule } from 'angular2-moment';
 import { PortableValueModule } from '../portable-value/portable-value.module';
 import { RecordComponent } from './record/record.component';
 import { RecordsComponent } from './records/records.component';
+import { UnitModule } from '../unit/unit.module';
 
 @NgModule({
-  imports: [CommonModule, PortableValueModule, MatTabsModule, MomentModule],
+  imports: [CommonModule, PortableValueModule, MatTabsModule, MomentModule, UnitModule],
   declarations: [RecordComponent, RecordsComponent],
   exports: [RecordComponent, RecordsComponent],
 })
