@@ -16,8 +16,10 @@ export class RecordsComponent implements OnInit {
   constructor(private _records: RecordsService, private query: RecordsQuery) { }
 
   ngOnInit() {
+    const record = this.record === 'rain' ? 'rainrate' : this.record;
+
     this.ranges.forEach(range => {
-      this[`${range}$`] = this.query.record$(range, this.record);
+      this[`${range}$`] = this.query.record$(range, record);
     });
   }
 }
