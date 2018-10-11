@@ -7,5 +7,5 @@ import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecordComponent {
-  @Input() data$;
+  @Input() data;
 }

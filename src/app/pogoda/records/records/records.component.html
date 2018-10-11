@@ -1,13 +1,15 @@
 <mat-tab-group [dynamicHeight]="true">
-  <mat-tab label="DZIŚ">
-    <skalagi-record [data$]="day$"></skalagi-record>
+  <ng-template [ngIf]="day$ | async" let-day="$implicit">
+    <mat-tab label="DZIŚ" *ngIf="!(record == 'rain' && day.value == 0)">
+      <skalagi-record [data]="day"></skalagi-record>
+    </mat-tab>
+  </ng-template>
+
+  <mat-tab label="MIESIĄC" *ngIf="month$ | async as month" >
+    <skalagi-record [data]="month"></skalagi-record>
   </mat-tab>
 
-  <mat-tab label="MIESIĄC">
-    <skalagi-record [data$]="month$"></skalagi-record>
-  </mat-tab>
-
-  <mat-tab label="ROK">
-    <skalagi-record [data$]="year$"></skalagi-record>
+  <mat-tab *ngIf="year$ | async as year" label="ROK">
+    <skalagi-record [data]="year"></skalagi-record>
   </mat-tab>
 </mat-tab-group>
