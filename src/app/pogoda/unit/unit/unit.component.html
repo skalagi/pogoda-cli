@@ -1,9 +1,10 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-between center">
-  <span fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <span class="name" fxLayout="row wrap" fxLayoutAlign="space-between center">
     <mat-icon>{{ name ? 'hdr_strong' : icon }}</mat-icon>
-    {{ name ? name : unit?.name }}
-    {{ after }}
+    <div fxLayout="column">
+      <span>{{ name ? name : unit?.name }}</span>
+      <ng-content></ng-content>
+    </div>  
   </span>
-  
   <portable-value [preTip]="preTip" [value]="unit?.value" [after]="unit?.units"></portable-value>
 </div>

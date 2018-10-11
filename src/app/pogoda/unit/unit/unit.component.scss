@@ -2,13 +2,14 @@ div {
     box-sizing: border-box;
 }
 
-span {
+.name {
     box-sizing: border-box;
     letter-spacing: 1px;
     // text-align: center;
     padding: 0 12px;
     margin: 8px 0;
 }
+
 mat-icon {
     margin-right: 12px;
 }

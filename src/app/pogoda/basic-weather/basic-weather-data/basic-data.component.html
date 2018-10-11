@@ -1,24 +1,26 @@
 <div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
-    <ng-template #wind>
-      <skalagi-unit *ngIf="basic?.current" [unit]="basic.current.speed" 
-        [after]="basic.current.translated"></skalagi-unit>      
-      <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed" 
-        [after]="basic.gust.translated"></skalagi-unit>     
+    <ng-template ngIf="basic?.gust">
+
+      <skalagi-unit *ngIf="basic?.current" [unit]="basic.current.speed">
+        {{ basic.current.translated }}
+      </skalagi-unit>
+
+      <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed">
+        {{ basic.gust.translated }}
+      </skalagi-unit>     
+
     </ng-template> 
 
-    <skalagi-unit *ngIf="basic?.trend" 
-      [unit]="basic.trend" [icon]="trendIcon"></skalagi-unit>
+    <skalagi-unit *ngIf="basic?.trend" [icon]="trendIcon"
+      [unit]="basic.trend"></skalagi-unit>
 
     <skalagi-unit *ngIf="basic?.real" 
       [unit]="basic.real"></skalagi-unit>
 
-    <skalagi-unit *ngIf="basic?.current && !basic?.gust; else wind" 
-      [unit]="basic.current"></skalagi-unit>
-
     <skalagi-unit *ngIf="basic?.sum" 
       [unit]="basic.sum"></skalagi-unit>
 
-    <skalagi-unit *ngIf="basic?.dewPoint" 
-      icon="opacity" [unit]="basic.dewPoint"></skalagi-unit>
+    <skalagi-unit *ngIf="basic?.dewPoint" icon="opacity"
+      [unit]="basic.dewPoint"></skalagi-unit>
     
   </div>
