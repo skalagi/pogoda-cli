@@ -1,5 +1,5 @@
 <div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
-    <ng-template ngIf="basic?.gust">
+    <ng-template [ngIf]="basic?.gust">
 
       <skalagi-unit *ngIf="basic?.current" [unit]="basic.current.speed">
         {{ basic.current.translated }}
