@@ -11,14 +11,25 @@ export class ChartService {
   constructor(private store: ChartStore, private http: HttpClient) { }
 
   private parseData(data, type, range) {
-    if (type === 'outHumidity' && range === 'day') {
+    if (type === 'humidity' && range === 'day') {
       return data.filter(point => point[1]);
     }
 
     return data;
   }
 
-  load(type, range) {
+  type(rawType) {
+    switch (rawType) {
+      case 'temperature': return 'outTemp';
+      case 'humidity': return 'outHumidity';
+      case 'wind': return 'windGust';
+    }
+
+    return rawType;
+  }
+
+  load(rawType, range) {
+    let type = this.type(rawType);
     if (this.types.has(type + range)) { return; }
     this.types.add(type + range);
 

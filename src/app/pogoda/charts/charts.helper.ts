@@ -16,8 +16,8 @@ export function decodeRange(day) {
 
 export function decodeType(type) {
     switch (type) {
-        case 'outTemp': return 'temperatura'
-        case 'outHumidity': return 'wilgotność';
+        case 'temperature': return 'temperatura'
+        case 'humidity': return 'wilgotność';
         case 'windGust': return 'wiatr';
         case 'rain': return 'opady';
         case 'barometer': return 'ciśnienie';
@@ -26,10 +26,10 @@ export function decodeType(type) {
 
 export function encodeType(type) {
     switch (type) {
-        case 'temperatura': return 'outTemp';
-        case 'wilgotność': return 'outHumidity';
+        case 'temperatura': return 'temperature';
+        case 'wilgotność': return 'humidity';
+        case 'ciśnienie': return 'barometer';
         case 'wiatr': return 'windGust';
         case 'opady': return 'rain';
-        case 'ciśnienie': return 'barometer';
     }
 }

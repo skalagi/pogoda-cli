@@ -9,13 +9,13 @@ const ranges = { day: [], month: [], year: [] };
 
 export function createInitialState(): ChartState {
   return {
-    outTemp: ranges,
+    temperature: ranges,
     barometer: ranges,
-    outHumidity: ranges,
+    humidity: ranges,
     rain: ranges,
     time: ranges,
-    windGust: ranges,
-    windCurrent: ranges,
+    wind: ranges,
+    windGustDir: ranges,
   };
 }
 
