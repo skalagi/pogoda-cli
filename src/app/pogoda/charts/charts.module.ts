@@ -27,7 +27,8 @@ Highcharts.setOptions({
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: ':type', component: ReportComponent },
+      { path: ':type', redirectTo: ':type/dziś' },
+      { path: ':type/:range', component: ReportComponent }
     ]),
     MatProgressBarModule,
     MatCardModule,

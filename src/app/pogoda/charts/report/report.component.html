@@ -1,14 +1,20 @@
-<mat-tab-group color="accent">
-    <mat-tab label="TEMPERATURA"></mat-tab>
-    <mat-tab label="CIŚNIENIE"></mat-tab>
-    <mat-tab label='WILGOTNOŚĆ'></mat-tab>
-    <mat-tab label='OPADY'></mat-tab>
-  </mat-tab-group>
-  
-<mat-tab-group color="accent" (selectedIndexChange)="changeRange($event)">
-  <mat-tab label="DZIENNY"></mat-tab>
-  <mat-tab label='MIESIĘCZNY'></mat-tab>
-  <mat-tab label='ROCZNY'></mat-tab>
-</mat-tab-group>
+<nav mat-tab-nav-bar color="accent" *ngIf="type$ | async as _type">
+  <a mat-tab-link
+      *ngFor="let type of types$ | async"
+      [routerLink]="['/', 'raport', type, decodeRange(_type.range) || 'dziś']"
+      [active]="type == decodeType(_type.type)">
+    {{ type }}
+  </a>
+</nav>
 
-<skalagi-chart [dataType]='dataType' [range$]="range$" [type]='type'></skalagi-chart>
+<nav mat-tab-nav-bar color="accent" *ngIf="type$ | async as _type">
+  <a mat-tab-link
+    *ngFor="let range of ranges$ | async"
+    [routerLink]="['/', 'raport', decodeType(_type.type), range]"
+    [active]="range == decodeRange(_type.range)">
+    {{ range }}
+  </a>
+</nav>
+
+<skalagi-chart [type$]="type$"></skalagi-chart>
+<router-outlet></router-outlet>

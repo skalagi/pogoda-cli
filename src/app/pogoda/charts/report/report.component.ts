@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of, combineLatest } from 'rxjs';
+
+import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
 import { ChartService } from '../state';
 
 @Component({
@@ -10,45 +12,32 @@ import { ChartService } from '../state';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  range$ = new BehaviorSubject('day');
-  dataType = '';
-  type = '';
+  type$ = new BehaviorSubject({ range: 'day', type: 'temperature' });
+  types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
+  ranges$ = of(['dziś', 'miesiąc', 'rok']);
 
   constructor(private route: ActivatedRoute, private charts: ChartService) { }
 
-  changeRange(index) {
-    this.range$.next(['day', 'month', 'year'][index]);
+  decodeRange(range) {
+    return decodeRange(range);
   }
 
-  private getType(type) {
-    switch (type) {
-      case 'temperatura':
-      return 'outTemp';
-
-      case 'wilgotność':
-      return 'outHumidity';
-
-      case 'wiatr':
-      return 'windGust';
-
-      case 'opady':
-      return 'rain';
-
-      case 'ciśnienie':
-      return 'barometer';
-    }
+  decodeType(type) {
+    return decodeType(type);
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe((data) => {
       const type = data.get('type');
+      const range = data.get('range');
 
       if (type) {
-        const _type = this.getType(type);
-
+        const _type = encodeType(type);
         this.charts.preload(_type);
-        this.dataType = _type;
-        this.type = type;
+
+        if (range) {
+          this.type$.next({ range: encodeRange(range), type: _type });
+        }
       }
     });
   }

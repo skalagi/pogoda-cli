@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { ChartQuery } from '../state';
+import { switchMap } from 'rxjs/operators';
 
 const textStyle = {
   fontWeight: '600',
@@ -13,37 +14,32 @@ const textStyle = {
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
-  @Input() type: string;
-  @Input() date: string;
-  @Input() range: string;
-  @Input() dataType: string;
-  @Input() range$;
-
-  loaded = true;
+  @Input() type$;
   chart: Chart;
 
   constructor(private query: ChartQuery) { }
 
-  get polRange() {
-    switch (this.range) {
-      case 'day': return 'dzienny';
-      case 'month': return 'miesięczny';
-      case 'year': return 'roczny';
-    }
-  }
-
   ngOnInit() {
     this.chart = this.createChart();
 
-    this.range$.subscribe(range => {
-      this.query.chart(range, this.dataType).subscribe(data => {
-        const type = data[0] && data[0].length > 2 ? 'arearange' : 'line';
+    this.type$.pipe(switchMap(({ range, type }) => {
+      if (this.chart.ref) {
+        this.chart.ref.yAxis[0].update({
+          min: type === 'windGust' ? 0 : null,
+          title: { text: '' },
+        });
+      }
+      return this.query.chart(range, type);
+    })).subscribe(data => {
+      const type = data.length && data[0].length > 2 ? 'arearange' : 'line';
+      const serie = { type, name: 'jednostka', data };
 
-        this.chart.removeSerie(0);
-        this.chart.addSerie({ type, name: this.type, data });
-        // this.chart.ref.yAxis[0].update({title: { text:  }});
-        // this.loaded = true;
-      });
+      if (this.chart.ref && this.chart.ref.series[0]) {
+        this.chart.ref.series[0].update(serie);
+      } else {
+        this.chart.addSerie(serie);
+      }
+      // this.loaded = true;
     });
   }
 
@@ -73,7 +69,6 @@ export class ChartComponent implements OnInit {
       },
 
       yAxis: {
-        min: this.type === 'windGust' ? 0 : null,
         title: {
           text: '',
           style: {
