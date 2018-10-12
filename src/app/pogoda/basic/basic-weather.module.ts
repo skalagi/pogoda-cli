@@ -8,17 +8,19 @@ import { RecordsModule } from '../records/records.module';
 import { BasicWeatherComponent } from './basic-weather.component';
 import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, MatButtonModule } from '@angular/material';
 import { BasicCardComponent } from './basic-card/basic-card.component';
-import { HttpClientModule } from '@angular/common/http';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { UnitModule } from '../unit/unit.module';
 import { BasicDataComponent } from './basic-data/basic-data.component';
+import { BasicChartComponent } from './basic-chart/basic-chart.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: BasicWeatherComponent }]),
+    ChartModule,
 
     DragDropModule,
     MatButtonModule,
@@ -36,6 +38,7 @@ import { BasicDataComponent } from './basic-data/basic-data.component';
     BasicWeatherComponent,
     BasicCardComponent,
     BasicDataComponent,
+    BasicChartComponent,
   ],
 
   exports: [BasicWeatherComponent],

@@ -18,7 +18,17 @@ export class ChartService {
     return data;
   }
 
-  type(rawType) {
+  decodeType(type) {
+    switch (type) {
+      case 'outTemp': return 'temperature';
+      case 'outHumidity': return 'humidity';
+      case 'windGust': return 'wind';
+    }
+
+    return type;
+  }
+
+  encodeType(rawType) {
     switch (rawType) {
       case 'temperature': return 'outTemp';
       case 'humidity': return 'outHumidity';
@@ -28,12 +38,12 @@ export class ChartService {
     return rawType;
   }
 
-  load(rawType, range) {
-    let type = this.type(rawType);
+  load(type, range) {
+    const chartType = this.encodeType(type);
     if (this.types.has(type + range)) { return; }
     this.types.add(type + range);
 
-    this.http.get(`${ environment.apiSource }/${ range }-charts/${ type }.json`)
+    this.http.get(`${ environment.apiSource }/${ range }-charts/${ chartType }.json`)
       .subscribe(data => {
         this.store.setState(state => {
           const _type = { ...state[type] };

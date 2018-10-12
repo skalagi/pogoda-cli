@@ -8,6 +8,8 @@
         [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
     </h3>
 
+    <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
+
     <mat-tab-group [dynamicHeight]="true">
       <mat-tab *ngIf="!basic?.value" label="DANE">
         <skalagi-basic-data [basic]="basic"></skalagi-basic-data>

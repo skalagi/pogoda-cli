@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BasicWeatherQuery } from '../state';
+import { ChartQuery } from 'app/pogoda/charts/state';
 
 @Component({
   selector: 'skalagi-basic-card',
@@ -10,8 +11,12 @@ export class BasicCardComponent implements OnInit {
   @Input() title;
   @Input() type;
   basic$;
+  chart$;
 
-  constructor(private query: BasicWeatherQuery) {}
+  constructor(
+    private query: BasicWeatherQuery,
+    private chartQuery: ChartQuery,
+    ) {}
 
   /*
   transform(wind) {
@@ -21,5 +26,6 @@ export class BasicCardComponent implements OnInit {
 
   ngOnInit() {
     this.basic$ = this.query.basic(this.type);
+    this.chart$ = this.chartQuery.chart('day', this.type);
   }
 }
