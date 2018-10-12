@@ -14,10 +14,8 @@ export function createInitialState(): ChartState {
     outHumidity: ranges,
     rain: ranges,
     time: ranges,
-    wind: {
-      current: ranges,
-      gust: ranges
-    }
+    windGust: ranges,
+    windCurrent: ranges,
   };
 }
 

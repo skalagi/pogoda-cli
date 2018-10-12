@@ -10,7 +10,6 @@ export class ChartQuery extends Query<ChartState> {
   }
 
   chart(range, type) {
-    console.log(range, type);
     return this.select(state => state[type][range]);
   }
 
