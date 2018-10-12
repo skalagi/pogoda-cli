@@ -38,10 +38,11 @@ export class SentencesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.query.list$.subscribe(sentences => {
       this.sentences = sentences.map(sentence => sentence.content);
-      this.current = this.sentences.length;
-    });
 
-    setTimeout(() => this.next());
+      if (this.sentence) {
+        setTimeout(() => this.next(), this.readTime);
+      }
+    });
   }
 
   ngOnDestroy() {
