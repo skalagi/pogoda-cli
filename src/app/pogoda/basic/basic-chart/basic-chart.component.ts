@@ -24,7 +24,11 @@ export class BasicChartComponent implements OnInit {
       ...chartConfig,
       chart: {
         height: 128,
+        type: 'area',
       },
+
+      colors: ['#2196f3'],
+
       plotOptions: {
         line: {
           lineWidth: 4,
@@ -33,6 +37,7 @@ export class BasicChartComponent implements OnInit {
           },
         },
       },
+
       yAxis: {
         visible: false,
       },
