@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PogodaComponent } from './pogoda/pogoda.component';
-import { BasicWeatherModule } from './basic-weather/basic-weather.module';
 import { RouterModule } from '@angular/router';
 import { pogodaRoutes } from './pogoda.routes';
 import { HeaderModule } from './pogoda/header/header.module';
@@ -16,7 +15,6 @@ import { FooterModule } from './pogoda/footer/footer.module';
     HeaderModule,
     FooterModule,
     SentencesModule,
-    BasicWeatherModule,
   ],
 
   declarations: [

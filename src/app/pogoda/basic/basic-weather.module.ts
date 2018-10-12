@@ -12,14 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { UnitModule } from '../unit/unit.module';
-import { BasicDataComponent } from './basic-weather-data/basic-data.component';
+import { BasicDataComponent } from './basic-data/basic-data.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule,
+    RouterModule.forChild([{ path: '', component: BasicWeatherComponent }]),
 
     DragDropModule,
     MatButtonModule,

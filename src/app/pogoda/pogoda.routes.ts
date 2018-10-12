@@ -1,8 +1,7 @@
-import { BasicWeatherComponent } from './basic-weather/basic-weather.component';
 import { Routes } from '@angular/router';
 
 export const pogodaRoutes: Routes = [
-  { path: '', pathMatch: 'full', component: BasicWeatherComponent },
+  { path: '', pathMatch: 'full', loadChildren: './basic/basic-weather.module#BasicWeatherModule' },
   { path: 'raport', loadChildren: './charts/charts.module#ChartsModule' },
   /*
   { path: 'temperatura', component: TemperatureDetailsComponent },

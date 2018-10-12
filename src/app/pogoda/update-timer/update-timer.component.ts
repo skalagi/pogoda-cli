@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicService } from '../api/basic/basic.service';
 import { Unit } from '../unit/unit';
-import { BasicApi } from '../basic-weather/state';
+import { BasicApi } from '../basic/state';
 
 @Component({
   selector: 'skalagi-update-timer',

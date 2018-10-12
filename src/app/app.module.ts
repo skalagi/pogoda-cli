@@ -11,6 +11,7 @@ registerLocaleData(localePl, 'pl');
 
 import { PogodaModule } from './pogoda/pogoda.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
 
     PogodaModule,
-    FormsModule,
-    HttpModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pl' } ],
   bootstrap: [AppComponent]
