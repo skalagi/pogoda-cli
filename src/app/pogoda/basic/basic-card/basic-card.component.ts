@@ -13,6 +13,12 @@ export class BasicCardComponent implements OnInit {
 
   constructor(private query: BasicWeatherQuery) {}
 
+  /*
+  transform(wind) {
+    return `rotate(${ wind ? wind.speed.value : 0 + 180 }deg)`;
+  }
+  */
+
   ngOnInit() {
     this.basic$ = this.query.basic(this.type);
   }

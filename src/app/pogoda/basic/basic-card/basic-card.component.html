@@ -3,7 +3,8 @@
     <h3 class="second-font title" *ngIf="title" fxLayout="row wrap" 
       [fxLayoutAlign]="basic?.value || basic?.current?.value || basic?.current?.speed?.value ? 'space-between center' : 'center center'">
       {{ title }}
-      <skalagi-portable-value [value]="basic?.value || basic?.current?.value || basic?.current?.speed?.value" 
+      <skalagi-portable-value *ngIf="basic?.value || basic?.current?.value || basic?.current?.speed?.value"
+        [value]="basic?.value || basic?.current?.value || basic?.current?.speed?.value" 
         [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
     </h3>
 
