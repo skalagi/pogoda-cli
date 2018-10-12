@@ -5,9 +5,9 @@ import { PogodaComponent } from './pogoda/pogoda.component';
 import { BasicWeatherModule } from './basic-weather/basic-weather.module';
 import { RouterModule } from '@angular/router';
 import { pogodaRoutes } from './pogoda.routes';
-import { HeaderModule } from './header/header.module';
+import { HeaderModule } from './pogoda/header/header.module';
 import { SentencesModule } from './sentences/sentences.module';
-import { FooterModule } from './footer/footer.module';
+import { FooterModule } from './pogoda/footer/footer.module';
 
 @NgModule({
   imports: [

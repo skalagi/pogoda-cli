@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { PortableValueModule } from '../portable-value/portable-value.module';
 import { RecordsModule } from '../records/records.module';
 
 import { BasicWeatherComponent } from './basic-weather.component';
@@ -20,7 +19,6 @@ import { BasicDataComponent } from './basic-weather-data/basic-data.component';
   imports: [
     CommonModule,
     RouterModule,
-    PortableValueModule,
     HttpClientModule,
 
     DragDropModule,

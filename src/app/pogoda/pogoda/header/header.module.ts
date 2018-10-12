@@ -1,4 +1,4 @@
-import { UpdateTimerModule } from './../update-timer/update-timer.module';
+import { UpdateTimerModule } from '../../update-timer/update-timer.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

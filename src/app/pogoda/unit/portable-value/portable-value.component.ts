@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { formatNumber } from '@angular/common';
 
 @Component({
-  selector: 'portable-value',
+  selector: 'skalagi-portable-value',
   templateUrl: './portable-value.component.html',
   styleUrls: ['./portable-value.component.scss']
 })

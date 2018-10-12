@@ -3,15 +3,14 @@ import { Http } from '@angular/http';
 
 import { environment } from '../../../../environments/environment';
 
-import { BasicApi } from './basic.interface';
 import { map } from 'rxjs/operators';
 
 
 @Injectable()
 export class BasicService {
   public nextUpdate = new EventEmitter();
-  public update: EventEmitter<BasicApi> = new EventEmitter();
-  public data: BasicApi;
+  public update: EventEmitter<any/*BasicApi*/> = new EventEmitter();
+  public data: any; // BasicApi;
 
   private source = `${ environment.apiSource }/basic.json`;
   private timeToReconnect = null;
