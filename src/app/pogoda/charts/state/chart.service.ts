@@ -10,21 +10,19 @@ export class ChartService {
 
   constructor(private store: ChartStore, private http: HttpClient) { }
 
-  preload(type) {
-    if (this.types.has(type)) { return; }
-    this.types.add(type);
+  load(type, range) {
+    if (this.types.has(type + range)) { return; }
+    this.types.add(type + range);
 
-    ['day', 'month', 'year'].forEach(range => {
-      this.http.get(`${ environment.apiSource }/${ range }-charts/${ type }.json`)
-        .subscribe(data => {
-          this.store.setState(state => {
-            const _type = { ...state[type] };
-            _type[range] = data;
+    this.http.get(`${ environment.apiSource }/${ range }-charts/${ type }.json`)
+      .subscribe(data => {
+        this.store.setState(state => {
+          const _type = { ...state[type] };
+          _type[range] = data;
 
-            return { ...state, [type]: _type };
-          });
+          return { ...state, [type]: _type };
         });
-    });
+      });
   }
 
 }

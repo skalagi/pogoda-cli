@@ -28,15 +28,17 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((data) => {
-      const type = data.get('type');
-      const range = data.get('range');
+      const _range = data.get('range');
+      const _type = data.get('type');
 
-      if (type) {
-        const _type = encodeType(type);
-        this.charts.preload(_type);
+      if (_type) {
+        const type = encodeType(_type);
 
-        if (range) {
-          this.type$.next({ range: encodeRange(range), type: _type });
+        if (_range) {
+          const range = encodeRange(_range);
+
+          this.charts.load(type, range);
+          this.type$.next({ range: range, type: type });
         }
       }
     });
