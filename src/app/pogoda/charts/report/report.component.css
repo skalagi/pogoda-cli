@@ -1,6 +1,5 @@
 :host {
   box-sizing: border-box;
-  padding: 24px;
   width: 100%;
 }
 
@@ -8,6 +7,10 @@ mat-tab-group {
   border-radius: 5px;
 }
 
-:host ::ng-deep .mat-tab-label {
-  color: #fff;
+:host ::ng-deep .mat-tab-link {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }

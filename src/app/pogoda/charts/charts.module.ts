@@ -27,6 +27,7 @@ Highcharts.setOptions({
   imports: [
     CommonModule,
     RouterModule.forChild([
+      { path: '', pathMatch: 'full', redirectTo: 'temperatura/dziś' },
       { path: ':type', redirectTo: ':type/dziś' },
       { path: ':type/:range', component: ReportComponent }
     ]),

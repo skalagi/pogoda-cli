@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, Observable, of, combineLatest } from 'rxjs';
+import { of, Subject, BehaviorSubject } from 'rxjs';
 
 import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
 import { ChartService } from '../state';
@@ -12,9 +12,9 @@ import { ChartService } from '../state';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  type$ = new BehaviorSubject({ range: 'day', type: 'temperature' });
   types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
+  type$ = new BehaviorSubject(null);
 
   constructor(private route: ActivatedRoute, private charts: ChartService) { }
 
