@@ -1,29 +1,17 @@
 import { Injectable } from '@angular/core';
-import { ID } from '@datorama/akita';
-import { SentencesStore } from './sentences.store';
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from 'environments/environment';
+import { SentencesStore } from './sentences.store';
+import { createSentence } from './sentence.model';
 
 @Injectable({ providedIn: 'root' })
 export class SentencesService {
 
-  constructor(private sentencesStore: SentencesStore,
-              private http: HttpClient) {
-    http.get(`${environment.apiSource}/info.json`).subscribe(data => {
-      console.log(data);
+  constructor(private store: SentencesStore, private http: HttpClient) {
+    http.get(`${environment.apiSource}/info.json`).subscribe((entities: String[]) => {
+      this.store.set(entities.map(entity => createSentence({ content: entity })));
     });
-  }
-
-  get() {
-    // this.http.get().subscribe((entities: ServerResponse) => {
-      // this.sentencesStore.set(entities);
-    // });
-  }
-
-  add() {
-    // this.http.post().subscribe((entity: ServerResponse) => {
-      // this.sentencesStore.add(entity);
-    // });
   }
 
 }

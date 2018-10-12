@@ -5,6 +5,7 @@ import { Sentence } from './sentence.model';
 
 @Injectable({ providedIn: 'root' })
 export class SentencesQuery extends QueryEntity<SentencesState, Sentence> {
+  list$ = this.selectAll();
 
   constructor(protected store: SentencesStore) {
     super(store);

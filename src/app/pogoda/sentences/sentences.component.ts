@@ -1,9 +1,11 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
 import { trigger, transition, animate, style, state } from '@angular/animations';
-import { SentencesService } from '../api/sentences/sentences.service';
+import { Subscription } from 'rxjs';
+
+import { SentencesQuery, SentencesService } from './state';
 
 @Component({
-  selector: 'app-sentences',
+  selector: 'skalagi-sentences',
   templateUrl: './sentences.component.html',
   styleUrls: ['./sentences.component.css'],
   animations: [
@@ -14,13 +16,15 @@ import { SentencesService } from '../api/sentences/sentences.service';
     ]),
   ],
 })
-export class SentencesComponent implements OnInit {
+export class SentencesComponent implements OnInit, OnDestroy {
   @HostBinding('class') primaryBg = 'primary-bg';
-  private sentences: string[] = [];
-  public state = 'show';
+  private subscription: Subscription;
+  private sentences: String[] = [];
   private current = 0;
+  loading;
+  state = 'show';
 
-  constructor(private api: SentencesService) { }
+  constructor(sentences: SentencesService, private query: SentencesQuery) { }
 
   get sentence() {
     const { sentences, current } = this;
@@ -32,10 +36,16 @@ export class SentencesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.api.sentences.subscribe(sentences => {
-      this.sentences = sentences;
-      setTimeout(() => this.next(), this.readTime);
+    this.subscription = this.query.list$.subscribe(sentences => {
+      this.sentences = sentences.map(sentence => sentence.content);
+      this.current = this.sentences.length;
     });
+
+    setTimeout(() => this.next());
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   showNew({ toState }) {

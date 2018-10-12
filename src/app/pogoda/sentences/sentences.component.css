@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   padding: 12px 24px;
   color: #fff;
