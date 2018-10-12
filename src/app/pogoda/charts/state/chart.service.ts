@@ -10,6 +10,14 @@ export class ChartService {
 
   constructor(private store: ChartStore, private http: HttpClient) { }
 
+  private parseData(data, type, range) {
+    if (type === 'outHumidity' && range === 'day') {
+      return data.filter(point => point[1]);
+    }
+
+    return data;
+  }
+
   load(type, range) {
     if (this.types.has(type + range)) { return; }
     this.types.add(type + range);
@@ -18,7 +26,8 @@ export class ChartService {
       .subscribe(data => {
         this.store.setState(state => {
           const _type = { ...state[type] };
-          _type[range] = data;
+
+          _type[range] = this.parseData(data, type, range);
 
           return { ...state, [type]: _type };
         });
