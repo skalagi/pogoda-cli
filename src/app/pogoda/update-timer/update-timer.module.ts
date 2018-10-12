@@ -4,14 +4,12 @@ import { CommonModule } from '@angular/common';
 import { UpdateTimerComponent } from './update-timer.component';
 import { MatProgressSpinnerModule, MatTooltipModule } from '@angular/material';
 import { MomentModule } from 'angular2-moment';
-import { ApiModule } from '../api/api.module';
 
 @NgModule({
     imports: [
         CommonModule,
         MatProgressSpinnerModule,
         MomentModule,
-        ApiModule,
         MatTooltipModule,
     ],
 
