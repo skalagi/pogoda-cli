@@ -1,15 +1,4 @@
-:host {
-  display: flex;
-  flex-flow: wrap;
-  margin: auto;
-}
-
-app-header, app-sentences {
-  flex-grow: 1;
-}
-
 router-outlet {
-  width: 100%;
   display: flex;
   justify-content: center;
 }

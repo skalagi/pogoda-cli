@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pogoda',
+  selector: 'skalagi-pogoda',
   templateUrl: './pogoda.component.html',
   styleUrls: ['./pogoda.component.scss']
 })

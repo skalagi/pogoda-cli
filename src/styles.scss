@@ -12,16 +12,6 @@ body {
   font-family: 'Alegreya Sans', sans-serif;
 }
 
-app-root {
-  margin: auto;
-}
-
-#loader {
-  font-weight: 600;
-  font-size: 2em;
-  color: mat-color($weather-blue-accent);
-}
-
 .primary-bg {
   background: $primary;
 }
@@ -37,7 +27,7 @@ app-root {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: mat-color($weather-blue-primary);
+  background-color: $primary;
   border: 1px solid mat-color($weather-blue-accent);
   border-radius: 4px;
 }

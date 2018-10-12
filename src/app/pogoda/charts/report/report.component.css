@@ -1,6 +1,7 @@
 :host {
   box-sizing: border-box;
   width: 100%;
+  margin-top: 2px;
 }
 
 mat-tab-group {

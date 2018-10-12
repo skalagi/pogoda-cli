@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { pogodaRoutes } from './pogoda.routes';
 import { HeaderModule } from './header/header.module';
 import { SentencesModule } from './sentences/sentences.module';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(pogodaRoutes),
     HeaderModule,
+    FooterModule,
     SentencesModule,
     BasicWeatherModule,
   ],

@@ -3,7 +3,7 @@ import { environment } from 'environments/environment';
 import { akitaDevtools } from '@datorama/akita';
 
 @Component({
-  selector: 'app-root',
+  selector: 'skalagi-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
