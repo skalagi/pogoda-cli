@@ -17,6 +17,8 @@ export class PortableValueComponent {
   @Input() afterTip = '';
   @Input() afterText = '';
 
+  @Input() color: string;
+
   get showTooltip() {
     return this.value.toString() !== this.roundedValue;
   }
