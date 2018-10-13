@@ -1,1 +1,3 @@
-<div fxLayout fxLayoutAlign="center center" [chart]="chart"></div>
+<highcharts-chart 
+    (chartInstance)="chartInit($event)"
+    [Highcharts]="highCharts" [options]="options"></highcharts-chart>

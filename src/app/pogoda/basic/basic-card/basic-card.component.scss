@@ -1,8 +1,9 @@
 .card {
     background: #fff;
-    border-radius: 6px;
+    border-radius: 8px;
     height: 100%;
     box-sizing: border-box;
+    border: 2px solid #fff;
     overflow: hidden;
 }
 
@@ -14,7 +15,7 @@
     flex-grow: 1;
 }
 
-h3, mat-tab-group, .actions {
+h3, .actions {
     padding: 0 24px;
 }
 
@@ -22,7 +23,7 @@ h3 {
     margin: 0;
     font-size: 32px;
     font-weight: 400;
-    padding-top: 32px;
+    padding-top: 24px;
     letter-spacing: 3px;
     color: #fff;
 }
