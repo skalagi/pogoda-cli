@@ -6,7 +6,6 @@ export const textStyle = {
 export const chartConfig = {
     chart: {
         backgroundColor: 'transparent',
-        margin: 0,
       },
 
       credits: { enabled: false },
@@ -14,15 +13,18 @@ export const chartConfig = {
       colors: ['#FFEB3B'],
 
       legend: {
+        enabled: false,
         itemStyle: {
           ...textStyle
         }
       },
 
+      title: {
+        text: '',
+      },
+
       xAxis: {
         type: 'datetime',
-        minPadding: 0,
-        maxPadding: 0,
         labels: {
           style: {
             ...textStyle,
@@ -42,9 +44,5 @@ export const chartConfig = {
             ...textStyle
           }
         }
-      },
-      series: [],
-      title: {
-        text: '',
       },
 };

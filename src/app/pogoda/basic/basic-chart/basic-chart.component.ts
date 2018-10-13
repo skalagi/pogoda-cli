@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { decodeType } from 'app/pogoda/charts/charts.helper';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import * as Highcharts from 'highcharts';
 
 export interface BasicChart {
@@ -14,7 +14,7 @@ export interface BasicChart {
   templateUrl: './basic-chart.component.html',
   styleUrls: ['./basic-chart.component.scss']
 })
-export class BasicChartComponent implements OnInit, AfterViewInit {
+export class BasicChartComponent {
   @Input() data$: Observable<BasicChart>;
   highCharts = Highcharts;
   options = {
@@ -22,8 +22,9 @@ export class BasicChartComponent implements OnInit, AfterViewInit {
     chart: {
       ...chartConfig.chart,
       backgroundColor: '#2196f3',
-      height: 96,
       type: 'area',
+      height: 96,
+      margin: 0,
     },
 
     colors: ['#fff'],
@@ -31,13 +32,7 @@ export class BasicChartComponent implements OnInit, AfterViewInit {
     plotOptions: {
       area: {
         fillColor: '#fff',
-        negativeColor: '#fff',
-        negativeFillColor: '#fff',
         lineWidth: 1,
-
-        marker: {
-          enabled: false,
-        },
       },
     },
 
@@ -47,12 +42,9 @@ export class BasicChartComponent implements OnInit, AfterViewInit {
     },
     xAxis: {
       ...chartConfig.xAxis,
-      gridLineColor: 'amber',
-      visible: true,
-    },
-    legend: {
-      ...chartConfig.legend,
-      enabled: false,
+      minPadding: 0,
+      maxPadding: 0,
+      visible: false,
     },
   };
 
@@ -62,21 +54,6 @@ export class BasicChartComponent implements OnInit, AfterViewInit {
         chart.addSeries({ data, name: decodeType(type) });
       }
     });
-  }
-
-  ngAfterViewInit() {
-    // this.chart.ref.reflow();
-
-  }
-
-  ngOnInit() {
-    // this.chart = this.createChart();
-    /*
-    combineLatest(this.data$, this.chart.ref$).subscribe((res) => {
-      const { type, data } = res[0];
-      const chart: Highcharts.ChartObject = res[1];
-    });
-    */
   }
 
 }

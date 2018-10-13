@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { switchMap } from 'rxjs/operators';
 
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { ChartQuery } from '../state';
+import { decodeType } from '../charts.helper';
 
 @Component({
   selector: 'skalagi-chart',
@@ -18,23 +18,24 @@ export class ChartComponent {
   constructor(private query: ChartQuery) { }
 
   chartInit(chart) {
-    this.type$.pipe(switchMap(({ range, type }) => {
-      if (chart) {
+    this.type$.subscribe(({ range, type }) => {
+      this.query.chart(range, type).subscribe(data => {
+        const chartType = data.length && data[0].length > 2 ? 'arearange' : 'line';
+        const serie = { type: chartType, data, name: decodeType(type) };
+
         chart.yAxis[0].update({
           min: type === 'windGust' ? 0 : null,
-          title: { text: '' },
-        });
-      }
-      return this.query.chart(range, type);
-    })).subscribe(data => {
-      const type = data.length && data[0].length > 2 ? 'arearange' : 'line';
-      const serie = { type, name: 'jednostka', data };
+          title: { text: decodeType(type) },
+        }, false);
 
-      if (chart && chart.series[0]) {
-        chart.series[0].update(serie);
-      } else {
-        chart.addSeries(serie);
-      }
+        if (chart.series[0]) {
+          chart.series[0].update(serie, false);
+        } else {
+          chart.addSeries(serie, false);
+        }
+
+        chart.redraw(true);
+      });
       // this.loaded = true;
     });
   }
