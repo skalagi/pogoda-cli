@@ -23,7 +23,7 @@ export class BasicChartComponent {
       ...chartConfig.chart,
       backgroundColor: '#2196f3',
       type: 'area',
-      height: 96,
+      height: 64,
       margin: 0,
     },
 
@@ -38,6 +38,7 @@ export class BasicChartComponent {
 
     yAxis: {
       ...chartConfig.yAxis,
+      endOnTick: false,
       visible: false,
     },
     xAxis: {
