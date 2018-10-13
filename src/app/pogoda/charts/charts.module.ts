@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChartModule } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartComponent } from './chart/chart.component';
 import { ReportComponent } from './report/report.component';
 import {
@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
     MatProgressBarModule,
     MatCardModule,
     MatTabsModule,
-    ChartModule,
+    HighchartsChartModule,
   ],
   declarations: [ChartComponent, ReportComponent],
   exports: [ChartComponent, ReportComponent]

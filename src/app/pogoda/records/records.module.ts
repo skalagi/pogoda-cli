@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material';
-import { MomentModule } from 'angular2-moment';
+import { MomentModule } from 'ngx-moment';
 
 import { RecordComponent } from './record/record.component';
 import { RecordsComponent } from './records/records.component';

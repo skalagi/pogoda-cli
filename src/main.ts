@@ -4,9 +4,13 @@ import 'moment/min/locales';
 import * as moment from 'moment';
 moment.locale('pl-pl');
 
+import * as Highcharts from 'highcharts';
+
+/*
 import { Highcharts } from 'angular-highcharts';
 require('highcharts/highcharts-more')(Highcharts);
 require('highcharts/modules/accessibility')(Highcharts);
+*/
 
 Highcharts.setOptions({
   lang: {

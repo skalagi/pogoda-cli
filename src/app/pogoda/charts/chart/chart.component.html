@@ -1,1 +1,3 @@
-<div [chart]="chart"></div>
+<highcharts-chart 
+    (chartInstance)="chartInit($event)"
+    [Highcharts]="highcharts" [options]="options"></highcharts-chart>
