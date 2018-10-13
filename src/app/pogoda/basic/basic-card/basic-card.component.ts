@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BasicWeatherQuery } from '../state';
 import { ChartQuery } from 'app/pogoda/charts/state';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'skalagi-basic-card',
@@ -25,7 +26,10 @@ export class BasicCardComponent implements OnInit {
   */
 
   ngOnInit() {
-    this.basic$ = this.query.basic(this.type);
-    this.chart$ = this.chartQuery.chart('day', this.type);
+    const { type } = this;
+
+    this.basic$ = this.query.basic(type);
+    this.chart$ = this.chartQuery.chart('day', type)
+      .pipe(map(data => ({ data, type })));
   }
 }

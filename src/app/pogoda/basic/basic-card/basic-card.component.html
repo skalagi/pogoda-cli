@@ -1,6 +1,6 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
   <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between">
-    <h3 class="second-font title" *ngIf="title" fxLayout="row wrap" 
+    <h3 class="second-font primary-bg title" *ngIf="title" fxLayout="row wrap" 
       [fxLayoutAlign]="basic?.value || basic?.current?.value || basic?.current?.speed?.value ? 'space-between center' : 'center center'">
       {{ title }}
       <skalagi-portable-value *ngIf="basic?.value || basic?.current?.value || basic?.current?.speed?.value"
@@ -8,7 +8,7 @@
         [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
     </h3>
 
-    <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
+    <skalagi-basic-chart class="primary-bg" [data$]="chart$"></skalagi-basic-chart>
 
     <mat-tab-group [dynamicHeight]="true">
       <mat-tab *ngIf="!basic?.value" label="DANE">
@@ -23,7 +23,8 @@
     </mat-tab-group>
     
     <div class="actions">
-      <button mat-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
+      <button mat-stroked-button disabled color='primary'>SZCZEGÓŁY</button>
+      <button mat-stroked-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
     </div>
   </div>
 </ng-template>

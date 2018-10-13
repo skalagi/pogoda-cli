@@ -3,15 +3,28 @@
     border-radius: 6px;
     height: 100%;
     box-sizing: border-box;
-    padding: 12px 24px;
+    overflow: hidden;
 }
 
 .title {
     text-align: center;
 }
 
-::ng-deep .mat-tab-body-wrapper {
+:host ::ng-deep .mat-tab-body-wrapper {
     flex-grow: 1;
+}
+
+h3, mat-tab-group, .actions {
+    padding: 0 24px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 400;
+    padding-top: 32px;
+    letter-spacing: 3px;
+    color: #fff;
 }
 
 mat-tab-group {
@@ -20,11 +33,10 @@ mat-tab-group {
 
 .actions {
     text-align: right;
-}
+    padding: 16px 24px;
 
-h3 {
-    margin: 12px;
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: 3px;
+    button {
+        margin-left: 12px;
+        letter-spacing: 2px;
+    }
 }
