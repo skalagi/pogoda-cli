@@ -1,11 +1,17 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
-  <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div class="mat-elevation-z2 card" fxLayout="column" fxLayoutAlign="space-between stretch">
     <h3 class="second-font primary-bg title" *ngIf="title" fxLayout="row wrap" 
       [fxLayoutAlign]="basic?.value || basic?.current?.value || basic?.current?.speed?.value ? 'space-between center' : 'center center'">
+      {{ 
+        title == 'Opady' && !basic?.value ? 'Brak opadów' 
+          : title == 'Wiatr' && !basic?.current?.speed?.value
+          ? 'Bezwietrznie' : title  
+      }}
 
       <mat-icon class="wind-arrow" *ngIf="basic?.current?.speed > 0" [ngStyle]="{ transform: transform(basic.current.dir.value) }">
         fast_rewind
       </mat-icon>
+
       <skalagi-portable-value *ngIf="basic?.value || basic?.current?.value || basic?.current?.speed?.value"
         [value]="basic?.value || basic?.current?.value || basic?.current?.speed?.value" 
         [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
@@ -26,7 +32,6 @@
     </mat-tab-group>
     
     <div class="actions">
-      <button mat-stroked-button disabled color='primary'>SZCZEGÓŁY</button>
       <button mat-stroked-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
     </div>
   </div>
