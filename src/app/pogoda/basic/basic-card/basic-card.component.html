@@ -2,7 +2,10 @@
   <div class="mat-elevation-z1 card" fxLayout="column" fxLayoutAlign="space-between stretch">
     <h3 class="second-font primary-bg title" *ngIf="title" fxLayout="row wrap" 
       [fxLayoutAlign]="basic?.value || basic?.current?.value || basic?.current?.speed?.value ? 'space-between center' : 'center center'">
-      {{ title }}
+
+      <mat-icon class="wind-arrow" *ngIf="basic?.current?.speed > 0" [ngStyle]="{ transform: transform(basic.current.dir.value) }">
+        fast_rewind
+      </mat-icon>
       <skalagi-portable-value *ngIf="basic?.value || basic?.current?.value || basic?.current?.speed?.value"
         [value]="basic?.value || basic?.current?.value || basic?.current?.speed?.value" 
         [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
