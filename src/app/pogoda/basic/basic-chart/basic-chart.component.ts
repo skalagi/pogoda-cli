@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { decodeType } from 'app/pogoda/charts/charts.helper';
-import { Observable } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import * as Highcharts from 'highcharts';
 
 export interface BasicChart {
@@ -14,8 +14,9 @@ export interface BasicChart {
   templateUrl: './basic-chart.component.html',
   styleUrls: ['./basic-chart.component.scss']
 })
-export class BasicChartComponent {
+export class BasicChartComponent implements AfterViewInit {
   @Input() data$: Observable<BasicChart>;
+  private chart$ = new BehaviorSubject(null);
   highCharts = Highcharts;
   options = {
     ...chartConfig,
@@ -27,8 +28,6 @@ export class BasicChartComponent {
       margin: 0,
     },
 
-    colors: ['#fff'],
-
     plotOptions: {
       area: {
         fillColor: '#fff',
@@ -39,6 +38,8 @@ export class BasicChartComponent {
     yAxis: {
       ...chartConfig.yAxis,
       endOnTick: false,
+      minPadding: 0,
+      maxPadding: 0,
       visible: false,
     },
     xAxis: {
@@ -49,10 +50,27 @@ export class BasicChartComponent {
     },
   };
 
+  ngAfterViewInit() {
+    this.chart$.subscribe(chart => chart ? chart.reflow() : chart);
+  }
+
   chartInit(chart) {
     this.data$.subscribe(({ type, data }) => {
       if (chart && data.length) {
-        chart.addSeries({ data, name: decodeType(type) });
+        this.chart$.next(chart);
+
+        let min;
+
+        data.forEach(point => {
+          if (!min || point[1] < min) {
+            min = point[1];
+          }
+        });
+
+        chart.yAxis[0].update({ min });
+        chart.addSeries({ data, name: decodeType(type) }, false);
+        chart.redraw();
+        chart.reflow();
       }
     });
   }
