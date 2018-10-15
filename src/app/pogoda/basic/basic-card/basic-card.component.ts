@@ -19,10 +19,6 @@ export class BasicCardComponent implements OnInit {
     private chartQuery: ChartQuery,
     ) {}
 
-  transform(wind) {
-    return `rotate(${ wind + 270 }deg)`;
-  }
-
   ngOnInit() {
     const { type } = this;
 

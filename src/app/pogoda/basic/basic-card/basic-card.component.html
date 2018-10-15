@@ -1,38 +1,25 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
-  <div class="mat-elevation-z2 card" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <h3 class="second-font primary-bg title" *ngIf="title" fxLayout="row wrap" 
-      [fxLayoutAlign]="basic?.value || basic?.current?.value || basic?.current?.speed?.value ? 'space-between center' : 'center center'">
-      {{ 
-        title == 'Opady' && !basic?.value ? 'Brak opadów' 
-          : title == 'Wiatr' && !basic?.current?.speed?.value
-          ? 'Bezwietrznie' : title  
-      }}
+  <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
 
-      <mat-icon class="wind-arrow" *ngIf="basic?.current?.speed > 0" [ngStyle]="{ transform: transform(basic.current.dir.value) }">
-        fast_rewind
-      </mat-icon>
+    <mat-tab-group color="accent" [dynamicHeight]="true">
 
-      <skalagi-portable-value *ngIf="basic?.value || basic?.current?.value || basic?.current?.speed?.value"
-        [value]="basic?.value || basic?.current?.value || basic?.current?.speed?.value" 
-        [after]="basic?.units || basic?.current?.units || basic?.current?.speed?.units"></skalagi-portable-value>
-    </h3>
-
-    <skalagi-basic-chart class="primary-bg" [data$]="chart$"></skalagi-basic-chart>
-
-    <mat-tab-group [dynamicHeight]="true">
-      <mat-tab *ngIf="!basic?.value" label="DANE">
+      <mat-tab label="{{ 
+          title == 'Opady' && !basic?.value ? 'BRAK OPADÓW' 
+            : title == 'Wiatr' && !basic?.current?.speed?.value
+            ? 'BEZWIETRZNIE' : title.toUpperCase()  
+        }}">
         <skalagi-basic-data [basic]="basic"></skalagi-basic-data>
       </mat-tab>
 
       <mat-tab label="REKORDY">
-        <ng-template matTabContent>
-          <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>        
-        </ng-template>
+          <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
       </mat-tab>
     </mat-tab-group>
+
+    <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
     
-    <div class="actions">
-      <button mat-stroked-button color='primary' [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
+    <div class="actions primary-bg">
+      <button color="accent" mat-flat-button [routerLink]="['raport', title.toLowerCase()]">RAPORT</button>
     </div>
   </div>
 </ng-template>

@@ -1,14 +1,20 @@
 .card {
-    background: #fff;
-    border-radius: 8px;
+    border-radius: 7px;
     height: 100%;
+    background: #fff;
+    border: 2px solid #2196f3;
+    position: relative;
     box-sizing: border-box;
-    border: 2px solid #fff;
     overflow: hidden;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))
+        drop-shadow(0 3px 1px rgba(0, 0, 0, 0.07))
+        drop-shadow(0 1px 5px rgba(0, 0, 0, 0.06))
+        drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.05));
 }
 
 .title {
     text-align: center;
+    color: #000;
 }
 
 .wind-arrow {
@@ -17,8 +23,17 @@
     width: $size;
     height: $size;
 }
-:host ::ng-deep .mat-tab-body-wrapper {
-    flex-grow: 1;
+
+:host ::ng-deep {
+    .mat-tab-body-wrapper {
+        flex-grow: 1;
+    }
+
+    
+    .mat-tab-label {
+        padding: 32px 24px;
+        font-weight: 600;
+    }
 }
 
 h3, .actions {
@@ -39,9 +54,13 @@ mat-tab-group {
     flex-grow: 1;
 }
 
+mat-tab-group {
+    background: #fff;
+}
+
 .actions {
     text-align: right;
-    padding: 16px 24px;
+    padding: 12px 16px;
 
     button {
         margin-left: 12px;
