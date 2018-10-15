@@ -39,8 +39,12 @@ export class ChartService {
   }
 
   load(type, range) {
+    this.store.setLoading(true);
+
     const chartType = this.encodeType(type);
-    if (this.types.has(type + range)) { return; }
+
+    if (this.types.has(type + range)) { this.store.setLoading(false); return; }
+
     this.types.add(type + range);
 
     this.http.get(`${ environment.apiSource }/${ range }-charts/${ chartType }.json`)

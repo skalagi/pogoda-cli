@@ -7,6 +7,8 @@
   </a>
 </nav>
 
+<mat-progress-bar *ngIf="loading$ | async" mode="query"></mat-progress-bar>
+
 <nav mat-tab-nav-bar backgroundColor="primary" color="accent" *ngIf="type$ | async as _type">
   <a mat-tab-link
     *ngFor="let range of ranges$ | async"

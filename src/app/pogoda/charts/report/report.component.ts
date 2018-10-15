@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of, Subject, BehaviorSubject } from 'rxjs';
 
 import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
-import { ChartService } from '../state';
+import { ChartService, ChartQuery } from '../state';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,8 +15,9 @@ export class ReportComponent implements OnInit {
   types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
   type$ = new BehaviorSubject(null);
+  loading$;
 
-  constructor(private route: ActivatedRoute, private charts: ChartService) { }
+  constructor(private route: ActivatedRoute, private query: ChartQuery) { }
 
   decodeRange(range) {
     return decodeRange(range);
@@ -27,6 +28,7 @@ export class ReportComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading$ = this.query.selectLoading();
     this.route.paramMap.subscribe((data) => {
       const _range = data.get('range');
       const _type = data.get('type');
