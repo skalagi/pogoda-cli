@@ -1,5 +1,5 @@
 footer {
-    padding: 96px;
+    padding: 64px;
     text-align: right;
     color: #fff;
 }
@@ -8,4 +8,9 @@ img {
     padding: 12px;
     padding-right: 0;
     height: 42px;
+}
+
+:host a {
+    color: #fff;
+    text-align: center;
 }

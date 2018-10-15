@@ -16,6 +16,7 @@ mat-toolbar {
 
 button, nav {
   height: 100%;
+  letter-spacing: 2px;
 }
 
 sub {
