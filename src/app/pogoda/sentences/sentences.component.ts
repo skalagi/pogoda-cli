@@ -25,7 +25,7 @@ export class SentencesComponent implements OnInit, OnDestroy {
   loading$;
   error$;
 
-  constructor(private query: SentencesQuery) { }
+  constructor(private query: SentencesQuery, service: SentencesService) { }
 
   get sentence() {
     const { sentences, current } = this;

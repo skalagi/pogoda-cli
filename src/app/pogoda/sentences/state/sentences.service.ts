@@ -11,8 +11,8 @@ export class SentencesService {
   constructor(private store: SentencesStore, private http: HttpClient) {
     http.get(`${environment.apiSource}/info.json`)
       .subscribe((entities: String[]) => {
-      this.store.set(entities.map(entity => createSentence({ content: entity })));
-    }, err => { console.log(err); this.store.setError(err); });
+        this.store.set(entities.map(entity => createSentence({ content: entity })));
+    }, err => { this.store.setError(err); });
   }
 
 }

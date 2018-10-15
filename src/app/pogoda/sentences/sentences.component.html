@@ -1,6 +1,5 @@
 <div class="primary-bg" fxLayout fxLayoutAlign="center center">
     <mat-progress-bar mode="buffer" *ngIf="(loading$ | async) && !(error$ | async)"></mat-progress-bar>
     <span *ngIf="(error$ | async)">BŁĄD WCZYTYWANIA PASKA INFORMACYJNEGO</span>
-
     <span *ngIf="!(error$ | async)" class="second-font" (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
 </div>
