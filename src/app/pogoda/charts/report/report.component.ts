@@ -16,6 +16,7 @@ export class ReportComponent implements OnInit {
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
   type$ = new BehaviorSubject(null);
   loading$;
+  error$;
 
   constructor(private route: ActivatedRoute, private query: ChartQuery) { }
 
@@ -29,6 +30,8 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
     this.loading$ = this.query.selectLoading();
+    this.error$ = this.query.selectError();
+
     this.route.paramMap.subscribe((data) => {
       const _range = data.get('range');
       const _type = data.get('type');

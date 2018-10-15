@@ -7,9 +7,11 @@ moment.locale('pl-pl');
 import * as Highcharts from 'highcharts';
 require('highcharts/highcharts-more')(Highcharts);
 require('highcharts/modules/accessibility')(Highcharts);
+require('highcharts/modules/no-data-to-display')(Highcharts);
 
 Highcharts.setOptions({
   lang: {
+    noData: 'BRAK DANYCH',
     months: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień',
     'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
     'Październik', 'Listopad', 'Grudzień'],
