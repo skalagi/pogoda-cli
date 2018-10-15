@@ -6,14 +6,19 @@ div {
     box-sizing: border-box;
     letter-spacing: 1px;
     // text-align: center;
-    padding-right: 12px;
-    margin: 8px 0;
+    padding: 0 8px;
+    margin: 6px 0;
+}
+
+skalagi-portable-value {
+    //flex-grow: 1;
 }
 
 .second-line {
     font-weight: 600;
+    font-size: 14px;
 }
 
 mat-icon {
-    margin-right: 12px;
+    margin: 4px 16px;
 }

@@ -9,9 +9,16 @@ import { Unit } from '../unit';
 })
 export class UnitComponent {
   @Input() after;
+  @Input() color;
+  @Input() dir;
   @Input() icon = 'bubble_chart';
   @Input() name: String;
   @Input() unit: Unit;
+
+  get transform() {
+    return `rotate(${ this.dir ? this.dir.value + 270 : 0  }deg)`;
+    // return `rotate(${ wind + 270 }deg)`;
+  }
 
   get preTip() {
     if (this.icon && this.unit && this.unit.name) {

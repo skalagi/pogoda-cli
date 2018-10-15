@@ -1,10 +1,12 @@
-<div fxLayout="row wrap" fxLayoutAlign="space-between center">
-  <span class="name" fxLayout="row wrap" fxLayoutAlign="space-between center">
-    <mat-icon>{{ name ? 'hdr_strong' : icon }}</mat-icon>
+<div fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center"
+>
+  <span class="name" fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center"
+    >
+    <mat-icon [ngStyle]="{ transform: transform }" [color]="color">{{ name ? 'hdr_strong' : icon }}</mat-icon>
     <div fxLayout="column">
       <span class="title">{{ name ? name : unit?.name }}</span>
-      <span class="second-line"><ng-content></ng-content></span>
+      <span [ngClass]="color" class="second-line"><ng-content></ng-content></span>
     </div>  
   </span>
-  <skalagi-portable-value color="primary" [preTip]="preTip" [value]="unit?.value" [after]="unit?.units"></skalagi-portable-value>
+  <skalagi-portable-value [color]="color" [preTip]="preTip" [value]="unit?.value" [after]="unit?.units"></skalagi-portable-value>
 </div>
