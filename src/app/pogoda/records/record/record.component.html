@@ -1,10 +1,10 @@
 <div fxLayout="column" fxLayoutAlign="center stretch">
-  <skalagi-unit *ngIf="data.name" 
+  <skalagi-unit *ngIf="data.name" color="primary"
     [unit]="data"></skalagi-unit>
 
-  <skalagi-unit *ngIf="data.max" 
+  <skalagi-unit *ngIf="data.max" color="primary"
     [unit]="data.max" [name]="data.max.name | amTimeAgo"></skalagi-unit>
 
-  <skalagi-unit *ngIf="data.min" 
+  <skalagi-unit *ngIf="data.min" color="primary"
     [unit]="data.min" [name]="data.min.name | amTimeAgo"></skalagi-unit>
 </div>

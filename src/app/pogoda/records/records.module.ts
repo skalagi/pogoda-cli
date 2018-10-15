@@ -6,7 +6,7 @@ import { MomentModule } from 'ngx-moment';
 import { RecordComponent } from './record/record.component';
 import { RecordsComponent } from './records/records.component';
 import { UnitModule } from '../unit/unit.module';
-import { FlexModule } from '@angular/flex-layout';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @NgModule({
   imports: [
