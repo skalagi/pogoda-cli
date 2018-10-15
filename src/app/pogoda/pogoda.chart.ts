@@ -10,7 +10,7 @@ export const chartConfig = {
 
       credits: { enabled: false },
 
-      colors: ['#fff'],
+      colors: ['#ffd740'],
 
       legend: {
         enabled: false,

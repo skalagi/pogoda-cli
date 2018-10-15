@@ -18,7 +18,7 @@ export function decodeType(type) {
     switch (type) {
         case 'temperature': return 'temperatura'
         case 'humidity': return 'wilgotność';
-        case 'windGust': return 'wiatr';
+        case 'wind': return 'wiatr';
         case 'rain': return 'opady';
         case 'barometer': return 'ciśnienie';
     }
@@ -29,7 +29,7 @@ export function encodeType(type) {
         case 'temperatura': return 'temperature';
         case 'wilgotność': return 'humidity';
         case 'ciśnienie': return 'barometer';
-        case 'wiatr': return 'windGust';
+        case 'wiatr': return 'wind';
         case 'opady': return 'rain';
     }
 }
