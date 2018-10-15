@@ -1,5 +1,21 @@
-
-
 mat-tab-group {
     height: 100%;
+}
+
+:host {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 12px 24px;
+    padding-top: 64px;
+}
+
+:host ::ng-deep .mat-tab-header {
+    background-color: #fff;
+}
+
+:host ::ng-deep .mat-tab-header .mat-tab-label {
+    padding: 16px 24px;
+    font-weight: 600;
+    color: #2196f3;
 }

@@ -2,7 +2,7 @@
     border-radius: 7px;
     height: 100%;
     background: #fff;
-    border: 2px solid #2196f3;
+    border: 2px solid #ffd740;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
@@ -12,55 +12,34 @@
         drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.05));
 }
 
-.title {
-    text-align: center;
-    color: #000;
-}
-
-.wind-arrow {
-    $size: 32px;
-    font-size: $size;
-    width: $size;
-    height: $size;
-}
-
 :host ::ng-deep {
     .mat-tab-body-wrapper {
         flex-grow: 1;
     }
 
+    mat-tab-header {
+        background: #2196f3;
     
-    .mat-tab-label {
-        padding: 32px 24px;
-        font-weight: 600;
+        .mat-tab-label {
+            padding: 32px 24px;
+            font-weight: 600;
+            color: #fff;
+        }
     }
-}
 
-h3, .actions {
-    padding: 0 24px;
-}
-
-h3 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 400;
-    padding-top: 24px;
-    padding-bottom: 12px;
-    letter-spacing: 3px;
-    color: #fff;
 }
 
 mat-tab-group {
     flex-grow: 1;
 }
 
-mat-tab-group {
+mat-tab-group, .actions {
     background: #fff;
 }
 
 .actions {
     text-align: right;
-    padding: 12px 16px;
+    padding: 12px 24px;
 
     button {
         margin-left: 12px;

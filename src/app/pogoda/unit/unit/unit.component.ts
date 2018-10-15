@@ -11,12 +11,12 @@ export class UnitComponent {
   @Input() after;
   @Input() color;
   @Input() dir;
-  @Input() icon = 'bubble_chart';
+  @Input() icon = 'flare';
   @Input() name: String;
   @Input() unit: Unit;
 
   get transform() {
-    return `rotate(${ this.dir ? this.dir.value + 270 : 0  }deg)`;
+    return `rotate(${ this.dir && this.dir.value ? this.dir.value + 270 : 0  }deg)`;
     // return `rotate(${ wind + 270 }deg)`;
   }
 

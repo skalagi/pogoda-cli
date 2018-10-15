@@ -3,8 +3,8 @@
   box-sizing: border-box;
   align-items: center;
   padding: 12px 24px;
-  border-style: solid;
-  border-width: 1px 0;
+  /* border-style: solid;
+  border-width: 1px 0; */
   color: #fff;
   width: 100%;
   position: sticky;

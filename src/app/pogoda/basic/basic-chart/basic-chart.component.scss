@@ -1,8 +1,9 @@
 highcharts-chart {
     display: block;
     box-sizing: border-box;
+    pointer-events: none;
     position: absolute;
     width: 101%;
-    bottom: 0;
-    background: #fff;
+    z-index: 2;
+    top: 64px;
 }

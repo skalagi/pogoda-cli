@@ -1,13 +1,13 @@
 <div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
     <ng-template [ngIf]="basic?.gust">
       
-      <skalagi-unit *ngIf="basic?.current && basic?.current.speed.value > 0" [unit]="basic.current.speed" color="primary"
-        icon="reply" [dir]="basic.current.dir">
+      <skalagi-unit *ngIf="basic?.current?.speed" [unit]="basic.current.speed" color="primary"
+        [icon]="basic.current.dir.value ? 'reply' : 'assistant_photo'" [dir]="basic.current.dir">
         {{ basic.current.translated }}
       </skalagi-unit>
 
       <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed" color="primary"
-        icon="reply_all" [dir]="basic.gust.dir">
+        [icon]="basic.current.dir.value ? 'reply_all' : 'toys'" [dir]="basic.gust.dir">
         {{ basic.gust.translated }}
       </skalagi-unit>     
 
@@ -19,10 +19,10 @@
     <skalagi-unit color="primary"  *ngIf="basic?.value"
       [unit]="basic"></skalagi-unit>
 
-    <skalagi-unit color="primary"  *ngIf="basic?.current?.value"
+    <skalagi-unit color="primary"  *ngIf="basic?.current && !basic?.current?.speed"
       [unit]="basic?.current"></skalagi-unit>
 
-    <skalagi-unit color="primary"  *ngIf="basic?.real" 
+    <skalagi-unit color="primary" icon="nature_people" *ngIf="basic?.real" 
       [unit]="basic.real"></skalagi-unit>
 
     <skalagi-unit color="primary"  *ngIf="basic?.sum" 

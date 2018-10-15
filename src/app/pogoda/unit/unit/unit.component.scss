@@ -6,9 +6,15 @@ div {
     box-sizing: border-box;
     letter-spacing: 1px;
     // text-align: center;
-    padding: 0 8px;
+    // padding: 0 8px;
     margin: 6px 0;
 }
+
+.title {
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
 
 skalagi-portable-value {
     //flex-grow: 1;
@@ -17,8 +23,4 @@ skalagi-portable-value {
 .second-line {
     font-weight: 600;
     font-size: 14px;
-}
-
-mat-icon {
-    margin: 4px 16px;
 }

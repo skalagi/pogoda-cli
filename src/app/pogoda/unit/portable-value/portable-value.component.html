@@ -1,6 +1,6 @@
-<span [ngClass]="color" fxLayout="row" fxLayoutAlign="center center"
+<span fxLayout="row" fxLayoutAlign="center center"
   *ngIf="value != null"
-  [ngClass]="{ tooltip: showTooltip }"
+  [ngClass]="class"
   [matTooltip]="showTooltip ? information() : ''">
   {{ information(true) }}
 </span>

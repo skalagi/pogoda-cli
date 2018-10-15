@@ -19,6 +19,10 @@ export class PortableValueComponent {
 
   @Input() color: string;
 
+  get class() {
+    return { tooltip: this.showTooltip, [this.color]: true };
+  }
+
   get showTooltip() {
     return this.value.toString() !== this.roundedValue;
   }

@@ -1,8 +1,10 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, AfterViewInit, HostBinding, ElementRef, OnDestroy } from '@angular/core';
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { decodeType } from 'app/pogoda/charts/charts.helper';
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
 import * as Highcharts from 'highcharts';
+import { ResizeObserver } from 'resize-observer';
+import { take } from 'rxjs/operators';
 
 export interface BasicChart {
   type: String,
@@ -12,26 +14,31 @@ export interface BasicChart {
 @Component({
   selector: 'skalagi-basic-chart',
   templateUrl: './basic-chart.component.html',
-  styleUrls: ['./basic-chart.component.scss']
+  styleUrls: ['./basic-chart.component.scss'],
 })
-export class BasicChartComponent implements AfterViewInit {
+export class BasicChartComponent implements AfterViewInit, OnDestroy {
   @Input() data$: Observable<BasicChart>;
   private chart$ = new BehaviorSubject(null);
+  private resize$: ResizeObserver;
   highCharts = Highcharts;
   update = true;
   options = {
     ...chartConfig,
     chart: {
       ...chartConfig.chart,
-      backgroundColor: '#fff',
+      backgroundColor: '#2196f3',
       type: 'area',
-      height: 96,
+      height: 64,
       margin: 0,
+    },
+
+    tooltip: {
+      enabled: false,
     },
 
     plotOptions: {
       area: {
-        fillColor: '#2196f3',
+        fillColor: '#fff',
         color: '#ffd740',
         negativeFillColor: 'red',
         lineWidth: 2,
@@ -42,7 +49,7 @@ export class BasicChartComponent implements AfterViewInit {
       ...chartConfig.yAxis,
       endOnTick: false,
       minPadding: 0,
-      maxPadding: 0,
+      maxPadding: .1,
       visible: false,
     },
     xAxis: {
@@ -53,31 +60,50 @@ export class BasicChartComponent implements AfterViewInit {
     },
   };
 
+  constructor(private el: ElementRef) {}
+
   ngAfterViewInit() {
-    this.chart$.subscribe(chart => chart ? chart.reflow() : chart);
+    this.resize$ = new ResizeObserver(entries => this.resize(entries));
+
+    this.resize$.observe(this.el.nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.resize$.unobserve(this.el.nativeElement);
+  }
+
+  resize(entries) {
+    this.chart$.pipe(take(1)).subscribe(chart => {
+      if (chart) {
+        chart.reflow();
+      }
+    });
   }
 
   chartInit(chart) {
     this.data$.subscribe(({ type, data }) => {
+      this.chart$.next(chart);
       if (chart && data.length) {
-        this.chart$.next(chart);
         const isEmpty = data.every(point => point[1] === 0);
 
         if (isEmpty) {
-          chart.update({ height: 0 }, false);
-        } else {/*
+          chart.addSeries({ data: data.map(point => [point[0], point[1] + 1]), name: decodeType(type) }, false);
+          chart.yAxis[0].update({ min: 0, max: 2 }, false);
+        } else {
           let min;
+
           data.forEach(point => {
             if (!min || point[1] < min) {
               min = point[1];
             }
           });
+
           chart.yAxis[0].update({ min }, false);
-          */
+
 
           chart.addSeries({ data, name: decodeType(type) }, false);
         }
-        chart.reflow();
+
         chart.redraw();
       }
     });
