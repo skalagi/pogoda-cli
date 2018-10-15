@@ -9,11 +9,15 @@
             : title == 'Wiatr' && !basic?.current?.speed?.value
             ? 'BEZWIETRZNIE' : title.toUpperCase()  
         }}">
-        <skalagi-basic-data [basic]="basic"></skalagi-basic-data>
+        <ng-template matTabContent>
+          <skalagi-basic-data [basic]="basic"></skalagi-basic-data>
+        </ng-template>
       </mat-tab>
 
       <mat-tab label="REKORDY">
-          <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
+        <ng-template matTabContent>
+            <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
 
