@@ -20,11 +20,18 @@ export class ChartComponent {
   chartInit(chart) {
     this.type$.subscribe(({ range, type }) => {
       this.query.chart(range, type).subscribe(data => {
-        const chartType = data.length && data[0].length > 2 ? 'arearange' : 'line';
+        const chartType = data.length && data[0].length > 2 ? 'arearange' : 'area';
         const serie = { type: chartType, data, name: decodeType(type) };
 
-        chart.yAxis[0].update({
-          min: type === 'windGust' ? 0 : null,
+        let min;
+
+        data.forEach(point => {
+          if (!min || point[1] < min) {
+            min = point[1];
+          }
+        });
+
+        chart.yAxis[0].update({ min,
           title: { text: decodeType(type) },
         }, false);
 

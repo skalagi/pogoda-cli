@@ -1,4 +1,4 @@
-<nav mat-tab-nav-bar color="primary"  backgroundColor="primary" *ngIf="type$ | async as _type">
+<nav mat-tab-nav-bar color="accent"  backgroundColor="primary" *ngIf="type$ | async as _type">
   <a mat-tab-link
       *ngFor="let type of types$ | async"
       [routerLink]="['/', 'raport', type, decodeRange(_type.range) || 'dziś']"
@@ -7,7 +7,7 @@
   </a>
 </nav>
 
-<nav mat-tab-nav-bar backgroundColor="primary" color="primary" *ngIf="type$ | async as _type">
+<nav mat-tab-nav-bar backgroundColor="primary" color="accent" *ngIf="type$ | async as _type">
   <a mat-tab-link
     *ngFor="let range of ranges$ | async"
     [routerLink]="['/', 'raport', decodeType(_type.type), range]"

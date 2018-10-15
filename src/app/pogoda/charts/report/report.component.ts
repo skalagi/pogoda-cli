@@ -36,9 +36,7 @@ export class ReportComponent implements OnInit {
 
         if (_range) {
           const range = encodeRange(_range);
-
-          this.charts.load(type, range);
-          this.type$.next({ range: range, type: type });
+          this.type$.next({ range, type });
         }
       }
     });
