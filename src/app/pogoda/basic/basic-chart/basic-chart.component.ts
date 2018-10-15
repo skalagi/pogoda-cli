@@ -18,20 +18,23 @@ export class BasicChartComponent implements AfterViewInit {
   @Input() data$: Observable<BasicChart>;
   private chart$ = new BehaviorSubject(null);
   highCharts = Highcharts;
+  update = true;
   options = {
     ...chartConfig,
     chart: {
       ...chartConfig.chart,
-      backgroundColor: '#2196f3',
+      backgroundColor: '#fff',
       type: 'area',
-      height: 64,
+      height: 96,
       margin: 0,
     },
 
     plotOptions: {
       area: {
-        fillColor: '#fff',
-        lineWidth: 1,
+        fillColor: '#2196f3',
+        color: '#ffd740',
+        negativeFillColor: 'red',
+        lineWidth: 2,
       },
     },
 
@@ -58,19 +61,24 @@ export class BasicChartComponent implements AfterViewInit {
     this.data$.subscribe(({ type, data }) => {
       if (chart && data.length) {
         this.chart$.next(chart);
+        const isEmpty = data.every(point => point[1] === 0);
 
-        let min;
+        if (isEmpty) {
+          chart.update({ height: 0 }, false);
+        } else {/*
+          let min;
+          data.forEach(point => {
+            if (!min || point[1] < min) {
+              min = point[1];
+            }
+          });
+          chart.yAxis[0].update({ min }, false);
+          */
 
-        data.forEach(point => {
-          if (!min || point[1] < min) {
-            min = point[1];
-          }
-        });
-
-        chart.yAxis[0].update({ min });
-        chart.addSeries({ data, name: decodeType(type) }, false);
-        chart.redraw();
+          chart.addSeries({ data, name: decodeType(type) }, false);
+        }
         chart.reflow();
+        chart.redraw();
       }
     });
   }

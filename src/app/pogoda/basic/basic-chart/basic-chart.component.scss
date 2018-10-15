@@ -1,5 +1,8 @@
 highcharts-chart {
     display: block;
-    margin: auto;
-    width: 110%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 101%;
+    bottom: 0;
+    background: #fff;
 }
