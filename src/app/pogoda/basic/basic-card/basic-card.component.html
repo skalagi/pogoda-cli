@@ -1,5 +1,5 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
-  <div class="card primary-bg" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
     <mat-progress-bar mode="indeterminate" 
       *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))"></mat-progress-bar>
 
@@ -24,7 +24,7 @@
 
     <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
     
-    <div class="actions primary-bg">
+    <div class="actions primary-bg" *ngIf="!(chartError$ | async)">
       <button color="accent" mat-flat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
     </div>
   </div>
