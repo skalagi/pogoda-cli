@@ -1,5 +1,6 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
   <div class="card primary-bg" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <mat-progress-bar mode="indeterminate" *ngIf="loading$ | async"></mat-progress-bar>
 
     <mat-tab-group color="accent" [dynamicHeight]="true">
 
