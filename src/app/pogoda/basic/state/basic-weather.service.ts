@@ -9,6 +9,9 @@ export class BasicWeatherService {
   constructor(private basicWeatherStore: BasicWeatherStore, private http: HttpClient) {
     this.basicWeatherStore.setLoading(true);
     this.http.get(`${ environment.apiSource }/basic.json?count&temperature&rain&barometer&humidity&wind`)
-      .subscribe(response => this.basicWeatherStore.setState(state => ({ ...state, ...response })));
+      .subscribe(response => {
+        this.basicWeatherStore.setState(state => ({ ...state, ...response }));
+        this.basicWeatherStore.setLoading(false);
+      });
   }
 }
