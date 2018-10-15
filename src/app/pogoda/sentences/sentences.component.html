@@ -1,1 +1,2 @@
+<mat-progress-bar mode="query" *ngIf="loading$ | async"></mat-progress-bar>
 <span class="second-font" (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>

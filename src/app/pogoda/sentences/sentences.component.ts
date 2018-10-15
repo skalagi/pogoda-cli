@@ -21,7 +21,7 @@ export class SentencesComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private sentences: String[] = [];
   private current = 0;
-  loading;
+  loading$;
   state = 'show';
 
   constructor(sentences: SentencesService, private query: SentencesQuery) { }
@@ -36,6 +36,7 @@ export class SentencesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.loading$ = this.query.selectLoading();
     this.subscription = this.query.list$.subscribe(sentences => {
       this.sentences = sentences.map(sentence => sentence.content);
 
