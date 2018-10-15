@@ -16,7 +16,7 @@ export class UnitComponent {
   @Input() unit: Unit;
 
   get transform() {
-    return `rotate(${ this.dir && this.dir.value ? this.dir.value + 270 : 0  }deg)`;
+    return `rotate(${ this.dir && this.dir.value ? this.dir.value + 180 : 0  }deg)`;
     // return `rotate(${ wind + 270 }deg)`;
   }
 
