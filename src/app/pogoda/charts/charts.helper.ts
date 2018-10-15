@@ -33,3 +33,14 @@ export function encodeType(type) {
         case 'opady': return 'rain';
     }
 }
+
+
+export function typeSuffix(type) {
+    switch (type) {
+        case 'temperature': return '℃';
+        case 'humidity': return '%';
+        case 'barometer': return 'hPa';
+        case 'wind': return 'km/h';
+        case 'rain': return 'mm';
+    }
+}

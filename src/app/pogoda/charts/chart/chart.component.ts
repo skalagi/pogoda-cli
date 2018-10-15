@@ -3,7 +3,7 @@ import * as Highcharts from 'highcharts';
 
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { ChartQuery } from '../state';
-import { decodeType } from '../charts.helper';
+import { decodeType, typeSuffix } from '../charts.helper';
 
 @Component({
   selector: 'skalagi-chart',
@@ -21,7 +21,15 @@ export class ChartComponent {
     this.type$.subscribe(({ range, type }) => {
       this.query.chart(range, type).subscribe(data => {
         const chartType = data.length && data[0].length > 2 ? 'arearange' : 'area';
-        const serie = { type: chartType, data, name: decodeType(type) };
+        const unit = typeSuffix(type);
+        const serie = {
+          type: chartType,
+          data,
+          name: decodeType(type),
+          tooltip: {
+            valueSuffix: unit,
+          }
+        };
 
         let min;
 
@@ -33,6 +41,9 @@ export class ChartComponent {
 
         chart.yAxis[0].update({ min,
           title: { text: decodeType(type) },
+          labels: {
+            format: `{value} ${ unit }`
+          }
         }, false);
 
         if (chart.series[0]) {
