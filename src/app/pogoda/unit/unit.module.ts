@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UnitComponent } from './unit/unit.component';
-import { FlexModule } from '@angular/flex-layout';
+import { FlexModule } from '@angular/flex-layout/flex';
 import { MatIconModule, MatTooltipModule } from '@angular/material';
 import { PortableValueComponent } from './portable-value/portable-value.component';
 
