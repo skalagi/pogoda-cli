@@ -16,8 +16,17 @@ body {
   background: $primary;
 }
 
+
+.accent-bg {
+  background: $accent;
+}
+
 .primary {
   color: $primary;
+}
+
+.accent {
+  color: $accent;
 }
 
 .mat-tab-label, .mat-tab-link {
@@ -27,11 +36,12 @@ body {
 }
 
 ::-webkit-scrollbar {
+  box-sizing: border-box;
+  border: 1px solid #fff;
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary;
-  border: 1px solid mat-color($weather-blue-accent);
-  border-radius: 4px;
+  background-color: #fff;
+  margin: 0 1px;
 }
