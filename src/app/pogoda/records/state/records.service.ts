@@ -20,6 +20,6 @@ export class RecordsService {
         this.recordsStore.setState(state => {
           return { ...state, [range]: records };
         });
-      });
+      }, err => { this.recordsStore.setError(err); });
   }
 }

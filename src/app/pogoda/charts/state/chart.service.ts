@@ -57,7 +57,7 @@ export class ChartService {
           return { ...state, [type]: _type };
         });
         this.store.setLoading(false);
-      });
+      }, err => { this.store.setError(err); });
   }
 
 }

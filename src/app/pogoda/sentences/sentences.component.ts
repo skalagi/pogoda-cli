@@ -21,14 +21,16 @@ export class SentencesComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private sentences: String[] = [];
   private current = 0;
-  loading$;
   state = 'show';
+  loading$;
+  error$;
 
-  constructor(sentences: SentencesService, private query: SentencesQuery) { }
+  constructor(private query: SentencesQuery) { }
 
   get sentence() {
     const { sentences, current } = this;
-    return sentences[current];
+    const sentence = sentences[current];
+    return sentence ? sentence : null;
   }
 
   private get readTime() {
@@ -37,6 +39,7 @@ export class SentencesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loading$ = this.query.selectLoading();
+    this.error$ = this.query.selectError();
     this.subscription = this.query.list$.subscribe(sentences => {
       this.sentences = sentences.map(sentence => sentence.content);
 

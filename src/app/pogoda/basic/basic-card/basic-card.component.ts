@@ -11,7 +11,9 @@ import { map } from 'rxjs/operators';
 export class BasicCardComponent implements OnInit {
   @Input() title;
   @Input() type;
+  chartError$;
   loading$;
+  error$;
   basic$;
   chart$;
 
@@ -24,6 +26,9 @@ export class BasicCardComponent implements OnInit {
     const { type } = this;
 
     this.loading$ = this.query.selectLoading();
+    this.chartError$ = this.chartQuery.selectError();
+    this.error$ = this.query.selectError();
+
     this.basic$ = this.query.basic(type);
     this.chart$ = this.chartQuery.chart('day', type)
       .pipe(map(data => ({ data, type })));

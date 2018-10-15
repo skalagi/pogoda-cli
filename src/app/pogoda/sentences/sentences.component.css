@@ -1,16 +1,17 @@
 :host {
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  padding: 12px 24px;
   /* border-style: solid;
   border-width: 1px 0; */
-  color: #fff;
-  width: 100%;
   position: sticky;
-  margin-bottom: 12px;
+  width: 100%;
   z-index: 2;
   top: 0;
+}
+
+div {  
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 12px 24px;
+  color: #fff;
 }
 
 span {
