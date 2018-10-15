@@ -44,3 +44,22 @@ export function typeSuffix(type) {
         case 'rain': return 'mm';
     }
 }
+
+export function minMax(type, data) {
+    let min, max;
+
+    if (type === 'wind' || type === 'rain') {
+      min = 0;
+    } else if (type === 'humidity') {
+      max = 100;
+      min = 0;
+    } else {
+      data.forEach(point => {
+        if (!min || point[1] < min) {
+          min = point[1];
+        }
+      });
+    }
+
+    return { min, max };
+}

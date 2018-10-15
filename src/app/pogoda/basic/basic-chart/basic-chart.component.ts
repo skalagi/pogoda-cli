@@ -1,6 +1,6 @@
 import { Component, Input, AfterViewInit, HostBinding, ElementRef, OnDestroy } from '@angular/core';
 import { chartConfig } from 'app/pogoda/pogoda.chart';
-import { decodeType } from 'app/pogoda/charts/charts.helper';
+import { decodeType, minMax } from 'app/pogoda/charts/charts.helper';
 import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
 import * as Highcharts from 'highcharts';
 import { ResizeObserver } from 'resize-observer';
@@ -41,6 +41,10 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
         fillColor: '#fff',
         color: '#ffd740',
         negativeFillColor: 'red',
+
+        marker: {
+          enabled: false,
+        },
         lineWidth: 2,
       },
     },
@@ -48,7 +52,6 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
     yAxis: {
       ...chartConfig.yAxis,
       endOnTick: false,
-      minPadding: 0,
       maxPadding: .1,
       visible: false,
     },
@@ -90,17 +93,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
           chart.addSeries({ data: data.map(point => [point[0], point[1] + 1]), name: decodeType(type) }, false);
           chart.yAxis[0].update({ min: 0, max: 2 }, false);
         } else {
-          let min;
-
-          data.forEach(point => {
-            if (!min || point[1] < min) {
-              min = point[1];
-            }
-          });
-
-          chart.yAxis[0].update({ min }, false);
-
-
+          chart.yAxis[0].update({ ...minMax(type, data), }, false);
           chart.addSeries({ data, name: decodeType(type) }, false);
         }
 

@@ -7,8 +7,6 @@
   </a>
 </nav>
 
-<mat-progress-bar *ngIf="(loading$ | async) && !(error$ | async)" mode="query"></mat-progress-bar>
-
 <nav mat-tab-nav-bar backgroundColor="primary" color="accent" *ngIf="type$ | async as _type">
   <a mat-tab-link
     *ngFor="let range of ranges$ | async"
@@ -17,6 +15,8 @@
     {{ range }}
   </a>
 </nav>
+
+<mat-progress-bar *ngIf="((loading$ | async) && !(error$ | async))" mode="buffer"></mat-progress-bar>
 
 <skalagi-chart [type$]="type$"></skalagi-chart>
 <router-outlet></router-outlet>

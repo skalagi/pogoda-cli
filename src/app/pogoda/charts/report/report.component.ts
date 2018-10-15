@@ -14,9 +14,9 @@ import { ChartService, ChartQuery } from '../state';
 export class ReportComponent implements OnInit {
   types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
+  loading$ = this.query.selectLoading();
+  error$ = this.query.selectError();
   type$ = new BehaviorSubject(null);
-  loading$;
-  error$;
 
   constructor(private route: ActivatedRoute, private query: ChartQuery) { }
 
@@ -29,9 +29,6 @@ export class ReportComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loading$ = this.query.selectLoading();
-    this.error$ = this.query.selectError();
-
     this.route.paramMap.subscribe((data) => {
       const _range = data.get('range');
       const _type = data.get('type');

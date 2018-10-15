@@ -43,7 +43,10 @@ export class ChartService {
 
     const chartType = this.encodeType(type);
 
-    if (this.types.has(type + range)) { return; }
+    if (this.types.has(type + range)) {
+      this.store.setLoading(false);
+      return;
+    }
 
     this.types.add(type + range);
 
