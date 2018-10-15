@@ -1,9 +1,17 @@
 h2 {
-  display: inline-flex;
   font-size: 24px;
   letter-spacing: 3px;
-  align-items: center;
   color: #FFEB3B;
+}
+
+header {
+  box-sizing: border-box;
+  padding: 8px 12px;
+}
+
+mat-toolbar {
+  border: 1px solid #fff;
+  border-radius: 6px;
 }
 
 button, nav {
