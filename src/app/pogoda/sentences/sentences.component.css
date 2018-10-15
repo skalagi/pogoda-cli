@@ -1,16 +1,11 @@
-:host {
-  /* border-style: solid;
-  border-width: 1px 0; */
-  position: sticky;
-  width: 100%;
-  z-index: 2;
-  top: 0;
-}
-
 div {  
   box-sizing: border-box;
   margin-bottom: 12px;
   padding: 12px 24px;
+  position: sticky;
+  width: 100%;
+  z-index: 2;
+  top: 0;
   color: #fff;
 }
 
