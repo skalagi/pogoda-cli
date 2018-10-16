@@ -7,6 +7,10 @@ footer {
     color: #fff;
 }
 
+:host .active {
+    display: none;
+}
+
 .copyright {
     letter-spacing: 4px;
 }

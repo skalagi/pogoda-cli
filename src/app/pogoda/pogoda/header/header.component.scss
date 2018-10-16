@@ -38,8 +38,15 @@ app-update-timer {
 }
 
 mat-icon {
-  animation: spin 30s infinite;
   margin-right: 3px;
+  $size: 20px;
+  font-size: $size;
+  width: $size;
+  height: $size;
+}
+
+.sun {
+  animation: spin 30s cubic-bezier(0.4, 0.0, 0.2, 1)  infinite;
 }
 
 @keyframes spin {

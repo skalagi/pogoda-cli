@@ -2,13 +2,17 @@
   <mat-toolbar color="primary">
     <nav>
       <button routerLink='/' mat-button>
-        <h2 fxLayout fxLayoutAlign="center center" class="second-font">Pog<mat-icon>brightness_7</mat-icon>da</h2>
+        <h2 fxLayout fxLayoutAlign="center center" class="second-font">
+          Pog<mat-icon class="sun">brightness_4</mat-icon>da
+        </h2>
       </button>
     </nav>
 
     <nav class="routes" fxLayout="row wrap">
+      <button mat-button disabled>PROGNOZA</button>
       <button mat-button routerLink='/pomiary'>POMIARY</button>
       <button mat-button routerLink='/raport'>RAPORT</button>
+      <button mat-button disabled>ASTRONOMIA</button>
       <button mat-button disabled>TRANSKRYPT</button>
     </nav>
     
