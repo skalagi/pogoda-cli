@@ -4,6 +4,7 @@ import { of, Subject, BehaviorSubject } from 'rxjs';
 
 import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
 import { ChartService, ChartQuery } from '../state';
+import { SEOService } from 'app/pogoda/seo.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -18,7 +19,7 @@ export class ReportComponent implements OnInit {
   error$ = this.query.selectError();
   type$ = new BehaviorSubject(null);
 
-  constructor(private route: ActivatedRoute, private query: ChartQuery) { }
+  constructor(private route: ActivatedRoute, private query: ChartQuery, private seo: SEOService) { }
 
   decodeRange(range) {
     return decodeRange(range);
@@ -39,6 +40,11 @@ export class ReportComponent implements OnInit {
         if (_range) {
           const range = encodeRange(_range);
           this.type$.next({ range, type });
+
+          let seoRange = decodeRange(range);
+          let seoType = decodeType(type);
+
+          this.seo.title(`Raport ${seoRange} ${seoType}`);
         }
       }
     });
