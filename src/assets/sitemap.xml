@@ -1,0 +1,98 @@
+<urlset xmlns=”http://www.sitemaps.org/schemas/sitemap/0.9“>
+    <url>
+        <loc>https://pogoda.cloud/pomiary/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/temperatura/dzis/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/temperatura/miesiac/</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/temperatura/rok/</loc>
+        <changefreq>monthly</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/cisnienie/dzis/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/cisnienie/miesiac/</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/cisnienie/rok/</loc>
+        <changefreq>monthly</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/wilgotnosc/dzis/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/wilgotnosc/miesiac/</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/wilgotnosc/rok/</loc>
+        <changefreq>monthly</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/opady/dzis/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/opady/miesiac/</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/opady/rok/</loc>
+        <changefreq>monthly</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/wiatr/dzis/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/wiatr/miesiac/</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/wiatr/rok/</loc>
+        <changefreq>monthly</changefreq>
+        <lastmod>2018-10-16</lastmod>
+    </url>
+   
+</urlset>
