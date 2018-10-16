@@ -7,6 +7,10 @@ import { environment } from 'environments/environment';
 export class BasicWeatherService {
 
   constructor(private basicWeatherStore: BasicWeatherStore, private http: HttpClient) {
+    this.update();
+  }
+
+  update() {
     this.basicWeatherStore.setLoading(true);
     this.http.get(`${ environment.apiSource }/basic.json?count&temperature&rain&barometer&humidity&wind`)
       .subscribe(response => {

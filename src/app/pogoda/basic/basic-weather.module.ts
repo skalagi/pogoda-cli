@@ -27,7 +27,7 @@ import { BasicChartComponent } from './basic-chart/basic-chart.component';
     MatCardModule,
     MatIconModule,
     MatTabsModule,
-    MatProgressBarModule,
+    MatProgressSpinnerModule,
     UnitModule,
 
     FlexLayoutModule,

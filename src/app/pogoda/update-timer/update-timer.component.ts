@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicWeatherQuery } from '../basic/state';
+import { BasicWeatherQuery, BasicWeatherService } from '../basic/state';
 import { BehaviorSubject, interval } from 'rxjs';
 import { timeInterval } from 'rxjs/operators';
 
@@ -12,10 +12,15 @@ export class UpdateTimerComponent implements OnInit {
   loading$ = this.query.selectLoading();
   time$ = new BehaviorSubject(null);
 
-  constructor(private query: BasicWeatherQuery) { }
+  constructor(private query: BasicWeatherQuery, private service: BasicWeatherService) { }
 
   tick() {
     const { value } = this.time$;
+
+    if (value === 0) {
+      this.time$.next(null);
+      this.service.update();
+    }
 
     if (value) {
       this.time$.next(value - 1);
