@@ -1,8 +1,5 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
   <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <mat-progress-bar mode="indeterminate" 
-      *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))"></mat-progress-bar>
-
     <mat-tab-group color="accent" [dynamicHeight]="true">
 
       <mat-tab label="{{ 
@@ -24,7 +21,10 @@
 
     <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
     
-    <div class="actions primary-bg" *ngIf="!(chartError$ | async)">
+    <div class="actions primary-bg" *ngIf="!(chartError$ | async)" fxLayout fxLayoutAlign="end center">
+      <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
+        *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))">
+      </mat-spinner>
       <button color="accent" mat-flat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
     </div>
   </div>
