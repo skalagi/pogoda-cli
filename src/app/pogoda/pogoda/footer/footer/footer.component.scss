@@ -2,12 +2,15 @@ footer {
     box-sizing: border-box;
     padding: 16px 64px;
     text-align: right;
+    position: sticky;
+    z-index: -1;
+    bottom: 0;
     color: #fff;
 }
 
 mat-nav-list {
     box-sizing: border-box;
-    padding: 16px 0;
+    padding: 32px 0;
 }
 
 .accent {

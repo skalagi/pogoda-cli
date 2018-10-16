@@ -1,5 +1,7 @@
 :host {
   box-sizing: border-box;
+  background: #1E88E5;
+  display: block;
   width: 100%;
   margin-top: 2px;
 }

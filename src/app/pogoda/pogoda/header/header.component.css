@@ -16,6 +16,10 @@ mat-toolbar {
   border-radius: 6px;
 }
 
+nav {
+  overflow: hidden;
+}
+
 .routes {
   margin-left: auto;
 }

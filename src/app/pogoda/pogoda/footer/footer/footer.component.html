@@ -5,7 +5,7 @@
     <a mat-list-item routerLink='/raport'>RAPORT</a>
   </mat-nav-list>
 
-  <div fxLayout fxLayoutAlign="space-between center">
+  <div fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
     <div *ngIf="(time$ | async) as time">
       Ostatnia aktualizacja: <span class="accent">{{ time?.data?.value | amTimeAgo }}</span>
     </div>
