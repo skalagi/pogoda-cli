@@ -1,8 +1,19 @@
 footer {
     box-sizing: border-box;
-    padding: 64px;
+    padding: 16px 64px;
     text-align: right;
     color: #fff;
+}
+
+mat-nav-list {
+    box-sizing: border-box;
+    padding: 16px 0;
+}
+
+.accent {
+    margin-left: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 img {
@@ -13,5 +24,6 @@ img {
 
 :host a {
     color: #fff;
+    letter-spacing: 2px;
     text-align: center;
 }
