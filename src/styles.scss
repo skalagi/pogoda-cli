@@ -28,6 +28,10 @@ body {
   color: $accent;
 }
 
+.warn {
+  color: $warn;
+}
+
 .mat-tab-label, .mat-tab-link {
   min-width: 0 !important;
   letter-spacing: 4px;

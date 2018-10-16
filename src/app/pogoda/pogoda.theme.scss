@@ -12,9 +12,11 @@ $weather-typography: mat-typography-config(
 
 $weather-blue-primary: mat-palette($mat-blue);
 $weather-blue-accent:  mat-palette($mat-amber, A200, A100, A400);
-$weather-blue-theme: mat-light-theme($weather-blue-primary, $weather-blue-accent);
+$weather-blue-warn: mat-palette($mat-red);
+$weather-blue-theme: mat-light-theme($weather-blue-primary, $weather-blue-accent, $weather-blue-warn);
 
 @include angular-material-theme($weather-blue-theme);
 
 $primary: mat-color($weather-blue-primary);
 $accent: mat-color($weather-blue-accent);
+$warn: mat-color($weather-blue-warn);
