@@ -1,4 +1,4 @@
-<mat-tab-group color="accent">
+<mat-tab-group @slide color="accent">
   <ng-template [ngIf]="day$ | async" let-day="$implicit">
     <mat-tab label="DZIŚ" *ngIf="!(record == 'rain' && day.value == 0)">
       <skalagi-record *matTabContent [data]="day"></skalagi-record>

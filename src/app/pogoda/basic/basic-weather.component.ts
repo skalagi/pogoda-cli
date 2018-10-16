@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicWeatherService } from './state';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
+import { SEOService } from '../seo.service';
 
 @Component({
   selector: 'skalagi-basic-weather',
@@ -26,9 +27,10 @@ export class BasicWeatherComponent implements OnInit {
 
   }
 
-  constructor(store: BasicWeatherService) { }
+  constructor(store: BasicWeatherService, private seo: SEOService) { }
 
   ngOnInit() {
+    this.seo.title('Pomiary');
   }
 
 }

@@ -1,34 +1,34 @@
-<div class="basic" fxLayout="column" fxLayoutAlign="center stretch" @slide>  
+<div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
     <ng-template [ngIf]="basic?.gust">
       
-      <skalagi-unit *ngIf="basic?.current?.speed" [unit]="basic.current.speed" color="primary"
+      <skalagi-unit @slide *ngIf="basic?.current?.speed" [unit]="basic.current.speed" color="primary"
         [icon]="basic.current.dir.value ? 'navigation' : 'assistant_photo'" [dir]="basic.current.dir">
         {{ basic.current.translated }}
       </skalagi-unit>
 
-      <skalagi-unit *ngIf="basic?.gust" [unit]="basic.gust.speed" color="primary"
+      <skalagi-unit @slide *ngIf="basic?.gust" [unit]="basic.gust.speed" color="primary"
         [icon]="basic.current.dir.value ? 'navigation' : 'toys'" [dir]="basic.gust.dir">
         {{ basic.gust.translated }}
       </skalagi-unit>     
 
     </ng-template> 
 
-    <skalagi-unit color="primary" *ngIf="basic?.trend" [icon]="trendIcon"
+    <skalagi-unit @slide color="primary" *ngIf="basic?.trend" [icon]="trendIcon"
       [unit]="basic.trend"></skalagi-unit>
     
-    <skalagi-unit color="primary"  *ngIf="basic?.value"
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.value"
       [unit]="basic"></skalagi-unit>
 
-    <skalagi-unit color="primary"  *ngIf="basic?.current && !basic?.current?.speed"
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.current && !basic?.current?.speed"
       [unit]="basic?.current"></skalagi-unit>
 
-    <skalagi-unit color="primary" icon="nature_people" *ngIf="basic?.real" 
+    <skalagi-unit @slide color="primary" icon="nature_people" *ngIf="basic?.real" 
       [unit]="basic.real"></skalagi-unit>
 
-    <skalagi-unit color="primary"  *ngIf="basic?.sum" 
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.sum" 
       [unit]="basic.sum"></skalagi-unit>
 
-    <skalagi-unit color="primary"  *ngIf="basic?.dewPoint" icon="opacity"
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.dewPoint" icon="opacity"
       [unit]="basic.dewPoint"></skalagi-unit>
     
   </div>
