@@ -2,7 +2,6 @@
   display: block;
   box-sizing: border-box;
   margin-bottom: 8px;
-  padding: 12px 24px;
   position: sticky;
   width: 100%;
   z-index: 3;
@@ -10,6 +9,7 @@
 }
 
 div {  
+  padding: 12px 24px;
   color: #fff;
   width: 100%;
 }

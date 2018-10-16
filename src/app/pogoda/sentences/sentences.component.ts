@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
 import { trigger, transition, animate, style, state } from '@angular/animations';
-import { Subscription } from 'rxjs';
+import { Subscription, interval } from 'rxjs';
 
 import { SentencesQuery, SentencesService } from './state';
 
@@ -24,6 +24,7 @@ export class SentencesComponent implements OnInit, OnDestroy {
   state = 'show';
   loading$;
   error$;
+  wait = false;
 
   constructor(private query: SentencesQuery, service: SentencesService) { }
 
@@ -37,15 +38,20 @@ export class SentencesComponent implements OnInit, OnDestroy {
     return this.sentence.length * 72;
   }
 
+  tick() {
+    if (this.sentence && !this.wait) {
+      setTimeout(() => this.next(), this.readTime);
+      this.wait = true;
+    }
+  }
+
   ngOnInit() {
     this.loading$ = this.query.selectLoading();
     this.error$ = this.query.selectError();
+    interval(1000).subscribe(() => this.tick());
+
     this.subscription = this.query.list$.subscribe(sentences => {
       this.sentences = sentences.map(sentence => sentence.content);
-
-      if (this.sentence) {
-        setTimeout(() => this.next(), this.readTime);
-      }
     });
   }
 
@@ -59,8 +65,8 @@ export class SentencesComponent implements OnInit, OnDestroy {
       const next = current + 1;
 
       this.current = sentences.length > next ? next : 0;
-      setTimeout(() => this.next(), this.readTime);
       this.state = 'show';
+      this.wait = false;
     }
   }
 
