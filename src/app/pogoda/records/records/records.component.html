@@ -1,4 +1,4 @@
-<mat-tab-group color="accent" [dynamicHeight]="true">
+<mat-tab-group color="accent">
   <ng-template [ngIf]="day$ | async" let-day="$implicit">
     <mat-tab label="DZIŚ" *ngIf="!(record == 'rain' && day.value == 0)">
       <skalagi-record *matTabContent [data]="day"></skalagi-record>
@@ -10,6 +10,8 @@
   </mat-tab>
 
   <mat-tab *ngIf="year$ | async as year" label="ROKU">
-    <skalagi-record *matTabContent [data]="year"></skalagi-record>
+    <ng-template matTabContent>
+        <skalagi-record [data]="year"></skalagi-record>
+    </ng-template>
   </mat-tab>
 </mat-tab-group>

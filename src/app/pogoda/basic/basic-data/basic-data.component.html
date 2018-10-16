@@ -1,4 +1,4 @@
-<div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
+<div class="basic" fxLayout="column" fxLayoutAlign="center stretch" @slide>  
     <ng-template [ngIf]="basic?.gust">
       
       <skalagi-unit *ngIf="basic?.current?.speed" [unit]="basic.current.speed" color="primary"
