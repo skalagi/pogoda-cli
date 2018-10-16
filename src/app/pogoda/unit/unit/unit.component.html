@@ -2,7 +2,7 @@
 >
   <span class="name" fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center"
     >
-    <mat-icon [ngStyle]="{ transform: transform }" [color]="color">{{ name ? 'hdr_strong' : icon }}</mat-icon>
+    <mat-icon [ngStyle]="{ transform: transform }" [color]="color">{{ icon }}</mat-icon>
     <div class="title" fxLayout="column">
       <span class="main-line">{{ name ? name : unit?.name }}</span>
       <span [ngClass]="color" class="second-line"><ng-content></ng-content></span>
