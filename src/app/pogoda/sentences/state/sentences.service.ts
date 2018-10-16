@@ -9,10 +9,19 @@ import { createSentence } from './sentence.model';
 export class SentencesService {
 
   constructor(private store: SentencesStore, private http: HttpClient) {
-    http.get(`${environment.apiSource}/info.json`)
+    this.get();
+  }
+
+  get() {
+    this.store.setLoading(true);
+    this.http.get(`${environment.apiSource}/info.json`)
       .subscribe((entities: String[]) => {
         this.store.set(entities.map(entity => createSentence({ content: entity })));
+        this.store.setLoading(false);
     }, err => { this.store.setError(err); });
   }
 
+  update() {
+    this.get();
+  }
 }

@@ -38,6 +38,10 @@ export class ChartService {
     return rawType;
   }
 
+  update() {
+    // TODO
+  }
+
   load(type, range) {
     this.store.setLoading(true);
 

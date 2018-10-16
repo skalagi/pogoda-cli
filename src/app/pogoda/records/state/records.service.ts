@@ -7,19 +7,29 @@ import { Records } from './records';
 
 @Injectable({ providedIn: 'root' })
 export class RecordsService {
-  constructor(private recordsStore: RecordsStore,
-    private http: HttpClient) {
-      this.preload('day');
-      this.preload('month');
-      this.preload('year');
+  private ranges = new Set();
+  constructor(private store: RecordsStore, private http: HttpClient) {}
+
+  update() {
+    this.ranges.forEach(range => this.load(range));
+  }
+
+  load(range) {
+    this.store.setLoading(true);
+
+    if (this.ranges.has(range)) {
+      this.store.setLoading(false);
+      return;
     }
 
-  preload(range) {
+    this.ranges.add(range);
+
     this.http.get(`${environment.apiSource}/${range}-records.json`)
       .subscribe((records: Records) => {
-        this.recordsStore.setState(state => {
+        this.store.setState(state => {
           return { ...state, [range]: records };
         });
-      }, err => { this.recordsStore.setError(err); });
+        this.store.setLoading(false);
+      }, err => { this.store.setError(err); });
   }
 }
