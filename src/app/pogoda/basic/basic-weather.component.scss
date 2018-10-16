@@ -1,5 +1,7 @@
 :host {
   display: block;
+  position: relative;
+  z-index: 2;
   background: #1E88E5;
   width: 100%;
 }

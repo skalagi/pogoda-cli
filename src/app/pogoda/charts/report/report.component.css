@@ -2,8 +2,9 @@
   box-sizing: border-box;
   background: #1E88E5;
   display: block;
+  position: relative;
+  z-index: 2;
   width: 100%;
-  margin-top: 2px;
 }
 
 mat-tab-group {

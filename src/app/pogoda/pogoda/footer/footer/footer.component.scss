@@ -3,9 +3,12 @@ footer {
     padding: 16px 64px;
     text-align: right;
     position: sticky;
-    z-index: -1;
     bottom: 0;
     color: #fff;
+}
+
+.copyright {
+    letter-spacing: 4px;
 }
 
 mat-nav-list {
