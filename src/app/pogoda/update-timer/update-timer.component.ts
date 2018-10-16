@@ -13,6 +13,7 @@ import { SentencesService } from '../sentences/state';
 })
 export class UpdateTimerComponent implements OnInit {
   loading$ = this.query.selectLoading();
+  error$ = this.query.selectError();
   time$ = new BehaviorSubject(null);
 
   constructor(

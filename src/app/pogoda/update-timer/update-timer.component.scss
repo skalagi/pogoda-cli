@@ -1,5 +1,23 @@
 :host {
   padding: 12px 24px;
+  animation: 1s cubic-bezier(0.4, 0.0, 0.2, 1) zuzia infinite;
+}
+
+.warn {
+  font-weight: 600;
+}
+
+@keyframes zuzia {
+  0% {
+    opacity: .75;
+
+  } 
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .25;
+  }
 }
 
 .value {
