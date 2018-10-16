@@ -10,6 +10,16 @@ export const chartConfig = {
 
       credits: { enabled: false },
 
+      plotOptions: {
+        arearange: {
+          fillColor: 'rgba(255, 255, 255, .75)',
+        },
+        area: {
+          fillColor: 'rgba(255, 255, 255, .75)',
+          lineWidth: 4,
+        },
+      },
+
       noData: {
         style: { ...textStyle },
       },
