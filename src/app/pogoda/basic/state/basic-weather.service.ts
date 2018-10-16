@@ -16,6 +16,9 @@ export class BasicWeatherService {
       .subscribe(response => {
         this.basicWeatherStore.setState(state => ({ ...state, ...response }));
         this.basicWeatherStore.setLoading(false);
-      }, err => { this.basicWeatherStore.setError(err); });
+      }, err => {
+        this.basicWeatherStore.setError(err);
+        this.basicWeatherStore.setLoading(false);
+      });
   }
 }
