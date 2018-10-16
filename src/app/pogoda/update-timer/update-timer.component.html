@@ -1,6 +1,5 @@
-<span *ngIf='loaded'>Ostatnia aktualizacja: <span class='value'>{{ data.value + "| amTimeAgo" }}</span>,</span>
-
-<span *ngIf='time'>czas do następnej:
-  <span [matTooltip]="time + 's'" class='primary value'>{{ time + "| amDuration:'seconds'" }}</span>
+<span *ngIf='!(loading$ | async)'>
+  <span [matTooltip]="'Następna aktualizacja za ' + (time$ | async) + 's'" class='value'>{{ (time$ | async) }}s</span>
 </span>
-<mat-spinner *ngIf='!loaded'></mat-spinner>
+
+<mat-spinner [strokeWidth]="2" [diameter]="32" color="accent" *ngIf='loading$ | async'></mat-spinner>
