@@ -6,12 +6,20 @@ mat-tab-group {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    padding: 12px 8px;
+    padding: 12px 24px;
     padding-top: 64px;
+
+    &.xs {
+        padding: 12px 8px;
+    }
 }
 
 :host ::ng-deep .mat-tab-header {
     background-color: #fff;
+}
+
+:host ::ng-deep mat-tab-body {
+    margin: 16px 0;
 }
 
 :host ::ng-deep .mat-tab-header .mat-tab-label {

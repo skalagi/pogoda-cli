@@ -1,5 +1,6 @@
-<div gdGap="96px" gdGap.xs="32px 4px" gdColumns="repeat(auto-fill, minmax(384px, auto))"
-    gdColumns.xs="repeat(1, 1fr)"
+<div gdGap="96px" ngClass.xs="xs" gdGap.xs="32px 4px" gdColumns.lt-sm="repeat(1, 1fr)"
+    gdColumns="repeat(auto-fill, minmax(384px, auto))"
+    
     gdAlignColumns="space-between center" gdAlignRows="stretch stretch" 
     (dropped)="dropped($event)">
     <skalagi-basic-card *ngFor='let card of cards'

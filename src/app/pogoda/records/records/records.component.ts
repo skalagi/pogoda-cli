@@ -4,7 +4,7 @@ import { RecordsService, RecordsQuery } from '../state';
 @Component({
   selector: 'skalagi-records',
   templateUrl: './records.component.html',
-  styleUrls: ['./records.component.css']
+  styleUrls: ['./records.component.scss']
 })
 export class RecordsComponent implements OnInit {
   ranges: String[] = ['day', 'month', 'year'];

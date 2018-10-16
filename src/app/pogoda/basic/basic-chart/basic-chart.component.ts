@@ -45,7 +45,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
         marker: {
           enabled: false,
         },
-        lineWidth: 2,
+        lineWidth: 4,
       },
     },
 
