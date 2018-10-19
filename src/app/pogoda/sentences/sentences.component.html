@@ -1,4 +1,6 @@
 <div *ngIf="!(error$ | async)" class="primary-bg" fxLayout fxLayoutAlign="center center">
-    <mat-progress-bar color="accent" mode="buffer" *ngIf="(loading$ | async) && !(error$ | async)"></mat-progress-bar>
-    <span class="second-font" (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
+    <mat-progress-bar color="accent" mode="buffer" *ngIf="loading$ | async; else sents"></mat-progress-bar>
+    <ng-template #sents>
+        <span class="second-font" (@state.done)='showNew($event)' [@state]="state">{{ sentence }}</span>
+    </ng-template>
 </div>
