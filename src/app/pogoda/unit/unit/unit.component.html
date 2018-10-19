@@ -1,7 +1,7 @@
 <div *ngIf="unit?.value != null" fxLayout="row wrap" 
   fxLayoutAlign.xs="stretch center" fxLayoutAlign="space-between center">
 
-  <span class="name" fxLayout="row wrap" 
+  <span class="name" fxLayout="row wrap" ngClass.xs="mobile"
     fxLayoutAlign.xs="space-around center" fxLayoutAlign="space-between center">
 
     <mat-icon [ngStyle]="{ transform: transform }" [color]="color">{{ icon }}</mat-icon>

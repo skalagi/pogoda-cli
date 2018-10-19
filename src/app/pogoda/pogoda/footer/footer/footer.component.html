@@ -1,4 +1,4 @@
-<footer class="primary-bg second-font">
+<footer class="primary-bg second-font" ngClass.xs="mobile">
   <mat-nav-list class="accent">
     <mat-list-item routerLinkActive="active" routerLink='/pomiary'>
        <a matLine >POMIARY</a>
@@ -10,7 +10,8 @@
   </mat-nav-list>
 
   <div class="bottom" ngClass.xs="mobile" 
-    fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
+    fxLayout.xs="column"
+    fxLayout="row wrap" fxLayoutAlign.xs="center stretch" fxLayoutAlign="space-around center">
     <div *ngIf="(time$ | async) as time">
       <span *ngIf="time?.data?.value" fxLayout="row wrap" fxLayout.xs="column">
         <span>Ostatnia aktualizacja:</span>

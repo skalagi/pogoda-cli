@@ -6,4 +6,8 @@
 highcharts-chart {
     display: block;
     width: 100%;
+
+    &.mobile {
+        height: 256px;
+    }
 }
