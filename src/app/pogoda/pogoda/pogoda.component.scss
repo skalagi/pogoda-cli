@@ -1,0 +1,17 @@
+skalagi-header, skalagi-sentences {
+    position: sticky;
+    z-index: 4;
+}
+
+skalagi-header {
+    display: block;
+    top: -12px;
+}
+
+skalagi-sentences {
+    top: 38px;
+
+    &.mobile {
+        position: relative;
+    }
+}
