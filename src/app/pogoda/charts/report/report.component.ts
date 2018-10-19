@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of, Subject, BehaviorSubject } from 'rxjs';
 
 import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
@@ -10,16 +10,19 @@ import { SEOService } from 'app/pogoda/seo.service';
   // tslint:disable-next-line:component-selector
   selector: 'report',
   templateUrl: './report.component.html',
-  styleUrls: ['./report.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./report.component.scss']
 })
 export class ReportComponent implements OnInit {
   types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
+  rangesIndex$ = new BehaviorSubject(null);
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
+  typesIndex$ = new BehaviorSubject(null);
   loading$ = this.query.selectLoading();
   error$ = this.query.selectError();
   type$ = new BehaviorSubject(null);
 
-  constructor(private route: ActivatedRoute, private query: ChartQuery, private seo: SEOService) { }
+  constructor(private route: ActivatedRoute, private query: ChartQuery, private seo: SEOService, private router: Router) { }
 
   decodeRange(range) {
     return decodeRange(range);
@@ -27,6 +30,38 @@ export class ReportComponent implements OnInit {
 
   decodeType(type) {
     return decodeType(type);
+  }
+
+  change({ range, type }) {
+    if (type !== null) {
+      this.types$.subscribe(types => {
+        this.router.navigate(['/', 'raport', types[type], decodeRange(this.type$.value.range) || 'dziś']);
+      });
+    }
+
+    if (range !== null) {
+      this.ranges$.subscribe(ranges => {
+        this.router.navigate(['/', 'raport', decodeType(this.type$.value.type), ranges[range]]);
+      });
+    }
+  }
+
+  tabsRange(range) {
+    switch (range) {
+      case 'day': return 0;
+      case 'month': return 1;
+      case 'year': return 2;
+    }
+  }
+
+  tabsTypes(range) {
+    switch (range) {
+      case 'temperature': return 0;
+      case 'barometer': return 1;
+      case 'humidity': return 2;
+      case 'rain': return 3;
+      case 'wind': return 4;
+    }
   }
 
   ngOnInit() {
@@ -40,11 +75,15 @@ export class ReportComponent implements OnInit {
         if (_range) {
           const range = encodeRange(_range);
           this.type$.next({ range, type });
+          this.typesIndex$.next(this.tabsTypes(type));
+          this.rangesIndex$.next(this.tabsRange(range));
 
           let seoRange = decodeRange(range);
           let seoType = decodeType(type);
+          const title = `${seoRange} ${seoType}`;
 
-          this.seo.title(`Raport ${seoRange} ${seoType}`);
+          this.seo.title(`Raport ${title}`);
+          this.seo.description(`Wykres wyświetlający ${title}`);
         }
       }
     });

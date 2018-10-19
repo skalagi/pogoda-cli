@@ -1,0 +1,22 @@
+:host {
+  box-sizing: border-box;
+  background: #1E88E5;
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+mat-tab-group {
+  border-radius: 5px;
+}
+
+:host ::ng-deep {
+  .mat-tab-label,  .mat-tab-link {
+    text-transform: uppercase;
+    padding-bottom: 32px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    padding-top: 32px;
+  }
+}
