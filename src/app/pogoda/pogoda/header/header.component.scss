@@ -1,5 +1,6 @@
 h2 {
   font-size: 24px;
+  line-height: 24px;
   letter-spacing: 3px;
   color: #FFEB3B;
 }
@@ -10,7 +11,7 @@ header {
 }
 
 mat-toolbar {
-  /* border: 1px solid #fff; */
+  height: auto;
   padding: 0;
   border-radius: 6px;
 }
@@ -28,11 +29,6 @@ button, nav {
   letter-spacing: 2px;
 }
 
-sub {
-  margin-left: .25em;
-  transform: translateY(-.5em);
-}
-
 skalagi-update-timer {
   margin-left: auto;
 }
@@ -46,7 +42,7 @@ mat-icon {
 }
 
 .sun {
-  animation: spin 30s cubic-bezier(0.4, 0.0, 0.2, 1)  infinite;
+  animation: spin 30s cubic-bezier(0.0, 0.0, 0.2, 1)  infinite;
 }
 
 @keyframes spin {

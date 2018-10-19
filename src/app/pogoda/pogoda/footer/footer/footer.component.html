@@ -1,11 +1,11 @@
 <footer class="primary-bg second-font">
-  <mat-nav-list>
-    <mat-list-item>
-       <a matLine routerLinkActive="actisve" routerLink='/pomiary'>POMIARY</a>
+  <mat-nav-list class="accent">
+    <mat-list-item routerLinkActive="active" routerLink='/pomiary'>
+       <a matLine >POMIARY</a>
     </mat-list-item>
 
-    <mat-list-item>
-       <a matLine routerLinkActive="activse" routerLink='/raport'>RAPORT</a>
+    <mat-list-item routerLinkActive="active" routerLink='/raport'>
+       <a matLine>RAPORT</a>
     </mat-list-item>
   </mat-nav-list>
 
@@ -14,7 +14,7 @@
     <div *ngIf="(time$ | async) as time">
       <span *ngIf="time?.data?.value" fxLayout="row wrap" fxLayout.xs="column">
         <span>Ostatnia aktualizacja:</span>
-        <span class="accent">{{ time.data.value | amTimeAgo }}</span>
+        <span class="accent time">{{ time.data.value | amTimeAgo }}</span>
       </span>
     </div>
 
