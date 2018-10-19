@@ -5,32 +5,32 @@ body {
   background: #1E88E5;
   min-height: 100vh;
   margin: 0;
-}
 
-.second-font {
-  font-family: 'Alegreya Sans', sans-serif;
-}
+  .second-font {
+    font-family: 'Alegreya Sans', sans-serif;
+  }
 
-.primary-bg {
-  background: $primary;
-}
+  .primary-bg {
+    background: $primary;
+  }
 
 
-.accent-bg {
-  background: $accent;
-  color: #333;
-}
+  .accent-bg {
+    background: $accent;
+    color: #333;
+  }
 
-.primary {
-  color: $primary;
-}
+  .primary {
+    color: $primary;
+  }
 
-.accent {
-  color: $accent;
-}
+  .accent {
+    color: $accent;
+  }
 
-.warn {
-  color: $warn;
+  .warn {
+    color: $warn;
+  }
 }
 
 .mat-tab-label, .mat-tab-link {
