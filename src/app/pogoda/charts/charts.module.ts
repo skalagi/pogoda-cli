@@ -9,6 +9,7 @@ import {
   MatProgressBarModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
       { path: ':type/:range', component: ReportComponent }
     ]),
     MatProgressBarModule,
+    FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
     HighchartsChartModule,

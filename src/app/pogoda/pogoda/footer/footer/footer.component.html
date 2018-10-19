@@ -1,13 +1,11 @@
 <footer class="primary-bg second-font">
   <mat-nav-list>
-    <a mat-list-item disableRipple>TRANSKRYPT</a>
-    <a mat-list-item disableRipple>ASTRONOMIA</a>
-    <a mat-list-item disableRipple>PROGNOZA</a>
     <a mat-list-item routerLinkActive="active" routerLink='/pomiary'>POMIARY</a>
     <a mat-list-item routerLinkActive="active" routerLink='/raport'>RAPORT</a>
   </mat-nav-list>
 
-  <div fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
+  <div class="bottom" ngClass.xs="mobile" 
+    fxLayout="row wrap" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
     <div *ngIf="(time$ | async) as time">
       <span *ngIf="time?.data?.value">
         Ostatnia aktualizacja: <span class="accent">{{ time.data.value | amTimeAgo }}</span>

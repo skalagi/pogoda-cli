@@ -13,6 +13,13 @@ footer {
 
 .copyright {
     letter-spacing: 4px;
+    margin: 16px;
+}
+
+.bottom {
+    &.mobile {
+        text-align: center;
+    }
 }
 
 mat-nav-list {
