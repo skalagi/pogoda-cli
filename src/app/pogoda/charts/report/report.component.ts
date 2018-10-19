@@ -32,7 +32,8 @@ export class ReportComponent implements OnInit {
     return decodeType(type);
   }
 
-  change({ range, type }) {
+  change(opts) {
+    const { range, type } = opts;
     if (type !== null) {
       this.types$.subscribe(types => {
         this.router.navigate(['/', 'raport', types[type], decodeRange(this.type$.value.range) || 'dziś']);

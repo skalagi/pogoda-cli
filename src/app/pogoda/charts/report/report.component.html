@@ -20,7 +20,8 @@
 </nav>
 -->
 
-<mat-tab-group [selectedIndex]="typesIndex$ | async" mat-align-tabs="center" backgroundColor="primary" (selectedIndexChange)="change({ type: $event })">
+<mat-tab-group [selectedIndex]="typesIndex$ | async" mat-align-tabs="center" backgroundColor="primary" 
+  (selectedIndexChange)="change({ type: $event })">
   <mat-tab *ngFor="let type of types$ | async" [label]="type"></mat-tab>
 </mat-tab-group>
 
