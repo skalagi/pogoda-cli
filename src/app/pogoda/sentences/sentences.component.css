@@ -1,11 +1,7 @@
 :host {
   display: block;
   box-sizing: border-box;
-  margin-bottom: 8px;
-  position: sticky;
   width: 100%;
-  z-index: 3;
-  top: 0;
 }
 
 div {  
