@@ -36,9 +36,9 @@
         [unit]="basic.dewPoint"></skalagi-unit>
 
     </ng-template> 
-    <mat-action-row *ngIf="!(chartError$ | async)" fxLayout fxLayoutAlign="end center">      
+    <mat-action-row fxLayout fxLayoutAlign="end center">      
       <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
-        *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))">
+        *ngIf="(loading$ | async)">
       </mat-spinner>
       <button color="primary" mat-button disabled>TRANSKRYPT</button>
       <button color="primary" mat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
