@@ -1,5 +1,6 @@
-<span *ngIf='!(loading$ | async)'>
-  <span *ngIf="!(error$ | async); else error" [matTooltip]="'Następna aktualizacja za ' + (time$ | async) + 's'" class='value'>{{ (time$ | async) }}s</span>
+<span *ngIf="!(loading$ | async)">
+  <span *ngIf="!(error$ | async); else error" [matTooltip]="'Następna aktualizacja za ' + (time$ | async) + 's'" 
+    class='value'>{{ (time$ | async) }}{{ (time$ | async) ? 's' : '' }}</span>
   <ng-template #error>
     <span class="warn">BŁĄD POŁĄCZENIA</span>
   </ng-template>

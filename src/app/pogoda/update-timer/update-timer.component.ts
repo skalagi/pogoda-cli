@@ -39,13 +39,24 @@ export class UpdateTimerComponent implements OnInit {
       this.updateServices();
     }
 
-    if (value) {
+    if (typeof value === 'number') {
       this.time$.next(value - 1);
     }
   }
 
   ngOnInit() {
-    this.query.basic('time').subscribe(time => time ? this.time$.next(time.next.value) : time);
+    this.query.basic('time').subscribe(time => {
+      const value = time.next.value;
+
+      if (value) {
+        if (typeof value === 'number') {
+          this.time$.next(value);
+        } else if (value.toLowerCase() === 'offline') {
+          this.time$.next('OFFLINE');
+        }
+      }
+    });
+
     interval(1000).subscribe(() => this.tick());
   }
 }
