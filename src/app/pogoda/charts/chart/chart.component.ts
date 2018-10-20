@@ -32,7 +32,6 @@ export class ChartComponent {
         };
 
         chart.yAxis[0].update({ ...minMax(type, data),
-          title: { text: decodeType(type) },
           labels: {
             format: `{value} ${ unit }`
           }
