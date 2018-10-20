@@ -20,7 +20,7 @@ export class ChartComponent {
   chartInit(chart) {
     this.type$.subscribe(({ range, type }) => {
       this.query.chart(range, type).subscribe(data => {
-        let chartType = data.length && data[0].length > 2 ? 'arearange' : 'area';
+        let chartType = data && data.length && data[0].length > 2 ? 'arearange' : 'area';
         const unit = typeSuffix(type);
         const serie = {
           type: chartType,
