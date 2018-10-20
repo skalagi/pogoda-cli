@@ -1,11 +1,11 @@
 <footer class="primary-bg second-font" ngClass.xs="mobile">
   <mat-nav-list class="accent">
     <mat-list-item routerLinkActive="active" routerLink='/pomiary'>
-       <a matLine >AKTUALNE ODZCZYTY</a>
+        <a matLine >AKTUALNE ODZCZYTY</a>
     </mat-list-item>
 
     <mat-list-item routerLinkActive="active" routerLink='/raport'>
-       <a matLine>RAPORT</a>
+        <a matLine>RAPORT</a>
     </mat-list-item>
   </mat-nav-list>
 
@@ -13,7 +13,7 @@
     fxLayout.xs="column"
     fxLayout="row wrap" fxLayoutAlign.xs="center stretch" fxLayoutAlign="space-around center">
     <div *ngIf="(time$ | async) as time">
-      <span *ngIf="time?.data?.value" fxLayout="row wrap" fxLayout.xs="column">
+      <span *ngIf="time?.data?.value" fxLayout="row wrap" fxLayoutAlign="center center">
         <span>Ostatnia aktualizacja:</span>
         <span class="accent time">{{ time.data.value | amTimeAgo }}</span>
       </span>
