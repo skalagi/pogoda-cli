@@ -40,8 +40,8 @@
       <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
         *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))">
       </mat-spinner>
-      <button color="accent" mat-flat-button disabled>TRANSKRYPT</button>
-      <button color="accent" mat-flat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
+      <button color="primary" mat-button disabled>TRANSKRYPT</button>
+      <button color="primary" mat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
     </mat-action-row>
   </mat-expansion-panel>    
 </div>
