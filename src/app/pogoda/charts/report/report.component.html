@@ -20,6 +20,10 @@
 </nav>
 -->
 
+<mat-progress-bar *ngIf="loading$ | async" mode="buffer"></mat-progress-bar>
+
+<skalagi-chart ngClass.xs="mobile" [type$]="type$"></skalagi-chart>
+
 <mat-tab-group [selectedIndex]="typesIndex$ | async" mat-align-tabs="center"
   color="accent" backgroundColor="primary"
   (selectedIndexChange)="change({ type: $event })">
@@ -31,8 +35,4 @@
   (selectedIndexChange)="change({ range: $event })">
     <mat-tab *ngFor="let range of ranges$ | async" [label]="range"></mat-tab>
 </mat-tab-group>
-
-<mat-progress-bar *ngIf="loading$ | async" mode="buffer"></mat-progress-bar>
-
-<skalagi-chart ngClass.xs="mobile" [type$]="type$"></skalagi-chart>
 <router-outlet></router-outlet>
