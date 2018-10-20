@@ -26,7 +26,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
     ...chartConfig,
     chart: {
       ...chartConfig.chart,
-      backgroundColor: '#2196f3',
+      backgroundColor: '#ffd740',
       type: 'area',
       height: 64,
       margin: 0,
@@ -41,7 +41,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
       area: {
         ...chartConfig.plotOptions.area,
         fillColor: '#fff',
-        color: '#ffd740',
+        color: '#1E88E5',
         negativeFillColor: 'red',
 
         marker: {

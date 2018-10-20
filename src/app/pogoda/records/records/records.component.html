@@ -1,17 +1,15 @@
 <mat-tab-group @slide headerPosition="below">
   <ng-template [ngIf]="day$ | async" let-day="$implicit">
     <mat-tab label="DZIŚ" *ngIf="!(record == 'rain' && day.value == 0)">
-      <skalagi-record *matTabContent [data]="day"></skalagi-record>
+      <skalagi-record [data]="day"></skalagi-record>
     </mat-tab>
   </ng-template>
 
   <mat-tab label="MIESIĄCA" *ngIf="month$ | async as month" >
-    <skalagi-record *matTabContent [data]="month"></skalagi-record>
+    <skalagi-record [data]="month"></skalagi-record>
   </mat-tab>
 
   <mat-tab *ngIf="year$ | async as year" label="ROKU">
-    <ng-template matTabContent>
         <skalagi-record [data]="year"></skalagi-record>
-    </ng-template>
   </mat-tab>
 </mat-tab-group>
