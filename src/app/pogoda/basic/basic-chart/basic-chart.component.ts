@@ -40,6 +40,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
       ...chartConfig.plotOptions,
       area: {
         ...chartConfig.plotOptions.area,
+        lineWidth: 5,
         fillColor: '#fff',
         color: '#1E88E5',
         negativeFillColor: 'red',

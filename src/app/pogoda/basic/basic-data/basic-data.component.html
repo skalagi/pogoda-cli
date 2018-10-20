@@ -16,11 +16,11 @@
           [unit]="basic?.current"></skalagi-unit>
     </mat-expansion-panel-header>
 
-    <skalagi-unit @slide color="primary" *ngIf="basic?.trend" [icon]="trendIcon"
-      [unit]="basic.trend"></skalagi-unit>
-
     <skalagi-unit @slide color="primary" icon="nature_people" *ngIf="basic?.real" 
       [unit]="basic.real"></skalagi-unit>
+
+    <skalagi-unit @slide color="primary" *ngIf="basic?.trend" [icon]="trendIcon"
+      [unit]="basic.trend"></skalagi-unit>
     
     <ng-template [ngIf]="basic?.gust">
 

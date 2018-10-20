@@ -31,10 +31,12 @@ body {
   .warn {
     color: $warn;
   }
-}
 
-.mat-tab-label, .mat-tab-link {
-  letter-spacing: 4px;
+  .mat-tab-label, .mat-tab-link {
+    letter-spacing: 4px;
+    min-width: auto;
+    
+  }
 }
 
 ::-webkit-scrollbar {
