@@ -1,4 +1,4 @@
-<mat-tab-group headerPosition="below">
+<mat-tab-group headerPosition="below" color="accent" backgroundColor="primary">
   <ng-template [ngIf]="day$ | async" let-day="$implicit">
     <mat-tab label="DZIŚ" *ngIf="!(record == 'rain' && day.value == 0)">
       <skalagi-record [data]="day"></skalagi-record>

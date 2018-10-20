@@ -7,16 +7,23 @@ mat-tab-group {
     display: block;
     width: 100%;
     padding: 12px 24px;
-    padding-top: 64px;
+    padding-top: 52px;
 
     &.xs {
         padding: 12px 8px;
     }
 }
 
-:host ::ng-deep .mat-tab-group .mat-tab-header {
-    background-color: #fff;
-}
+:host ::ng-deep .mat-tab-group.mat-background-primary {
+    .mat-tab-header {
+        background-color: #fff;
+    }
+    
+    .mat-ink-bar {
+        background-color: #2196f3;
+    }
+
+} 
 
 :host ::ng-deep mat-tab-body {
     margin: 16px 0;
