@@ -1,6 +1,6 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
   <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <mat-tab-group color="accent">
+    <mat-tab-group mat-align-tabs="center" color="accent">
 
       <mat-tab label="{{ 
           title == 'Opady' && !basic?.value ? 'BRAK OPADÓW' 
