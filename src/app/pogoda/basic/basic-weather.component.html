@@ -3,6 +3,6 @@
     
     gdAlignColumns="space-between center" gdAlignRows="stretch stretch" 
     (dropped)="dropped($event)">
-    <skalagi-basic-card *ngFor='let card of cards'
+    <skalagi-basic-card *ngFor='let card of cards' class="mat-elevation-z1"
         [title]="card.title" [type]="card.type"></skalagi-basic-card>
 </div>

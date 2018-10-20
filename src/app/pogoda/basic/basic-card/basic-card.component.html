@@ -1,12 +1,12 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
   <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <mat-tab-group mat-align-tabs="center" backgroundColor="accent">
-
-      <mat-tab label="{{ 
-          title == 'Opady' && !basic?.value ? 'BRAK OPADÓW' 
+    <mat-tab-group [dynamicHeight]="true" mat-align-tabs="center" backgroundColor="accent">
+      
+      <mat-tab label="{{
+        title == 'Opady' && !basic?.value ? 'BRAK OPADÓW' 
             : title == 'Wiatr' && !basic?.current?.speed?.value
             ? 'BEZWIETRZNIE' : title.toUpperCase()  
-        }}">
+      }}">
         <skalagi-basic-data [title]="title" [basic]="basic"></skalagi-basic-data>
       </mat-tab>
 
