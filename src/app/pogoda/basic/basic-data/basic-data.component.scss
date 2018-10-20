@@ -7,6 +7,13 @@
 .basic {
     height: 100%;
     box-sizing: border-box;
-    padding: 12px 24px;
     padding-top: 64px;
+}
+
+skalagi-unit {
+    width: 100%;
+}
+
+mat-expansion-panel-header {
+    height: auto;
 }

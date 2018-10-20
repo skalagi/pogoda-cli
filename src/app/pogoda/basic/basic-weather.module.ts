@@ -7,7 +7,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { RecordsModule } from '../records/records.module';
 
 import { BasicWeatherComponent } from './basic-weather.component';
-import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, MatButtonModule, MatProgressBarModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule,
+   MatButtonModule, MatProgressBarModule, MatExpansionModule } from '@angular/material';
 import { BasicCardComponent } from './basic-card/basic-card.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -21,6 +22,8 @@ import { BasicChartComponent } from './basic-chart/basic-chart.component';
     CommonModule,
     RouterModule.forChild([{ path: '', component: BasicWeatherComponent }]),
     HighchartsChartModule,
+
+    MatExpansionModule,
 
     DragDropModule,
     MatButtonModule,

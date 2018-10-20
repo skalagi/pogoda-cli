@@ -8,7 +8,7 @@
             ? 'BEZWIETRZNIE' : title.toUpperCase()  
         }}">
         <ng-template matTabContent>
-          <skalagi-basic-data [basic]="basic"></skalagi-basic-data>
+          <skalagi-basic-data [title]="title" [basic]="basic"></skalagi-basic-data>
         </ng-template>
       </mat-tab>
 
@@ -20,13 +20,5 @@
     </mat-tab-group>
 
     <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
-    
-    <div class="actions primary-bg" *ngIf="!(chartError$ | async)" fxLayout fxLayoutAlign="end center">
-      <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
-        *ngIf="(loading$ | async) && !((chartError$ | async) || (error$ | async))">
-      </mat-spinner>
-      <button color="accent" mat-flat-button disabled>TRANSKRYPT</button>
-      <button color="accent" mat-flat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
-    </div>
   </div>
 </ng-template>

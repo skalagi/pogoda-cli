@@ -11,6 +11,7 @@ import { slideTrigger } from 'app/pogoda/pogoda.animation';
 })
 export class BasicDataComponent implements OnInit {
   @Input() basic;
+  @Input() title;
   loading$;
 
   get trendIcon() {
