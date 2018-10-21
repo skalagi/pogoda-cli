@@ -11,7 +11,7 @@ require('highcharts/modules/no-data-to-display')(Highcharts);
 
 Highcharts.setOptions({
   lang: {
-    noData: 'BRAK DANYCH',
+    noData: 'EWALUACJA DANYCH',
     months: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień',
     'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
     'Październik', 'Listopad', 'Grudzień'],

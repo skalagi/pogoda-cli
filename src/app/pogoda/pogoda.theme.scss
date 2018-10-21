@@ -11,7 +11,7 @@ $weather-typography: mat-typography-config(
 @include mat-core($weather-typography);
 
 $weather-blue-primary: mat-palette($mat-blue);
-$weather-blue-accent:  mat-palette($mat-amber, A200, A100, A400);
+$weather-blue-accent:  mat-palette($mat-amber, A400);
 $weather-blue-warn: mat-palette($mat-red);
 $weather-blue-theme: mat-light-theme($weather-blue-primary, $weather-blue-accent, $weather-blue-warn);
 

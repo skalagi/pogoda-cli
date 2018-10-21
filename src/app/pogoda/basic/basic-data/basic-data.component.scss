@@ -10,8 +10,41 @@
     padding-top: 64px;
 }
 
+.mat-expanded {
+    mat-expansion-panel-header {
+        ::ng-deep skalagi-unit {
+            .main-line {
+                font-size: 16px;
+                font-weight: 300;
+                color: #333;
+            }
+        }
+
+        .icon {
+            color: #333;
+        }
+    }
+}
+
+mat-expansion-panel-header {
+    ::ng-deep skalagi-unit .main-line {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #2196f3;
+    }
+}
+
 skalagi-unit {
     width: 100%;
+}
+
+.icon {
+    font-size: 30px;
+    padding-left: 12px;
+
+    mat-icon {
+        height: auto;
+    }
 }
 
 button {

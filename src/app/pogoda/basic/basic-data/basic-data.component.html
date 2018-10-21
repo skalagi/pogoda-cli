@@ -1,6 +1,6 @@
 <div class="basic" fxLayout="column" fxLayoutAlign="center stretch">  
 
-  <mat-expansion-panel hideToggle class="mat-elevation-z0">
+  <mat-expansion-panel hideToggle class="mat-elevation-z0" #panel>
     <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="64px">
       <skalagi-unit @slide color="primary" *ngIf="basic?.value"
         [unit]="basic"></skalagi-unit>    
@@ -14,13 +14,17 @@
 
         <skalagi-unit @slide color="primary"  *ngIf="basic?.current && !basic?.current?.speed"
           [unit]="basic?.current"></skalagi-unit>
-    </mat-expansion-panel-header>
 
-    <skalagi-unit @slide color="primary" icon="nature_people" *ngIf="basic?.real" 
-      [unit]="basic.real"></skalagi-unit>
+        <span class="icon" fxLayout fxLayoutAlign="center center">
+          <mat-icon inline color="primary">{{ !panel.expanded ? 'unfold_more' : 'unfold_less' }}</mat-icon>
+        </span>
+    </mat-expansion-panel-header>
 
     <skalagi-unit @slide color="primary" *ngIf="basic?.trend" [icon]="trendIcon"
       [unit]="basic.trend"></skalagi-unit>
+
+    <skalagi-unit @slide color="primary" icon="nature_people" *ngIf="basic?.real" 
+      [unit]="basic.real"></skalagi-unit>
     
     <ng-template [ngIf]="basic?.gust">
 
