@@ -45,6 +45,10 @@ mat-sidenav {
     }
 }
 
+:host .active {
+    display: none;
+}
+
 :host .viewport {
 
     mat-sidenav-content.mat-sidenav-content {
