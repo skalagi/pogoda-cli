@@ -52,7 +52,7 @@ export class UpdateTimerComponent implements OnInit {
         if (typeof value === 'number') {
           this.time$.next(value);
         } else if (value.toLowerCase() === 'offline') {
-          this.time$.next('OFFLINE');
+          this.time$.next(null);
         }
       }
     });
