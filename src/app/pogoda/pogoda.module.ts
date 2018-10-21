@@ -13,7 +13,9 @@ import { MatSidenavModule, MatListModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(pogodaRoutes),
+    RouterModule.forRoot(pogodaRoutes, {
+      scrollPositionRestoration: 'enabled',
+    }),
     FlexLayoutModule,
     MatSidenavModule,
     MatListModule,
