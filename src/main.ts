@@ -1,6 +1,8 @@
 import './polyfills.ts';
 import 'moment/min/locales';
 
+import 'hammerjs';
+
 import * as moment from 'moment';
 moment.locale('pl-pl');
 
