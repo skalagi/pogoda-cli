@@ -1,99 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://pogoda.cloud/pomiary/</loc>
+        <loc>https://pogoda.cloud/</loc>
         <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://pogoda.cloud/temperatura/dzis/</loc>
-        <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/temperatura/miesiac/</loc>
+        <loc>https://pogoda.cloud/pomiary/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-21</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://pogoda.cloud/temperatura/dziś/</loc>
+        <changefreq>always</changefreq>
+        <lastmod>2018-10-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pogoda.cloud/temperatura/miesiąc/</loc>
         <changefreq>daily</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
         <loc>https://pogoda.cloud/temperatura/rok/</loc>
         <changefreq>monthly</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
     
     <url>
-        <loc>https://pogoda.cloud/cisnienie/dzis/</loc>
+        <loc>https://pogoda.cloud/ciśnienie/dziś/</loc>
         <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/cisnienie/miesiac/</loc>
+        <loc>https://pogoda.cloud/ciśnienie/miesiąc/</loc>
         <changefreq>daily</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/cisnienie/rok/</loc>
+        <loc>https://pogoda.cloud/ciśnienie/rok/</loc>
         <changefreq>monthly</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
     
     <url>
-        <loc>https://pogoda.cloud/wilgotnosc/dzis/</loc>
+        <loc>https://pogoda.cloud/wilgotność/dziś/</loc>
         <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/wilgotnosc/miesiac/</loc>
+        <loc>https://pogoda.cloud/wilgotność/miesiąc/</loc>
         <changefreq>daily</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/wilgotnosc/rok/</loc>
+        <loc>https://pogoda.cloud/wilgotność/rok/</loc>
         <changefreq>monthly</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
     
     <url>
-        <loc>https://pogoda.cloud/opady/dzis/</loc>
+        <loc>https://pogoda.cloud/opady/dziś/</loc>
         <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/opady/miesiac/</loc>
+        <loc>https://pogoda.cloud/opady/miesiąc/</loc>
         <changefreq>daily</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
         <loc>https://pogoda.cloud/opady/rok/</loc>
         <changefreq>monthly</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
     
     <url>
-        <loc>https://pogoda.cloud/wiatr/dzis/</loc>
+        <loc>https://pogoda.cloud/wiatr/dziś/</loc>
         <changefreq>always</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
-        <loc>https://pogoda.cloud/wiatr/miesiac/</loc>
+        <loc>https://pogoda.cloud/wiatr/miesiąc/</loc>
         <changefreq>daily</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
 
     <url>
         <loc>https://pogoda.cloud/wiatr/rok/</loc>
         <changefreq>monthly</changefreq>
-        <lastmod>2018-10-16</lastmod>
+        <lastmod>2018-10-21</lastmod>
     </url>
    
 </urlset>
