@@ -10,6 +10,20 @@ header {
   width: 100%;
 }
 
+.title { 
+  mat-icon {
+    margin-right: 3px;
+    $size: 20px;
+    font-size: $size;
+    width: $size;
+    height: $size;
+  }
+}
+
+.menu {
+  margin-right: 8px;
+}
+
 mat-toolbar {
   height: 52px;
   padding: 0;
@@ -18,27 +32,20 @@ mat-toolbar {
 
 nav {
   overflow: hidden;
+
+  &, button {
+    height: 100%;
+    letter-spacing: 2px;
+  }
+  
 }
 
 .routes {
   margin-left: auto;
 }
 
-button, nav {
-  height: 100%;
-  letter-spacing: 2px;
-}
-
 skalagi-update-timer {
   margin-left: auto;
-}
-
-mat-icon {
-  margin-right: 3px;
-  $size: 20px;
-  font-size: $size;
-  width: $size;
-  height: $size;
 }
 
 .sun {

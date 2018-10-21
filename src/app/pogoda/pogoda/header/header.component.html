@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar color="primary">
-    <nav>
+    <nav class="title">
       <button routerLink='/' mat-button>
         <h2 fxLayout fxLayoutAlign="center center" class="second-font">
           
@@ -18,5 +18,11 @@
     </nav>
     
     <skalagi-update-timer></skalagi-update-timer>
+
+    <button mat-icon-button fxHide.gt-sm class="menu">
+      <div fxLayout fxLayoutAlign="center center">
+        <mat-icon>menu</mat-icon>
+      </div>
+    </button>
   </mat-toolbar>
 </header>
