@@ -1,19 +1,20 @@
-<main gdColumns="1fr 1fr" gdColumns.lt-md="auto" gdAlignRows="space-evenly stretch">
+<main *ngIf="basic$ | async as basic"
+    gdColumns="1fr 1fr" gdColumns.lt-md="auto" gdAlignRows="space-evenly stretch">
     <skalagi-widget-unit title="TEMPERATURA" 
-        *ngIf="temperature$ | async as temperature" [unit]="temperature?.real"></skalagi-widget-unit>
+         [unit]="basic.temperature?.real"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="CIŚNIENIE"
-        *ngIf="presure$ | async as presure" [unit]="presure?.current"></skalagi-widget-unit>
+        [unit]="basic.presure?.current"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="WILGOTNOŚĆ"
-        *ngIf="humidity$ | async as humidity" [unit]="humidity"></skalagi-widget-unit>
+        [unit]="basic.humidity"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="OPADY" 
-        *ngIf="rain$ | async as rain" [unit]="rain?.current"></skalagi-widget-unit>
+        [unit]="basic.rain?.current"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="WIATR" 
-        *ngIf="wind$ | async as wind" [unit]="wind?.current.speed"></skalagi-widget-unit>
+        [unit]="basic.wind?.current.speed"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="PODMUCHY" 
-        *ngIf="wind$ | async as wind" [unit]="wind?.gust.speed"></skalagi-widget-unit>
+        [unit]="basic.wind?.gust.speed"></skalagi-widget-unit>
 </main>
