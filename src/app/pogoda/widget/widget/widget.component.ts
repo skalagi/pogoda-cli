@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { BasicWeatherQuery } from 'app/pogoda/basic/state';
 
 @Component({
   selector: 'skalagi-widget',
   templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.scss']
+  styleUrls: ['./widget.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WidgetComponent implements OnInit {
+  temperature$;
+  presure$;
+  wind$;
+  rain$;
 
-  constructor() { }
+  constructor(private query: BasicWeatherQuery) { }
 
   ngOnInit() {
+    this.temperature$ = this.query.basic('temperature');
+    this.presure$ = this.query.basic('barometer');
+    this.wind$ = this.query.basic('wind');
+    this.rain$ = this.query.basic('rain');
   }
 
 }

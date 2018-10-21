@@ -1,0 +1,8 @@
+<figure *ngIf="unit?.value">
+    <h1 class="second-font">
+        <span class="human">{{ unit.value | number:'0.0-2' }} 
+            <span class="unit">{{ unit.units }}</span>
+        </span>
+        <span class="full primary">{{ unit.value }}</span>
+    </h1>
+</figure>

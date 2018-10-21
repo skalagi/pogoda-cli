@@ -1,1 +1,4 @@
-<figure class="primary-bg"></figure>
+<skalagi-widget-unit *ngIf="temperature$ | async as temperature" [unit]="temperature?.real"></skalagi-widget-unit>
+<skalagi-widget-unit *ngIf="rain$ | async as rain" [unit]="rain?.current"></skalagi-widget-unit>
+<skalagi-widget-unit *ngIf="wind$ | async as wind" [unit]="wind?.current.speed"></skalagi-widget-unit>
+<skalagi-widget-unit *ngIf="presure$ | async as presure" [unit]="presure?.current"></skalagi-widget-unit>
