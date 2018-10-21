@@ -1,6 +1,5 @@
-<ng-template [ngIf]="basic$ | async" let-basic="$implicit">
-  <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">      
-    <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
-    <skalagi-basic-data [title]="title" [basic]="basic"></skalagi-basic-data>
-  </div>
-</ng-template>
+<div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">      
+  <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
+  <skalagi-basic-data [title]="title" [basic]="data"></skalagi-basic-data>
+</div>
+

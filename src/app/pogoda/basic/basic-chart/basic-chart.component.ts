@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, HostBinding, ElementRef, OnDestroy } from '@angular/core';
+import { Component, Input, AfterViewInit, HostBinding, ElementRef, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { chartConfig } from 'app/pogoda/pogoda.chart';
 import { decodeType, minMax } from 'app/pogoda/charts/charts.helper';
 import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
@@ -15,6 +15,7 @@ export interface BasicChart {
   selector: 'skalagi-basic-chart',
   templateUrl: './basic-chart.component.html',
   styleUrls: ['./basic-chart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasicChartComponent implements AfterViewInit, OnDestroy {
   @Input() data$: Observable<BasicChart>;
