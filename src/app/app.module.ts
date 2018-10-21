@@ -11,8 +11,6 @@ registerLocaleData(localePl, 'pl');
 import { PogodaModule } from './pogoda/pogoda.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +24,7 @@ import { environment } from '../environments/environment';
 
     PogodaModule,
 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pl' } ],
   bootstrap: [AppComponent]

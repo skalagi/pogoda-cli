@@ -17,10 +17,10 @@
             "tsConfig": "src/tsconfig.json",
             "assets": [
               "src/assets",
+              "src/manifest.json",
               "src/favicon.ico",
               "src/sitemap.xml",
-              "src/robots.txt",
-              "src/manifest.json"
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.scss"
@@ -31,7 +31,7 @@
             "source": {
               "fileReplacements": [
                 {
-                  "replace": "src/undefined",
+                  "replace": "src/environments",
                   "with": "src/environments/environment.ts"
                 }
               ]
@@ -39,7 +39,7 @@
             "dev": {
               "fileReplacements": [
                 {
-                  "replace": "src/undefined",
+                  "replace": "src/environments",
                   "with": "src/environments/environment.ts"
                 }
               ]
