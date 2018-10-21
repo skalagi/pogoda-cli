@@ -3,6 +3,11 @@ skalagi-header, skalagi-sentences {
     z-index: 3;
 }
 
+.route-outlet {
+    position: relative;
+    z-index: 1;
+}
+
 skalagi-header {
     display: block;
     top: -12px;
