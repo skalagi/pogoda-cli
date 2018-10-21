@@ -2,17 +2,17 @@
     <h1 class="">
         <div class="human" fxLayout="row inline" fxLayoutAlign="center start">
             <span class="">
-                <span class="value">
-                    {{ unit.value || 0 | number:'1.0-2' }}
+                <span class="value accent">
+                    {{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}
                 </span>
-                <span class="nicer-value primary">
-                    <span>{{ unit.value || 0 | number:'1.0-2' }}</span>
+                <span class="nicer-value">
+                    <span>{{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}</span>
                 </span>
                 <span class="full primary">
-                    <span>{{ unit.value || 0 | number:'1.0-20' }}</span>
+                    <span>{{ value(unit) == '-' ? '-' : unit.value | number:'1.0-20' }}</span>
                 </span>
             </span>
-            <span class="unit">{{ unit.units }}</span>            
+            <span class="unit">{{ units(unit) }}</span>            
         </div>
     </h1>
     <h3 class="second-font">{{ title }}</h3>

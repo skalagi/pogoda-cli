@@ -9,4 +9,20 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class WidgetUnitComponent {
   @Input() title;
   @Input() unit;
+
+  units(unit) {
+    if (unit === null) {
+      return '';
+    }
+
+    return unit.units;
+  }
+
+  value(unit) {
+    if (unit === null || unit.value === null) {
+      return '-';
+    }
+
+    return unit.value;
+  }
 }
