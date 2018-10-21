@@ -1,24 +1,13 @@
-:host {
+.timer {
   padding: 12px 24px;
-  animation: 1s cubic-bezier(0.4, 0.0, 0.2, 1) zuzia infinite;
+
+  &.mobile {
+    padding: 12px 8px;
+  }
 }
 
 .warn {
   font-weight: 600;
-}
-
-@keyframes zuzia {
-  0% {
-    opacity: .75;
-  } 
-
-  75% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: .2;
-  }
 }
 
 .value {

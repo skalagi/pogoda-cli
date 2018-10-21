@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { UpdateTimerComponent } from './update-timer.component';
 import { MatProgressSpinnerModule, MatTooltipModule } from '@angular/material';
 import { MomentModule } from 'ngx-moment';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
         CommonModule,
         MatProgressSpinnerModule,
+        FlexLayoutModule,
         MomentModule,
         MatTooltipModule,
     ],

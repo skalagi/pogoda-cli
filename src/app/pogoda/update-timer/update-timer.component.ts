@@ -31,6 +31,20 @@ export class UpdateTimerComponent implements OnInit {
     this.sentencesService.update();
   }
 
+  formatTime(time) {
+    const seconds = time % 60;
+    const minutes = (time - seconds) / 60;
+    if (minutes && !seconds) {
+      return `${ minutes }m`;
+    } else if (minutes) {
+      return `${ minutes }m ${ seconds }s`;
+    } else if (seconds) {
+      return `${ seconds }s`;
+    }
+
+    return 'offline';
+  }
+
   tick() {
     const { value } = this.time$;
 
@@ -52,7 +66,7 @@ export class UpdateTimerComponent implements OnInit {
         if (typeof value === 'number') {
           this.time$.next(value);
         } else if (value.toLowerCase() === 'offline') {
-          this.time$.next(null);
+          this.time$.next('offline');
         }
       }
     });
