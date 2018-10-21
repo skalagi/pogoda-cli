@@ -19,7 +19,7 @@ export class WidgetUnitComponent {
   }
 
   value(unit) {
-    if (unit === null || unit.value === null) {
+    if (unit === null || unit.value === null || (this.title !== 'TEMPERATURA' && unit.value === 0)) {
       return '-';
     }
 

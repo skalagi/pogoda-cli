@@ -17,7 +17,6 @@ export class UnitComponent {
 
   get transform() {
     return `rotate(${ this.dir && this.dir.value ? this.dir.value + 180 : 0  }deg)`;
-    // return `rotate(${ wind + 270 }deg)`;
   }
 
   get preTip() {
