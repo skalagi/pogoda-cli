@@ -3,9 +3,20 @@ skalagi-header, skalagi-sentences {
     z-index: 3;
 }
 
+.viewport {
+    min-height: 100vh;
+}
+
 .route-outlet {
+    background: #1E88E5;
+    box-sizing: border-box;
+    padding: 48px 32px 32px 32px;
     position: relative;
     z-index: 1;
+  
+    &.mobile {
+      padding: 24px 8px 8px 8px;
+    }
 }
 
 skalagi-header {
@@ -25,4 +36,11 @@ skalagi-sentences {
         position: relative;
         top: 0;
     }
+}
+
+skalagi-footer {
+    display: block;
+    margin-top: auto;
+    position: sticky;
+    bottom: 0;
 }
