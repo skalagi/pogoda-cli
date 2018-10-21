@@ -8,15 +8,18 @@ import { HeaderModule } from './pogoda/header/header.module';
 import { SentencesModule } from './sentences/sentences.module';
 import { FooterModule } from './pogoda/footer/footer.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule, MatListModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(pogodaRoutes),
     FlexLayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    SentencesModule,
     HeaderModule,
     FooterModule,
-    SentencesModule,
   ],
 
   declarations: [

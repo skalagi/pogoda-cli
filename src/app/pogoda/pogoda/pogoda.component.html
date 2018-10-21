@@ -1,8 +1,41 @@
 <div class="viewport" fxLayout="column">
-    <skalagi-header ngClass.lt-sm="mobile"></skalagi-header>
+    <skalagi-header (toggleMenu$)="sidenav.toggle()" ngClass.lt-sm="mobile"></skalagi-header>
     <skalagi-sentences ngClass.lt-sm="mobile"></skalagi-sentences>
-    <div fxFlex ngClass.lt-sm="mobile" class="route-outlet mat-elevation-z1">
+    <div ngClass.lt-sm="mobile" fxFlex class="route-outlet mat-elevation-z1">
         <router-outlet></router-outlet>
     </div>     
     <skalagi-footer></skalagi-footer>
 </div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" position="end" 
+        [fixedInViewport]="true" [fixedTopGap]="48">            
+        <mat-nav-list class="accent">
+            <mat-list-item routerLinkActive="active" routerLink='/'
+                (click)="sidenav.close()" [routerLinkActiveOptions]="{exact:true}">
+                <a matLine >STRONA GŁÓWNA</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine>TRANSKRYPT</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine>ASTRONOMIA</a>
+            </mat-list-item>
+            
+            <mat-list-item>
+                <a matLine>PROGNOZA</a>
+            </mat-list-item>
+            
+            <mat-list-item routerLinkActive="active" routerLink='/pomiary'
+                (click)="sidenav.close()">
+                <a matLine>POMIARY</a>
+            </mat-list-item>
+
+            <mat-list-item routerLinkActive="active" routerLink='/raport'
+                (click)="sidenav.close()">
+                <a matLine>RAPORT</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+</mat-sidenav-container>    

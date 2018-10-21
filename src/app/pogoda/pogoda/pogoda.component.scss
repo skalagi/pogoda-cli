@@ -38,9 +38,32 @@ skalagi-sentences {
     }
 }
 
+mat-sidenav {
+    background: #2196f3;
+    a {
+        color: #fff;
+    }
+}
+
+:host .viewport {
+
+    mat-sidenav-content.mat-sidenav-content {
+        overflow: inherit;        
+    }
+    
+    mat-sidenav-container.mat-sidenav-container {
+        overflow: inherit;
+    }
+}
+
+::ng-deep {
+    mat-sidenav-container.mat-drawer-container {
+        z-index: 4;
+    }
+}
+
 skalagi-footer {
     display: block;
-    margin-top: auto;
     position: sticky;
     bottom: 0;
 }

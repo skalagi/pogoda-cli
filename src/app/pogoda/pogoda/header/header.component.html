@@ -20,7 +20,7 @@
     <skalagi-update-timer></skalagi-update-timer>
 
     <button mat-icon-button fxHide.gt-sm class="menu">
-      <div fxLayout fxLayoutAlign="center center">
+      <div (click)="toggleMenu$.next()" fxLayout fxLayoutAlign="center center">
         <mat-icon>menu</mat-icon>
       </div>
     </button>
