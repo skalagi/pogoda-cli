@@ -3,13 +3,13 @@
         <div class="human" fxLayout="row inline" fxLayoutAlign="center start">
             <span class="">
                 <span class="value">
-                    {{ unit.value | number:'0.0-2' }}
+                    {{ unit.value || 0 | number:'1.0-2' }}
                 </span>
                 <span class="nicer-value primary">
-                    <span>{{ unit.value | number:'0.0-2' }}</span>
+                    <span>{{ unit.value || 0 | number:'1.0-2' }}</span>
                 </span>
                 <span class="full primary">
-                    <span>{{ unit.value | number:'0.0' }}</span>
+                    <span>{{ unit.value || 0 | number:'1.0-20' }}</span>
                 </span>
             </span>
             <span class="unit">{{ unit.units }}</span>            
