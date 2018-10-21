@@ -7,7 +7,6 @@
 .basic {
     height: 100%;
     box-sizing: border-box;
-    padding-top: 64px;
 }
 
 .mat-expanded {
@@ -24,6 +23,9 @@
             color: #333;
         }
     }
+}
+mat-expansion-panel {
+    border-radius: 0;
 }
 
 mat-expansion-panel-header {

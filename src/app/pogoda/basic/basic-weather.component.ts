@@ -10,11 +10,11 @@ import { SEOService } from '../seo.service';
 })
 export class BasicWeatherComponent implements OnInit {
   cards = [
-    { title: 'Wiatr', type: 'wind' },
     { title: 'Temperatura', type: 'temperature' },
     { title: 'Ciśnienie', type: 'barometer' },
-    { title: 'Opady', type: 'rain' },
     { title: 'Wilgotność', type: 'humidity' },
+    { title: 'Wiatr', type: 'wind' },
+    { title: 'Opady', type: 'rain' },
   ];
 
   dropped(ev) {

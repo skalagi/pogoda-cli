@@ -26,9 +26,9 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
     ...chartConfig,
     chart: {
       ...chartConfig.chart,
-      backgroundColor: '#2196f3',
+      backgroundColor: 'transparent',
       type: 'area',
-      height: 64,
+      height: 96,
       margin: 0,
     },
 
@@ -43,7 +43,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
         lineWidth: 3,
         fillColor: '#fff',
         color: '#ffd740',
-        negativeFillColor: 'red',
+        negativeFillColor: 'rgba(255, 0, 0, 0.5)',
 
         marker: {
           enabled: false,
@@ -95,7 +95,9 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
           chart.addSeries({ data: data.map(point => [point[0], point[1] + 1]), name: decodeType(type) }, false);
           chart.yAxis[0].update({ min: 0, max: 2 }, false);
         } else {
-          chart.yAxis[0].update({ ...minMax(type, data), }, false);
+          const _minMax = { ...minMax(type, data) };
+
+          chart.yAxis[0].update({ ..._minMax }, false);
           chart.addSeries({ data, name: decodeType(type) }, false);
         }
 

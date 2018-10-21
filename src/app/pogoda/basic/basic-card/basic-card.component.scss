@@ -1,7 +1,8 @@
 .card {
     border-radius: 6px;
     height: 100%;
-    // border: 2px solid #ffd740;
+    border: solid #ffd740;
+    border-width: 0 0 2px 0;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;

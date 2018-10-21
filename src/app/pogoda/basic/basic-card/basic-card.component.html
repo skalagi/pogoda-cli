@@ -1,20 +1,6 @@
 <ng-template [ngIf]="basic$ | async" let-basic="$implicit">
-  <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <mat-tab-group [dynamicHeight]="true" mat-align-tabs="center" backgroundColor="primary">
-      
-      <mat-tab label="{{
-        title == 'Opady' && !basic?.value ? 'BRAK OPADÓW' 
-            : title == 'Wiatr' && !basic?.current?.speed?.value
-            ? 'BEZWIETRZNIE' : title.toUpperCase()  
-      }}">
-        <skalagi-basic-data [title]="title" [basic]="basic"></skalagi-basic-data>
-      </mat-tab>
-
-      <mat-tab label="REKORDY">
-        <skalagi-records fxFlex *ngIf="type" [record]="type"></skalagi-records>
-      </mat-tab>
-    </mat-tab-group>
-
+  <div class="card" fxLayout="column" fxLayoutAlign="space-between stretch">      
     <skalagi-basic-chart [data$]="chart$"></skalagi-basic-chart>
+    <skalagi-basic-data [title]="title" [basic]="basic"></skalagi-basic-data>
   </div>
 </ng-template>
