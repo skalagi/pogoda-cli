@@ -1,5 +1,4 @@
 figure {
-    overflow: hidden;
     margin: 48px 0;
     min-width: 50vw;
     color: #fff;
@@ -31,9 +30,20 @@ h3 {
     z-index: 1;
 }
 
-
-.full {
+.value {
+    position: relative;
+    z-index: 1;
+}
+.nicer-value {
     position: absolute;
     top: 3px;
     left: 2px;
+    z-index: 1;
+}
+
+
+.full {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

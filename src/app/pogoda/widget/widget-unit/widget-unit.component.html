@@ -2,7 +2,12 @@
     <h1 class="">
         <div class="human" fxLayout="row inline" fxLayoutAlign="center start">
             <span class="">
-                {{ unit.value | number:'0.0-2' }}
+                <span class="value">
+                    {{ unit.value | number:'0.0-2' }}
+                </span>
+                <span class="nicer-value primary">
+                    <span>{{ unit.value | number:'0.0-2' }}</span>
+                </span>
                 <span class="full primary">
                     <span>{{ unit.value | number:'0.0' }}</span>
                 </span>
