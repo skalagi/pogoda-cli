@@ -5,7 +5,7 @@
       <skalagi-unit @slide color="primary" *ngIf="basic?.value"
         [unit]="basic"></skalagi-unit>    
 
-        <ng-template [ngIf]="basic?.gust">          
+        <ng-template [ngIf]="basic?.current?.speed">          
           <skalagi-unit @slide *ngIf="basic?.current?.speed" [unit]="basic.current.speed" color="primary"
             [icon]="basic.current.dir.value ? 'navigation' : 'assistant_photo'" [dir]="basic.current.dir">
             {{ basic.current.translated }}
