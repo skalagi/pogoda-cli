@@ -1,5 +1,7 @@
 figure {
+    overflow: hidden;
     margin: 48px 0;
+    min-width: 50vw;
     color: #fff;
 }
 
@@ -11,8 +13,17 @@ h1 {
     position: relative;
 }
 
+h3 {
+    letter-spacing: 4px;
+    font-weight: 300;
+    margin: 32px 24px;
+}
+
 .unit {
     font-weight: 200;
+    position: relative;
+    font-size: 24px;
+    z-index: 2;
 }
 
 .human {
@@ -20,8 +31,9 @@ h1 {
     z-index: 1;
 }
 
+
 .full {
     position: absolute;
-    bottom: -4px;
-    left: 3px;
+    top: 3px;
+    left: 2px;
 }

@@ -1,8 +1,14 @@
-<figure *ngIf="unit?.value">
-    <h1 class="second-font">
-        <span class="human">{{ unit.value | number:'0.0-2' }} 
-            <span class="unit">{{ unit.units }}</span>
-        </span>
-        <span class="full primary">{{ unit.value }}</span>
+<figure fxLayout="column" fxLayoutAlign="center center">
+    <h1 class="">
+        <div class="human" fxLayout="row inline" fxLayoutAlign="center start">
+            <span class="">
+                {{ unit.value | number:'0.0-2' }}
+                <span class="full primary">
+                    <span>{{ unit.value | number:'0.0' }}</span>
+                </span>
+            </span>
+            <span class="unit">{{ unit.units }}</span>            
+        </div>
     </h1>
+    <h3 class="second-font">{{ title }}</h3>
 </figure>
