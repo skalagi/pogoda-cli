@@ -16,7 +16,7 @@
           [unit]="basic?.current"></skalagi-unit>
 
         <span class="icon" fxLayout fxLayoutAlign="center center">
-          <mat-icon inline color="primary">{{ !panel.expanded ? 'unfold_more' : 'unfold_less' }}</mat-icon>
+          <mat-icon inline color="accent">{{ !panel.expanded ? 'unfold_more' : 'unfold_less' }}</mat-icon>
         </span>
     </mat-expansion-panel-header>
 
@@ -44,8 +44,9 @@
       <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
         *ngIf="(loading$ | async)">
       </mat-spinner>
-      <button color="primary" mat-button disabled>TRANSKRYPT</button>
-      <button color="primary" mat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
+      <button color="accent" mat-button disabled>TRANSKRYPT</button>
+      <button color="accent" mat-button [routerLink]="['/raport', title.toLowerCase()]">RAPORT</button>
+      <button color="accent" mat-button disabled>SZCZEGÓŁY</button>
     </mat-action-row>
   </mat-expansion-panel>    
 </div>

@@ -29,7 +29,7 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
       ...chartConfig.chart,
       backgroundColor: 'transparent',
       type: 'area',
-      height: 96,
+      height: 112,
       margin: 0,
     },
 

@@ -29,10 +29,16 @@ mat-expansion-panel {
 }
 
 mat-expansion-panel-header {
-    ::ng-deep skalagi-unit .main-line {
-        font-size: 1.1em;
-        font-weight: 600;
-        color: #2196f3;
+    ::ng-deep skalagi-unit {
+        .main-line {
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        skalagi-portable-value span {
+            font-weight: 600;
+        }
     }
 }
 
