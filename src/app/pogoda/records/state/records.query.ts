@@ -9,10 +9,13 @@ export class RecordsQuery extends Query<RecordsState> {
     super(store);
   }
 
-  record$(range, record) {
+  record$(range, record?) {
     this.service.load(range);
     return this.select(records => {
-      return records[range][record];
+      if (record) {
+        return records[range][record];
+      }
+      return records[range];
     });
   }
 }

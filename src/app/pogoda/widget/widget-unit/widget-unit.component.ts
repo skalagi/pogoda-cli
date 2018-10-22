@@ -7,22 +7,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WidgetUnitComponent {
+  @Input() records;
   @Input() title;
   @Input() unit;
-
-  units(unit) {
-    if (unit === null) {
-      return '';
-    }
-
-    return unit.units;
-  }
-
-  value(unit) {
-    if (unit === null || unit.value === null || (this.title !== 'TEMPERATURA' && unit.value === 0)) {
-      return '-';
-    }
-
-    return unit.value;
-  }
 }

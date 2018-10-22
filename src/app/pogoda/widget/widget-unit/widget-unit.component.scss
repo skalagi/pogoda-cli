@@ -1,11 +1,9 @@
 figure {
-    margin: 24px 0;
-    min-width: 50vw;
     color: #fff;
 }
 
 h1 {
-    margin: 0;
+    margin: 24px 0;
     display: inline-block;
     font-size: 96px;
     font-weight: 300;
@@ -15,36 +13,17 @@ h1 {
 h3 {
     letter-spacing: 4px;
     font-weight: 300;
-    margin: 32px 24px;
 }
 
-.unit {
-    font-weight: 200;
-    position: relative;
-    font-size: 24px;
-    z-index: 2;
+h3, h4 {
+    font-size: 32px;
+    margin: 0;
 }
 
-.human {
-    position: relative;
-    z-index: 1;
+h4 {
+    flex-grow: 1;
 }
 
-.value {
-    position: relative;
-    z-index: 1;
-}
-.nicer-value {
-    position: absolute;
-    color: rgba(255, 255, 255, .75);
-    top: 3px;
-    left: 2px;
-    z-index: 1;
-}
-
-
-.full {
-    position: absolute;
-    top: 0;
-    left: 0;
+.records {
+    width: 100%;
 }

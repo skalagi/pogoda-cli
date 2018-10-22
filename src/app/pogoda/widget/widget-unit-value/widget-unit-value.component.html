@@ -1,0 +1,17 @@
+<div *ngIf="unit != null" class="human"> 
+  <div>
+      <div class="value accent">
+          {{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}
+      </div>
+      
+      <div class="nicer-value">
+          <span>{{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}</span>
+      </div>
+
+      <div class="full primary">
+          <span>{{ value(unit) == '-' ? '-' : unit.value | number:'1.0-20' }}</span>
+      </div>
+  </div>      
+</div>
+
+<div class="unit" fxLayout="column" fxLayoutAlign="start center">{{ units(unit) }}</div>     

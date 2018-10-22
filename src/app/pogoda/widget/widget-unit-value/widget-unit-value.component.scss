@@ -1,0 +1,41 @@
+
+.unit {
+    position: relative;
+    font-size: .3em;
+    z-index: 2;
+}
+
+:host {
+    display: flex;
+    flex-flow: wrap;
+    align-items: start;
+    justify-content: center;
+}
+
+:host .human {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.value {
+    position: relative;
+    z-index: 1;
+}
+
+.nicer-value, .full {
+    position: absolute;
+    width: 100%;
+}
+
+.nicer-value {
+    z-index: 1;
+    left: .03em;
+    top: .02em;
+}
+
+
+.full {
+    left: 0;
+    top: 0;
+}

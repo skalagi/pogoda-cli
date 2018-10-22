@@ -1,20 +1,25 @@
-<main *ngIf="basic$ | async as basic"
-    gdColumns="1fr 1fr" gdColumns.lt-md="auto" gdAlignRows="space-evenly stretch">
-    <skalagi-widget-unit title="TEMPERATURA" 
-         [unit]="basic.temperature?.real"></skalagi-widget-unit>
+<div *ngIf="(records$ | async) || true as records">
 
-    <skalagi-widget-unit title="CIŚNIENIE"
-        [unit]="basic.barometer?.current"></skalagi-widget-unit>
+    <main *ngIf="basic$ | async as basic"
+        gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
+            gdAlignRows="space-evenly stretch" gdGap="64px">
+        <skalagi-widget-unit title="TEMPERATURA" [records]="records?.temperature"
+                [unit]="basic.temperature?.real"></skalagi-widget-unit>
+    
+        <skalagi-widget-unit title="WILGOTNOŚĆ" [records]="records?.humidity"
+            [unit]="basic.humidity"></skalagi-widget-unit>
+    
+        <skalagi-widget-unit title="CIŚNIENIE" [records]="records?.barometer"
+            [unit]="basic.barometer?.current"></skalagi-widget-unit>
+    
+        <skalagi-widget-unit title="OPADY" [records]="records?.rain" 
+            [unit]="basic.rain?.current"></skalagi-widget-unit>
+    
+        <skalagi-widget-unit title="WIATR" [records]="records?.wind" 
+            [unit]="basic.wind?.current.speed"></skalagi-widget-unit>
+    
+        <skalagi-widget-unit title="PODMUCHY" [records]="records?.wind"
+            [unit]="basic.wind?.gust.speed"></skalagi-widget-unit>
+    </main>
 
-    <skalagi-widget-unit title="WILGOTNOŚĆ"
-        [unit]="basic.humidity"></skalagi-widget-unit>
-
-    <skalagi-widget-unit title="OPADY" 
-        [unit]="basic.rain?.current"></skalagi-widget-unit>
-
-    <skalagi-widget-unit title="WIATR" 
-        [unit]="basic.wind?.current.speed"></skalagi-widget-unit>
-
-    <skalagi-widget-unit title="PODMUCHY" 
-        [unit]="basic.wind?.gust.speed"></skalagi-widget-unit>
-</main>
+</div>

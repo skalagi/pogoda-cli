@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { WidgetComponent } from './widget/widget.component';
 import { WidgetUnitComponent } from './widget-unit/widget-unit.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WidgetUnitValueComponent } from './widget-unit-value/widget-unit-value.component';
+import { MatIconModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
+    MatIconModule,
   ],
-  declarations: [WidgetComponent, WidgetUnitComponent],
+  declarations: [WidgetComponent, WidgetUnitComponent, WidgetUnitValueComponent],
   exports: [WidgetComponent]
 })
 export class WidgetModule { }
