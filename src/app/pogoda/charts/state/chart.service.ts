@@ -11,11 +11,22 @@ export class ChartService {
   constructor(private store: ChartStore, private http: HttpClient) { }
 
   private parseData(data, type, range) {
+    let _data = [...data];
+
     if (type === 'humidity' && range === 'day') {
-      return data.filter(point => point[1]);
+      _data = _data.filter(point => point[1]);
     }
 
-    return data.map(point => ([point[0], +point[1].toFixed(1)]));
+
+    return _data.map(point => {
+      const points = [point[0], +point[1].toFixed(1)];
+
+      if (point[2]) {
+        points[2] = +point[2].toFixed(1);
+      }
+
+      return points;
+    });
   }
 
   decodeType(type) {
