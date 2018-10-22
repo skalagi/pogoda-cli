@@ -1,4 +1,4 @@
-<span *ngIf="(!(loading$ | async)); else load" class="timer" ngClass.xs="mobile">
+<span *ngIf="(!(loading$ | async)); else load" class="timer accent" ngClass.xs="mobile">
   <span *ngIf="!(error$ | async); else error" 
     [matTooltip]="'Następna aktualizacja za ' + (time$ | async) + 's'" 
     class='value'>{{ formatTime(time$ | async) }}</span>

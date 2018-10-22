@@ -24,7 +24,7 @@ export const chartConfig = {
         style: { ...textStyle },
       },
 
-      colors: ['#ffd740'],
+      colors: ['#ffc400'],
 
       legend: {
         enabled: false,
