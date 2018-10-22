@@ -28,6 +28,16 @@ mat-expansion-panel {
     border-radius: 0;
 }
 
+.mobile {
+    mat-expansion-panel-header {
+        padding: 0 12px;
+    }
+    ::ng-deep .mat-expansion-panel-body{
+        padding: 0 12px;
+    }
+}
+
+
 mat-expansion-panel-header {
     ::ng-deep skalagi-unit {
         .main-line {
