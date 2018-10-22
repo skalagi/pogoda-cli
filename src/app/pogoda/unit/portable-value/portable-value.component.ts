@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { formatNumber } from '@angular/common';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'skalagi-portable-value',
   templateUrl: './portable-value.component.html',
-  styleUrls: ['./portable-value.component.scss']
+  styleUrls: ['./portable-value.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortableValueComponent {
   @Input() preText = '';
@@ -27,7 +29,7 @@ export class PortableValueComponent {
     return this.value && this.value.toString() !== this.roundedValue;
   }
 
-  information(rounded) {
+  information(rounded?) {
     const { preTip, preText, afterText, pre, value, afterTip, after } = this;
     const message = pre + (rounded ? this.roundedValue : value) + after;
 

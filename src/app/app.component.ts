@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit, AfterViewInit } from '@angular/core';
+import { Component, NgZone, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from 'environments/environment';
 import { akitaDevtools } from '@datorama/akita';
 import { SwUpdate } from '@angular/service-worker';
@@ -7,7 +7,8 @@ import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'skalagi-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   constructor(

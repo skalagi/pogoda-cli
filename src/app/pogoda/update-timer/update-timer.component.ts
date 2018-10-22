@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BasicWeatherQuery, BasicWeatherService } from '../basic/state';
 import { BehaviorSubject, interval } from 'rxjs';
 import { timeInterval } from 'rxjs/operators';
@@ -9,7 +9,8 @@ import { SentencesService } from '../sentences/state';
 @Component({
   selector: 'skalagi-update-timer',
   templateUrl: './update-timer.component.html',
-  styleUrls: ['./update-timer.component.scss']
+  styleUrls: ['./update-timer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpdateTimerComponent implements OnInit {
   loading$ = this.query.selectLoading();

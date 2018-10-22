@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 import { chartConfig } from 'app/pogoda/pogoda.chart';
@@ -8,7 +8,8 @@ import { decodeType, typeSuffix, minMax } from '../charts.helper';
 @Component({
   selector: 'skalagi-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  styleUrls: ['./chart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartComponent {
   @Input() type$;

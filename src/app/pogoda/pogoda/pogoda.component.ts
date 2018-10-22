@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SEOService } from '../seo.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { environment } from 'environments/environment';
@@ -6,7 +6,8 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'skalagi-pogoda',
   templateUrl: './pogoda.component.html',
-  styleUrls: ['./pogoda.component.scss']
+  styleUrls: ['./pogoda.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PogodaComponent implements OnInit {
   constructor(private seo: SEOService, private router: Router) {}

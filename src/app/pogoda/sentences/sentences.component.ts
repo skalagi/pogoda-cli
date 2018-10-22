@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostBinding, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { trigger, transition, animate, style, state } from '@angular/animations';
 import { Subscription, interval } from 'rxjs';
 
@@ -8,6 +8,7 @@ import { SentencesQuery, SentencesService } from './state';
   selector: 'skalagi-sentences',
   templateUrl: './sentences.component.html',
   styleUrls: ['./sentences.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('state', [
       transition('show <=> hide', animate('400ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
