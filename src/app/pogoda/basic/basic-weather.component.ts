@@ -15,11 +15,11 @@ import { NgPerfume, PerfumeAfterViewInit } from 'perfume.js/angular';
 export class BasicWeatherComponent implements OnInit, AfterViewInit {
   basic$;
   cards = [
-    { title: 'Ciśnienie', type: 'barometer' },
     { title: 'Temperatura', type: 'temperature' },
+    { title: 'Ciśnienie', type: 'barometer' },
+    { title: 'Wilgotność', type: 'humidity' },
     { title: 'Wiatr', type: 'wind' },
     { title: 'Opady', type: 'rain' },
-    { title: 'Wilgotność', type: 'humidity' },
   ];
 
   ngAfterViewInit() {
