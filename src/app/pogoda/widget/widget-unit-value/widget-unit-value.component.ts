@@ -7,6 +7,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WidgetUnitValueComponent {
+  @Input() trend;
   @Input() unit;
 
   emptyValue(unit) {

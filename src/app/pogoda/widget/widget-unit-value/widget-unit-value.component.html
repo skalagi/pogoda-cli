@@ -1,3 +1,5 @@
+<mat-icon *ngIf="trend" color="accent">{{ 'trending_' + (trend > 0 ? 'up' : 'down') }}</mat-icon>
+
 <div *ngIf="unit != null" class="human"> 
   <div>
       <div class="value accent">

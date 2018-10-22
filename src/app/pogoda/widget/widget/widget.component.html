@@ -4,12 +4,14 @@
         gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
             gdAlignRows="space-evenly stretch" gdGap="64px">
         <skalagi-widget-unit title="TEMPERATURA" [records]="records?.temperature"
-                [unit]="basic.temperature?.real"></skalagi-widget-unit>
+            [trendingUnit]="basic.temperature.trend"
+            [unit]="basic.temperature?.real"></skalagi-widget-unit>
     
         <skalagi-widget-unit title="WILGOTNOŚĆ" [records]="records?.humidity"
             [unit]="basic.humidity"></skalagi-widget-unit>
     
         <skalagi-widget-unit title="CIŚNIENIE" [records]="records?.barometer"
+            [trendingUnit]="basic.barometer.trend"
             [unit]="basic.barometer?.current"></skalagi-widget-unit>
     
         <skalagi-widget-unit title="OPADY" [records]="records?.rain" 
