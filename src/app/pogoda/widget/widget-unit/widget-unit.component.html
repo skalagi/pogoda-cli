@@ -2,16 +2,15 @@
     
     <div class="records" *ngIf="records != null" fxLayout="row wrap" fxLayoutAlign="space-between center">
         <h4 *ngIf="records?.max" fxLayout="row wrap" fxLayoutAlign="center center">
-            <mat-icon color="accent">arrow_upward</mat-icon>
-            <skalagi-widget-unit-value [unit]="records?.max"></skalagi-widget-unit-value>
+            <skalagi-widget-unit-value icon="arrow_upward" [unit]="records?.max"></skalagi-widget-unit-value>
         </h4>
+        
         <h4 *ngIf="records?.min" fxLayout="row wrap" fxLayoutAlign="center center">
-            <mat-icon color="accent">arrow_downward</mat-icon>
-            <skalagi-widget-unit-value [unit]="records?.min"></skalagi-widget-unit-value>
+            <skalagi-widget-unit-value icon="arrow_downward" [unit]="records?.min"></skalagi-widget-unit-value>
         </h4>
+
         <h4 *ngIf="records?.value" fxLayout="row wrap" fxLayoutAlign="center center">
-            <mat-icon color="accent">history</mat-icon>
-            <skalagi-widget-unit-value [unit]="records"></skalagi-widget-unit-value>
+            <skalagi-widget-unit-value icon="history" [unit]="records"></skalagi-widget-unit-value>
         </h4>
     </div>
     

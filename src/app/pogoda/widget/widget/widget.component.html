@@ -2,7 +2,7 @@
 
     <main *ngIf="basic$ | async as basic"
         gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
-            gdAlignRows="space-evenly stretch" gdGap="64px">
+            gdAlignRows="space-evenly stretch" gdGap="96px">
         <skalagi-widget-unit title="TEMPERATURA" [records]="records?.temperature"
             [trendingUnit]="basic.temperature.trend"
             [unit]="basic.temperature?.real"></skalagi-widget-unit>

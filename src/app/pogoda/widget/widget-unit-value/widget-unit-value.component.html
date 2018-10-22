@@ -1,4 +1,6 @@
-<mat-icon *ngIf="trend" color="accent">{{ 'trending_' + (trend > 0 ? 'up' : 'down') }}</mat-icon>
+<mat-icon *ngIf="icon || trend" class="trend" color="accent">
+    {{ icon ? icon : 'trending_' + (trend > 0 ? 'up' : 'down') }}
+</mat-icon>
 
 <div *ngIf="unit != null" class="human"> 
   <div>

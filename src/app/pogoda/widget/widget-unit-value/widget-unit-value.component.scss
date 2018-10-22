@@ -5,6 +5,17 @@
     z-index: 2;
 }
 
+.trend {
+    $size: .5em;
+    font-size: $size;
+    height: $size * 1.75;
+    width: $size * 1.75;
+}
+
+mat-icon {
+    z-index: 2;
+}
+
 :host {
     display: flex;
     flex-flow: wrap;

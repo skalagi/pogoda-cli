@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 export class WidgetUnitValueComponent {
   @Input() trend;
   @Input() unit;
+  @Input() icon;
 
   emptyValue(unit) {
     return unit === null || unit === undefined || unit.value === null || unit.value === 0;
