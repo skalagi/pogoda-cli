@@ -22,7 +22,12 @@ import { MatSnackBarModule } from '@angular/material';
   imports: [
     PerfumeModule.forRoot({
       firstContentfulPaint: true,
+      timeToInteractive: true,
       firstInputDelay: true,
+      googleAnalytics: {
+        enable: true,
+        timingVar: 'perf'
+      }
     }),
     BrowserModule,
     BrowserAnimationsModule,
