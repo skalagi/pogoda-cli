@@ -24,12 +24,16 @@ export class PortableValueComponent {
   }
 
   get showTooltip() {
-    return this.value.toString() !== this.roundedValue;
+    return this.value && this.value.toString() !== this.roundedValue;
   }
 
   information(rounded) {
     const { preTip, preText, afterText, pre, value, afterTip, after } = this;
     const message = pre + (rounded ? this.roundedValue : value) + after;
+
+    if (!value) {
+      return '-';
+    }
 
     if (rounded) {
       return preText + message + afterText;
