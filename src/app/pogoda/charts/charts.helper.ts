@@ -55,7 +55,7 @@ export function minMax(type, data) {
         min = 0;
     } else {
         data.forEach(point => {
-            if (min === null) {
+            if (min === undefined) {
                 min = point[1];
             } else if (point[1] < min) {
                 min = point[1];
