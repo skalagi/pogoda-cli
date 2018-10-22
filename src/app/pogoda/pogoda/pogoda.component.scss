@@ -41,8 +41,10 @@ skalagi-sentences {
 
 mat-sidenav {
     background: #2196f3;
-    a {
-        color: #fff;
+    a.accent {
+        font-weight: 500;
+        border: 1px solid;
+        border-width: 0 0 0 1px;
     }
 }
 

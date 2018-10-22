@@ -9,10 +9,6 @@ footer {
     }
 }
 
-:host .active {
-    display: none;
-}
-
 .copyright {
     letter-spacing: 4px;
     margin: 16px;
@@ -45,7 +41,6 @@ img {
 }
 
 :host a {
-    color: #fff;
     letter-spacing: 2px;
     text-align: center;
 }

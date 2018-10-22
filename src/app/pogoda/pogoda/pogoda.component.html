@@ -10,9 +10,9 @@
     <mat-sidenav #sidenav mode="side" position="end" 
         [fixedInViewport]="true" [fixedTopGap]="48">            
         <mat-nav-list class="accent">
-            <mat-list-item routerLinkActive="active" routerLink='/'
+            <mat-list-item routerLinkActive="accent" routerLink='/'
                 (click)="sidenav.close()" [routerLinkActiveOptions]="{exact:true}">
-                <a matLine >STRONA GŁÓWNA</a>
+                <a matLine>STRONA GŁÓWNA</a>
             </mat-list-item>
 
             <mat-list-item>
@@ -27,12 +27,12 @@
                 <a matLine>PROGNOZA</a>
             </mat-list-item>
             
-            <mat-list-item routerLinkActive="active" routerLink='/pomiary'
+            <mat-list-item routerLinkActive="accent" routerLink='/pomiary'
                 (click)="sidenav.close()">
                 <a matLine>POMIARY</a>
             </mat-list-item>
 
-            <mat-list-item routerLinkActive="active" routerLink='/raport'
+            <mat-list-item routerLinkActive="accent" routerLink='/raport'
                 (click)="sidenav.close()">
                 <a matLine>RAPORT</a>
             </mat-list-item>

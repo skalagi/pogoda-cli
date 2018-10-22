@@ -24,6 +24,13 @@ body {
     color: $primary;
   }
 
+  .mat-nav-list .mat-list-item {
+    color: #fff;
+    &.accent {
+      color: $accent;
+    }
+  }
+
   .accent {
     color: $accent;
   }

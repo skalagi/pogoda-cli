@@ -28,13 +28,5 @@ export class PogodaComponent implements OnInit {
         }
       }
     });
-
-    /*
-      this.sw.available.subscribe(() => {
-        if (confirm('Dostępna nowa wersja strony. Wczytać?')) {
-          location.reload();
-        }
-      });
-    */
   }
 }

@@ -1,7 +1,7 @@
 <header>
   <mat-toolbar color="primary">
-    <nav class="title accent">
-      <button routerLink='/' mat-button>
+    <nav class="title">
+      <button routerLink='/' mat-button routerLinkActive="accent" [routerLinkActiveOptions]="{exact:true}">
         <h2 fxLayout fxLayoutAlign="center center" class="second-font">
           
           Pog<mat-icon class="sun">wb_sunny</mat-icon>da
@@ -11,8 +11,8 @@
 
     <nav class="routes" fxHide.lt-md fxLayout="row wrap">
       <button mat-button disabled>PROGNOZA</button>
-      <button mat-button routerLinkActive="accent-bg" routerLink='/pomiary'>POMIARY</button>
-      <button mat-button routerLinkActive="accent-bg" routerLink='/raport'>RAPORT</button>
+      <button mat-button routerLinkActive="accent" routerLink='/pomiary'>POMIARY</button>
+      <button mat-button routerLinkActive="accent" routerLink='/raport'>RAPORT</button>
       <button mat-button disabled>ASTRONOMIA</button>
       <button mat-button disabled>TRANSKRYPT</button>
     </nav>
