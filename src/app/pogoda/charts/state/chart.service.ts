@@ -15,7 +15,7 @@ export class ChartService {
       return data.filter(point => point[1]);
     }
 
-    return data;
+    return data.map(point => ([point[0], +point[1].toFixed(1)]));
   }
 
   decodeType(type) {
