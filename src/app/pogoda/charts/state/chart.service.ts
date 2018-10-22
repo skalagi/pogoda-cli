@@ -15,7 +15,17 @@ export class ChartService {
 
     if (type === 'humidity' && range === 'day') {
       _data = _data.filter(point => point[1]);
+    } else if (type === 'barometer' && range === 'day') {
+      _data = _data.filter(point => point[1]);
     }
+    /*else if (type === 'wind') {
+      if (range === 'day') {
+
+      } else {
+        // _data = _data.filter(point => (point[2] <= 50) && (point[1] <= 50));
+      }
+    }
+    */
 
 
     return _data.map(point => {
