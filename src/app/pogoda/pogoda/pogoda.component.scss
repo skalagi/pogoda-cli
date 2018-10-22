@@ -10,12 +10,15 @@ skalagi-header, skalagi-sentences {
 .route-outlet {
     background: #1E88E5;
     box-sizing: border-box;
-    padding: 48px 32px 32px 32px;
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    padding: 48px 32px 24px 32px;
     position: relative;
     z-index: 1;
   
     &.mobile {
-      padding: 24px 8px 8px 8px;
+      padding: 24px 8px 2px 8px;
     }
 }
 
@@ -46,10 +49,6 @@ mat-sidenav {
         border: 1px solid;
         border-width: 0 0 0 1px;
     }
-}
-
-:host .active {
-    display: none;
 }
 
 :host .viewport {

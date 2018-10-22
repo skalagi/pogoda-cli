@@ -2,7 +2,7 @@
     gdColumns.lt-sm="repeat(1, minmax(0, auto))"
     gdColumns="repeat(auto-fill, minmax(384px, auto))"
     gdRows="repeat(auto-fit, 1fr)"
-    gdAlignColumns="space-between center" gdAlignRows="stretch stretch" 
+    gdAlignColumns="space-around center" gdAlignRows="stretch stretch" 
     (dropped)="dropped($event)">
     <skalagi-basic-card *ngFor='let card of cards'
         [title]="card.title" [data]="basic[card.type]" [type]="card.type"></skalagi-basic-card>

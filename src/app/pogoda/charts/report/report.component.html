@@ -24,15 +24,18 @@
 
 <skalagi-chart ngClass.xs="mobile" [type$]="type$"></skalagi-chart>
 
-<mat-tab-group [selectedIndex]="typesIndex$ | async" mat-align-tabs="center"
-  color="accent" backgroundColor="primary"
-  (selectedIndexChange)="change({ type: $event })">
-  <mat-tab *ngFor="let type of types$ | async" [label]="type"></mat-tab>
-</mat-tab-group>
+<div>
+  <mat-tab-group [selectedIndex]="typesIndex$ | async" mat-align-tabs="center"
+    color="accent" backgroundColor="primary"
+    (selectedIndexChange)="change({ type: $event })">
+    <mat-tab *ngFor="let type of types$ | async" [label]="type"></mat-tab>
+  </mat-tab-group>
+  
+  <mat-tab-group [selectedIndex]="rangesIndex$ | async" mat-align-tabs="center"
+    color="accent" backgroundColor="primary"
+    (selectedIndexChange)="change({ range: $event })">
+      <mat-tab *ngFor="let range of ranges$ | async" [label]="range"></mat-tab>
+  </mat-tab-group>
 
-<mat-tab-group [selectedIndex]="rangesIndex$ | async" mat-align-tabs="center"
-  color="accent" backgroundColor="primary"
-  (selectedIndexChange)="change({ range: $event })">
-    <mat-tab *ngFor="let range of ranges$ | async" [label]="range"></mat-tab>
-</mat-tab-group>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

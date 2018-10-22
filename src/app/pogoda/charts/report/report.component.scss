@@ -1,7 +1,11 @@
 :host {
   box-sizing: border-box;
   background: #1E88E5;
-  display: block;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-grow: 1;
   position: relative;
   z-index: 2;
   width: 100%;
