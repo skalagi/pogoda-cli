@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, AfterViewInit } from '@angular/core';
 import { environment } from 'environments/environment';
 import { akitaDevtools } from '@datorama/akita';
 import { SwUpdate } from '@angular/service-worker';
@@ -10,7 +10,10 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(ngZone: NgZone, private sw: SwUpdate, private snack: MatSnackBar) {
+  constructor(
+    private sw: SwUpdate,
+    private snack: MatSnackBar,
+    ngZone: NgZone) {
     if (!environment.production) {
       akitaDevtools(ngZone);
     }

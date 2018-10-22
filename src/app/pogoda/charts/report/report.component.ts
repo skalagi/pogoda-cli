@@ -1,10 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { of, Subject, BehaviorSubject } from 'rxjs';
+import { of, BehaviorSubject } from 'rxjs';
 
 import { encodeType, encodeRange, decodeType, decodeRange } from '../charts.helper';
-import { ChartService, ChartQuery } from '../state';
+import { ChartQuery } from '../state';
 import { SEOService } from 'app/pogoda/seo.service';
+import { NgPerfume, PerfumeAfterViewInit } from 'perfume.js/angular';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -13,7 +14,8 @@ import { SEOService } from 'app/pogoda/seo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./report.component.scss']
 })
-export class ReportComponent implements OnInit {
+@PerfumeAfterViewInit('ReportComponent')
+export class ReportComponent implements OnInit, AfterViewInit {
   types$ = of(['temperatura', 'ciśnienie', 'wilgotność', 'opady', 'wiatr']);
   rangesIndex$ = new BehaviorSubject(null);
   ranges$ = of(['dziś', 'miesiąc', 'rok']);
@@ -22,7 +24,18 @@ export class ReportComponent implements OnInit {
   error$ = this.query.selectError();
   type$ = new BehaviorSubject(null);
 
-  constructor(private route: ActivatedRoute, private query: ChartQuery, private seo: SEOService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private perfume: NgPerfume,
+    private query: ChartQuery,
+    private seo: SEOService,
+    private router: Router,
+    ) { }
+
+  ngAfterViewInit() {
+    this.perfume.start('report');
+    this.perfume.end('report');
+  }
 
   decodeRange(range) {
     return decodeRange(range);

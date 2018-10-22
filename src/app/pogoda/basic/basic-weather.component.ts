@@ -1,7 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { BasicWeatherService, BasicWeatherQuery } from './state';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { SEOService } from '../seo.service';
+import { NgPerfume, PerfumeAfterViewInit } from 'perfume.js/angular';
+
 
 @Component({
   selector: 'skalagi-basic-weather',
@@ -9,7 +11,8 @@ import { SEOService } from '../seo.service';
   styleUrls: ['./basic-weather.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BasicWeatherComponent implements OnInit {
+@PerfumeAfterViewInit('BasicWeatherComponent')
+export class BasicWeatherComponent implements OnInit, AfterViewInit {
   basic$;
   cards = [
     { title: 'Ciśnienie', type: 'barometer' },
@@ -18,6 +21,11 @@ export class BasicWeatherComponent implements OnInit {
     { title: 'Opady', type: 'rain' },
     { title: 'Wilgotność', type: 'humidity' },
   ];
+
+  ngAfterViewInit() {
+    this.perfume.start('homepage');
+    this.perfume.end('homepage');
+  }
 
   dropped(ev) {
 
@@ -29,7 +37,11 @@ export class BasicWeatherComponent implements OnInit {
 
   }
 
-  constructor(store: BasicWeatherService, private query: BasicWeatherQuery, private seo: SEOService) { }
+  constructor(
+    store: BasicWeatherService,
+    private query: BasicWeatherQuery,
+    private seo: SEOService,
+    private perfume: NgPerfume) { }
 
   ngOnInit() {
     this.seo.title('Pomiary');
