@@ -32,10 +32,7 @@ export class ReportComponent implements OnInit, AfterViewInit {
     private router: Router,
     ) { }
 
-  ngAfterViewInit() {
-    this.perfume.start('report');
-    this.perfume.end('report');
-  }
+  ngAfterViewInit() {}
 
   decodeRange(range) {
     return decodeRange(range);

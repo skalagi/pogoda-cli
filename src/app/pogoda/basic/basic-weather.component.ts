@@ -22,10 +22,7 @@ export class BasicWeatherComponent implements OnInit, AfterViewInit {
     { title: 'Opady', type: 'rain' },
   ];
 
-  ngAfterViewInit() {
-    this.perfume.start('homepage');
-    this.perfume.end('homepage');
-  }
+  ngAfterViewInit() { }
 
   dropped(ev) {
 

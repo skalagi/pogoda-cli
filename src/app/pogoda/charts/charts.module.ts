@@ -10,6 +10,7 @@ import {
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PerfumeModule } from 'perfume.js/angular';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
+    PerfumeModule,
     HighchartsChartModule,
   ],
   declarations: [ChartComponent, ReportComponent],

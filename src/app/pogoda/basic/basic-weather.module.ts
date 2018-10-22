@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { UnitModule } from '../unit/unit.module';
 import { BasicDataComponent } from './basic-data/basic-data.component';
 import { BasicChartComponent } from './basic-chart/basic-chart.component';
+import { PerfumeModule } from 'perfume.js/angular';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { BasicChartComponent } from './basic-chart/basic-chart.component';
     HighchartsChartModule,
 
     MatExpansionModule,
+    PerfumeModule,
 
     DragDropModule,
     MatButtonModule,

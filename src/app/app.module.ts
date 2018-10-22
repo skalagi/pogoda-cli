@@ -24,6 +24,7 @@ import { MatSnackBarModule } from '@angular/material';
       firstContentfulPaint: true,
       timeToInteractive: true,
       firstInputDelay: true,
+      firstPaint: true,
       googleAnalytics: {
         enable: true,
         timingVar: 'perf'
