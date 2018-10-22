@@ -25,21 +25,20 @@
 
     <skalagi-unit @slide color="primary" icon="nature_people" *ngIf="basic?.real" 
       [unit]="basic.real"></skalagi-unit>
+
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.sum" 
+      [unit]="basic.sum"></skalagi-unit>
+
+    <skalagi-unit @slide color="primary"  *ngIf="basic?.dewPoint" icon="opacity"
+      [unit]="basic.dewPoint"></skalagi-unit>
     
     <ng-template [ngIf]="basic?.gust">
-
       <skalagi-unit @slide *ngIf="basic?.gust" [unit]="basic.gust.speed" color="primary"
         [icon]="basic.current.dir.value ? 'navigation' : 'toys'" [dir]="basic.gust.dir">
         {{ basic.gust.translated }}
       </skalagi-unit>     
-
-      <skalagi-unit @slide color="primary"  *ngIf="basic?.sum" 
-        [unit]="basic.sum"></skalagi-unit>
-  
-      <skalagi-unit @slide color="primary"  *ngIf="basic?.dewPoint" icon="opacity"
-        [unit]="basic.dewPoint"></skalagi-unit>
-
     </ng-template> 
+  
     <mat-action-row fxLayout fxLayoutAlign="end center">      
       <mat-spinner [diameter]="32" color="accent" [strokeWidth]="3"
         *ngIf="(loading$ | async)">
