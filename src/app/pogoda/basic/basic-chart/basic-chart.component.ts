@@ -90,11 +90,11 @@ export class BasicChartComponent implements AfterViewInit, OnDestroy {
     this.data$.subscribe(({ type, data }) => {
       this.chart$.next(chart);
       if (chart && data.length) {
-        const isEmpty = data.every(point => point[1] === 0);
+        const isEmpty = type === 'rain' && data.every(point => point[1] === 0);
 
         if (isEmpty) {
-          chart.addSeries({ data: data.map(point => [point[0], point[1] + 1]), name: decodeType(type) }, false);
-          chart.yAxis[0].update({ min: 0, max: 2 }, false);
+          chart.addSeries({ data: data.map(point => [point[0], point[1]]), name: decodeType(type) }, false);
+          chart.yAxis[0].update({ min: 0, max: 1 }, false);
         } else {
           const _minMax = { ...minMax(type, data) };
 

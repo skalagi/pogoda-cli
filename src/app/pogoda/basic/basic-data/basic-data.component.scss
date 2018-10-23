@@ -7,49 +7,8 @@
 .basic {
     height: 100%;
     box-sizing: border-box;
-}
-
-.mat-expanded {
-    mat-expansion-panel-header {
-        ::ng-deep skalagi-unit {
-            .main-line {
-                font-size: 16px;
-                font-weight: 300;
-                color: #333;
-            }
-        }
-
-        .icon {
-            color: #333;
-        }
-    }
-}
-mat-expansion-panel {
-    border-radius: 0;
-}
-
-.mobile {
-    mat-expansion-panel-header {
-        padding: 0 12px;
-    }
-    ::ng-deep .mat-expansion-panel-body{
-        padding: 0 12px;
-    }
-}
-
-
-mat-expansion-panel-header {
-    ::ng-deep skalagi-unit {
-        .main-line {
-            font-size: 1.1em;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        skalagi-portable-value span {
-            font-weight: 600;
-        }
-    }
+    background: #fff;
+    padding: 16px
 }
 
 skalagi-unit {
@@ -63,6 +22,10 @@ skalagi-unit {
     mat-icon {
         height: auto;
     }
+}
+
+.actions {
+    margin-top: 24px;
 }
 
 button {

@@ -16,9 +16,9 @@ export class BasicWeatherComponent implements OnInit, AfterViewInit {
   basic$;
   cards = [
     { title: 'Temperatura', type: 'temperature' },
+    { title: 'Wiatr', type: 'wind' },
     { title: 'Ciśnienie', type: 'barometer' },
     { title: 'Wilgotność', type: 'humidity' },
-    { title: 'Wiatr', type: 'wind' },
     { title: 'Opady', type: 'rain' },
   ];
 

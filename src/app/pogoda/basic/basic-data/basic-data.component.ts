@@ -1,5 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { BasicWeatherQuery } from '../state';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { slideTrigger } from 'app/pogoda/pogoda.animation';
 
 @Component({
@@ -9,10 +8,9 @@ import { slideTrigger } from 'app/pogoda/pogoda.animation';
   animations: [slideTrigger],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BasicDataComponent implements OnInit {
+export class BasicDataComponent {
   @Input() basic;
   @Input() title;
-  loading$;
 
   get trendIcon() {
     if (!this.basic) { return; }
@@ -26,11 +24,4 @@ export class BasicDataComponent implements OnInit {
       default: return;
     }
   }
-
-  constructor(private query: BasicWeatherQuery) { }
-
-  ngOnInit() {
-    this.loading$ = this.query.selectLoading();
-  }
-
 }
