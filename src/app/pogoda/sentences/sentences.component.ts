@@ -8,7 +8,6 @@ import { SentencesQuery, SentencesService } from './state';
   selector: 'skalagi-sentences',
   templateUrl: './sentences.component.html',
   styleUrls: ['./sentences.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('state', [
       transition('show <=> hide', animate('400ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
