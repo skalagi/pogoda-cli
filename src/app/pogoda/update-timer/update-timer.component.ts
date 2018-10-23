@@ -41,11 +41,9 @@ export class UpdateTimerComponent implements OnInit {
       return `${ minutes }m ${ seconds }s`;
     } else if (seconds) {
       return `${ seconds }s`;
-    } else if (time === 'offline') {
-      return 'offline';
     }
 
-    return '';
+    return '.';
   }
 
   tick() {
@@ -69,8 +67,7 @@ export class UpdateTimerComponent implements OnInit {
         if (typeof value === 'number') {
           this.time$.next(value);
         } else if (value.toLowerCase() === 'offline') {
-          setTimeout(() => this.time$.next(60 * 3), 1000 * 4);
-          this.time$.next('OFFLINE');
+          this.time$.next(10)
         }
       }
     });
