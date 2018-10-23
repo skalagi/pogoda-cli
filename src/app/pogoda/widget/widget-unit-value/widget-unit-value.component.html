@@ -1,4 +1,4 @@
-<mat-icon *ngIf="icon || trend" class="trend" color="accent">
+<mat-icon *ngIf="icon || trend" class="trend drop-shadow" color="accent">
     {{ icon ? icon : 'trending_' + (trend > 0 ? 'up' : 'down') }}
 </mat-icon>
 
@@ -8,7 +8,7 @@
           {{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}
       </div>
       
-      <div class="nicer-value">
+      <div class="nicer-value drop-shadow">
           <span>{{ value(unit) == '-' ? '-' : unit.value | number:'1.0-2' }}</span>
       </div>
 
@@ -18,4 +18,7 @@
   </div>      
 </div>
 
-<div class="unit" fxLayout="column" fxLayoutAlign="start center">{{ units(unit) }}</div>     
+<div class="second-font unit accent drop-shadow" fxLayout="column" fxLayoutAlign="start center">{{ units(unit) }}</div>        
+
+<div class="second-font unit accent wind-unit drop-shadow" fxLayout="column" fxLayoutAlign="start center">{{ description }}</div>  
+

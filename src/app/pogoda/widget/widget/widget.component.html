@@ -1,31 +1,28 @@
-<div *ngIf="(records$ | async) || true as records">
 
-    <main *ngIf="basic$ | async as basic"
-        gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
-            gdAlignRows="space-evenly stretch" gdGap="96px">
-        <div fxLayout fxLayoutAlign="center center">
-            <img src="assets/icons/icon-144x144.png">
-        </div>
-        
-        <skalagi-widget-unit title="TEMPERATURA" [records]="records?.temperature"
-            [trendingUnit]="basic.temperature.trend"
-            [unit]="basic.temperature?.real"></skalagi-widget-unit>
+<main *ngIf="basic$ | async as basic"
+    gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
+        gdAlignRows="space-evenly stretch" gdGap="96px">
+    <div fxLayout fxLayoutAlign="center center">
+        <img src="assets/icons/icon-144x144.png">
+    </div>
     
-        <skalagi-widget-unit title="WILGOTNOŚĆ" [records]="records?.humidity"
-            [unit]="basic.humidity"></skalagi-widget-unit>
-    
-        <skalagi-widget-unit title="CIŚNIENIE" [records]="records?.barometer"
-            [trendingUnit]="basic.barometer.trend"
-            [unit]="basic.barometer?.current"></skalagi-widget-unit>
-    
-        <skalagi-widget-unit title="OPADY" [records]="records?.rain" 
-            [unit]="basic.rain?.current"></skalagi-widget-unit>
-    
-        <skalagi-widget-unit title="WIATR" [records]="records?.wind" 
-            [unit]="basic.wind?.current.speed"></skalagi-widget-unit>
-    
-        <skalagi-widget-unit title="PODMUCHY" [records]="records?.wind"
-            [unit]="basic.wind?.gust.speed"></skalagi-widget-unit>
-    </main>
+    <skalagi-widget-unit title="TEMPERATURA" 
+        [trendingUnit]="basic.temperature.trend"
+        [unit]="basic.temperature?.real"></skalagi-widget-unit>
 
-</div>
+    <skalagi-widget-unit title="WILGOTNOŚĆ" 
+        [unit]="basic.humidity"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="CIŚNIENIE" 
+        [trendingUnit]="basic.barometer.trend"
+        [unit]="basic.barometer?.current"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="OPADY"
+        [unit]="basic.rain?.sum"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="WIATR" 
+        [unit]="basic.wind?.current"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="PODMUCHY" 
+        [unit]="basic.wind?.gust"></skalagi-widget-unit>
+</main>

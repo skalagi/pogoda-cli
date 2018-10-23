@@ -1,8 +1,9 @@
 figure {
-    color: #fff;
+    border: 2px solid;
     background: rgba(#2196f3, .75);
     border-radius: 24px / 16px;
-    padding: 16px;
+    padding: 24px 12px;
+    overflow: hidden;
     margin: 0;
 }
 
@@ -12,23 +13,13 @@ h1 {
     font-size: 96px;
     font-weight: 300;
     position: relative;
+    color: #fff;
 }
 
 h3 {
     letter-spacing: 4px;
     font-weight: 300;
     margin: 0 0 0 0;
-}
-
-h3, h4 {
     font-size: 32px;
-}
-
-h4 {
-    margin: 0;
-    flex-grow: 1;
-}
-
-.records {
-    width: 100%;
+    color: #fff;
 }
