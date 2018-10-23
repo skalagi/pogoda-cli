@@ -1,4 +1,6 @@
-img {
-    max-width: 100%;
-    margin: 64px 0;
+:host {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
