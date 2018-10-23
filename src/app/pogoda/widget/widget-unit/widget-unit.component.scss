@@ -3,6 +3,7 @@ figure {
     background: rgba(#2196f3, .75);
     border-radius: 24px / 16px;
     padding: 24px 12px;
+    cursor: pointer;
     overflow: hidden;
     margin: 0;
 }
@@ -14,6 +15,14 @@ h1 {
     font-weight: 300;
     position: relative;
     color: #fff;
+}
+
+h4 {
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
 }
 
 h3 {

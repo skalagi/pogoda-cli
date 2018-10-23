@@ -1,9 +1,11 @@
-<figure fxLayout="column" class="accent mat-elevation-z1" fxLayoutAlign="center center">
+<figure fxLayout="column" fxLayoutAlign="center center"
+    class="accent mat-elevation-z1" routerLink="/pomiary">
     
     <h1>
-        <skalagi-widget-unit-value [description]="unit?.translated" 
+        <skalagi-widget-unit-value
             [trend]="trendingUnit?.value" [unit]="unit?.speed ? unit.speed : unit"></skalagi-widget-unit-value>
     </h1>
 
+    <h4 class="second-font unit accent drop-shadow" fxLayout="column" fxLayoutAlign="start center">{{ unit?.translated }}</h4>  
     <h3 class="second-font">{{ title }}</h3>
 </figure>

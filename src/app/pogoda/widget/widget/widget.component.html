@@ -10,19 +10,19 @@
         [trendingUnit]="basic.temperature.trend"
         [unit]="basic.temperature?.real"></skalagi-widget-unit>
 
-    <skalagi-widget-unit title="WILGOTNOŚĆ" 
-        [unit]="basic.humidity"></skalagi-widget-unit>
-
     <skalagi-widget-unit title="CIŚNIENIE" 
         [trendingUnit]="basic.barometer.trend"
         [unit]="basic.barometer?.current"></skalagi-widget-unit>
-
-    <skalagi-widget-unit title="OPADY"
-        [unit]="basic.rain?.sum"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="WIATR" 
         [unit]="basic.wind?.current"></skalagi-widget-unit>
 
     <skalagi-widget-unit title="PODMUCHY" 
         [unit]="basic.wind?.gust"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="WILGOTNOŚĆ" 
+        [unit]="basic.humidity"></skalagi-widget-unit>
+
+    <skalagi-widget-unit title="OPADY"
+        [unit]="basic.rain?.sum"></skalagi-widget-unit>
 </main>
