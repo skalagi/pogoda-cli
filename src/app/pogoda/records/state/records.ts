@@ -2,7 +2,7 @@ import { Unit, unit } from '../../unit/unit';
 
 export interface Record {
   min?: Unit;
-  max: Unit;
+  max?: Unit;
 }
 
 export interface Records {
@@ -16,7 +16,7 @@ export interface Records {
 }
 
 export function record(data?: Partial<Record>): Record {
-    return { ...data, max: unit() };
+    return { ...data };
 }
 
 export function records(data?: Partial<Records>): Records {
