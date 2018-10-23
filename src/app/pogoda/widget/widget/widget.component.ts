@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BasicWeatherQuery } from 'app/pogoda/basic/state';
-import { RecordsQuery } from 'app/pogoda/records/state';
 
 @Component({
   selector: 'skalagi-widget',
@@ -9,14 +8,12 @@ import { RecordsQuery } from 'app/pogoda/records/state';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WidgetComponent implements OnInit {
-  records$;
   basic$;
 
-  constructor(private query: BasicWeatherQuery, private recordsQuery: RecordsQuery) { }
+  constructor(private query: BasicWeatherQuery) { }
 
   ngOnInit() {
     this.basic$ = this.query.select();
-    this.records$ = this.recordsQuery.record$('day');
   }
 
 }

@@ -1,19 +1,5 @@
 <figure fxLayout="column" fxLayoutAlign="center center">
     
-    <div class="records" *ngIf="records != null" fxLayout="row wrap" fxLayoutAlign="space-between center">
-        <h4 *ngIf="records?.max" fxLayout="row wrap" fxLayoutAlign="center center">
-            <skalagi-widget-unit-value icon="arrow_upward" [unit]="records?.max"></skalagi-widget-unit-value>
-        </h4>
-        
-        <h4 *ngIf="records?.min" fxLayout="row wrap" fxLayoutAlign="center center">
-            <skalagi-widget-unit-value icon="arrow_downward" [unit]="records?.min"></skalagi-widget-unit-value>
-        </h4>
-
-        <h4 *ngIf="records?.value" fxLayout="row wrap" fxLayoutAlign="center center">
-            <skalagi-widget-unit-value icon="history" [unit]="records"></skalagi-widget-unit-value>
-        </h4>
-    </div>
-    
     <h1>
         <skalagi-widget-unit-value [trend]="trendingUnit?.value" [unit]="unit"></skalagi-widget-unit-value>
     </h1>
