@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
 import { trigger, transition, animate, style, state } from '@angular/animations';
 import { Subscription, interval } from 'rxjs';
 
@@ -10,9 +10,9 @@ import { SentencesQuery, SentencesService } from './state';
   styleUrls: ['./sentences.component.css'],
   animations: [
     trigger('state', [
-      transition('show <=> hide', animate('400ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      transition('show <=> hide', animate('400ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
       state('show', style({ opacity: 1, transform: 'translateY(0)' })),
-      state('hide', style({ opacity: 0, transform: 'translateY(-16px)' })),
+      state('hide', style({ opacity: 0, transform: 'translateY(-100%)' })),
     ]),
   ],
 })
