@@ -1,3 +1,6 @@
-<p>
-  forecast works!
-</p>
+<div *ngIf="forecast$ | async as forecast">
+  <skalagi-txt-forecast [forecast]="forecast.txt_forecast"></skalagi-txt-forecast>
+  <!--
+    <skalagi-simple-forecast [forecast]="forecast.simpleforecast"></skalagi-simple-forecast>
+  -->
+</div>

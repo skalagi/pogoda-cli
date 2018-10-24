@@ -1,0 +1,13 @@
+<main gdColumns="repeat(1, 1fr)" gdColumns.md="repeat(2, 1fr)"
+    gdColumns.gt-md="repeat(3, 1fr)" gdGap="64px">
+    <figure *ngFor="let day of forecast.forecastday">
+        <h2 class="second-font accent">{{ day.title }}</h2>
+    
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <img [src]="day.icon_url">
+            <h4 class="accent">{{ day.pop }}%</h4>
+        </div>
+        
+        <p>{{ day.fcttext_metric }}</p>
+    </figure>
+</main>
