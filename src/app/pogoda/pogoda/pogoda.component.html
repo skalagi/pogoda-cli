@@ -1,7 +1,7 @@
 <div class="viewport" fxLayout="column">
-    <skalagi-header (toggleMenu$)="sidenav.toggle()" ngClass.lt-sm="mobile"></skalagi-header>
-    <skalagi-sentences ngClass.lt-sm="mobile"></skalagi-sentences>
-    <div ngClass.lt-sm="mobile" class="route-outlet mat-elevation-z1">
+    <skalagi-header (toggleMenu$)="sidenav.toggle()" ngClass.xs="mobile"></skalagi-header>
+    <skalagi-sentences ngClass.xs="mobile"></skalagi-sentences>
+    <div ngClass.xs="mobile" class="route-outlet mat-elevation-z1">
         <router-outlet></router-outlet>
     </div>     
 </div>
@@ -24,7 +24,8 @@
                 <a matLine>ASTRONOMIA</a>
             </mat-list-item>
             
-            <mat-list-item>
+            <mat-list-item routerLinkActive="accent" routerLink='/prognoza'
+                (click)="sidenav.close()">
                 <a matLine>PROGNOZA</a>
             </mat-list-item>
             
