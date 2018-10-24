@@ -10,7 +10,18 @@ img {
 .forecast {
     margin: 0;
     padding: 24px 16px;
+    height: 100%;
+    box-sizing: border-box;
     cursor: pointer;
+
+    div {
+        height: 100%;
+    }
+
+    p {
+        margin: 0;
+        letter-spacing: 4px;
+    }
 
     h2 {
         letter-spacing: 3px;
