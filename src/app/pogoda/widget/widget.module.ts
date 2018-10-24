@@ -4,7 +4,7 @@ import { WidgetComponent } from './widget/widget.component';
 import { WidgetUnitComponent } from './widget-unit/widget-unit.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WidgetUnitValueComponent } from './widget-unit-value/widget-unit-value.component';
-import { MatIconModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatRippleModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
 
@@ -13,6 +13,7 @@ import { MomentModule } from 'ngx-moment';
     CommonModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatRippleModule,
     RouterModule,
     MomentModule,
     MatIconModule,
