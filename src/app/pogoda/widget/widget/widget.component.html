@@ -2,9 +2,24 @@
 <main *ngIf="basic$ | async as basic"
     gdColumns="repeat(auto-fit, minmax(256px, auto))" gdColumns.xs="1fr"
         gdAlignRows="space-evenly stretch" gdGap="96px">
+
     <div fxLayout fxLayoutAlign="center center">
         <img src="assets/icons/icon-144x144.png">
     </div>
+    
+    <button mat-button>
+        <figure *ngIf="(forecast$ | async)?.simpleforecast?.forecastday as days" 
+            class="border accent forecast bg mat-elevation-z1">
+            <div *ngIf="days?.length" fxLayout="row wrap" fxLayoutAlign="space-around center">
+                <img src="assets/icons/wu/{{ days[0].icon }}.svg">
+                <h2 class="second-font">
+                    {{ days[0].date.epoch | amFromUnix | amTimeAgo }}
+                    {{ days[0].conditions }}
+                </h2>
+                <p>DOWIEDZ SIĘ WIĘCEJ</p>
+            </div>
+        </figure>
+    </button>
     
     <skalagi-widget-unit title="TEMPERATURA" 
         [trendingUnit]="basic.temperature.trend"

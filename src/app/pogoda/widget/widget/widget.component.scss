@@ -6,3 +6,24 @@
 img {
     z-index: 3;
 }
+
+.forecast {
+    margin: 0;
+    padding: 24px 16px;
+
+    h2 {
+        letter-spacing: 3px;
+        text-align: center;
+        font-weight: 500;
+        color: #fff;
+    }
+    img {
+        height: 96px;
+        margin: 0 16px;
+    }
+}
+
+button {
+    padding: 0;
+    white-space: normal;
+}
