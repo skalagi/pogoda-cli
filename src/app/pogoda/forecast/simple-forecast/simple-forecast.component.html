@@ -1,3 +1,12 @@
-<p *ngFor="let day of forecast.forecastday">
-    
-</p>
+<main gdColumns="repeat(1, 1fr)" gdColumns.md="repeat(2, 1fr)"
+    gdColumns.gt-md="repeat(4, 1fr)" gdGap="64px" gdAlignColumns="center stretch">
+    <figure *ngFor="let day of forecast.forecastday" class="border accent bg mat-elevation-z1">
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <img src="assets/icons/wu/{{ day.icon }}.svg">
+            <h2 class="second-font accent">
+                {{ day.date.epoch | amFromUnix | amTimeAgo }}
+                {{ day.conditions }}
+            </h2>
+        </div>
+    </figure>
+</main>

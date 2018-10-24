@@ -1,5 +1,6 @@
 figure {
     margin: 0;
+    padding: 24px 8px;
 }
 
 h2 {
@@ -10,7 +11,7 @@ h2 {
 }
 
 img {
-    width: 38px;
+    height: 64px;
 }
 
 h4 {
@@ -20,5 +21,6 @@ h4 {
 
 p {
     letter-spacing: 2px;
+    text-align: center;
     color: #fff;
 }

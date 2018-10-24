@@ -1,6 +1,4 @@
-<div *ngIf="forecast$ | async as forecast">
+<div *ngIf="forecast$ | async as forecast" gdColumns="1fr" gdGap="96px">
+  <skalagi-simple-forecast [forecast]="forecast.simpleforecast"></skalagi-simple-forecast>
   <skalagi-txt-forecast [forecast]="forecast.txt_forecast"></skalagi-txt-forecast>
-  <!--
-    <skalagi-simple-forecast [forecast]="forecast.simpleforecast"></skalagi-simple-forecast>
-  -->
 </div>
