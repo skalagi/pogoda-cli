@@ -37,7 +37,7 @@ import { MatSnackBarModule } from '@angular/material';
     FormsModule,
     PogodaModule,
 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
+    ServiceWorkerModule.register('ngsw-worker.js'),
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pl' } ],
   bootstrap: [AppComponent]
